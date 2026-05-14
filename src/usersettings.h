@@ -55,6 +55,8 @@ namespace Settings
 
     string EgressRegion();
 
+    string TunnelProtocol();
+
     bool SystrayMinimize();
 
     bool DisableDisallowedTrafficAlert();

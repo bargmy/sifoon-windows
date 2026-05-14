@@ -726,6 +726,7 @@
     localProxySetup();
     upstreamProxySetup();
     vpnModeSetup();
+    tunnelProtocolSetup();
 
     updateAvailableEgressRegions(false); // don't force valid -- haven't filled in settings yet
 
@@ -941,6 +942,10 @@
     }
     vpnModeUpdate();
 
+    if (!_.isUndefined(obj.TunnelProtocol)) {
+      $('input[name="TunnelProtocol"][value="' + obj.TunnelProtocol + '"]').prop('checked', true);
+    }
+
     if (!_.isUndefined(obj.LocalHttpProxyPort)) {
       $('#LocalHttpProxyPort').val(obj.LocalHttpProxyPort > 0 ? obj.LocalHttpProxyPort : '');
     }
@@ -1031,6 +1036,7 @@
       UpstreamProxyPassword: $('#UpstreamProxyPassword').val(),
       UpstreamProxyDomain: $('#UpstreamProxyDomain').val(),
       SkipUpstreamProxy: $('#SkipUpstreamProxy').prop('checked') ? 1 : 0,
+      TunnelProtocol: $('input[name="TunnelProtocol"]:checked').val(),
       EgressRegion: egressRegion === BEST_REGION_VALUE ? '' : egressRegion,
       SystrayMinimize: $('#SystrayMinimize').prop('checked') ? 1 : 0,
       DisableDisallowedTrafficAlert: $('#DisableDisallowedTrafficAlert').prop('checked') ? 1 : 0
@@ -1479,6 +1485,12 @@
       $('#settings-pane').trigger(SETTING_CHANGED_EVENT, this.id);
 
       vpnModeUpdate();
+    });
+  }
+
+  function tunnelProtocolSetup() {
+    $('input[name="TunnelProtocol"]').change(function() {
+      $('#settings-pane').trigger(SETTING_CHANGED_EVENT, 'TunnelProtocol');
     });
   }
 

@@ -869,6 +869,55 @@
 
           <div class="accordion" id="settings-accordion">
 
+            <div class="accordion-group vpn-incompatible">
+              <div class="accordion-heading">
+                <a class="accordion-toggle" href="#settings-accordion-protocol-selector"
+                   data-toggle="collapse" data-parent="#settings-accordion">
+                  <i class="accordion-expand-icon icon-plus-square"
+                     data-icon-closed="icon-plus-square" data-icon-opened="icon-minus-square"></i>
+                  <span data-i18n="settings#protocol-selector#heading">
+                    Manual Connection Mode
+                  </span>
+                  <span class="label label-warning vpn-incompatible-msg">
+                    <i class="icon-prohibited"></i>
+                    <span data-i18n="settings#vpn-incompatible-label">L2TP/IPSec</span>
+                  </span>
+                </a>
+              </div>
+              <div id="settings-accordion-protocol-selector" class="js-accordion-body collapse">
+                <div class="accordion-inner">
+                  <form action="">
+                    <fieldset>
+                      <div class="control-group">
+                        <div class="controls">
+                          <label class="radio">
+                            <input type="radio" name="TunnelProtocol" value="" checked />
+                            <span data-i18n="settings#protocol-selector#automatic">Automatic</span>
+                          </label>
+                          <label class="radio">
+                            <input type="radio" name="TunnelProtocol" value="SSH" />
+                            <span data-i18n="settings#protocol-selector#ssh">SSH</span>
+                          </label>
+                          <label class="radio">
+                            <input type="radio" name="TunnelProtocol" value="OSSH" />
+                            <span data-i18n="settings#protocol-selector#ossh">Obfuscated SSH</span>
+                          </label>
+                          <label class="radio">
+                            <input type="radio" name="TunnelProtocol" value="QUIC" />
+                            <span data-i18n="settings#protocol-selector#quic">QUIC</span>
+                          </label>
+                          <label class="radio">
+                            <input type="radio" name="TunnelProtocol" value="FRONTED-MEEK-HTTPS-OSSH" />
+                            <span data-i18n="settings#protocol-selector#fronted-meek-https">CDN Fronting (HTTPS)</span>
+                          </label>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </form>
+                </div>
+              </div>
+            </div>
+
             <div class="accordion-group">
               <div class="accordion-heading">
                 <a class="accordion-toggle" href="#settings-accordion-systray-minimize"

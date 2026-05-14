@@ -55,6 +55,9 @@
 #define EGRESS_REGION_NAME              "EgressRegion"
 #define EGRESS_REGION_DEFAULT           ""
 
+#define TUNNEL_PROTOCOL_NAME            "TunnelProtocol"
+#define TUNNEL_PROTOCOL_DEFAULT         ""
+
 #define SKIP_BROWSER_DEFAULT            FALSE
 
 #define SKIP_PROXY_SETTINGS_NAME        "SkipProxySettings"
@@ -218,6 +221,9 @@ void Settings::ToJson(Json::Value& o_json)
       o_json["EgressRegion"] = Settings::EgressRegion();
       o_json["defaults"]["EgressRegion"] = EGRESS_REGION_DEFAULT;
 
+      o_json["TunnelProtocol"] = Settings::TunnelProtocol();
+      o_json["defaults"]["TunnelProtocol"] = TUNNEL_PROTOCOL_DEFAULT;
+
       o_json["SystrayMinimize"] = Settings::SystrayMinimize() ? TRUE : FALSE;
       o_json["defaults"]["SystrayMinimize"] = SYSTRAY_MINIMIZE_DEFAULT;
 
@@ -324,6 +330,13 @@ bool Settings::FromJson(
         WriteRegistryStringValue(
             EGRESS_REGION_NAME,
             egressRegion,
+            failReason);
+
+        string tunnelProtocol = json.get("TunnelProtocol", TUNNEL_PROTOCOL_DEFAULT).asString();
+        reconnectRequiredValueChanged = reconnectRequiredValueChanged || tunnelProtocol != Settings::TunnelProtocol();
+        WriteRegistryStringValue(
+            TUNNEL_PROTOCOL_NAME,
+            tunnelProtocol,
             failReason);
 
         BOOL systrayMinimize = json.get("SystrayMinimize", SYSTRAY_MINIMIZE_DEFAULT).asUInt();
@@ -563,6 +576,11 @@ bool Settings::SkipUpstreamProxy()
 string Settings::EgressRegion()
 {
     return GetSettingString(EGRESS_REGION_NAME, EGRESS_REGION_DEFAULT);
+}
+
+string Settings::TunnelProtocol()
+{
+    return GetSettingString(TUNNEL_PROTOCOL_NAME, TUNNEL_PROTOCOL_DEFAULT);
 }
 
 bool Settings::SystrayMinimize()

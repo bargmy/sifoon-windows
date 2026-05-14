@@ -499,6 +499,31 @@
     "message": "Uses Windows L2TP/IPSec virtual networking. This mode will tunnel all of your apps, but it doesn’t provide obfuscation and so does not have strong censorship circumvention capabilities. It is <strong>not recommended</strong> for bypassing most firewalls.",
     "description": "Help text for the 'Use L2TP/IPSec mode' transport selection checkbox. It gives some technical details and indicates that this mode is not recommended."
   },
+  "settings#protocol-selector#heading": {
+    "message": "Manual Connection Mode",
+    "description": "Settings section heading where the user can manually select the connection protocol."
+  },
+  "settings#protocol-selector#automatic": {
+    "message": "Automatic",
+    "description": "Option to allow Sifoon to automatically select the best connection protocol."
+  },
+  "settings#protocol-selector#ssh": {
+    "message": "SSH",
+    "description": "Manual selection for the SSH connection protocol."
+  },
+  "settings#protocol-selector#ossh": {
+    "message": "Obfuscated SSH",
+    "description": "Manual selection for the Obfuscated SSH connection protocol."
+  },
+  "settings#protocol-selector#quic": {
+    "message": "QUIC",
+    "description": "Manual selection for the QUIC connection protocol."
+  },
+  "settings#protocol-selector#fronted-meek-https": {
+    "message": "CDN Fronting (HTTPS)",
+    "description": "Manual selection for the CDN Fronting (HTTPS) connection protocol."
+  },
+
   "settings#systray-minimize#heading": {
     "message": "Minimize to Notification Area (System Tray)",
     "description": "Settings section heading. In this section the user can choose to enable or disable the ability for the Sifoon application window to be hidden as a notification area icon when minimized. 'Notification area' is the official term for the icons located near the clock on the Windows taskbar, but it's also often called the 'system tray' or 'systray' -- use whatever is most common in your language, and be verbose if necessary."

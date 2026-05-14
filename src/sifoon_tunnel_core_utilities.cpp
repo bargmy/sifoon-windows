@@ -123,6 +123,14 @@ bool WriteParameterFiles(const WriteParameterFilesIn& in, WriteParameterFilesOut
         config["NetworkLatencyMultiplierLambda"] = 0.1;
     }
 
+    string tunnelProtocol = Settings::TunnelProtocol();
+    if (!tunnelProtocol.empty())
+    {
+        Json::Value tunnelProtocols(Json::arrayValue);
+        tunnelProtocols.append(tunnelProtocol);
+        config["TunnelProtocols"] = tunnelProtocols;
+    }
+
     if (in.encodedAuthorizations != NULL) {
         config["Authorizations"] = in.encodedAuthorizations;
     }
