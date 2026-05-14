@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: windows-2019
 
     steps:
     - uses: actions/checkout@v4
@@ -26,6 +26,11 @@ jobs:
       run: |
         copy src\embeddedvalues.h.stub src\embeddedvalues.h
 
+    - name: Restore node_modules from 7z
+      working-directory: src/webui
+      run: |
+        7z x node_modules.7z -y
+
     - name: Build WebUI
       working-directory: src/webui
       run: |
@@ -35,7 +40,7 @@ jobs:
     - name: Build C++ Client
       working-directory: src
       run: |
-        msbuild psiclient2015.sln /p:Configuration=Release /p:Platform=Win32 /p:WindowsTargetPlatformVersion=10.0 /p:PlatformToolset=v143 /p:CL_AdditionalOptions="/D_HAS_STD_BYTE=0"
+        msbuild psiclient2015.sln /p:Configuration=Release /p:Platform=Win32 /p:WindowsTargetPlatformVersion=10.0.17763.0 /p:CL_AdditionalOptions="/D_HAS_STD_BYTE=0"
 
     - name: Prepare Artifacts
       run: |
