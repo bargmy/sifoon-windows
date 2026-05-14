@@ -26,11 +26,6 @@ jobs:
       run: |
         copy src\embeddedvalues.h.stub src\embeddedvalues.h
 
-    - name: Restore node_modules from 7z
-      working-directory: src/webui
-      run: |
-        7z x node_modules.7z -y
-
     - name: Build WebUI
       working-directory: src/webui
       run: |
