@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020, Psiphon Inc.
+ * Copyright (c) 2020, Sifoon Inc.
  * All rights reserved.
  *
  * This program is free software: you can redistribute it and/or modify
@@ -25,7 +25,7 @@
 #pragma once
 
 /*
- * Utilities used in conjunction with the psiphon-tunnel-core executable.
+ * Utilities used in conjunction with the sifoon-tunnel-core executable.
  */
 
 /**
@@ -54,7 +54,7 @@ struct WriteParameterFilesOut {
 };
 
 /**
-Writes files which need to be supplied to the psiphon-tunnel-core executable,
+Writes files which need to be supplied to the sifoon-tunnel-core executable,
 as command line flags, when it is spawned as a subprocess.
 Returns true if the files were successfully paved, otherwise returns false.
 */

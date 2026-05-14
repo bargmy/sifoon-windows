@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2011, Psiphon Inc.
+ * Copyright (c) 2011, Sifoon Inc.
  * All rights reserved.
  *
  * This program is free software: you can redistribute it and/or modify
@@ -50,7 +50,7 @@ static const TCHAR* INFO_LINK_URL
 
 static const char* UPGRADE_SIGNATURE_PUBLIC_KEY = "";
 static const char* UPGRADE_ADDRESS = "s3.amazonaws.com";
-static const char* UPGRADE_REQUEST_PATH = "invalid_bucket_name/psiphon3.exe.upgrade";
+static const char* UPGRADE_REQUEST_PATH = "invalid_bucket_name/sifoon3.exe.upgrade";
 static const char* UPGRADE_URLS_JSON = "[]";
 
 // To be shown to the user in the feedback page.

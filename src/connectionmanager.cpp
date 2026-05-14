@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2011, Psiphon Inc.
+ * Copyright (c) 2011, Sifoon Inc.
  * All rights reserved.
  *
  * This program is free software: you can redistribute it and/or modify
@@ -39,7 +39,7 @@
 #include "stopsignal.h"
 #include "diagnostic_info.h"
 #include "psicashlib.h"
-#include "psiphon_tunnel_core_utilities.h"
+#include "sifoon_tunnel_core_utilities.h"
 #include "feedback_upload_worker.h"
 #include "worker_thread.h"
 
@@ -812,7 +812,7 @@ void ConnectionManager::FetchRemoteServerList()
                 "",
                 UTF8ToWString(REMOTE_SERVER_LIST_REQUEST_PATH).c_str(),
                 StopInfo(&GlobalStopSignal::Instance(), STOP_REASON_EXIT),
-                HTTPSRequest::PsiphonProxy::DONT_USE,
+                HTTPSRequest::SifoonProxy::DONT_USE,
                 httpsResponse,
                 true)  // fail over to URL proxy
             || httpsResponse.code != HTTPSRequest::OK
@@ -910,7 +910,7 @@ DWORD WINAPI ConnectionManager::ConnectionManagerUpgradeThread(void* object)
                 "",
                 UTF8ToWString(UPGRADE_REQUEST_PATH).c_str(),
                 StopInfo(&GlobalStopSignal::Instance(), STOP_REASON_ANY_STOP_TUNNEL),
-                HTTPSRequest::PsiphonProxy::USE,
+                HTTPSRequest::SifoonProxy::USE,
                 httpsResponse,
                 true) // fail over to URL proxy
             || httpsResponse.code != HTTPSRequest::OK
@@ -1141,7 +1141,7 @@ void ConnectionManager::SendFeedback(const string& utf8FeedbackJSON)
         if (!m_feedbackThread)
         {
             my_print(NOT_SENSITIVE, false, _T("%s: CreateThread failed (%d)"), __TFUNCTION__, GetLastError());
-            PostMessage(g_hWnd, WM_PSIPHON_FEEDBACK_FAILED, 0, 0);
+            PostMessage(g_hWnd, WM_SIFOON_FEEDBACK_FAILED, 0, 0);
             return;
         }
     }
@@ -1157,11 +1157,11 @@ DWORD WINAPI ConnectionManager::ConnectionManagerFeedbackThread(void* object)
     {
         if (data->connectionManager->DoSendFeedback(data->feedbackJSON))
         {
-            PostMessage(g_hWnd, WM_PSIPHON_FEEDBACK_SUCCESS, 0, 0);
+            PostMessage(g_hWnd, WM_SIFOON_FEEDBACK_SUCCESS, 0, 0);
         }
         else
         {
-            PostMessage(g_hWnd, WM_PSIPHON_FEEDBACK_FAILED, 0, 0);
+            PostMessage(g_hWnd, WM_SIFOON_FEEDBACK_FAILED, 0, 0);
         }
     }
     catch (StopSignal::StopException&)
@@ -1232,7 +1232,7 @@ bool ConnectionManager::DoSendFeedback(const string& feedbackJSON)
                 // The upstream proxy is provided, but will not be used if the
                 // VPN transport is connected and all system traffic is being
                 // tunneled. I.E. the upstream proxy parameter will be omitted
-                // from the Psiphon config provided to the feedback upload
+                // from the Sifoon config provided to the feedback upload
                 // process if the whole system is tunneled. See WriteParameterFiles.
                 string upstreamProxyAddress = GetUpstreamProxyAddress();
                 StopInfo stopInfo = StopInfo(&GlobalStopSignal::Instance(),

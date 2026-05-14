@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2015, Psiphon Inc.
+ * Copyright (c) 2015, Sifoon Inc.
  * All rights reserved.
  *
  * This program is free software: you can redistribute it and/or modify
@@ -35,10 +35,10 @@ extern ConnectionManager g_connectionManager;
 
 //==== global window message constants =================================
 
-#define WM_PSIPHON_MY_PRINT                     WM_USER + 100
-#define WM_PSIPHON_FEEDBACK_SUCCESS             WM_USER + 101
-#define WM_PSIPHON_FEEDBACK_FAILED              WM_USER + 102
-#define WM_PSIPHON_CREATED                      WM_USER + 103
+#define WM_SIFOON_MY_PRINT                     WM_USER + 100
+#define WM_SIFOON_FEEDBACK_SUCCESS             WM_USER + 101
+#define WM_SIFOON_FEEDBACK_FAILED              WM_USER + 102
+#define WM_SIFOON_CREATED                      WM_USER + 103
 
 
 //==== UI Interaction ==================================================

@@ -43,7 +43,7 @@ jobs:
     - name: Prepare Artifacts
       run: |
         mkdir artifacts
-        copy src\Release\psiphon.exe artifacts\psiphon-windows.exe
+        copy src\Release\sifoon.exe artifacts\sifoon-windows.exe
 
     - name: Create Release
       uses: softprops/action-gh-release@v2
@@ -52,12 +52,12 @@ jobs:
         name: ${{ github.ref_name == 'master' && 'Latest Build' || github.ref_name }}
         draft: false
         prerelease: ${{ github.ref_name == 'master' }}
-        files: artifacts/psiphon-windows.exe
+        files: artifacts/sifoon-windows.exe
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Development Release (Upload Artifact)
       uses: actions/upload-artifact@v4
       with:
-        name: psiphon-windows
-        path: artifacts/psiphon-windows.exe
+        name: sifoon-windows
+        path: artifacts/sifoon-windows.exe

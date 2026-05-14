@@ -182,13 +182,13 @@ typedef struct MC_NMCUSTOMDRAWINFO_tag {
 /*@}*/
 
 
-/*PSIPHON*/
+/*SIFOON*/
 /* Converting mCtrl from a dynamic to static library requires us to do some
 additional initialization. These functions must be called once each, before
 (and after) any other mCtrl module initialization or termination.*/
 void mc_StaticLibInitialize();
 void mc_StaticLibTerminate();
-/*/PSIPHON*/
+/*/SIFOON*/
 
 
 #ifdef __cplusplus

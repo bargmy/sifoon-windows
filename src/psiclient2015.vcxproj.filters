@@ -52,9 +52,9 @@
     <ClCompile Include="psicashlib.cpp" />
     <ClCompile Include="dispatch_queue.cpp" />
     <ClCompile Include="feedback_upload.cpp" />
-    <ClCompile Include="psiphon_tunnel_core_utilities.cpp" />
+    <ClCompile Include="sifoon_tunnel_core_utilities.cpp" />
     <ClCompile Include="subprocess.cpp" />
-    <ClCompile Include="psiphon_tunnel_core.cpp" />
+    <ClCompile Include="sifoon_tunnel_core.cpp" />
     <ClCompile Include="feedback_upload_worker.cpp" />
     <ClCompile Include="psiclient_systray.cpp" />
     <ClCompile Include="psiclient_ui.cpp" />
@@ -540,9 +540,9 @@
       <Filter>3rdParty\psicash</Filter>
     </ClInclude>
     <ClInclude Include="feedback_upload.h" />
-    <ClInclude Include="psiphon_tunnel_core_utilities.h" />
+    <ClInclude Include="sifoon_tunnel_core_utilities.h" />
     <ClInclude Include="subprocess.h" />
-    <ClInclude Include="psiphon_tunnel_core.h" />
+    <ClInclude Include="sifoon_tunnel_core.h" />
     <ClInclude Include="feedback_upload_worker.h" />
     <ClInclude Include="psiclient_systray.h" />
     <ClInclude Include="psiclient_ui.h" />
@@ -578,6 +578,6 @@
     <Image Include="systray-stopped.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Manifest Include="psiphon.manifest" />
+    <Manifest Include="sifoon.manifest" />
   </ItemGroup>
 </Project>

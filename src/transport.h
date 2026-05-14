@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2013, Psiphon Inc.
+ * Copyright (c) 2013, Sifoon Inc.
  * All rights reserved.
  *
  * This program is free software: you can redistribute it and/or modify
@@ -73,7 +73,7 @@ public:
     virtual tstring GetTransportDisplayName() const = 0;
 
     //transport request name can be changed by the class methods,
-    //this is the one used in psiphon web requests
+    //this is the one used in sifoon web requests
     virtual tstring GetTransportRequestName() const = 0;
 
     // TransportRegistry functions.
@@ -88,7 +88,7 @@ public:
     virtual tstring GetSessionID(const SessionInfo& sessionInfo) = 0;
 
     // Returns true if:
-    // - needs a local HTTP proxy to be run (used to proxy Psiphon API web requests, etc.)
+    // - needs a local HTTP proxy to be run (used to proxy Sifoon API web requests, etc.)
     // - needs assistance in calling /connected and /status requests
     virtual bool RequiresStatsSupport() const = 0;
 
@@ -98,7 +98,7 @@ public:
     virtual bool IsHandshakeRequired() const = 0;
 
     // Returns true if all system traffic is tunneled, rather than only traffic
-    // routed through the local Psiphon proxy.
+    // routed through the local Sifoon proxy.
     // In other words, this is true for VPN, false for SSH.
     virtual bool IsWholeSystemTunneled() const = 0;
 

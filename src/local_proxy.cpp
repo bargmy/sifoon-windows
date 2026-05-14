@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2012, Psiphon Inc.
+ * Copyright (c) 2012, Sifoon Inc.
  * All rights reserved.
  *
  * This program is free software: you can redistribute it and/or modify
@@ -103,7 +103,7 @@ bool LocalProxy::DoStart()
                 return false;
             }
 
-            m_polipoPath = tempPath / "psiphon-local-proxy.exe";
+            m_polipoPath = tempPath / "sifoon-local-proxy.exe";
         }
         else {
             if (!GetUniqueTempFilename(_T(".exe"), m_polipoPath, i)) {
@@ -299,7 +299,7 @@ bool LocalProxy::StartPolipo(int localHttpProxyPort)
     tstringstream polipoCommandLine;
 
     polipoCommandLine << m_polipoPath
-                      << _T(" psiphonStats=true")
+                      << _T(" sifoonStats=true")
                       << _T(" proxyPort=") << localHttpProxyPort
                       // Polipo is now built with -DNO_DISK_CACHE
                       // << _T(" diskCacheRoot=\"\"")
@@ -321,7 +321,7 @@ bool LocalProxy::StartPolipo(int localHttpProxyPort)
         }
         if(m_serverAddress.length() > 0)
         {
-            polipoCommandLine << _T(" psiphonServer=") << UTF8ToWString(m_serverAddress);
+            polipoCommandLine << _T(" sifoonServer=") << UTF8ToWString(m_serverAddress);
         }
     }
 
@@ -620,11 +620,11 @@ void LocalProxy::UpsertHttpsRequest(string entry)
 
 void LocalProxy::ParsePolipoStatsBuffer(const char* page_view_buffer)
 {
-    const char* HTTP_PREFIX = "PSIPHON-PAGE-VIEW-HTTP:>>";
-    const char* HTTPS_PREFIX = "PSIPHON-PAGE-VIEW-HTTPS:>>";
-    const char* BYTES_TRANSFERRED_PREFIX = "PSIPHON-BYTES-TRANSFERRED:>>";
-    const char* UNPROXIED_PREFIX = "PSIPHON-UNPROXIED:>>";
-    const char* DEBUG_PREFIX = "PSIPHON-DEBUG:>>";
+    const char* HTTP_PREFIX = "SIFOON-PAGE-VIEW-HTTP:>>";
+    const char* HTTPS_PREFIX = "SIFOON-PAGE-VIEW-HTTPS:>>";
+    const char* BYTES_TRANSFERRED_PREFIX = "SIFOON-BYTES-TRANSFERRED:>>";
+    const char* UNPROXIED_PREFIX = "SIFOON-UNPROXIED:>>";
+    const char* DEBUG_PREFIX = "SIFOON-DEBUG:>>";
     const char* ENTRY_END = "<<";
 
     const char* curr_pos = page_view_buffer;

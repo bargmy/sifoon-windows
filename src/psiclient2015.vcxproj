@@ -42,12 +42,12 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <TargetName>psiphon</TargetName>
+    <TargetName>sifoon</TargetName>
     <GenerateManifest>false</GenerateManifest>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <TargetName>psiphon</TargetName>
+    <TargetName>sifoon</TargetName>
     <GenerateManifest>false</GenerateManifest>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -259,8 +259,8 @@
     <ClInclude Include="psicashlib.h" />
     <ClInclude Include="psiclient_systray.h" />
     <ClInclude Include="psiclient_ui.h" />
-    <ClInclude Include="psiphon_tunnel_core.h" />
-    <ClInclude Include="psiphon_tunnel_core_utilities.h" />
+    <ClInclude Include="sifoon_tunnel_core.h" />
+    <ClInclude Include="sifoon_tunnel_core_utilities.h" />
     <ClInclude Include="subprocess.h" />
     <ClInclude Include="wininet_network_check.h" />
     <ClInclude Include="psiclient.h" />
@@ -334,8 +334,8 @@
     <ClCompile Include="dispatch_queue.cpp" />
     <ClCompile Include="psiclient_systray.cpp" />
     <ClCompile Include="psiclient_ui.cpp" />
-    <ClCompile Include="psiphon_tunnel_core.cpp" />
-    <ClCompile Include="psiphon_tunnel_core_utilities.cpp" />
+    <ClCompile Include="sifoon_tunnel_core.cpp" />
+    <ClCompile Include="sifoon_tunnel_core_utilities.cpp" />
     <ClCompile Include="subprocess.cpp" />
     <ClCompile Include="wininet_network_check.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
@@ -369,7 +369,7 @@
     <Image Include="systray-stopped.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Manifest Include="psiphon.manifest" />
+    <Manifest Include="sifoon.manifest" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

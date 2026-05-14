@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021, Psiphon Inc.
+ * Copyright (c) 2021, Sifoon Inc.
  * All rights reserved.
  *
  * This program is free software: you can redistribute it and/or modify
@@ -20,8 +20,8 @@
 #pragma once
 
 // Systray- and notification-related window messages
-#define WM_PSIPHON_TRAY_ICON_NOTIFY                 WM_USER + 300
-#define WM_PSIPHON_TRAY_CONNECTED_REMINDER_NOTIFY   WM_USER + 301
+#define WM_SIFOON_TRAY_ICON_NOTIFY                 WM_USER + 300
+#define WM_SIFOON_TRAY_CONNECTED_REMINDER_NOTIFY   WM_USER + 301
 
 /// Should be called when the above window messages are received
 void SystrayWndProc(UINT message, WPARAM wParam, LPARAM lParam);

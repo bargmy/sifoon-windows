@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2020, Psiphon Inc.
+* Copyright (c) 2020, Sifoon Inc.
 * All rights reserved.
 *
 * This program is free software: you can redistribute it and/or modify
@@ -21,14 +21,14 @@
 #include <shlwapi.h>
 #pragma comment(lib,"shlwapi.lib")
 
-#include "psiphon_tunnel_core.h"
+#include "sifoon_tunnel_core.h"
 #include "diagnostic_info.h"
 #include "logging.h"
 #include "psiclient.h"
 #include "utilities.h"
 
 
-PsiphonTunnelCore::PsiphonTunnelCore(IPsiphonTunnelCoreNoticeHandler* noticeHandler, const tstring& exePath)
+SifoonTunnelCore::SifoonTunnelCore(ISifoonTunnelCoreNoticeHandler* noticeHandler, const tstring& exePath)
     : Subprocess(exePath, this),
       m_panicked(false)
 {
@@ -39,11 +39,11 @@ PsiphonTunnelCore::PsiphonTunnelCore(IPsiphonTunnelCoreNoticeHandler* noticeHand
 }
 
 
-PsiphonTunnelCore::~PsiphonTunnelCore()
+SifoonTunnelCore::~SifoonTunnelCore()
 {
 }
 
-void PsiphonTunnelCore::HandleSubprocessOutputLine(const string& line)
+void SifoonTunnelCore::HandleSubprocessOutputLine(const string& line)
 {
     // Notices are logged to diagnostics. Some notices are excluded from
     // diagnostics if they may contain private user data.
@@ -110,7 +110,7 @@ void PsiphonTunnelCore::HandleSubprocessOutputLine(const string& line)
             logOutputToDiagnostics = false;
         }
 
-        m_noticeHandler->HandlePsiphonTunnelCoreNotice(noticeType, timestamp, data);
+        m_noticeHandler->HandleSifoonTunnelCoreNotice(noticeType, timestamp, data);
     }
     catch (exception& e)
     {

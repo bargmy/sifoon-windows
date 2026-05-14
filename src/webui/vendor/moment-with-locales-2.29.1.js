@@ -4904,7 +4904,7 @@
     proto.toDate = toDate;
     proto.toISOString = toISOString;
     proto.inspect = inspect;
-    /* PSIPHON: this causes an exception in the IE8 webview
+    /* SIFOON: this causes an exception in the IE8 webview
     if (typeof Symbol !== 'undefined' && Symbol.for != null) {
         proto[Symbol.for('nodejs.util.inspect.custom')] = function () {
             return 'Moment<' + this.format() + '>';

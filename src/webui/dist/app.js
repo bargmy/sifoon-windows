@@ -3,7 +3,7 @@
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 /*
- * Copyright (c) 2015, Psiphon Inc.
+ * Copyright (c) 2015, Sifoon Inc.
  * All rights reserved.
  *
  * This program is free software: you can redistribute it and/or modify
@@ -182,7 +182,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
      Our main tools for scaling are the CSS styles `transform: scale(dpiScaling)` and `transform-origin`.
     `transform` does what it sounds like -- it scales an element by the given factor.
     By default, the origin of that scaling is the center of the element. That's basically
-    never what we want -- for example, if the top-left Psiphon logo were scaled by 2.5x
+    never what we want -- for example, if the top-left Sifoon logo were scaled by 2.5x
     from the center, part of it would end up outside the app window. When we're using a
     LTR locale, we almost always want the scaling origin to be the top-left corner of
     elements; when using an RTL locale, we want it to be the top-right corner.
@@ -1009,7 +1009,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       $('#settings-pane').trigger(SETTING_CHANGED_EVENT, this.id);
     });
   } //
-  // Egress Region (Psiphon Server Region)
+  // Egress Region (Sifoon Server Region)
   //
   // Will be called exactly once. Set up event listeners, etc.
 
@@ -1540,7 +1540,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
     var lang = prevLang || g_initObj.Config && g_initObj.Config.Language || fallbackLanguage;
-    i18n.init(window.PSIPHON.LOCALES, fallbackLanguage);
+    i18n.init(window.SIFOON.LOCALES, fallbackLanguage);
     switchLocale(lang, true); // Populate the list of language choices
 
     populateLocales();
@@ -1593,7 +1593,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     //
     // Iterate through the English keys, since we know it will be complete.
 
-    var translation = window.PSIPHON.LOCALES.en.translation;
+    var translation = window.SIFOON.LOCALES.en.translation;
     var appBackendStringTable = {};
 
     for (var key in translation) {
@@ -1611,7 +1611,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
   function populateLocales() {
     var localePriorityGuide = ['en', 'fa', 'ar', 'zh', 'zh_CN', 'zh_TW'];
-    var locales = $.map(window.PSIPHON.LOCALES, function (val, key) {
+    var locales = $.map(window.SIFOON.LOCALES, function (val, key) {
       return key;
     }); // Sort the locales according to the priority guide
 
@@ -1643,7 +1643,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
       $localeListElem.loadTemplate($("#locale-template"), {
         localeCode: locales[i],
-        localeName: window.PSIPHON.LOCALES[locales[i]].name
+        localeName: window.SIFOON.LOCALES[locales[i]].name
       }, {
         append: true
       });
@@ -2158,7 +2158,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     if (psicashData.purchases) {
       for (var _i = 0; _i < psicashData.purchases.length; _i++) {
         // There are two different contexts/ways of checking for active Speed Boost.
-        // **If we are connected**, then we rely on psiphond to decide that the
+        // **If we are connected**, then we rely on sifoond to decide that the
         // authorization is expired, which will result in tunnel-core reconnecting and a
         // signal that the authorization is now rejected. This is when the purchase is
         // actually removed from the PsiCash lib datastore. So, if we are connected, its
@@ -2175,7 +2175,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           if (g_lastState === 'connected' || localTimeExpiry.isAfter(moment())) {
             state = PsiCashUIState.ACTIVE_BOOST;
             isRetired = false;
-            millisOfSpeedBoostRemaining = localTimeExpiry.diff(moment()); // Clock skew (between client<->PsiCash server<->psiphond) could result in a
+            millisOfSpeedBoostRemaining = localTimeExpiry.diff(moment()); // Clock skew (between client<->PsiCash server<->sifoond) could result in a
             // purchase being used past the expiry in the purchase record. Ensure we're
             // not showing a negative value in the UI.
 
@@ -2234,7 +2234,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
     PsiCashBalanceChange.push(psicashData.balance, veryFirstUpdate); // Some UI elements (i.e., the turtle speed limit) don't apply to users with a high
     // baseline speed. So we'll selectively show/hide those elements depending on the
-    // the Psiphon speed limit.
+    // the Sifoon speed limit.
 
     var baselineRateLimit = getCookie('BaselineRateLimit');
     var threshold = (5 << 20) / 8; // 5 mbps in bytes; arbitrarily "fast"
@@ -2969,7 +2969,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
    * Begin the account logout flow. Should not be called if the user is not logged in.
    * @param {?Event} event
    * @param {boolean} skipConnectedCheck If true, there will be no check of whether
-   *    the Psiphon tunnel is currently connected. Should only be set to true when this
+   *    the Sifoon tunnel is currently connected. Should only be set to true when this
    *    is called via the local-only logout prompt.
    */
 
@@ -3704,11 +3704,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           regions: regions
         }
       });
-    }); // Wire up the PsiphonUI::URLCopiedToClipboard notice
+    }); // Wire up the SifoonUI::URLCopiedToClipboard notice
 
     $('#debug-URLCopiedToClipboard a').click(function () {
       HtmlCtrlInterface_AddNotice({
-        noticeType: 'PsiphonUI::URLCopiedToClipboard'
+        noticeType: 'SifoonUI::URLCopiedToClipboard'
       });
     }); // Wire up the UpstreamProxyError notice
 
@@ -3740,11 +3740,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       HtmlCtrlInterface_AddNotice({
         noticeType: 'SocksProxyPortInUse'
       });
-    }); // Wire up the PsiphonUI::FileError notice
+    }); // Wire up the SifoonUI::FileError notice
 
-    $('#debug-PsiphonUI-FileError a').click(function () {
+    $('#debug-SifoonUI-FileError a').click(function () {
       HtmlCtrlInterface_AddNotice({
-        noticeType: 'PsiphonUI::FileError',
+        noticeType: 'SifoonUI::FileError',
         data: "C:\\Users\\<username>\\Temp\\file.ext\n\nAccess denied."
       });
     }); // Wire up the SystemProxySettings::SetProxyError test
@@ -4081,7 +4081,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   /* INTERFACE METHODS *********************************************************/
 
 
-  var PSIPHON_LINK_PREFIX = 'psi:';
+  var SIFOON_LINK_PREFIX = 'psi:';
   /**
    * Send a command payload to the C backend.
    * In browser mode, it just logs.
@@ -4097,10 +4097,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
 
     if (IS_BROWSER) {
-      var appURL = "".concat(PSIPHON_LINK_PREFIX).concat(action).concat(arg !== null ? '?' + arg : '');
+      var appURL = "".concat(SIFOON_LINK_PREFIX).concat(action).concat(arg !== null ? '?' + arg : '');
       console.log(appURL);
     } else {
-      var _appURL = "".concat(PSIPHON_LINK_PREFIX).concat(action).concat(arg !== null ? '?' + base64.encode(unescape(encodeURIComponent(arg))) : '');
+      var _appURL = "".concat(SIFOON_LINK_PREFIX).concat(action).concat(arg !== null ? '?' + base64.encode(unescape(encodeURIComponent(arg))) : '');
 
       window.location = _appURL;
     }
@@ -4155,10 +4155,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             data: args.data
           })
         });
-      } else if (args.noticeType === 'PsiphonUI::URLCopiedToClipboard') {
+      } else if (args.noticeType === 'SifoonUI::URLCopiedToClipboard') {
         displayCornerAlert($('#alert-url-copied-to-clipboard'));
-      } else if (args.noticeType === 'PsiphonUI::FileError') {
-        showNoticeModal('notice#psiphonui-fileerror-error-title', 'notice#psiphonui-fileerror-error-body', 'error', 'notice#psiphonui-fileerror-detail-preamble', // tech detail preamble
+      } else if (args.noticeType === 'SifoonUI::FileError') {
+        showNoticeModal('notice#sifoonui-fileerror-error-title', 'notice#sifoonui-fileerror-error-body', 'error', 'notice#sifoonui-fileerror-detail-preamble', // tech detail preamble
         args.data, // tech detail body
         null); // callback
       }
@@ -4220,20 +4220,20 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     var args = _.isObject(jsonArgs) ? jsonArgs : JSON.parse(jsonArgs);
     nextTick(function () {
       // NOTE: All deeplinks accepted here _must_ be listed in psiclient_ui.cpp::ALLOWED_DEEPLINKS
-      if (args.deeplink.startsWith('psiphon://psicash/buy')) {
+      if (args.deeplink.startsWith('sifoon://psicash/buy')) {
         switchToTab('#psicash-tab');
 
         if (g_lastState === 'connected') {
           buyPsiClick();
         }
-      } else if (args.deeplink.startsWith('psiphon://psicash') || args.deeplink.startsWith('psiphon://subscribe')) {
+      } else if (args.deeplink.startsWith('sifoon://psicash') || args.deeplink.startsWith('sifoon://subscribe')) {
         switchToTab('#psicash-tab');
-      } else if (args.deeplink.startsWith('psiphon://feedback')) {
+      } else if (args.deeplink.startsWith('sifoon://feedback')) {
         switchToTab('#feedback-tab');
-      } else if (args.deeplink.startsWith('psiphon://settings/')) {
+      } else if (args.deeplink.startsWith('sifoon://settings/')) {
         var section = args.deeplink.substring(args.deeplink.lastIndexOf('/') + 1);
         showSettingsSection("#settings-accordion-".concat(section));
-      } else if (args.deeplink.startsWith('psiphon://settings')) {
+      } else if (args.deeplink.startsWith('sifoon://settings')) {
         switchToTab('#settings-tab');
       } else {
         alert(args.deeplink);

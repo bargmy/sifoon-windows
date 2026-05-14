@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2020, Psiphon Inc.
+* Copyright (c) 2020, Sifoon Inc.
 * All rights reserved.
 *
 * This program is free software: you can redistribute it and/or modify
@@ -21,35 +21,35 @@
 
 #include "subprocess.h"
 
-class IPsiphonTunnelCoreNoticeHandler
+class ISifoonTunnelCoreNoticeHandler
 {
 public:
     /**
-    Called for each Psiphon Tunnel Core notice read from the Psiphon Tunnel
-    Core process when ConsumeSubprocessOutput is invoked on a PsiphonTunnelCore
+    Called for each Sifoon Tunnel Core notice read from the Sifoon Tunnel
+    Core process when ConsumeSubprocessOutput is invoked on a SifoonTunnelCore
     instance. See ConsumeSubprocessOutput in subprocess.h.
     */
-    virtual void HandlePsiphonTunnelCoreNotice(const string& noticeType, const string& timestamp, const Json::Value& data) = 0;
+    virtual void HandleSifoonTunnelCoreNotice(const string& noticeType, const string& timestamp, const Json::Value& data) = 0;
 };
 
 /**
-PsiphonTunnelCore is used to launch and manage a psiphon-tunnel-core
+SifoonTunnelCore is used to launch and manage a sifoon-tunnel-core
 executable as a subprocess.
 */
-class PsiphonTunnelCore : public Subprocess, ISubprocessOutputHandler
+class SifoonTunnelCore : public Subprocess, ISubprocessOutputHandler
 {
 public:
     /**
     Initialize a new instance. Throws std::exception if outputHandler is null.
     */
-    PsiphonTunnelCore(IPsiphonTunnelCoreNoticeHandler* noticeHandler, const tstring& exePath);
-    ~PsiphonTunnelCore();
+    SifoonTunnelCore(ISifoonTunnelCoreNoticeHandler* noticeHandler, const tstring& exePath);
+    ~SifoonTunnelCore();
 
     // ISubprocessOutputHandler implementation
     void HandleSubprocessOutputLine(const string& line);
 
 protected:
-    IPsiphonTunnelCoreNoticeHandler *m_noticeHandler;
+    ISifoonTunnelCoreNoticeHandler *m_noticeHandler;
     bool m_panicked;
 };
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2015, Psiphon Inc.
+ * Copyright (c) 2015, Sifoon Inc.
  * All rights reserved.
  *
  * This program is free software: you can redistribute it and/or modify
@@ -200,7 +200,7 @@ module.exports = function(grunt) {
 
       grunt.file.write(
         this.data.dest,
-        '(window.PSIPHON || (window.PSIPHON={})).LOCALES = ' + JSON.stringify(locales, null, '  ') + ';');
+        '(window.SIFOON || (window.SIFOON={})).LOCALES = ' + JSON.stringify(locales, null, '  ') + ';');
       grunt.log.ok();
     });
 };

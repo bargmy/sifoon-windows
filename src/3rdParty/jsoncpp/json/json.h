@@ -70,7 +70,7 @@ license you like.
 
 
 
-#pragma warning(disable: 4005) // PSIPHON: Disable warning: "'JSON_IS_AMALGAMATION': macro redefinition"
+#pragma warning(disable: 4005) // SIFOON: Disable warning: "'JSON_IS_AMALGAMATION': macro redefinition"
 
 #ifndef JSON_AMALGATED_H_INCLUDED
 # define JSON_AMALGATED_H_INCLUDED

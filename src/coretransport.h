@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2015, Psiphon Inc.
+ * Copyright (c) 2015, Sifoon Inc.
  * All rights reserved.
  *
  * This program is free software: you can redistribute it and/or modify
@@ -20,7 +20,7 @@
 #pragma once
 
 #include "worker_thread.h"
-#include "psiphon_tunnel_core.h"
+#include "sifoon_tunnel_core.h"
 #include "transport.h"
 #include "transport_registry.h"
 #include "usersettings.h"
@@ -28,9 +28,9 @@
 class SessionInfo;
 
 #define CORE_TRANSPORT_PROTOCOL_NAME    _T("CoreTransport")
-#define CORE_TRANSPORT_DISPLAY_NAME     _T("Psiphon Tunnel")
+#define CORE_TRANSPORT_DISPLAY_NAME     _T("Sifoon Tunnel")
 
-class CoreTransport : public ITransport, public IPsiphonTunnelCoreNoticeHandler
+class CoreTransport : public ITransport, public ISifoonTunnelCoreNoticeHandler
 {
 public:
     CoreTransport();
@@ -61,8 +61,8 @@ protected:
     virtual void TransportConnect();
     virtual bool DoPeriodicCheck();
 
-    // IPsiphonTunnelCoreNoticeHandler
-    void HandlePsiphonTunnelCoreNotice(const string& noticeType, const string& timestamp, const Json::Value& data);
+    // ISifoonTunnelCoreNoticeHandler
+    void HandleSifoonTunnelCoreNotice(const string& noticeType, const string& timestamp, const Json::Value& data);
 
     bool RequestingUrlProxyWithoutTunnel();
     void TransportConnectHelper();
@@ -77,5 +77,5 @@ protected:
     bool m_clientUpgradeDownloadHandled;
     string m_lastUpstreamProxyErrorMessage;
     std::vector<std::string> m_authorizationIDs;
-    unique_ptr<PsiphonTunnelCore> m_psiphonTunnelCore;
+    unique_ptr<SifoonTunnelCore> m_sifoonTunnelCore;
 };

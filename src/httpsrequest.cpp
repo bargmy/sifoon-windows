@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2011, Psiphon Inc.
+ * Copyright (c) 2011, Sifoon Inc.
  * All rights reserved.
  *
  * This program is free software: you can redistribute it and/or modify
@@ -306,7 +306,7 @@ bool HTTPSRequest::MakeRequest(
         const string& webServerCertificate,
         const TCHAR* requestPath,
         const StopInfo& stopInfo,
-        PsiphonProxy usePsiphonLocalProxy,
+        SifoonProxy useSifoonLocalProxy,
         HTTPSRequest::Response& response,
         bool failoverToURLProxy/*=false*/,
         LPCWSTR additionalHeaders/*=NULL*/,
@@ -320,7 +320,7 @@ bool HTTPSRequest::MakeRequest(
 
     bool success = MakeRequestWithURLProxyOption(
         serverAddress, serverWebPort, webServerCertificate, requestPath,
-        stopInfo, usePsiphonLocalProxy, response,
+        stopInfo, useSifoonLocalProxy, response,
         false, // useURLProxy
         additionalHeaders, additionalData, additionalDataLength, httpVerb);
 
@@ -345,7 +345,7 @@ bool HTTPSRequest::MakeRequest(
             // We already have a tunnel, so we'll use that for the URL proxy
 
             tstringstream urlProxyRequestPath;
-            if (usePsiphonLocalProxy == PsiphonProxy::DONT_USE)
+            if (useSifoonLocalProxy == SifoonProxy::DONT_USE)
             {
                 urlProxyRequestPath << _T("/direct/");
                 my_print(NOT_SENSITIVE, true, _T("%s:%d - Making direct URL proxy request with existing tunnel-core"), __TFUNCTION__, __LINE__);
@@ -360,11 +360,11 @@ bool HTTPSRequest::MakeRequest(
             success = MakeRequestWithURLProxyOption(
                 tunneledProxyConfig.HTTPHostname().c_str(), tunneledProxyConfig.HTTPPort(),
                 webServerCertificate, urlProxyRequestPath.str().c_str(),
-                stopInfo, usePsiphonLocalProxy, response,
+                stopInfo, useSifoonLocalProxy, response,
                 true, // useURLProxy
                 additionalHeaders, additionalData, additionalDataLength, httpVerb);
         }
-        else if (usePsiphonLocalProxy == PsiphonProxy::REQUIRE)
+        else if (useSifoonLocalProxy == SifoonProxy::REQUIRE)
         {
             // We don't have a tunnel, but we must make the request tunneled, so we can't proceed
             success = false;
@@ -387,7 +387,7 @@ bool HTTPSRequest::MakeRequest(
                     NULL, // not collecting stats
                     NULL, // not supplying authorizations
                     new ServerEntry(), // this empty ServerEntry is the flag for URL proxy mode; we don't need to connect to a specific server
-                    true);// don't apply system proxy settings (or write to the Psiphon proxy settings registry key)
+                    true);// don't apply system proxy settings (or write to the Sifoon proxy settings registry key)
                           // as another transport might currently be running
 
                 // NOTE that we will always make "direct" requests since this URL proxy will not establish a tunnel
@@ -399,7 +399,7 @@ bool HTTPSRequest::MakeRequest(
                 success = MakeRequestWithURLProxyOption(
                     _T("127.0.0.1"), connection.GetTransportLocalHttpProxy(),
                     webServerCertificate, urlProxyRequestPath.str().c_str(),
-                    stopInfo, usePsiphonLocalProxy, response,
+                    stopInfo, useSifoonLocalProxy, response,
                     true, // useURLProxy
                     additionalHeaders, additionalData, additionalDataLength, httpVerb);
 
@@ -428,7 +428,7 @@ bool HTTPSRequest::MakeRequestWithURLProxyOption(
         const string& webServerCertificate,
         const TCHAR* requestPath,
         const StopInfo& stopInfo,
-        PsiphonProxy usePsiphonLocalProxy,
+        SifoonProxy useSifoonLocalProxy,
         HTTPSRequest::Response& response,
         bool useURLProxy,
         LPCWSTR additionalHeaders,
@@ -455,11 +455,11 @@ bool HTTPSRequest::MakeRequestWithURLProxyOption(
         // The URL proxy (tunnelcore) will pick up a system proxy setting and will use it if necessary.
         // So leave proxyHost blank here.
     }
-    else if (usePsiphonLocalProxy == PsiphonProxy::DONT_USE)
+    else if (useSifoonLocalProxy == SifoonProxy::DONT_USE)
     {
         proxyHost = GetNativeDefaultProxyConfig().HTTPHostPort();
     }
-    else // PsiphonProxy::USE or PsiphonProxy::REQUIRE
+    else // SifoonProxy::USE or SifoonProxy::REQUIRE
     {
         auto tunneledProxyConfig = GetTunneledDefaultProxyConfig();
 
@@ -467,13 +467,13 @@ bool HTTPSRequest::MakeRequestWithURLProxyOption(
         {
             proxyHost = tunneledProxyConfig.HTTPHostPort();
         }
-        else if (usePsiphonLocalProxy == PsiphonProxy::REQUIRE)
+        else if (useSifoonLocalProxy == SifoonProxy::REQUIRE)
         {
-            // We are required to proxy through Psiphon, but there's no Psiphon proxy to use
-            my_print(NOT_SENSITIVE, true, _T("%s:%d: usePsiphonLocalProxy is PsiphonProxy::REQUIRE but !tunneledProxyConfig.HTTPEnabled()"), __TFUNCTION__, __LINE__);
+            // We are required to proxy through Sifoon, but there's no Sifoon proxy to use
+            my_print(NOT_SENSITIVE, true, _T("%s:%d: useSifoonLocalProxy is SifoonProxy::REQUIRE but !tunneledProxyConfig.HTTPEnabled()"), __TFUNCTION__, __LINE__);
             return false;
         }
-        // PsiphonProxy::USE doesn't require the Psiphon proxy, but will use it if available
+        // SifoonProxy::USE doesn't require the Sifoon proxy, but will use it if available
     }
 
     tstring reqType(requestPath);
@@ -482,7 +482,7 @@ bool HTTPSRequest::MakeRequestWithURLProxyOption(
     {
         reqType.resize(reqEnd);
     }
-    my_print(NOT_SENSITIVE, true, _T("%s: %s; proxy: {use: %d, set: %S}"), __TFUNCTION__, reqType.c_str(), usePsiphonLocalProxy, (proxyHost.length() ? "true" : "false"));
+    my_print(NOT_SENSITIVE, true, _T("%s: %s; proxy: {use: %d, set: %S}"), __TFUNCTION__, reqType.c_str(), useSifoonLocalProxy, (proxyHost.length() ? "true" : "false"));
 
     AutoHINTERNET hSession =
                 WinHttpOpen(

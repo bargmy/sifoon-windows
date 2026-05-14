@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021, Psiphon Inc.
+ * Copyright (c) 2021, Sifoon Inc.
  * All rights reserved.
  *
  * This program is free software: you can redistribute it and/or modify
@@ -116,7 +116,7 @@ HWND GetHTMLControl() {
 //==== Command line and deeplink helpers ==================================================
 
 // These deeplinks should make the list in https://github.com/Psiphon-Inc/psiphon-issues/wiki/Supported-Psiphon-client-deep-links
-static const wstring DEEPLINK_PROTOCOL_SCHEME = L"psiphon";
+static const wstring DEEPLINK_PROTOCOL_SCHEME = L"sifoon";
 static const vector<wstring> ALLOWED_DEEPLINKS = {
     DEEPLINK_PROTOCOL_SCHEME + L"://feedback",
     DEEPLINK_PROTOCOL_SCHEME + L"://subscribe",
@@ -146,7 +146,7 @@ inline size_t MaxCommandLineLength() {
 constexpr ULONG_PTR COPY_DATA_CMDLINE = 0x3AB21AEF;
 
 
-void RegisterPsiphonProtocolHandler() {
+void RegisterSifoonProtocolHandler() {
     if (!WriteRegistryProtocolHandler(DEEPLINK_PROTOCOL_SCHEME)) {
         my_print(NOT_SENSITIVE, true, _T("%s:%d: WriteRegistryProtocolHandler failed to register deeplink protocol"), __TFUNCTION__, __LINE__);
         // This isn't fatal to the application functioning, so no error will be produced
@@ -160,11 +160,11 @@ static void DoDeeplink(const wstring& untrustedDeeplink)
     // We're only going to send known-good deeplinks to the HTML UI, but we're going to be
     // a bit flexible about matching the incoming the links. This is for two reasons:
     // 1. Windows adds (sometimes? always?) a trailing slash to an authority-only URL,
-    //    like `psiphon://psicash/`, but our cross-platform standard is to no have that
+    //    like `sifoon://psicash/`, but our cross-platform standard is to no have that
     //    trailing slash.
     // 2. If we get an overly-specific URL that we don't support, for example:
-    //    - `psiphon://psicash/speedboost` -> `psiphon://psicash`, which is a link supported by iOS and Android
-    //    - `psiphon://settings/nope` -> `psiphon://settings`, in case we get a settings deeplink for another platform
+    //    - `sifoon://psicash/speedboost` -> `sifoon://psicash`, which is a link supported by iOS and Android
+    //    - `sifoon://settings/nope` -> `sifoon://settings`, in case we get a settings deeplink for another platform
     //
     // So we're going to do prefix matching against the allowed deeplinks, sorted by
     // length descending, to match the more-specific ones first.
@@ -220,7 +220,7 @@ void ProcessCommandLine(const wstring& cmdLine) {
         return;
     }
 
-    // We only have one kind of command line arg: deeplinks of the form `-- "psiphon://a/b"`.
+    // We only have one kind of command line arg: deeplinks of the form `-- "sifoon://a/b"`.
     const wstring deeplinkPrefix = L"-- \"";
     const wstring deeplinkSuffix = L"\"";
 
@@ -410,7 +410,7 @@ void HtmlUI_AddLog(int priority, LPCTSTR message)
     wchar_t* buf = new wchar_t[bufLen];
     wcsncpy_s(buf, bufLen, wJson.c_str(), bufLen);
     buf[bufLen - 1] = L'\0';
-    PostMessage(g_hWnd, WM_PSIPHON_HTMLUI_ADDLOG, (WPARAM)buf, 0);
+    PostMessage(g_hWnd, WM_SIFOON_HTMLUI_ADDLOG, (WPARAM)buf, 0);
 }
 
 static void HtmlUI_AddLogHandler(LPCWSTR json)
@@ -440,7 +440,7 @@ static void HtmlUI_SetState(const wstring& json)
     wchar_t* buf = new wchar_t[bufLen];
     wcsncpy_s(buf, bufLen, json.c_str(), bufLen);
     buf[bufLen - 1] = L'\0';
-    PostMessage(g_hWnd, WM_PSIPHON_HTMLUI_SETSTATE, (WPARAM)buf, 0);
+    PostMessage(g_hWnd, WM_SIFOON_HTMLUI_SETSTATE, (WPARAM)buf, 0);
 }
 
 static void HtmlUI_SetStateHandler(LPCWSTR json)
@@ -472,7 +472,7 @@ static void HtmlUI_AddNotice(const string& noticeJSON)
     wchar_t* buf = new wchar_t[bufLen];
     wcsncpy_s(buf, bufLen, wJson.c_str(), bufLen);
     buf[bufLen - 1] = L'\0';
-    PostMessage(g_hWnd, WM_PSIPHON_HTMLUI_ADDNOTICE, (WPARAM)buf, 0);
+    PostMessage(g_hWnd, WM_SIFOON_HTMLUI_ADDNOTICE, (WPARAM)buf, 0);
 }
 
 static void HtmlUI_AddNoticeHandler(LPCWSTR json)
@@ -504,7 +504,7 @@ static void HtmlUI_RefreshSettings(const string& settingsJSON)
     wchar_t* buf = new wchar_t[bufLen];
     wcsncpy_s(buf, bufLen, wJson.c_str(), bufLen);
     buf[bufLen - 1] = L'\0';
-    PostMessage(g_hWnd, WM_PSIPHON_HTMLUI_REFRESHSETTINGS, (WPARAM)buf, 0);
+    PostMessage(g_hWnd, WM_SIFOON_HTMLUI_REFRESHSETTINGS, (WPARAM)buf, 0);
 }
 
 static void HtmlUI_RefreshSettingsHandler(LPCWSTR json)
@@ -536,7 +536,7 @@ static void HtmlUI_UpdateDpiScaling(const string& dpiScalingJSON)
     wchar_t* buf = new wchar_t[bufLen];
     wcsncpy_s(buf, bufLen, wJson.c_str(), bufLen);
     buf[bufLen - 1] = L'\0';
-    PostMessage(g_hWnd, WM_PSIPHON_HTMLUI_UPDATEDPISCALING, (WPARAM)buf, 0);
+    PostMessage(g_hWnd, WM_SIFOON_HTMLUI_UPDATEDPISCALING, (WPARAM)buf, 0);
 }
 
 static void HtmlUI_UpdateDpiScalingHandler(LPCWSTR json)
@@ -566,7 +566,7 @@ static void HTMLUI_Deeplink(const string& deeplinkJSON) {
     wchar_t* buf = new wchar_t[bufLen];
     wcsncpy_s(buf, bufLen, wJson.c_str(), bufLen);
     buf[bufLen - 1] = L'\0';
-    PostMessage(g_hWnd, WM_PSIPHON_HTMLUI_DEEPLINK, (WPARAM)buf, 0);
+    PostMessage(g_hWnd, WM_SIFOON_HTMLUI_DEEPLINK, (WPARAM)buf, 0);
 }
 
 static void HTMLUI_DeeplinkHandler(LPCWSTR deeplinkJSON) {
@@ -597,7 +597,7 @@ static void HtmlUI_PsiCashMessage(const string& psicashJSON)
     wchar_t* buf = new wchar_t[bufLen];
     wcsncpy_s(buf, bufLen, wJson.c_str(), bufLen);
     buf[bufLen - 1] = L'\0';
-    PostMessage(g_hWnd, WM_PSIPHON_HTMLUI_PSICASHMESSAGE, (WPARAM)buf, 0);
+    PostMessage(g_hWnd, WM_SIFOON_HTMLUI_PSICASHMESSAGE, (WPARAM)buf, 0);
 }
 
 static void HtmlUI_PsiCashMessageHandler(LPCWSTR json)
@@ -627,7 +627,7 @@ static void HtmlUI_BeforeNavigate(MC_NMHTMLURL* nmHtmlUrl)
     TCHAR* buf = new TCHAR[bufLen];
     _tcsncpy_s(buf, bufLen, nmHtmlUrl->pszUrl, bufLen);
     buf[bufLen - 1] = _T('\0');
-    PostMessage(g_hWnd, WM_PSIPHON_HTMLUI_BEFORENAVIGATE, (WPARAM)buf, 0);
+    PostMessage(g_hWnd, WM_SIFOON_HTMLUI_BEFORENAVIGATE, (WPARAM)buf, 0);
 }
 
 // Helper for HtmlUI_BeforeNavigateHandler
@@ -641,7 +641,7 @@ static string uiURLParams(const wstring& url, size_t prefixLen) {
 // HtmlUI_BeforeNavigateHandler intercepts all navigation attempts in the HTML control.
 // It is also this mechanism that is used for the HTML control to communicate
 // with the back-end code (the code you're looking at now).
-#define PSIPHON_LINK_PREFIX     _T("psi:")
+#define SIFOON_LINK_PREFIX     _T("psi:")
 static void HtmlUI_BeforeNavigateHandler(LPCTSTR _url)
 {
     // NOTE: DO NOT log the URL directly -- it may contain the PsiCash password
@@ -649,32 +649,32 @@ static void HtmlUI_BeforeNavigateHandler(LPCTSTR _url)
     wstring url = UrlDecode(_url);
     delete[] _url;
 
-    const LPCTSTR appReady = PSIPHON_LINK_PREFIX _T("ready");
-    const LPCTSTR appStringTable = PSIPHON_LINK_PREFIX _T("stringtable?");
+    const LPCTSTR appReady = SIFOON_LINK_PREFIX _T("ready");
+    const LPCTSTR appStringTable = SIFOON_LINK_PREFIX _T("stringtable?");
     const size_t appStringTableLen = _tcslen(appStringTable);
-    const LPCTSTR appLogCommand = PSIPHON_LINK_PREFIX _T("log?");
+    const LPCTSTR appLogCommand = SIFOON_LINK_PREFIX _T("log?");
     const size_t appLogCommandLen = _tcslen(appLogCommand);
-    const LPCTSTR appStart = PSIPHON_LINK_PREFIX _T("start");
-    const LPCTSTR appStop = PSIPHON_LINK_PREFIX _T("stop");
-    const LPCTSTR appReconnect = PSIPHON_LINK_PREFIX _T("reconnect?");
+    const LPCTSTR appStart = SIFOON_LINK_PREFIX _T("start");
+    const LPCTSTR appStop = SIFOON_LINK_PREFIX _T("stop");
+    const LPCTSTR appReconnect = SIFOON_LINK_PREFIX _T("reconnect?");
     const size_t appReconnectLen = _tcslen(appReconnect);
-    const LPCTSTR appSaveSettings = PSIPHON_LINK_PREFIX _T("savesettings?");
+    const LPCTSTR appSaveSettings = SIFOON_LINK_PREFIX _T("savesettings?");
     const size_t appSaveSettingsLen = _tcslen(appSaveSettings);
-    const LPCTSTR appSendFeedback = PSIPHON_LINK_PREFIX _T("sendfeedback?");
+    const LPCTSTR appSendFeedback = SIFOON_LINK_PREFIX _T("sendfeedback?");
     const size_t appSendFeedbackLen = _tcslen(appSendFeedback);
-    const LPCTSTR appSetCookies = PSIPHON_LINK_PREFIX _T("setcookies?");
+    const LPCTSTR appSetCookies = SIFOON_LINK_PREFIX _T("setcookies?");
     const size_t appSetCookiesLen = _tcslen(appSetCookies);
-    const LPCTSTR appBannerClick = PSIPHON_LINK_PREFIX _T("bannerclick");
-    const LPCTSTR psicashCommand = PSIPHON_LINK_PREFIX _T("psicash?");
+    const LPCTSTR appBannerClick = SIFOON_LINK_PREFIX _T("bannerclick");
+    const LPCTSTR psicashCommand = SIFOON_LINK_PREFIX _T("psicash?");
     const size_t psicashCommandLen = _tcslen(psicashCommand);
-    const LPCTSTR disallowedTraffic = PSIPHON_LINK_PREFIX _T("disallowedtraffic");
+    const LPCTSTR disallowedTraffic = SIFOON_LINK_PREFIX _T("disallowedtraffic");
 
     if (url == appReady)
     {
         my_print(NOT_SENSITIVE, true, _T("%s: Ready requested"), __TFUNCTION__);
         g_htmlUiReady = true;
         InitPsiCash();
-        PostMessage(g_hWnd, WM_PSIPHON_CREATED, 0, 0);
+        PostMessage(g_hWnd, WM_SIFOON_CREATED, 0, 0);
 
         if (!g_queuedDeeplink.empty()) {
             my_print(NOT_SENSITIVE, true, _T("%s: Opening queued deeplink"), __TFUNCTION__);
@@ -801,7 +801,7 @@ static void HtmlUI_BeforeNavigateHandler(LPCTSTR _url)
 
         // Copy the URL to the clipboard and let the UI know we did so, so the user can be informed
         if (CopyToClipboard(g_hWnd, url)) {
-            UI_Notice("PsiphonUI::URLCopiedToClipboard", WStringToUTF8(url));
+            UI_Notice("SifoonUI::URLCopiedToClipboard", WStringToUTF8(url));
         }
 
         my_print(NOT_SENSITIVE, true, _T("%s: external URL opened and copied to clipboard"), __TFUNCTION__);
@@ -1231,28 +1231,28 @@ LRESULT HandleNotifyHTMLControl(HWND hWnd, NMHDR* hdr)
 
 void HTMLControlWndProc(UINT message, WPARAM wParam, LPARAM lParam) {
     switch (message) {
-    case WM_PSIPHON_HTMLUI_BEFORENAVIGATE:
+    case WM_SIFOON_HTMLUI_BEFORENAVIGATE:
         HtmlUI_BeforeNavigateHandler((LPCTSTR)wParam);
         break;
-    case WM_PSIPHON_HTMLUI_SETSTATE:
+    case WM_SIFOON_HTMLUI_SETSTATE:
         HtmlUI_SetStateHandler((LPCWSTR)wParam);
         break;
-    case WM_PSIPHON_HTMLUI_ADDLOG:
+    case WM_SIFOON_HTMLUI_ADDLOG:
         HtmlUI_AddLogHandler((LPCWSTR)wParam);
         break;
-    case WM_PSIPHON_HTMLUI_ADDNOTICE:
+    case WM_SIFOON_HTMLUI_ADDNOTICE:
         HtmlUI_AddNoticeHandler((LPCWSTR)wParam);
         break;
-    case WM_PSIPHON_HTMLUI_REFRESHSETTINGS:
+    case WM_SIFOON_HTMLUI_REFRESHSETTINGS:
         HtmlUI_RefreshSettingsHandler((LPCWSTR)wParam);
         break;
-    case WM_PSIPHON_HTMLUI_UPDATEDPISCALING:
+    case WM_SIFOON_HTMLUI_UPDATEDPISCALING:
         HtmlUI_UpdateDpiScalingHandler((LPCWSTR)wParam);
         break;
-    case WM_PSIPHON_HTMLUI_DEEPLINK:
+    case WM_SIFOON_HTMLUI_DEEPLINK:
         HTMLUI_DeeplinkHandler((LPCWSTR)wParam);
         break;
-    case WM_PSIPHON_HTMLUI_PSICASHMESSAGE:
+    case WM_SIFOON_HTMLUI_PSICASHMESSAGE:
         HtmlUI_PsiCashMessageHandler((LPCWSTR)wParam);
         break;
     };

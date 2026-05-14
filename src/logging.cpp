@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2015, Psiphon Inc.
+* Copyright (c) 2015, Sifoon Inc.
 * All rights reserved.
 *
 * This program is free software: you can redistribute it and/or modify
@@ -135,7 +135,7 @@ void my_print(LogSensitivity sensitivity, bool bDebugMessage, const TCHAR* forma
         // deadlocks with SendMessage. Main window will deallocate
         // buffer.
 
-        PostMessage(g_hWnd, WM_PSIPHON_MY_PRINT, bDebugMessage ? 0 : 1, (LPARAM)buffer);
+        PostMessage(g_hWnd, WM_SIFOON_MY_PRINT, bDebugMessage ? 0 : 1, (LPARAM)buffer);
     }
 }
 

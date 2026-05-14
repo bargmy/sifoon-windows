@@ -12,7 +12,7 @@ using namespace std;
 namespace psicash {
 
 static constexpr bool TESTING = false;
-static constexpr auto USER_AGENT = "Psiphon-PsiCash-Windows";
+static constexpr auto USER_AGENT = "Sifoon-PsiCash-Windows";
 
 psicash::MakeHTTPRequestFn GetHTTPReqFn(const StopInfo& stopInfo);
 
@@ -31,8 +31,8 @@ error::Error Lib::Init(bool forceReset) {
     AutoMUTEX lock(m_mutex);
 
     tstring dataDir;
-    if (!GetPsiphonDataPath({ _T("psicash") }, true, dataDir)) {
-        return psicash::error::MakeCriticalError("GetPsiphonDataPath failed");
+    if (!GetSifoonDataPath({ _T("psicash") }, true, dataDir)) {
+        return psicash::error::MakeCriticalError("GetSifoonDataPath failed");
     }
 
     // C++'s standard library doesn't deal with wide strings, so make the path
@@ -138,7 +138,7 @@ void Lib::AccountLogout(
         });
 }
 
-// Note that this _requires_ a Psiphon tunnel to be in place.
+// Note that this _requires_ a Sifoon tunnel to be in place.
 psicash::MakeHTTPRequestFn GetHTTPReqFn(const StopInfo& stopInfo) {
     psicash::MakeHTTPRequestFn httpReqFn = [&stopInfo](const psicash::HTTPParams& params) ->psicash::HTTPResult {
         // NOTE: This makes only HTTPS requests and ignores params.scheme
@@ -176,7 +176,7 @@ psicash::MakeHTTPRequestFn GetHTTPReqFn(const StopInfo& stopInfo) {
                     "",         // webServerCertificate
                     requestPath.str().c_str(),
                     stopInfo,
-                    HTTPSRequest::PsiphonProxy::REQUIRE,
+                    HTTPSRequest::SifoonProxy::REQUIRE,
                     httpsResponse,
                     true,       // failoverToURLProxy -- required for old WinXP
                     headers.str().empty() ? NULL : headers.str().c_str(),

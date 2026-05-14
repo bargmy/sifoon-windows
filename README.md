@@ -1,6 +1,6 @@
-# Psiphon for Windows
+# Sifoon for Windows
 
-This repository contains the code for the Psiphon for Windows client software.
+This repository contains the code for the Sifoon for Windows client software.
 
 ## License
 

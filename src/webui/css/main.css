@@ -5597,7 +5597,7 @@ a.badge:focus {
   .controls-row [class*="span"] + [class*="span"] {
     margin-left: 0;
   }
-  /* PSIPHON
+  /* SIFOON
   HACK: These styles mess up on IE (but not Chrome). I can't figure out how to fix them,
   and our window doesn't get small that we need them, so I'm disabling them.
   .modal {
@@ -6117,19 +6117,19 @@ textarea {
   animation: spin 1s infinite steps(8);
 }
 /* HEADER AND NAV */
-.psiphon-header {
+.sifoon-header {
   height: 90px;
   background-color: #1B7B9C;
   padding: 0;
 }
-.psiphon-header .banner {
+.sifoon-header .banner {
   height: 100%;
   padding: 0.5em;
 }
-.psiphon-header .banner > div {
+.sifoon-header .banner > div {
   color: #EEEEEE;
 }
-.psiphon-header .banner > a {
+.sifoon-header .banner > a {
   display: inline-block;
   *display: inline;
   /* IE7 inline-block hack */
@@ -6137,42 +6137,42 @@ textarea {
   background: #FFFFFF;
   border: thin #135971 solid;
 }
-.psiphon-header .banner > a img {
+.sifoon-header .banner > a img {
   height: 48px;
 }
-.psiphon-header .banner.long-connecting {
+.sifoon-header .banner.long-connecting {
   font-size: 0.9em;
 }
-.psiphon-header .banner.long-connecting div {
+.sifoon-header .banner.long-connecting div {
   max-width: 400px;
   margin: auto;
 }
-.psiphon-header .banner.long-connecting div a {
+.sifoon-header .banner.long-connecting div a {
   color: #eb9a85;
   font-weight: bold;
 }
-.psiphon-header .header-nav-join {
+.sifoon-header .header-nav-join {
   position: absolute;
   padding-top: 10px;
   margin: 0;
   height: 140px;
   background-color: #FFF;
 }
-body[dir="ltr"] .psiphon-header .header-nav-join {
+body[dir="ltr"] .sifoon-header .header-nav-join {
   float: left;
   left: 0;
   padding-left: 20px;
   border-left: 5px solid #1B7B9C;
   border-right: none;
 }
-body[dir="rtl"] .psiphon-header .header-nav-join {
+body[dir="rtl"] .sifoon-header .header-nav-join {
   float: right;
   right: 0;
   padding-right: 20px;
   border-right: 5px solid #1B7B9C;
   border-left: none;
 }
-.psiphon-header .header-nav-join img {
+.sifoon-header .header-nav-join img {
   height: 100px;
 }
 .nav,

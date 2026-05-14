@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2015, Psiphon Inc.
+* Copyright (c) 2015, Sifoon Inc.
 * All rights reserved.
 *
 * This program is free software: you can redistribute it and/or modify
@@ -151,11 +151,11 @@ bool ExtractExecutable(
 }
 
 // Returns empty path if unable to get dir
-static filesystem::path GetBasePsiphonDataDir()
+static filesystem::path GetBaseSifoonDataDir()
 {
     /*
     We initially used AppData/Roaming for our data directory, but later review revealed
-    that it's not appropriate for Psiphon data or PsiCash data. So we need to migrate
+    that it's not appropriate for Sifoon data or PsiCash data. So we need to migrate
     from /Roaming to /Local. See these issues for details:
     https://github.com/Psiphon-Inc/psiphon-issues/issues/688
     https://github.com/Psiphon-Inc/psiphon-issues/issues/689
@@ -199,7 +199,7 @@ static filesystem::path GetBasePsiphonDataDir()
     }
     else
     {
-        my_print(NOT_SENSITIVE, true, _T("%s: MigratePsiphonDataDir failed to move roaming to local (%d)"), __TFUNCTION__, GetLastError());
+        my_print(NOT_SENSITIVE, true, _T("%s: MigrateSifoonDataDir failed to move roaming to local (%d)"), __TFUNCTION__, GetLastError());
         pathToUse = psiRoaming;
     }
 
@@ -212,10 +212,10 @@ static filesystem::path GetBasePsiphonDataDir()
     return pathToUse;
 }
 
-bool GetPsiphonDataPath(const vector<tstring> &pathSuffixes, bool ensureExists, tstring &o_path)
+bool GetSifoonDataPath(const vector<tstring> &pathSuffixes, bool ensureExists, tstring &o_path)
 {
     // static var initialization is thread-safe as of C++11
-    static const auto baseDataPath = GetBasePsiphonDataDir();
+    static const auto baseDataPath = GetBaseSifoonDataDir();
     if (baseDataPath.empty())
     {
         return false;
@@ -1124,16 +1124,16 @@ bool WriteRegistryProtocolHandler(const tstring& scheme)
 {
     /* We're creating a structure that looks like this:
 
-    [HKEY_CURRENT_USER\SOFTWARE\Classes\psiphon]
-    @="URL:psiphon"
+    [HKEY_CURRENT_USER\SOFTWARE\Classes\sifoon]
+    @="URL:sifoon"
     "URL Protocol"=""
 
-    [HKEY_CURRENT_USER\SOFTWARE\Classes\psiphon\shell]
+    [HKEY_CURRENT_USER\SOFTWARE\Classes\sifoon\shell]
 
-    [HKEY_CURRENT_USER\SOFTWARE\Classes\psiphon\shell\open]
+    [HKEY_CURRENT_USER\SOFTWARE\Classes\sifoon\shell\open]
 
-    [HKEY_CURRENT_USER\SOFTWARE\Classes\psiphon\shell\open\command]
-    @="\"C:\\<path_to>\\psiphon3.exe\" -- \"%1\""
+    [HKEY_CURRENT_USER\SOFTWARE\Classes\sifoon\shell\open\command]
+    @="\"C:\\<path_to>\\sifoon3.exe\" -- \"%1\""
     */
 
     tstring exePath;
@@ -1868,7 +1868,7 @@ void EnforceOSSupport(HWND parentWnd, const wstring& message, const string& faqU
     const wstring url = UTF8ToWString(faqURL) + fragment;
     const wstring messageURL = message + L"\n" + url;
 
-    ::MessageBoxW(parentWnd, messageURL.c_str(), L"Psiphon", MB_OK | MB_ICONSTOP);
+    ::MessageBoxW(parentWnd, messageURL.c_str(), L"Sifoon", MB_OK | MB_ICONSTOP);
     OpenBrowser(url);
 
     // Just in case the OS version check does not work correctly, let the app continue running.

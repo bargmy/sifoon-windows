@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2015, Psiphon Inc.
+ * Copyright (c) 2015, Sifoon Inc.
  * All rights reserved.
  *
  * This program is free software: you can redistribute it and/or modify
@@ -32,7 +32,7 @@
 #include "embeddedvalues.h"
 #include "utilities.h"
 #include "authenticated_data_package.h"
-#include "psiphon_tunnel_core_utilities.h"
+#include "sifoon_tunnel_core_utilities.h"
 
 
 #define AUTOMATICALLY_ASSIGNED_PORT_NUMBER   0
@@ -64,7 +64,7 @@ CoreTransport::~CoreTransport()
 
 bool CoreTransport::Cleanup()
 {
-    m_psiphonTunnelCore = nullptr;
+    m_sifoonTunnelCore = nullptr;
     m_hasEverConnected = false;
     m_isConnected = false;
 
@@ -344,15 +344,15 @@ bool CoreTransport::SpawnCoreProcess(const tstring& configFilename, const tstrin
             if (RequestingUrlProxyWithoutTunnel()) {
                 // Use a different filename, so that a subsequent non-URL-proxy tunnel
                 // start doesn't try to tear this one down.
-                exePath = tempPath / "psiphon-url-proxy.exe";
+                exePath = tempPath / "sifoon-url-proxy.exe";
             }
             else {
-                exePath = tempPath / "psiphon-tunnel-core.exe";
+                exePath = tempPath / "sifoon-tunnel-core.exe";
             }
         }
         else {
             // We will be using a random file name for the executable. This will help
-            // prevent blocking of "psiphon-tunnel-core.exe". See:
+            // prevent blocking of "sifoon-tunnel-core.exe". See:
             // https://github.com/Psiphon-Inc/psiphon-issues/issues/828
             // The goal is to make the running of this file as unblockable as possible,
             // for example by a Windows Group Policy. Originally we always used the same
@@ -374,7 +374,7 @@ bool CoreTransport::SpawnCoreProcess(const tstring& configFilename, const tstrin
             // In RequestingUrlProxyWithoutTunnel mode, we allow for multiple instances
             // so we don't fail extract if the file already exists -- and don't try to
             // kill any associated process holding a lock on it.
-            if (!ExtractExecutable(IDR_PSIPHON_TUNNEL_CORE_EXE, exePath, true))
+            if (!ExtractExecutable(IDR_SIFOON_TUNNEL_CORE_EXE, exePath, true))
             {
                 my_print(NOT_SENSITIVE, true, _T("%s:%d - ExtractExecutable failed: %d"), __TFUNCTION__, __LINE__, GetLastError());
 
@@ -385,7 +385,7 @@ bool CoreTransport::SpawnCoreProcess(const tstring& configFilename, const tstrin
         }
         else
         {
-            if (!ExtractExecutable(IDR_PSIPHON_TUNNEL_CORE_EXE, exePath))
+            if (!ExtractExecutable(IDR_SIFOON_TUNNEL_CORE_EXE, exePath))
             {
                 my_print(NOT_SENSITIVE, true, _T("%s:%d - ExtractExecutable failed: %d"), __TFUNCTION__, __LINE__, GetLastError());
 
@@ -403,8 +403,8 @@ bool CoreTransport::SpawnCoreProcess(const tstring& configFilename, const tstrin
             commandLineFlags << _T(" --serverList \"") << serverListFilename << _T("\"");
         }
 
-        m_psiphonTunnelCore = make_unique<PsiphonTunnelCore>(this, exePath);
-        if (!m_psiphonTunnelCore->SpawnSubprocess(commandLineFlags.str())) {
+        m_sifoonTunnelCore = make_unique<SifoonTunnelCore>(this, exePath);
+        if (!m_sifoonTunnelCore->SpawnSubprocess(commandLineFlags.str())) {
             my_print(NOT_SENSITIVE, false, _T("%s:%d - SpawnSubprocess failed"), __TFUNCTION__, __LINE__);
             continue;
         }
@@ -415,14 +415,14 @@ bool CoreTransport::SpawnCoreProcess(const tstring& configFilename, const tstrin
 
     if (!startSuccess) {
         if (!fileErrorDetail.empty()) {
-            UI_Notice("PsiphonUI::FileError", fileErrorDetail);
+            UI_Notice("SifoonUI::FileError", fileErrorDetail);
         }
 
         my_print(NOT_SENSITIVE, true, _T("%s:%d - process spawning failed utterly: %d"), __TFUNCTION__, __LINE__, GetLastError());
         return false;
     }
 
-    if (!m_psiphonTunnelCore->CloseInputPipes()) {
+    if (!m_sifoonTunnelCore->CloseInputPipes()) {
         my_print(NOT_SENSITIVE, false, _T("%s - failed to close input pipes"), __TFUNCTION__);
         return false;
     }
@@ -501,7 +501,7 @@ bool CoreTransport::ValidateAndPaveUpgrade(const tstring& clientUpgradeFilename)
 }
 
 
-void CoreTransport::HandlePsiphonTunnelCoreNotice(const string& noticeType, const string& timestamp, const Json::Value& data)
+void CoreTransport::HandleSifoonTunnelCoreNotice(const string& noticeType, const string& timestamp, const Json::Value& data)
 {
     if (noticeType == "Tunnels")
     {
@@ -532,7 +532,7 @@ void CoreTransport::HandlePsiphonTunnelCoreNotice(const string& noticeType, cons
         if (!ValidateAndPaveUpgrade(UTF8ToWString(data["filename"].asString()))) {
             m_clientUpgradeDownloadHandled = false;
         }
-        my_print(NOT_SENSITIVE, false, _T("Psiphon has been updated. The new version will launch the next time Psiphon starts."));
+        my_print(NOT_SENSITIVE, false, _T("Sifoon has been updated. The new version will launch the next time Sifoon starts."));
     }
     else if (noticeType == "Homepage")
     {
@@ -666,14 +666,14 @@ bool CoreTransport::DoPeriodicCheck()
     // Check if the subprocess is still running, and consume any buffered output
 
     try {
-        DWORD status = m_psiphonTunnelCore->Status();
+        DWORD status = m_sifoonTunnelCore->Status();
         if (status == SUBPROCESS_STATUS_RUNNING) {
             if (m_stopInfo.stopSignal->CheckSignal(m_stopInfo.stopReasons))
             {
                 throw Abort();
             }
 
-            m_psiphonTunnelCore->ConsumeSubprocessOutput();
+            m_sifoonTunnelCore->ConsumeSubprocessOutput();
 
             return true;
         }
@@ -681,7 +681,7 @@ bool CoreTransport::DoPeriodicCheck()
             // The process has signalled -- which implies that it has died.
             // We'll consume the output anyway, as it might contain information
             // about why the process death occurred (such as port conflict).
-            m_psiphonTunnelCore->ConsumeSubprocessOutput();
+            m_sifoonTunnelCore->ConsumeSubprocessOutput();
             return false;
         }
         else if (status == SUBPROCESS_STATUS_NO_PROCESS) {

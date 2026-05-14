@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2015, Psiphon Inc.
+ * Copyright (c) 2015, Sifoon Inc.
  * All rights reserved.
  *
  * This program is free software: you can redistribute it and/or modify
@@ -288,7 +288,7 @@ BOOL InitInstance(HINSTANCE hInstance, LPTSTR lpCmdLine, int nShowCmd)
         return FALSE;
     }
 
-    RegisterPsiphonProtocolHandler();
+    RegisterSifoonProtocolHandler();
     ProcessCommandLine(lpCmdLine ? lpCmdLine : _T(""));
 
     g_hInst = hInstance;
@@ -323,7 +323,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
         OnCreate(hWnd);
         break;
 
-    case WM_PSIPHON_CREATED:
+    case WM_SIFOON_CREATED:
     {
         // Display client version number
         string clientVersion = "Client Version: "s + CLIENT_VERSION;
@@ -397,14 +397,14 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
         break;
     }
 
-    case WM_PSIPHON_HTMLUI_BEFORENAVIGATE:
-    case WM_PSIPHON_HTMLUI_SETSTATE:
-    case WM_PSIPHON_HTMLUI_ADDLOG:
-    case WM_PSIPHON_HTMLUI_ADDNOTICE:
-    case WM_PSIPHON_HTMLUI_REFRESHSETTINGS:
-    case WM_PSIPHON_HTMLUI_UPDATEDPISCALING:
-    case WM_PSIPHON_HTMLUI_PSICASHMESSAGE:
-    case WM_PSIPHON_HTMLUI_DEEPLINK:
+    case WM_SIFOON_HTMLUI_BEFORENAVIGATE:
+    case WM_SIFOON_HTMLUI_SETSTATE:
+    case WM_SIFOON_HTMLUI_ADDLOG:
+    case WM_SIFOON_HTMLUI_ADDNOTICE:
+    case WM_SIFOON_HTMLUI_REFRESHSETTINGS:
+    case WM_SIFOON_HTMLUI_UPDATEDPISCALING:
+    case WM_SIFOON_HTMLUI_PSICASHMESSAGE:
+    case WM_SIFOON_HTMLUI_DEEPLINK:
         HTMLControlWndProc(message, wParam, lParam);
         break;
 
@@ -455,12 +455,12 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
     case WM_NOTIFY:
         return HandleNotify(hWnd, (NMHDR*)lParam);
 
-    case WM_PSIPHON_TRAY_CONNECTED_REMINDER_NOTIFY:
-    case WM_PSIPHON_TRAY_ICON_NOTIFY:
+    case WM_SIFOON_TRAY_CONNECTED_REMINDER_NOTIFY:
+    case WM_SIFOON_TRAY_ICON_NOTIFY:
         SystrayWndProc(message, wParam, lParam);
         break;
 
-    case WM_PSIPHON_MY_PRINT:
+    case WM_SIFOON_MY_PRINT:
     {
         int priority = (int)wParam;
         TCHAR* log = (TCHAR*)lParam;
@@ -473,11 +473,11 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
         break;
     }
 
-    case WM_PSIPHON_FEEDBACK_SUCCESS:
+    case WM_SIFOON_FEEDBACK_SUCCESS:
         my_print(NOT_SENSITIVE, false, _T("Feedback sent. Thank you!"));
         break;
 
-    case WM_PSIPHON_FEEDBACK_FAILED:
+    case WM_SIFOON_FEEDBACK_FAILED:
         my_print(NOT_SENSITIVE, false, _T("Failed to send feedback."));
         break;
 

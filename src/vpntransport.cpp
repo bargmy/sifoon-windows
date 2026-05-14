@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2015, Psiphon Inc.
+ * Copyright (c) 2015, Sifoon Inc.
  * All rights reserved.
  *
  * This program is free software: you can redistribute it and/or modify
@@ -31,7 +31,7 @@
 
 
 #define VPN_CONNECTION_TIMEOUT_SECONDS  20
-#define VPN_CONNECTION_NAME             _T("Psiphon3")
+#define VPN_CONNECTION_NAME             _T("Sifoon3")
 
 
 void TweakVPN();

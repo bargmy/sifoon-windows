@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2013, Psiphon Inc.
+ * Copyright (c) 2013, Sifoon Inc.
  * All rights reserved.
  *
  * This program is free software: you can redistribute it and/or modify
@@ -21,7 +21,7 @@
 
 
 /**
-Should be called before Psiphon has attempted to connect or made any system
+Should be called before Sifoon has attempted to connect or made any system
 network changes.
 */
 void DoStartupDiagnosticCollection();
@@ -84,7 +84,7 @@ void AddDiagnosticInfo(const char* message, const T& entry)
 // Some diagnostic info is useful outside of feedback
 //
 
-// Get the ClientPlatform string that should be passed along to the Psiphon server.
+// Get the ClientPlatform string that should be passed along to the Sifoon server.
 std::string GetClientPlatform();
 
 bool GetCountryDialingCode(wstring& o_countryDialingCode);

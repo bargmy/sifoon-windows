@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2020, Psiphon Inc.
+* Copyright (c) 2020, Sifoon Inc.
 * All rights reserved.
 *
 * This program is free software: you can redistribute it and/or modify
@@ -20,7 +20,7 @@
 #pragma once
 
 #include "worker_thread.h"
-#include "psiphon_tunnel_core.h"
+#include "sifoon_tunnel_core.h"
 #include "transport.h"
 #include "transport_registry.h"
 #include "usersettings.h"
@@ -54,11 +54,11 @@ public:
 };
 
 /**
-FeedbackUpload facilitates uploading feedback data to Psiphon's servers. This
+FeedbackUpload facilitates uploading feedback data to Sifoon's servers. This
 includes user feedback and diagnostic logs. The upload can, optionally, be
 interrupted with the provided stop signal, when it is desirable to do so.
 */
-class FeedbackUpload : public IWorkerThread, public IPsiphonTunnelCoreNoticeHandler
+class FeedbackUpload : public IWorkerThread, public ISifoonTunnelCoreNoticeHandler
 {
 
 public:
@@ -103,8 +103,8 @@ protected:
     void DoStop(bool cleanly);
     virtual bool DoPeriodicCheck();
 
-    // IPsiphonTunnelCoreNoticeHandler implementation
-    void HandlePsiphonTunnelCoreNotice(const string& noticeType, const string& timestamp, const Json::Value& data);
+    // ISifoonTunnelCoreNoticeHandler implementation
+    void HandleSifoonTunnelCoreNotice(const string& noticeType, const string& timestamp, const Json::Value& data);
 
     virtual void SendFeedback();
 
@@ -121,5 +121,5 @@ protected:
     string m_diagnosticData;
     string m_upstreamProxyAddress;
     StopInfo m_stopInfo;
-    unique_ptr<PsiphonTunnelCore> m_psiphonTunnelCore;
+    unique_ptr<SifoonTunnelCore> m_sifoonTunnelCore;
 };

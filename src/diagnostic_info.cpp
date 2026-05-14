@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2013, Psiphon Inc.
+ * Copyright (c) 2013, Sifoon Inc.
  * All rights reserved.
  *
  * This program is free software: you can redistribute it and/or modify
@@ -1108,14 +1108,14 @@ void GetDiagnosticInfo(Json::Value& o_json)
 
     o_json["SystemInformation"] = Json::Value(Json::objectValue);
 
-    Json::Value psiphonInfo = Json::Value(Json::objectValue);
-    psiphonInfo["PROPAGATION_CHANNEL_ID"] = PROPAGATION_CHANNEL_ID;
-    psiphonInfo["SPONSOR_ID"] = SPONSOR_ID;
-    psiphonInfo["CLIENT_VERSION"] = CLIENT_VERSION;
-    psiphonInfo["clientBuild"] = GetBuildTimestamp();
-    psiphonInfo["splitTunnel"] = Settings::SplitTunnel();
-    psiphonInfo["selectedTransport"] = WStringToUTF8(Settings::Transport());
-    o_json["SystemInformation"]["PsiphonInfo"] = psiphonInfo;
+    Json::Value sifoonInfo = Json::Value(Json::objectValue);
+    sifoonInfo["PROPAGATION_CHANNEL_ID"] = PROPAGATION_CHANNEL_ID;
+    sifoonInfo["SPONSOR_ID"] = SPONSOR_ID;
+    sifoonInfo["CLIENT_VERSION"] = CLIENT_VERSION;
+    sifoonInfo["clientBuild"] = GetBuildTimestamp();
+    sifoonInfo["splitTunnel"] = Settings::SplitTunnel();
+    sifoonInfo["selectedTransport"] = WStringToUTF8(Settings::Transport());
+    o_json["SystemInformation"]["SifoonInfo"] = sifoonInfo;
 
     /*
     * SystemInformation::OSInfo

@@ -1,75 +1,75 @@
 {
     "banner#long-connecting": {
-        "message": "<strong>Ồ!</strong> Bạn dường như gặp khó khăn kết nối!<br>\nTải phiên bản Psiphon mới nhất từ <a class=\"NewVersionURL\" href=\"#\">trang tải xuống</a>\nhoặc gửi email đến <a class=\"NewVersionEmail\" href=\"#\"></a>",
-        "description": "Message that appears when Psiphon is having trouble connecting. Often such connection problems can be fixed by downloading a new version. The word 'Psiphon' must not be translated or transliterated."
+        "message": "<strong>Ồ!</strong> Bạn dường như gặp khó khăn kết nối!<br>\nTải phiên bản Sifoon mới nhất từ <a class=\"NewVersionURL\" href=\"#\">trang tải xuống</a>\nhoặc gửi email đến <a class=\"NewVersionEmail\" href=\"#\"></a>",
+        "description": "Message that appears when Sifoon is having trouble connecting. Often such connection problems can be fixed by downloading a new version. The word 'Sifoon' must not be translated or transliterated."
     },
     "nav#connection#starting": {
         "message": "Đang kết nối",
-        "description": "Text on the tab that, if the user clicks on it, switches to the 'Connection' view, that has the connect button. This particular text is shown when Psiphon is connecting."
+        "description": "Text on the tab that, if the user clicks on it, switches to the 'Connection' view, that has the connect button. This particular text is shown when Sifoon is connecting."
     },
     "nav#connection#connected": {
         "message": "Đã kết nối",
-        "description": "Text on the tab that, if the user clicks on it, switches to the 'Connection' view, that has the connect button. This particular text is shown when Psiphon is connected."
+        "description": "Text on the tab that, if the user clicks on it, switches to the 'Connection' view, that has the connect button. This particular text is shown when Sifoon is connected."
     },
     "nav#connection#stopping": {
         "message": "Đang ngắt kết nối",
-        "description": "Text on the tab that, if the user clicks on it, switches to the 'Connection' view, that has the connect button. This particular text is shown when Psiphon is disconnecting."
+        "description": "Text on the tab that, if the user clicks on it, switches to the 'Connection' view, that has the connect button. This particular text is shown when Sifoon is disconnecting."
     },
     "nav#connection#stopped": {
         "message": "Đã dừng kết nối",
-        "description": "Text on the tab that, if the user clicks on it, switches to the 'Connection' view, that has the connect button. This particular text is shown when Psiphon is disconnected."
+        "description": "Text on the tab that, if the user clicks on it, switches to the 'Connection' view, that has the connect button. This particular text is shown when Sifoon is disconnected."
     },
     "nav#settings": {
         "message": "Thiết đặt",
-        "description": "Text on the tab that, if the user clicks on it, switches to the 'Settings' view. In that view the user can change the settings/options that change how Psiphon works."
+        "description": "Text on the tab that, if the user clicks on it, switches to the 'Settings' view. In that view the user can change the settings/options that change how Sifoon works."
     },
     "nav#feedback": {
         "message": "Phản hồi",
-        "description": "Text on the tab that, if the user clicks on it, switches to the 'Feeback' view. In that view the user can send feedback about their experience to Psiphon."
+        "description": "Text on the tab that, if the user clicks on it, switches to the 'Feeback' view. In that view the user can send feedback about their experience to Sifoon."
     },
     "nav#logs": {
         "message": "Ký sự",
-        "description": "Text on the tab that, if the user clicks on it, switches to the 'Logs' view. In that view the user can see the status messages that Psiphon produces as it connects, disconnects, etc."
+        "description": "Text on the tab that, if the user clicks on it, switches to the 'Logs' view. In that view the user can see the status messages that Sifoon produces as it connects, disconnects, etc."
     },
     "nav#about": {
         "message": "Giới thiệu",
-        "description": "Text on the tab that, if the user clicks on it, switches to the 'About' view. In that view the user can see info about the app, info about Psiphon Inc., and click links for more information."
+        "description": "Text on the tab that, if the user clicks on it, switches to the 'About' view. In that view the user can see info about the app, info about Sifoon Inc., and click links for more information."
     },
     "connection#starting-msg": {
-        "message": "Psiphon  <span class=\"state-word\">đang kết nối </span>…",
-        "description": "Message in the big connection status box telling the user that Psiphon is currently trying to connect to the network. The word 'Psiphon' must not be translated or transliterated."
+        "message": "Sifoon  <span class=\"state-word\">đang kết nối </span>…",
+        "description": "Message in the big connection status box telling the user that Sifoon is currently trying to connect to the network. The word 'Sifoon' must not be translated or transliterated."
     },
     "connection#stop-btn": {
         "message": "Dừng ",
         "description": "Text on the big connection button telling the user that if they click it, they will stop trying to connect to the network. This is shown to the user when they are trying to connect."
     },
     "connection#connected-msg": {
-        "message": "Psiphon <span class=\"state-word\"> được kết nối</span>",
-        "description": "Message in the big connection status box telling the user that Psiphon is currently connected to the network. The word 'Psiphon' must not be translated or transliterated."
+        "message": "Sifoon <span class=\"state-word\"> được kết nối</span>",
+        "description": "Message in the big connection status box telling the user that Sifoon is currently connected to the network. The word 'Sifoon' must not be translated or transliterated."
     },
     "connection#disconnect-btn": {
         "message": "Ngắt kết nối",
         "description": "Text on the big connection button telling the user that if they click it, they will be disconnected from the network. This is shown when the user is currently connected."
     },
     "connection#stopping-msg": {
-        "message": "Psiphon <span class=\"state-word\">đang ngắt kết nối </span>…",
-        "description": "Message in the big connection status box telling the user that Psiphon is currently trying to disconnect from the network. The word 'Psiphon' must not be translated or transliterated."
+        "message": "Sifoon <span class=\"state-word\">đang ngắt kết nối </span>…",
+        "description": "Message in the big connection status box telling the user that Sifoon is currently trying to disconnect from the network. The word 'Sifoon' must not be translated or transliterated."
     },
     "connection#wait-btn": {
         "message": "Xin chờ...",
-        "description": "Text on the big connection button telling the user to wait while Psiphon tries to disconnect from the network. When this message is shown, the button is disabled."
+        "description": "Text on the big connection button telling the user to wait while Sifoon tries to disconnect from the network. When this message is shown, the button is disabled."
     },
     "connection#stopped-msg": {
-        "message": "Psiphon <span class=\"state-word\">đã ngắt kết nối </span>",
-        "description": "Message in the big connection status box telling the user that Psiphon is currently not connected to the network. The word 'Psiphon' must not be translated or transliterated."
+        "message": "Sifoon <span class=\"state-word\">đã ngắt kết nối </span>",
+        "description": "Message in the big connection status box telling the user that Sifoon is currently not connected to the network. The word 'Sifoon' must not be translated or transliterated."
     },
     "connection#connect-btn": {
         "message": "Kết nối",
-        "description": "Text on the big connection button telling the user that if they click it, Psiphon will start trying to connect to the network. This is shown to the user while Psiphon is disconnected."
+        "description": "Text on the big connection button telling the user that if they click it, Sifoon will start trying to connect to the network. This is shown to the user while Sifoon is disconnected."
     },
     "connection#egress-region-combo-label": {
         "message": "Chọn vùng máy chủ",
-        "description": "The label for the 'Psiphon Server Region' combo box control located on the connection tab."
+        "description": "The label for the 'Sifoon Server Region' combo box control located on the connection tab."
     },
     "settings#error-alert": {
         "message": "<strong>Có Lỗi!</strong> Vui lòng điều chỉnh các con số sai trước khi tiếp tục.",
@@ -77,7 +77,7 @@
     },
     "settings#reset-button": {
         "message": "Thiết lập lại mặc định",
-        "description": "Text on the button that resets the Psiphon settings values to default. This will typically be pressed if the user has configured something incorrectly and needs to get back to the default state."
+        "description": "Text on the button that resets the Sifoon settings values to default. This will typically be pressed if the user has configured something incorrectly and needs to get back to the default state."
     },
     "settings#apply-button": {
         "message": "Áp dụng các thay đổi",
@@ -109,11 +109,11 @@
     },
     "settings#split-tunnel#heading": {
         "message": "Tách Đường Hầm",
-        "description": "Settings section heading. If the user clicks this, the 'Split Tunnel' section will expand and can be edited. If 'split tunnel' is enabled, if the user is trying to get to a website in his/her own country, they will connect to it directly, instead of through Psiphon."
+        "description": "Settings section heading. If the user clicks this, the 'Split Tunnel' section will expand and can be edited. If 'split tunnel' is enabled, if the user is trying to get to a website in his/her own country, they will connect to it directly, instead of through Sifoon."
     },
     "settings#split-tunnel#help-text": {
-        "message": "Nếu bật mở, truy cập vào các máy chủ ở quốc gia bạn sẽ không được xuyên hầm qua Psiphon.",
-        "description": "Text explaining to the user what the 'Split Tunnel' setting does if enabled. The word 'Psiphon' must not be translated or transliterated."
+        "message": "Nếu bật mở, truy cập vào các máy chủ ở quốc gia bạn sẽ không được xuyên hầm qua Sifoon.",
+        "description": "Text explaining to the user what the 'Split Tunnel' setting does if enabled. The word 'Sifoon' must not be translated or transliterated."
     },
     "settings#split-tunnel#reason": {
         "message": "Trang web ở ngay trong quốc gia bạn thường không bị chặn, do đó bật mở tùy chọn này sẽ giúp truy cập vào các trang đó nhanh hơn và đôi khi giảm chi phí của nhà mạng.",
@@ -133,11 +133,11 @@
     },
     "settings#disable-timeouts#heading": {
         "message": "Tắt Hạn Chờ cho Mạng Chậm",
-        "description": "Settings section heading. If the user clicks this, the 'Disable Timeouts for Slow Networks' section will expand and can be edited. If 'disable timeouts' is enabled, network timeouts between the Psiphon client and server will be disabled."
+        "description": "Settings section heading. If the user clicks this, the 'Disable Timeouts for Slow Networks' section will expand and can be edited. If 'disable timeouts' is enabled, network timeouts between the Sifoon client and server will be disabled."
     },
     "settings#disable-timeouts#help-text": {
-        "message": "Nếu kích hoạt, việc thông tin liên lạc với máy chủ Psiphon sẽ không bị hết hạn chờ",
-        "description": "Text explaining to the user what the 'Disable Timeouts' setting does if enabled. The word 'Psiphon' must not be translated or transliterated."
+        "message": "Nếu kích hoạt, việc thông tin liên lạc với máy chủ Sifoon sẽ không bị hết hạn chờ",
+        "description": "Text explaining to the user what the 'Disable Timeouts' setting does if enabled. The word 'Sifoon' must not be translated or transliterated."
     },
     "settings#disable-timeouts#reason": {
         "message": "Khi bật mở tùy chọn này cho một đường kết nối mạng rất chậm, bạn sẽ ít bị ngắt kết nối bất ngờ.",
@@ -148,244 +148,244 @@
         "description": "The label on the checkbox that enables 'Disable Timeouts' mode."
     },
     "settings#egress-region#heading": {
-        "message": "Vùng máy chủ Psiphon",
-        "description": "Settings section heading. In this section the user can choose to use a Psiphon server in a specific country/region (or the default, which is just to choose the best/fastest region). The word 'Psiphon' must not be translated or transliterated."
+        "message": "Vùng máy chủ Sifoon",
+        "description": "Settings section heading. In this section the user can choose to use a Sifoon server in a specific country/region (or the default, which is just to choose the best/fastest region). The word 'Sifoon' must not be translated or transliterated."
     },
     "settings#egress-region#select-best-performance": {
         "message": "Hiệu Năng Tốt Nhất",
-        "description": "One of the choices in the 'Psiphon Server Region' combo box. This is the default option and indicates that Psiphon will use a server in the best/fastest region."
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. This is the default option and indicates that Sifoon will use a server in the best/fastest region."
     },
     "settings#egress-region#select-us": {
         "message": "Hoa Kỳ",
-        "description": "One of the choices in the 'Psiphon Server Region' combo box. If selected, a Psiphon server in the United States will be used."
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in the United States will be used."
     },
     "settings#egress-region#select-ca": {
         "message": "Canada",
-        "description": "One of the choices in the 'Psiphon Server Region' combo box. If selected, a Psiphon server in the Canada will be used."
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in the Canada will be used."
     },
     "settings#egress-region#select-gb": {
         "message": "Anh Quốc",
-        "description": "One of the choices in the 'Psiphon Server Region' combo box. If selected, a Psiphon server in the UK will be used."
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in the UK will be used."
     },
     "settings#egress-region#select-jp": {
         "message": "Nhật Bản",
-        "description": "One of the choices in the 'Psiphon Server Region' combo box. If selected, a Psiphon server in Japan will be used."
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Japan will be used."
     },
     "settings#egress-region#select-sg": {
         "message": "Singapore",
-        "description": "One of the choices in the 'Psiphon Server Region' combo box. If selected, a Psiphon server in Singapore will be used."
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Singapore will be used."
     },
     "settings#egress-region#select-sk": {
         "message": "Slovakia",
-        "description": "One of the choices in the 'Psiphon Server Region' combo box. If selected, a Psiphon server in Slovakia will be used."
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Slovakia will be used."
     },
     "settings#egress-region#select-nl": {
         "message": "Hà Lan",
-        "description": "One of the choices in the 'Psiphon Server Region' combo box. If selected, a Psiphon server in the Netherlands will be used."
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in the Netherlands will be used."
     },
     "settings#egress-region#select-de": {
         "message": "Đức",
-        "description": "One of the choices in the 'Psiphon Server Region' combo box. If selected, a Psiphon server in Germany will be used."
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Germany will be used."
     },
     "settings#egress-region#select-in": {
         "message": "Ấn Độ",
-        "description": "One of the choices in the 'Psiphon Server Region' combo box. If selected, a Psiphon server in India will be used."
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in India will be used."
     },
     "settings#egress-region#select-es": {
         "message": "Tây Ban Nha",
-        "description": "One of the choices in the 'Psiphon Server Region' combo box. If selected, a Psiphon server in Spain will be used."
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Spain will be used."
     },
     "settings#egress-region#select-hk": {
         "message": "Hồng Kông",
-        "description": "One of the choices in the 'Psiphon Server Region' combo box. If selected, a Psiphon server in Hong Kong will be used."
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Hong Kong will be used."
     },
     "settings#egress-region#select-at": {
         "message": "Áo",
-        "description": "One of the choices in the 'Psiphon Server Region' combo box. If selected, a Psiphon server in Austria will be used."
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Austria will be used."
     },
     "settings#egress-region#select-be": {
         "message": "Bỉ",
-        "description": "One of the choices in the 'Psiphon Server Region' combo box. If selected, a Psiphon server in Belgium will be used."
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Belgium will be used."
     },
     "settings#egress-region#select-bg": {
         "message": "Bulgaria",
-        "description": "One of the choices in the 'Psiphon Server Region' combo box. If selected, a Psiphon server in Bulgaria will be used."
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Bulgaria will be used."
     },
     "settings#egress-region#select-ch": {
         "message": "Thụy Sĩ",
-        "description": "One of the choices in the 'Psiphon Server Region' combo box. If selected, a Psiphon server in Switzerland will be used."
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Switzerland will be used."
     },
     "settings#egress-region#select-cz": {
         "message": "Tiệp",
-        "description": "One of the choices in the 'Psiphon Server Region' combo box. If selected, a Psiphon server in Czech Republic will be used."
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Czech Republic will be used."
     },
     "settings#egress-region#select-dk": {
         "message": "Đan Mạch",
-        "description": "One of the choices in the 'Psiphon Server Region' combo box. If selected, a Psiphon server in Denmark will be used."
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Denmark will be used."
     },
     "settings#egress-region#select-fr": {
         "message": "Pháp",
-        "description": "One of the choices in the 'Psiphon Server Region' combo box. If selected, a Psiphon server in France will be used."
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in France will be used."
     },
     "settings#egress-region#select-hu": {
         "message": "Hungary",
-        "description": "One of the choices in the 'Psiphon Server Region' combo box. If selected, a Psiphon server in Hungary will be used."
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Hungary will be used."
     },
     "settings#egress-region#select-it": {
         "message": "Ý",
-        "description": "One of the choices in the 'Psiphon Server Region' combo box. If selected, a Psiphon server in Italy will be used."
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Italy will be used."
     },
     "settings#egress-region#select-no": {
         "message": "Na Uy",
-        "description": "One of the choices in the 'Psiphon Server Region' combo box. If selected, a Psiphon server in Norway will be used."
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Norway will be used."
     },
     "settings#egress-region#select-ro": {
         "message": "Romania",
-        "description": "One of the choices in the 'Psiphon Server Region' combo box. If selected, a Psiphon server in Romania will be used."
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Romania will be used."
     },
     "settings#egress-region#select-se": {
         "message": "Thụy Điển",
-        "description": "One of the choices in the 'Psiphon Server Region' combo box. If selected, a Psiphon server in Sweden will be used."
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Sweden will be used."
     },
     "settings#egress-region#select-pl": {
         "message": "Ba Lan",
-        "description": "One of the choices in the 'Psiphon Server Region' combo box. If selected, a Psiphon server in Sweden will be used."
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Sweden will be used."
     },
     "settings#egress-region#select-rs": {
         "message": "Serbia",
-        "description": "One of the choices in the 'Psiphon Server Region' combo box. If selected, a Psiphon server in Serbia will be used."
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Serbia will be used."
     },
     "settings#egress-region#select-au": {
         "message": "Úc",
-        "description": "One of the choices in the 'Psiphon Server Region' combo box. If selected, a Psiphon server in Australia will be used."
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Australia will be used."
     },
     "settings#egress-region#select-ar": {
         "message": "Argentina",
-        "description": "One of the choices in the 'Psiphon Server Region' combo box. If selected, a Psiphon server in Argentina will be used."
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Argentina will be used."
     },
     "settings#egress-region#select-br": {
         "message": "Brazil",
-        "description": "One of the choices in the 'Psiphon Server Region' combo box. If selected, a Psiphon server in Brazil will be used."
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Brazil will be used."
     },
     "settings#egress-region#select-cl": {
         "message": "Chile",
-        "description": "One of the choices in the 'Psiphon Server Region' combo box. If selected, a Psiphon server in Chile will be used."
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Chile will be used."
     },
     "settings#egress-region#select-fi": {
         "message": "Phần Lan",
-        "description": "One of the choices in the 'Psiphon Server Region' combo box. If selected, a Psiphon server in Finland will be used."
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Finland will be used."
     },
     "settings#egress-region#select-is": {
         "message": "Iceland",
-        "description": "One of the choices in the 'Psiphon Server Region' combo box. If selected, a Psiphon server in Iceland will be used."
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Iceland will be used."
     },
     "settings#egress-region#select-ie": {
         "message": "Ireland",
-        "description": "One of the choices in the 'Psiphon Server Region' combo box. If selected, a Psiphon server in Ireland will be used."
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Ireland will be used."
     },
     "settings#egress-region#select-ke": {
         "message": "Kenya",
-        "description": "One of the choices in the 'Psiphon Server Region' combo box. If selected, a Psiphon server in Kenya will be used."
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Kenya will be used."
     },
     "settings#egress-region#select-mx": {
         "message": "Mexico",
-        "description": "One of the choices in the 'Psiphon Server Region' combo box. If selected, a Psiphon server in Mexico will be used."
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Mexico will be used."
     },
     "settings#egress-region#select-za": {
         "message": "Nam Phi",
-        "description": "One of the choices in the 'Psiphon Server Region' combo box. If selected, a Psiphon server in South Africa will be used."
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in South Africa will be used."
     },
     "settings#egress-region#select-kr": {
         "message": "Hàn Quốc",
-        "description": "One of the choices in the 'Psiphon Server Region' combo box. If selected, a Psiphon server in Korea will be used."
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Korea will be used."
     },
     "settings#egress-region#select-tw": {
         "message": "Đài Loan",
-        "description": "One of the choices in the 'Psiphon Server Region' combo box. If selected, a Psiphon server in Taiwan will be used."
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Taiwan will be used."
     },
     "settings#egress-region#select-ae": {
         "message": "United Arab Emirates",
-        "description": "One of the choices in the 'Psiphon Server Region' combo box. If selected, a Psiphon server in United Arab Emirates will be used."
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in United Arab Emirates will be used."
     },
     "settings#egress-region#select-ee": {
         "message": "Estonia",
-        "description": "One of the choices in the 'Psiphon Server Region' combo box. If selected, a Psiphon server in Estonia will be used."
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Estonia will be used."
     },
     "settings#egress-region#select-lv": {
         "message": "Latvia",
-        "description": "One of the choices in the 'Psiphon Server Region' combo box. If selected, a Psiphon server in Latvia will be used."
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Latvia will be used."
     },
     "settings#egress-region#select-lt": {
         "message": "Lithuania",
-        "description": "One of the choices in the 'Psiphon Server Region' combo box. If selected, a Psiphon server in Lithuania will be used."
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Lithuania will be used."
     },
     "settings#egress-region#select-id": {
         "message": "Indonesia",
-        "description": "One of the choices in the 'Psiphon Server Region' combo box. If selected, a Psiphon server in Indonesia will be used."
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Indonesia will be used."
     },
     "settings#egress-region#select-nz": {
         "message": "New Zealand",
-        "description": "One of the choices in the 'Psiphon Server Region' combo box. If selected, a Psiphon server in New Zealand will be used."
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in New Zealand will be used."
     },
     "settings#egress-region#select-gr": {
         "message": "Hy Lạp",
-        "description": "One of the choices in the 'Psiphon Server Region' combo box. If selected, a Psiphon server in Greece will be used."
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Greece will be used."
     },
     "settings#egress-region#select-hr": {
         "message": "Croatia",
-        "description": "One of the choices in the 'Psiphon Server Region' combo box. If selected, a Psiphon server in Croatia will be used."
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Croatia will be used."
     },
     "settings#egress-region#select-pt": {
         "message": "Bồ Đào Nha",
-        "description": "One of the choices in the 'Psiphon Server Region' combo box. If selected, a Psiphon server in Portugal will be used."
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Portugal will be used."
     },
     "settings#egress-region#select-ua": {
         "message": "Ukraine",
-        "description": "One of the choices in the 'Psiphon Server Region' combo box. If selected, a Psiphon server in Ukraine will be used."
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Ukraine will be used."
     },
     "settings#egress-region#select-co": {
         "message": "Colombia",
-        "description": "One of the choices in the 'Psiphon Server Region' combo box. If selected, a Psiphon server in Colombia will be used."
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Colombia will be used."
     },
     "settings#egress-region#select-my": {
         "message": "Malaysia",
-        "description": "One of the choices in the 'Psiphon Server Region' combo box. If selected, a Psiphon server in Malaysia will be used."
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Malaysia will be used."
     },
     "settings#egress-region#description": {
-        "message": "Psiphon có nhiều máy chủ tại nhiều quốc gia và vùng khác nhau. Dùng một máy chủ Psiphon trong vùng gần với quốc gia bạn thường sẽ có kết nối mạng nhanh hơn, nhưng bạn có thể muốn cho thấy là mình đang đứng từ một quốc gia hay vùng nào khác để truy cập và sử dụng dịch vụ.",
-        "description": "Help text in the 'Psiphon Server Region' settings section explaining what the option is and why the user may want to override the default ('best') setting value. The word 'Psiphon' must not be translated or transliterated."
+        "message": "Sifoon có nhiều máy chủ tại nhiều quốc gia và vùng khác nhau. Dùng một máy chủ Sifoon trong vùng gần với quốc gia bạn thường sẽ có kết nối mạng nhanh hơn, nhưng bạn có thể muốn cho thấy là mình đang đứng từ một quốc gia hay vùng nào khác để truy cập và sử dụng dịch vụ.",
+        "description": "Help text in the 'Sifoon Server Region' settings section explaining what the option is and why the user may want to override the default ('best') setting value. The word 'Sifoon' must not be translated or transliterated."
     },
     "settings#egress-region#default": {
-        "message": "Tùy chọn mặc định <strong>“Hiệu Năng Tốt Nhất”</strong> cho phép Psiphon tự động chọn một máy chủ với kết nối mạng tốt nhất.",
-        "description": "Help text below the 'Psiphon Server Region' combo box. It explains to the user what the default (and best) option is. The word 'Psiphon' must not be translated or transliterated."
+        "message": "Tùy chọn mặc định <strong>“Hiệu Năng Tốt Nhất”</strong> cho phép Sifoon tự động chọn một máy chủ với kết nối mạng tốt nhất.",
+        "description": "Help text below the 'Sifoon Server Region' combo box. It explains to the user what the default (and best) option is. The word 'Sifoon' must not be translated or transliterated."
     },
     "settings#egress-region#invalid-error-msg": {
-        "message": "Chọn một khu vực máy chủ Psiphon hợp lệ.",
-        "description": "Error message that is visible when the 'Psiphon Server Region' setting is invalid or not yet set. The word 'Psiphon' must not be translated or transliterated."
+        "message": "Chọn một khu vực máy chủ Sifoon hợp lệ.",
+        "description": "Error message that is visible when the 'Sifoon Server Region' setting is invalid or not yet set. The word 'Sifoon' must not be translated or transliterated."
     },
     "settings#egress-region#error-modal-title": {
         "message": "Khu Vực Máy Chủ Không Có Sẵn",
-        "description": "Title text of the error modal dialog shown when it is detected that the user has an invalid 'Psiphon Server Region' currently configured."
+        "description": "Title text of the error modal dialog shown when it is detected that the user has an invalid 'Sifoon Server Region' currently configured."
     },
     "settings#egress-region#error-modal-body-http": {
-        "message": "Bạn cấu hình Psiphon để dùng máy chủ trong một vùng riêng biệt.<br>\nTuy nhiê, vùng đó không còn nữa.<br>\nBạn phải chọn một vùng khác hoặc đổi qua tùy chọn mặc định “Hiệu Năng Tốt Nhất”.",
-        "description": "Descriptive body text of the error modal dialog shown when it is detected that the user has an invalid 'Psiphon Server Region' currently configured. The word 'Psiphon' must not be translated or transliterated."
+        "message": "Bạn cấu hình Sifoon để dùng máy chủ trong một vùng riêng biệt.<br>\nTuy nhiê, vùng đó không còn nữa.<br>\nBạn phải chọn một vùng khác hoặc đổi qua tùy chọn mặc định “Hiệu Năng Tốt Nhất”.",
+        "description": "Descriptive body text of the error modal dialog shown when it is detected that the user has an invalid 'Sifoon Server Region' currently configured. The word 'Sifoon' must not be translated or transliterated."
     },
     "settings#local-proxy-ports#heading": {
         "message": "Các cổng Proxy địa phương",
-        "description": "Settings section heading. In this section the user can specify what network ports the local Psiphon processes should use (Psiphon uses two such ports). For most people, this should be set to automatic."
+        "description": "Settings section heading. In this section the user can specify what network ports the local Sifoon processes should use (Sifoon uses two such ports). For most people, this should be set to automatic."
     },
     "settings#local-proxy-ports#leave-blank": {
         "message": "Để <strong>trống </strong> để tự động chọn cổng (đề nghị).",
         "description": "Help text that appears above the 'Local Proxy Ports' settings. 'blank' is the default and best value, and is bolded."
     },
     "settings#local-proxy-ports#reason": {
-        "message": "Nếu bạn dùng các công cụ nào trong máy tính mà cần có cấu hình đặc biệt để chạy được với Psiphon, thì bạn nên để Psiphon thường xuyên dùng cùng một cổng địa phương. Nếu bạn không có lý do gì để chọn một cổng nào đó thì nên để cho Psiphon tự động chọn cổng để tránh bị xung khắc. ",
-        "description": "Help text in the 'Local Proxy Ports' settings area. This explains to the user why they might want to override the default (automatic) settings values. The word 'Psiphon' must not be translated or transliterated."
+        "message": "Nếu bạn dùng các công cụ nào trong máy tính mà cần có cấu hình đặc biệt để chạy được với Sifoon, thì bạn nên để Sifoon thường xuyên dùng cùng một cổng địa phương. Nếu bạn không có lý do gì để chọn một cổng nào đó thì nên để cho Sifoon tự động chọn cổng để tránh bị xung khắc. ",
+        "description": "Help text in the 'Local Proxy Ports' settings area. This explains to the user why they might want to override the default (automatic) settings values. The word 'Sifoon' must not be translated or transliterated."
     },
     "settings#local-proxy-ports#http-label": {
         "message": "HTTP/HTTPS",
-        "description": "Label for the text box where the user will enter their desired local port for the Psiphon HTTP/HTTPS process. The full term for this would be 'Desired HTTP and HTTPS local proxy port', but is shortened."
+        "description": "Label for the text box where the user will enter their desired local port for the Sifoon HTTP/HTTPS process. The full term for this would be 'Desired HTTP and HTTPS local proxy port', but is shortened."
     },
     "settings#port-value-error-msg": {
         "message": "Phải ở giữa 1 và 65535.",
@@ -393,7 +393,7 @@
     },
     "settings#local-proxy-ports#socks-label": {
         "message": "SOCKS",
-        "description": "Label for the text box where the user will enter their desired local port for the Psiphon SOCKS process. The full term for this would be 'Desired SOCKS local proxy port', but is shortened. 'SOCKS' is a proxy protocol. Any user for whom this setting is useful will know what that means."
+        "description": "Label for the text box where the user will enter their desired local port for the Sifoon SOCKS process. The full term for this would be 'Desired SOCKS local proxy port', but is shortened. 'SOCKS' is a proxy protocol. Any user for whom this setting is useful will know what that means."
     },
     "settings#local-proxy-ports#unique-error-msg": {
         "message": "Các cổng địa phương phải khác biệt với nhau",
@@ -401,43 +401,43 @@
     },
     "settings#local-proxy-ports#error-modal-title": {
         "message": "Xung đột cổng Proxy địa phương",
-        "description": "Title of the message box showing the error message when it is detected that the user has chosen a local proxy port (either HTTP or SOCKS) that is already in use and therefore can't be used by Psiphon."
+        "description": "Title of the message box showing the error message when it is detected that the user has chosen a local proxy port (either HTTP or SOCKS) that is already in use and therefore can't be used by Sifoon."
     },
     "settings#local-proxy-ports#error-modal-body-http": {
-        "message": "<p>\nBạn cấu hình Psiphon dùng một cổng địa phương đặc trung cho proxy HTTP.<br>\nTuy nhiên, cổng đó hình như đã được dùng rồi và Psiphon không thể dùng nó.\n</p>\n<p>\nXin đổi qua cổng khác và thử lại. Chúng tôi đề nghị bạn xóa số cổng để Psiphon tự động chọn một cổng đang còn trống .\n</p>",
-        "description": "Main text in the 'Local Proxy Port Conflict' dialog box. This is shown when the conflict is with the HTTP proxy port, rather than the SOCKS proxy port. The word 'Psiphon' must not be translated or transliterated."
+        "message": "<p>\nBạn cấu hình Sifoon dùng một cổng địa phương đặc trung cho proxy HTTP.<br>\nTuy nhiên, cổng đó hình như đã được dùng rồi và Sifoon không thể dùng nó.\n</p>\n<p>\nXin đổi qua cổng khác và thử lại. Chúng tôi đề nghị bạn xóa số cổng để Sifoon tự động chọn một cổng đang còn trống .\n</p>",
+        "description": "Main text in the 'Local Proxy Port Conflict' dialog box. This is shown when the conflict is with the HTTP proxy port, rather than the SOCKS proxy port. The word 'Sifoon' must not be translated or transliterated."
     },
     "settings#local-proxy-ports#error-modal-body-socks": {
-        "message": "<p>\nBạn cấu hình Psiphon dùng một cổng địa phương đặc trung cho proxy SOCKS.<br>\nTuy nhiên, cổng đó hình như đã được dùng rồi và Psiphon không thể dùng nó.\n</p>\n<p>\nXin đổi qua cổng khác và thử lại. Chúng tôi đề nghị bạn xóa số cổng để Psiphon tự động chọn một cổng đang còn trống.\n</p>",
-        "description": "Main text in the 'Local Proxy Port Conflict' dialog box. This is shown when the conflict is with the SOCKS proxy port, rather than the HTTP proxy port. The word 'Psiphon' must not be translated or transliterated."
+        "message": "<p>\nBạn cấu hình Sifoon dùng một cổng địa phương đặc trung cho proxy SOCKS.<br>\nTuy nhiên, cổng đó hình như đã được dùng rồi và Sifoon không thể dùng nó.\n</p>\n<p>\nXin đổi qua cổng khác và thử lại. Chúng tôi đề nghị bạn xóa số cổng để Sifoon tự động chọn một cổng đang còn trống.\n</p>",
+        "description": "Main text in the 'Local Proxy Port Conflict' dialog box. This is shown when the conflict is with the SOCKS proxy port, rather than the HTTP proxy port. The word 'Sifoon' must not be translated or transliterated."
     },
     "settings#expose-local-proxies-to-lan#help-text": {
-        "message": "Nếu bạn có các thiết bị khác trong mạng của mình, như TV thông minh hoặc máy chơi game, bạn có thể cho phép chúng dùng các proxies HTTP và SOCKS trong khi Psiphon kết nối.",
-        "description": "Help text explaining the setting to allow other devices on the network to use the local Psiphon proxies. Smart TV refers to televisions that have Internet connectivity and apps that access Internet services."
+        "message": "Nếu bạn có các thiết bị khác trong mạng của mình, như TV thông minh hoặc máy chơi game, bạn có thể cho phép chúng dùng các proxies HTTP và SOCKS trong khi Sifoon kết nối.",
+        "description": "Help text explaining the setting to allow other devices on the network to use the local Sifoon proxies. Smart TV refers to televisions that have Internet connectivity and apps that access Internet services."
     },
     "settings#expose-local-proxies-to-lan#hint": {
         "message": "<strong>GỢI Ý:</strong> Bạn nên chọn ít nhất một trong các số cổng bên trên để dùng tính năng này. Địa chỉ của các proxies cục bộ sẽ được hiển thị trong nhật ký.",
-        "description": "Helpful hint suggesting to set port numbers for the local Psiphon proxies when using the setting to allow other devices on the network to use the local Psiphon proxies."
+        "description": "Helpful hint suggesting to set port numbers for the local Sifoon proxies when using the setting to allow other devices on the network to use the local Sifoon proxies."
     },
     "settings#expose-local-proxies-to-lan#enable-label": {
-        "message": "Cho phép các thiết bị khác trong mạng bạn dùng proxies Psiphon cục bộ",
-        "description": "Label for the setting to allow other devices on the network to use the local Psiphon proxies."
+        "message": "Cho phép các thiết bị khác trong mạng bạn dùng proxies Sifoon cục bộ",
+        "description": "Label for the setting to allow other devices on the network to use the local Sifoon proxies."
     },
     "settings#upstream-proxy#heading": {
         "message": "Proxy luồng trên",
-        "description": "Settings section heading. In this section the user can specify network information to use an 'upstream proxy', which is a separate proxy that Psiphon will connect through to get to its own server. This is most often used by people in school or work networks that force them to connect out to the Internet through a particular server. This setting can also disable automatic upstream proxy use."
+        "description": "Settings section heading. In this section the user can specify network information to use an 'upstream proxy', which is a separate proxy that Sifoon will connect through to get to its own server. This is most often used by people in school or work networks that force them to connect out to the Internet through a particular server. This setting can also disable automatic upstream proxy use."
     },
     "settings#upstream-proxy#by-default": {
-        "message": "Nếu máy đã có sẵn cấu hình proxy, theo mặc định Psiphon sẽ dùng proxy đó khi mở đường hầm kết nối an toàn. Bạn có thể lờ cách đó đi bằng cách nêu rõ cần dùng proxy nào, hoặc cho biết là không dùng \"proxy luồng trên\".",
-        "description": "Help text indicating the default (and best) configuration and behavior for the 'Upstream Proxy' setting. It also indicates what will happen if the setting is overridden or disabled. The word 'Psiphon' must not be translated or transliterated."
+        "message": "Nếu máy đã có sẵn cấu hình proxy, theo mặc định Sifoon sẽ dùng proxy đó khi mở đường hầm kết nối an toàn. Bạn có thể lờ cách đó đi bằng cách nêu rõ cần dùng proxy nào, hoặc cho biết là không dùng \"proxy luồng trên\".",
+        "description": "Help text indicating the default (and best) configuration and behavior for the 'Upstream Proxy' setting. It also indicates what will happen if the setting is overridden or disabled. The word 'Sifoon' must not be translated or transliterated."
     },
     "settings#upstream-proxy#reason": {
         "message": "Proxy luồng trên đôi khi cần có cho trường học, đại học, hoặc công ty. Nếu nhà mạng có cung cấp các thiết đặt proxy luồng trên cho bạn, thì cần thiết đặt nơi đây để có thể kết nối.",
-        "description": "Help text describing why the user might need to modify the upstream proxy settings in order to successfully connect to the Psiphon server."
+        "description": "Help text describing why the user might need to modify the upstream proxy settings in order to successfully connect to the Sifoon server."
     },
     "settings#upstream-proxy#proxy-reqs": {
         "message": "Chỉ cho phép các proxy HTTP nào hỗ trợ HTTPS",
-        "description": "Help text beside the upstream proxy settings indicating what type of upstream proxies can by used by Psiphon (different proxies are of different types and have different capabilities, and Psiphon has certain requirements)."
+        "description": "Help text beside the upstream proxy settings indicating what type of upstream proxies can by used by Sifoon (different proxies are of different types and have different capabilities, and Sifoon has certain requirements)."
     },
     "settings#upstream-proxy#hostname-label": {
         "message": "Tên máy chủ",
@@ -476,12 +476,12 @@
         "description": "Title of the message box showing the error message when a problem is detected with the user's 'upstream proxy settings'."
     },
     "settings#upstream-proxy#error-modal-body-default": {
-        "message": "Psiphon hiện được cấu hình để dùng proxy của hệ thống làm “proxy luồng trên”.<br>\nTuy nhiên, chúng tôi dường như không thể kết nối với máy chủ Psiphon qua proxy đó.<br>\nXin kích hoạt tùy chọn “Đừng dùng proxy luồng trên” và thử lại.",
-        "description": "Main text in the 'Upstream Proxy Error' dialog box. This is shown when the user has not directly altered these settings (yet), but the default is causing a problem. The word 'Psiphon' must not be translated or transliterated."
+        "message": "Sifoon hiện được cấu hình để dùng proxy của hệ thống làm “proxy luồng trên”.<br>\nTuy nhiên, chúng tôi dường như không thể kết nối với máy chủ Sifoon qua proxy đó.<br>\nXin kích hoạt tùy chọn “Đừng dùng proxy luồng trên” và thử lại.",
+        "description": "Main text in the 'Upstream Proxy Error' dialog box. This is shown when the user has not directly altered these settings (yet), but the default is causing a problem. The word 'Sifoon' must not be translated or transliterated."
     },
     "settings#upstream-proxy#error-modal-body-configured": {
-        "message": "Psiphon hiện được cấu hình để dùng proxy của hệ thống làm “proxy luồng trên”.<br>\nTuy nhiên, chúng tôi dường như không thể kết nối với máy chủ Psiphon qua proxy đó.<br>\nXin điều chỉnh lại các thiết đặt và thử lại.",
-        "description": "Main text in the 'Upstream Proxy Error' dialog box. This is shown when the user has directly altered these settings, and those settings are (probably) erroneous. The word 'Psiphon' must not be translated or transliterated."
+        "message": "Sifoon hiện được cấu hình để dùng proxy của hệ thống làm “proxy luồng trên”.<br>\nTuy nhiên, chúng tôi dường như không thể kết nối với máy chủ Sifoon qua proxy đó.<br>\nXin điều chỉnh lại các thiết đặt và thử lại.",
+        "description": "Main text in the 'Upstream Proxy Error' dialog box. This is shown when the user has directly altered these settings, and those settings are (probably) erroneous. The word 'Sifoon' must not be translated or transliterated."
     },
     "settings#transport-mode#heading": {
         "message": "Chế Độ Chuyển Giao",
@@ -492,20 +492,20 @@
         "description": "Label for the checkbox that allows the user to indicate that they want to use the non-default network transport mode. This mode is generally inferior for circumvention and not recommended. 'L2TP/IPSec' is the technical name for a type of virtual private network and should probably not be translated."
     },
     "settings#transport-mode#help-text": {
-        "message": "Dùng mạng ảo L2TP/IPSec của Windows. Chế độ này sẽ đưa tất cả ứng dụng xuyên qua Psiphon, nhưng không cung cấp việc rối mã và vì thế không có khả năng mạnh mẽ để vượt kiểm duyệt.  <strong>Đề nghị không dùng</strong> để vượt hầu hết tường lửa.",
+        "message": "Dùng mạng ảo L2TP/IPSec của Windows. Chế độ này sẽ đưa tất cả ứng dụng xuyên qua Sifoon, nhưng không cung cấp việc rối mã và vì thế không có khả năng mạnh mẽ để vượt kiểm duyệt.  <strong>Đề nghị không dùng</strong> để vượt hầu hết tường lửa.",
         "description": "Help text for the 'Use L2TP/IPSec mode' transport selection checkbox. It gives some technical details and indicates that this mode is not recommended."
     },
     "settings#systray-minimize#heading": {
         "message": "Thu nhỏ vào Vùng Thông Báo (Khay Hệ Thống)",
-        "description": "Settings section heading. In this section the user can choose to enable or disable the ability for the Psiphon application window to be hidden as a notification area icon when minimized. 'Notification area' is the official term for the icons located near the clock on the Windows taskbar, but it's also often called the 'system tray' or 'systray' -- use whatever is most common in your language, and be verbose if necessary."
+        "description": "Settings section heading. In this section the user can choose to enable or disable the ability for the Sifoon application window to be hidden as a notification area icon when minimized. 'Notification area' is the official term for the icons located near the clock on the Windows taskbar, but it's also often called the 'system tray' or 'systray' -- use whatever is most common in your language, and be verbose if necessary."
     },
     "settings#systray-minimize#help-text": {
-        "message": "Nếu bật lên, khi thu nhỏ lại cửa sổ phần mềm Psiphon sẽ ẩn trong vùng thông báo (còn được gọi là \"khay hệ thống\" hay \"systray\", nằm gần đồng hồ trên thanh tác vụ của Windows).",
-        "description": "Text explaining to the user what the 'Minimize to Notification Area (System Tray)' setting does if enabled. The word 'Psiphon' must not be translated or transliterated."
+        "message": "Nếu bật lên, khi thu nhỏ lại cửa sổ phần mềm Sifoon sẽ ẩn trong vùng thông báo (còn được gọi là \"khay hệ thống\" hay \"systray\", nằm gần đồng hồ trên thanh tác vụ của Windows).",
+        "description": "Text explaining to the user what the 'Minimize to Notification Area (System Tray)' setting does if enabled. The word 'Sifoon' must not be translated or transliterated."
     },
     "settings#systray-minimize#reason": {
-        "message": "Thu nhỏ Psiphon vào vùng thông báo (\"khay hệ thống\") làm trống chỗ trên thanh tác vụ. Việc này hữu ích nếu bạn thường chạy Psiphon cho một thời gian dài.",
-        "description": "Help text in the 'Minimize to Systray' settings section explaining to the user why they might want to enable it. The word 'Psiphon' must not be translated or transliterated."
+        "message": "Thu nhỏ Sifoon vào vùng thông báo (\"khay hệ thống\") làm trống chỗ trên thanh tác vụ. Việc này hữu ích nếu bạn thường chạy Sifoon cho một thời gian dài.",
+        "description": "Help text in the 'Minimize to Systray' settings section explaining to the user why they might want to enable it. The word 'Sifoon' must not be translated or transliterated."
     },
     "settings#systray-minimize#enable-label": {
         "message": "Thu nhỏ vào vùng thông báo (khay hệ thống)",
@@ -533,39 +533,39 @@
     },
     "feedback#top_para_2": {
         "message": "Nhiều vấn đề có thể được khắc phục bằng cách tải phiên bản mới nhất. Bạn có thể <a class=\"NewVersionURL\" href=\"#\">tải phiên bản mới nhất bằng cách nhấp vào đây</a>, hoặc bạn có thể gửi email tới <a class=\"NewVersionEmail\" href=\"#\"></a>.",
-        "description": "Text telling the user that downloading a new version of Psiphon may be beneficial, and how to get a new version."
+        "description": "Text telling the user that downloading a new version of Sifoon may be beneficial, and how to get a new version."
     },
     "feedback#top_para_3": {
         "message": "Bạn cũng có thể tìm thấy các giải pháp cho nhiều vấn đề thông thường trong phần <a class=\"FaqURL\" href=\"#\">Các câu hỏi thường gặp</a>.",
-        "description": "Text telling the user how to get to the Psiphon FAQ."
+        "description": "Text telling the user how to get to the Sifoon FAQ."
     },
     "feedback#smiley_happy": {
-        "message": "Psiphon kết nối và làm việc đúng theo cách tôi muốn.",
-        "description": "The text below the 'happy face' feedback choice. The word 'Psiphon' must not be translated or transliterated."
+        "message": "Sifoon kết nối và làm việc đúng theo cách tôi muốn.",
+        "description": "The text below the 'happy face' feedback choice. The word 'Sifoon' must not be translated or transliterated."
     },
     "feedback#smiley_sad": {
-        "message": "Psiphon thường không kết nối được hay không thực hiện đủ tốt.",
-        "description": "The text below the 'sad face' feedback choice. The word 'Psiphon' must not be translated or transliterated."
+        "message": "Sifoon thường không kết nối được hay không thực hiện đủ tốt.",
+        "description": "The text below the 'sad face' feedback choice. The word 'Sifoon' must not be translated or transliterated."
     },
     "feedback#text_feedback_prompt": {
         "message": "Vui lòng điền góp ý vào đây:",
-        "description": "Label for a text box where the user can provide a feedback message to Psiphon Inc."
+        "description": "Label for a text box where the user can provide a feedback message to Sifoon Inc."
     },
     "feedback#text_feedback_email_prompt": {
         "message": "Nếu bạn muốn chúng tôi hồi đáp cho bạn, xin vui lòng cho địa chỉ email của bạn:",
-        "description": "Label for a text field where the user can provide an email address to Psiphon Inc. along with their feedback."
+        "description": "Label for a text field where the user can provide an email address to Sifoon Inc. along with their feedback."
     },
     "feedback#diagnostic_check": {
-        "message": "Tải dữ liệu chẩn đoán lên. Xin lưu ý là dữ liệu chẩn đoán này không nhận diện bạn và nó sẽ giúp chúng tôi làm Psiphon chạy tốt hơn <a class=\"DataCollectionInfoURL\" href=\"#\">Nhấp vào đây để thấy những dữ liệu mà chúng tôi thu thập</a>",
-        "description": "Checkbox text. If it is checked, diagnostic information about Psiphon's status will be sent along with the feedback to Psiphon Inc. The word 'Psiphon' must not be translated or transliterated."
+        "message": "Tải dữ liệu chẩn đoán lên. Xin lưu ý là dữ liệu chẩn đoán này không nhận diện bạn và nó sẽ giúp chúng tôi làm Sifoon chạy tốt hơn <a class=\"DataCollectionInfoURL\" href=\"#\">Nhấp vào đây để thấy những dữ liệu mà chúng tôi thu thập</a>",
+        "description": "Checkbox text. If it is checked, diagnostic information about Sifoon's status will be sent along with the feedback to Sifoon Inc. The word 'Sifoon' must not be translated or transliterated."
     },
     "feedback#submit_button": {
         "message": "Gửi",
-        "description": "Submit button text. If the user clicks it, their feedback will be sent to Psiphon Inc."
+        "description": "Submit button text. If the user clicks it, their feedback will be sent to Sifoon Inc."
     },
     "feedback#text_feedback_bottom_para": {
         "message": "Nếu mẫu đơn trên không dùng được, hoặc bạn muốn gửi các ảnh chụp màn hình, hãy email cho chúng tôi tại  <a id=\"FeedbackEmailAddress\" href=\"mailto:feedback@psiphon.ca\">feedback@psiphon.ca</a>.",
-        "description": "Message showing the user an email they can use to contact Psiphon Inc."
+        "description": "Message showing the user an email they can use to contact Sifoon Inc."
     },
     "feedback#success-message": {
         "message": "<strong>Cám ơn!</strong> Phản hồi của bạn đã được gửi đi.",
@@ -580,32 +580,32 @@
         "description": "Placeholder text shown when there are not yet any log messages to show. This message is removed when the first log message is added."
     },
     "language#success-message": {
-        "message": "<strong>Xin chào!</strong> Chào mừng bạn đến với Psiphon.",
-        "description": "A welcome message shown to the user when they first switch to the correct UI language. The word 'Psiphon' must not be translated or transliterated."
+        "message": "<strong>Xin chào!</strong> Chào mừng bạn đến với Sifoon.",
+        "description": "A welcome message shown to the user when they first switch to the correct UI language. The word 'Sifoon' must not be translated or transliterated."
     },
     "about#wordart-tag": {
         "message": "Bên Kia Biên Giới",
-        "description": "The application/product/tool tagline/slogan/motto part of the fancy title at the top of the 'About' page. 'Beyond Borders' is the slogan that is also used on the Psiphon website -- it is meant to suggest that Psiphon can help users to get to the internet beyond the border (firewall) of the country they live in. The word 'Psiphon' must not be translated or transliterated."
+        "description": "The application/product/tool tagline/slogan/motto part of the fancy title at the top of the 'About' page. 'Beyond Borders' is the slogan that is also used on the Sifoon website -- it is meant to suggest that Sifoon can help users to get to the internet beyond the border (firewall) of the country they live in. The word 'Sifoon' must not be translated or transliterated."
     },
     "about#description": {
-        "message": "Psiphon là một <strong>công cụ vượt thoát kiểm duyệt </strong> — Được thiết kế để giúp vào mạng Internet mở rộng, vượt qua kiểm duyệt và tường lửa. Psiphon là phần mềm <strong>nguồn mở </strong> và được phát triển tại Toronto, Canada.",
-        "description": "Paragraph on the 'About' page telling users generally what Psiphon is. The word 'Psiphon' must not be translated or transliterated."
+        "message": "Sifoon là một <strong>công cụ vượt thoát kiểm duyệt </strong> — Được thiết kế để giúp vào mạng Internet mở rộng, vượt qua kiểm duyệt và tường lửa. Sifoon là phần mềm <strong>nguồn mở </strong> và được phát triển tại Toronto, Canada.",
+        "description": "Paragraph on the 'About' page telling users generally what Sifoon is. The word 'Sifoon' must not be translated or transliterated."
     },
     "about#visit-download-site": {
-        "message": "Xin vào trang web để <strong><a class=\"NewVersionURL\" href=\"#\">tải xuống phiên bản mới</a></strong> hoặc <strong><a class=\"InfoURL\" href=\"#\">được giúp đỡ và có thông tin</a></strong>. Psiphon có các phiên bản cho hệ Android và Windows.",
-        "description": "Paragraph on the 'About' page telling users what web page to go to get a new version of Psiphon or more info about it. The word 'Psiphon' must not be translated or transliterated."
+        "message": "Xin vào trang web để <strong><a class=\"NewVersionURL\" href=\"#\">tải xuống phiên bản mới</a></strong> hoặc <strong><a class=\"InfoURL\" href=\"#\">được giúp đỡ và có thông tin</a></strong>. Sifoon có các phiên bản cho hệ Android và Windows.",
+        "description": "Paragraph on the 'About' page telling users what web page to go to get a new version of Sifoon or more info about it. The word 'Sifoon' must not be translated or transliterated."
     },
     "about#get-by-email": {
-        "message": "Nếu trang web không truy cập được, bạn có thể nhận phiên bản mới của Psiphon bằng cách gửi email đến:",
-        "description": "Paragraph on the 'About' page telling users that they can also get a new version of Psiphon via email. The text in this resource is then followed by an email address. The word 'Psiphon' must not be translated or transliterated."
+        "message": "Nếu trang web không truy cập được, bạn có thể nhận phiên bản mới của Sifoon bằng cách gửi email đến:",
+        "description": "Paragraph on the 'About' page telling users that they can also get a new version of Sifoon via email. The text in this resource is then followed by an email address. The word 'Sifoon' must not be translated or transliterated."
     },
     "about#license-agree": {
-        "message": "Khi dùng Psiphon bạn mặc nhiên đồng ý với các điều khoản của  <a href=\"https://psiphon.ca/license.html\">Giấy Phép Người Dùng Cuối</a> and <a href=\"https://psiphon.ca/privacy.html\">Chính sách Quyền Riêng Tư</a>.",
-        "description": "Paragraph on the 'About' page telling users that they agreeing to Psiphon's End-User License Agreement and Privacy Policy. The link URLs must not be modified. The word 'Psiphon' must not be translated or transliterated."
+        "message": "Khi dùng Sifoon bạn mặc nhiên đồng ý với các điều khoản của  <a href=\"https://psiphon.ca/license.html\">Giấy Phép Người Dùng Cuối</a> and <a href=\"https://psiphon.ca/privacy.html\">Chính sách Quyền Riêng Tư</a>.",
+        "description": "Paragraph on the 'About' page telling users that they agreeing to Sifoon's End-User License Agreement and Privacy Policy. The link URLs must not be modified. The word 'Sifoon' must not be translated or transliterated."
     },
     "about#client-version": {
-        "message": "Phiên bản trình Psiphon cho Windows:",
-        "description": "Footer on the 'About' page indicating the client version number. This text is the prefix to the actual number. Like: 'Psiphon for Windows client version: 88'. The word 'Psiphon' must not be translated or transliterated."
+        "message": "Phiên bản trình Sifoon cho Windows:",
+        "description": "Footer on the 'About' page indicating the client version number. This text is the prefix to the actual number. Like: 'Sifoon for Windows client version: 88'. The word 'Sifoon' must not be translated or transliterated."
     },
     "general#modal-close-button": {
         "message": "Đóng",
@@ -621,59 +621,59 @@
     },
     "notice#systemproxysettings-setproxy-error-title": {
         "message": "Lỗi Proxy Hệ Thống",
-        "description": "Title of modal error message shown to user when Psiphon fails to set the user's system proxy settings. This means that Psiphon was able to connect, but was unable to configure the system to actually use Psiphon."
+        "description": "Title of modal error message shown to user when Sifoon fails to set the user's system proxy settings. This means that Sifoon was able to connect, but was unable to configure the system to actually use Sifoon."
     },
     "notice#systemproxysettings-setproxy-error-body": {
-        "message": "<p>Psiphon thất bại khi lập các thiết đặt proxy hệ thống.</p>\n<p>Đây có thể vì xung khắc với phần mềm chống vi-rút. Bạn cần cấu hình lại các thiết đặt của ứng dụng hoặc của proxy hệ thống để dùng proxy Psiphon địa phương.</p>",
-        "description": "Body text of modal error message shown to user when Psiphon fails to set the user's system proxy settings. This means that Psiphon was able to connect, but was unable to configure the system to actually use Psiphon. The word 'Psiphon' must not be translated or transliterated."
+        "message": "<p>Sifoon thất bại khi lập các thiết đặt proxy hệ thống.</p>\n<p>Đây có thể vì xung khắc với phần mềm chống vi-rút. Bạn cần cấu hình lại các thiết đặt của ứng dụng hoặc của proxy hệ thống để dùng proxy Sifoon địa phương.</p>",
+        "description": "Body text of modal error message shown to user when Sifoon fails to set the user's system proxy settings. This means that Sifoon was able to connect, but was unable to configure the system to actually use Sifoon. The word 'Sifoon' must not be translated or transliterated."
     },
     "notice#systemproxysettings-setproxy-warning-template": {
-        "message": "Psiphon thất bại khi lập các thiết đặt proxy hệ thống cho đường kết nối internet mang tên “<%- data %>”. Đây có thể vì xung khắc với phần mềm chống vi-rút. Bạn cần cấu hình lại các thiết đặt của ứng dụng hoặc của proxy hệ thống để dùng proxy Psiphon địa phương.",
-        "description": "'<%- data %>' is a placeholder and must not be modified. Log message emitted when Psiphon can't fully configure the system to use Psiphon. It may or may not be a fatal state, and may or may not need human intervention. The word 'Psiphon' must not be translated or transliterated."
+        "message": "Sifoon thất bại khi lập các thiết đặt proxy hệ thống cho đường kết nối internet mang tên “<%- data %>”. Đây có thể vì xung khắc với phần mềm chống vi-rút. Bạn cần cấu hình lại các thiết đặt của ứng dụng hoặc của proxy hệ thống để dùng proxy Sifoon địa phương.",
+        "description": "'<%- data %>' is a placeholder and must not be modified. Log message emitted when Sifoon can't fully configure the system to use Sifoon. It may or may not be a fatal state, and may or may not need human intervention. The word 'Sifoon' must not be translated or transliterated."
     },
     "appbackend#state-stopped-title": {
-        "message": "Psiphon đã ngắt kết nối",
-        "description": "Appears in the notification area balloon when Psiphon is disconnected (or has lost its connection, or has been disconnected). The word 'Psiphon' must not be translated or transliterated."
+        "message": "Sifoon đã ngắt kết nối",
+        "description": "Appears in the notification area balloon when Sifoon is disconnected (or has lost its connection, or has been disconnected). The word 'Sifoon' must not be translated or transliterated."
     },
     "appbackend#state-starting-title": {
-        "message": "Psiphon đang kết nối",
-        "description": "Appears in the notification area balloon when Psiphon is in the process of connecting to a server. The word 'Psiphon' must not be translated or transliterated."
+        "message": "Sifoon đang kết nối",
+        "description": "Appears in the notification area balloon when Sifoon is in the process of connecting to a server. The word 'Sifoon' must not be translated or transliterated."
     },
     "appbackend#state-starting-body": {
         "message": "Xin chờ...",
-        "description": "Appears in the notification area balloon when Psiphon is in the process of connecting to a server. The word 'Psiphon' must not be translated or transliterated."
+        "description": "Appears in the notification area balloon when Sifoon is in the process of connecting to a server. The word 'Sifoon' must not be translated or transliterated."
     },
     "appbackend#state-connected-title": {
-        "message": "Psiphon đã kết nối",
-        "description": "Appears in the notification area balloon when Psiphon is currently connected to a server. Specifically, it appears when the connection has just completed. The word 'Psiphon' must not be translated or transliterated."
+        "message": "Sifoon đã kết nối",
+        "description": "Appears in the notification area balloon when Sifoon is currently connected to a server. Specifically, it appears when the connection has just completed. The word 'Sifoon' must not be translated or transliterated."
     },
     "appbackend#state-connected-body": {
         "message": "Tìm tòi bên kia biên giới!",
-        "description": "Appears in the notification area balloon when Psiphon is currently connected to a server. Specifically, it appears when the connection has just completed. This is intended to be a reference to the 'Psiphon: Beyond Borders' tag line. Note for right-to-left languages: You should not use an exclamation mark, as it won't be displayed correct if shown on a left-to-right operating system."
+        "description": "Appears in the notification area balloon when Sifoon is currently connected to a server. Specifically, it appears when the connection has just completed. This is intended to be a reference to the 'Sifoon: Beyond Borders' tag line. Note for right-to-left languages: You should not use an exclamation mark, as it won't be displayed correct if shown on a left-to-right operating system."
     },
     "appbackend#state-connected-reminder-title": {
-        "message": "Psiphon giúp bạn được kết nối",
-        "description": "Appears in the notification area balloon periodically while Psiphon is connected to a server. The word 'Psiphon' must not be translated or transliterated."
+        "message": "Sifoon giúp bạn được kết nối",
+        "description": "Appears in the notification area balloon periodically while Sifoon is connected to a server. The word 'Sifoon' must not be translated or transliterated."
     },
     "appbackend#state-connected-reminder-body": {
         "message": "Giữ Pisphon miễn phí. Bấm vào đây để thăm trang của các nhà bảo trợ!",
-        "description": "Appears in the notification area balloon periodically while Psiphon is connected to a server. This is intended to encourage the user to visit the sponsor's landing page. Note for right-to-left languages: You should not use an exclamation mark, as it won't be displayed correct if shown on a left-to-right operating system. The word 'Psiphon' must not be translated or transliterated."
+        "description": "Appears in the notification area balloon periodically while Sifoon is connected to a server. This is intended to encourage the user to visit the sponsor's landing page. Note for right-to-left languages: You should not use an exclamation mark, as it won't be displayed correct if shown on a left-to-right operating system. The word 'Sifoon' must not be translated or transliterated."
     },
     "appbackend#state-connected-reminder-body-2": {
         "message": "Giữ Pisphon miễn phí bằng cách vào thăm trang của các nhà bảo trợ!",
-        "description": "Appears in the notification area balloon periodically while Psiphon is connected to a server. This is intended to encourage the user to visit the sponsor's landing page. Note for right-to-left languages: You should not use an exclamation mark, as it won't be displayed correct if shown on a left-to-right operating system. The word 'Psiphon' must not be translated or transliterated."
+        "description": "Appears in the notification area balloon periodically while Sifoon is connected to a server. This is intended to encourage the user to visit the sponsor's landing page. Note for right-to-left languages: You should not use an exclamation mark, as it won't be displayed correct if shown on a left-to-right operating system. The word 'Sifoon' must not be translated or transliterated."
     },
     "appbackend#minimized-to-systray-title": {
-        "message": "Psiphon đã được thu nhỏ vào vùng thông báo",
-        "description": "Appears in the notification area balloon when Psiphon has been minimized to the Windows' notification area (aka 'system tray' aka 'systray', the area of the taskbar with the clock, battery indicator, and other icons). The word 'Psiphon' must not be translated or transliterated."
+        "message": "Sifoon đã được thu nhỏ vào vùng thông báo",
+        "description": "Appears in the notification area balloon when Sifoon has been minimized to the Windows' notification area (aka 'system tray' aka 'systray', the area of the taskbar with the clock, battery indicator, and other icons). The word 'Sifoon' must not be translated or transliterated."
     },
     "appbackend#minimized-to-systray-body": {
         "message": "Bấm vào biểu tượng để phục hồi ứng dụng",
-        "description": "Appears in the notification area balloon when Psiphon has been minimized to the Windows' notification area (aka 'system tray' aka 'systray', the area of the taskbar with the clock, battery indicator, and other icons)."
+        "description": "Appears in the notification area balloon when Sifoon has been minimized to the Windows' notification area (aka 'system tray' aka 'systray', the area of the taskbar with the clock, battery indicator, and other icons)."
     },
     "appbackend#os-unsupported": {
-        "message": "Psiphon only supports Windows 10 and newer.\nPlease visit our website for more information.",
-        "description": "Appears in a message box when Psiphon is run on an unsupported version of Windows. Is followed by a URL."
+        "message": "Sifoon only supports Windows 10 and newer.\nPlease visit our website for more information.",
+        "description": "Appears in a message box when Sifoon is run on an unsupported version of Windows. Is followed by a URL."
     },
     "psicash#transaction-error-title": {
         "message": "Lỗi giao dịch PsiCash",
@@ -741,7 +741,7 @@
     },
     "psicash#ui-speedboost-active": {
         "message": "Tăng&nbsp;Tốc chạy cho %s",
-        "description": "When the user has Speed Boost active, this shows them how much time they have remaining. '%s' is like 'an hour' or '30 minutes' (localized). This text will be shown on a narrow button that should have at most 3 lines. You may use `&nbsp;`, `<br>`, `<wbr>`, `&shy;`, etc. to control word wrap. 'Speed Boost' is a reward that can be purchased with PsiCash credit. It provides unlimited network connection speed through Psiphon. Other words that can be used to help with translation are: 'turbo' (like cars), 'accelerate', 'warp speed', 'blast off', or anything that indicates a fast or unrestricted speed."
+        "description": "When the user has Speed Boost active, this shows them how much time they have remaining. '%s' is like 'an hour' or '30 minutes' (localized). This text will be shown on a narrow button that should have at most 3 lines. You may use `&nbsp;`, `<br>`, `<wbr>`, `&shy;`, etc. to control word wrap. 'Speed Boost' is a reward that can be purchased with PsiCash credit. It provides unlimited network connection speed through Sifoon. Other words that can be used to help with translation are: 'turbo' (like cars), 'accelerate', 'warp speed', 'blast off', or anything that indicates a fast or unrestricted speed."
     },
     "psicash#ui-buypsi": {
         "message": "Mua PsiCash",
@@ -753,11 +753,11 @@
     },
     "psicash#ui-nsfbalance-buttontext": {
         "message": "Cần cho Tăng&nbsp;Tốc",
-        "description": "Label on a disabled button, followed by a value in PsiCash indicating how much it costs to buy an hour of Speed Boost. When the user has enough PsiCash, the button will be enabled and the text will change. You may use `&nbsp;`, `<br>`, `<wbr>`, `&shy;`, etc. to control word wrap. 'Speed Boost' is a reward that can be purchased with PsiCash credit. It provides unlimited network connection speed through Psiphon. Other words that can be used to help with translation are: 'turbo' (like cars), 'accelerate', 'warp speed', 'blast off', or anything that indicates a fast or unrestricted speed."
+        "description": "Label on a disabled button, followed by a value in PsiCash indicating how much it costs to buy an hour of Speed Boost. When the user has enough PsiCash, the button will be enabled and the text will change. You may use `&nbsp;`, `<br>`, `<wbr>`, `&shy;`, etc. to control word wrap. 'Speed Boost' is a reward that can be purchased with PsiCash credit. It provides unlimited network connection speed through Sifoon. Other words that can be used to help with translation are: 'turbo' (like cars), 'accelerate', 'warp speed', 'blast off', or anything that indicates a fast or unrestricted speed."
     },
     "psicash#ui-speedboost-button": {
         "message": "Tăng Tốc",
-        "description": "Label on a button. The text is followed by a value in PsiCash indicating how much it costs to buy an hour of Speed Boost. Clicking the button will buy Speed Boost. 'Speed Boost' is a reward that can be purchased with PsiCash credit. It provides unlimited network connection speed through Psiphon. Other words that can be used to help with translation are: 'turbo' (like cars), 'accelerate', 'warp speed', 'blast off', or anything that indicates a fast or unrestricted speed."
+        "description": "Label on a button. The text is followed by a value in PsiCash indicating how much it costs to buy an hour of Speed Boost. Clicking the button will buy Speed Boost. 'Speed Boost' is a reward that can be purchased with PsiCash credit. It provides unlimited network connection speed through Sifoon. Other words that can be used to help with translation are: 'turbo' (like cars), 'accelerate', 'warp speed', 'blast off', or anything that indicates a fast or unrestricted speed."
     },
     "psicash#1-hour": {
         "message": "1 tiếng",
@@ -777,7 +777,7 @@
     },
     "psicash#ui-buyingboost-buttontext": {
         "message": "Khởi động Tăng&nbsp;Tốc!",
-        "description": "Label for a disabled button. The user has clicked the button in order to buy an hour of Speed Boost, and now the purchase is completing and Speed Boost is activating. You may use `&nbsp;`, `<br>`, `<wbr>`, `&shy;`, etc. to control word wrap. 'Speed Boost' is a reward that can be purchased with PsiCash credit. It provides unlimited network connection speed through Psiphon. Other words that can be used to help with translation are: 'turbo' (like cars), 'accelerate', 'warp speed', 'blast off', or anything that indicates a fast or unrestricted speed."
+        "description": "Label for a disabled button. The user has clicked the button in order to buy an hour of Speed Boost, and now the purchase is completing and Speed Boost is activating. You may use `&nbsp;`, `<br>`, `<wbr>`, `&shy;`, etc. to control word wrap. 'Speed Boost' is a reward that can be purchased with PsiCash credit. It provides unlimited network connection speed through Sifoon. Other words that can be used to help with translation are: 'turbo' (like cars), 'accelerate', 'warp speed', 'blast off', or anything that indicates a fast or unrestricted speed."
     },
     "psicash#pane-create-account": {
         "message": "Tạo tài khoản để bảo vệ tiền PsiCash!",
@@ -800,12 +800,12 @@
         "description": "Text for a link to a web site where users can manage their PsiCash account."
     },
     "psicash#pane-create-account-plea": {
-        "message": "Tạo tài khoản PsiCash sẽ bảo vệ tiền PsiCash của bạn trong trường hợp bạn xóa kho chứa của ứng dụng hoặc dùng Psiphon trên một thiết bị khác. <a href=\"https://psiphon.ca/faq.html#psicash-account\">Tìm hiểu thêm.</a>",
+        "message": "Tạo tài khoản PsiCash sẽ bảo vệ tiền PsiCash của bạn trong trường hợp bạn xóa kho chứa của ứng dụng hoặc dùng Sifoon trên một thiết bị khác. <a href=\"https://psiphon.ca/faq.html#psicash-account\">Tìm hiểu thêm.</a>",
         "description": "Text shown below the PsiCash balance when the user does not have a PsiCash account. 'Learn more' is a link to an FAQ entry explaining the benefits of creating an account. The word 'PsiCash' must not be translated or transliterated."
     },
     "psicash#pane-l2tp-incompatible": {
-        "message": "Tăng Tốc không thể dùng trong lúc Psiphon kết nối dùng <a href=\"#\"> phương thức chuyển tải L2TP/IPSec </a>.",
-        "description": "A message shown when L2TP/IPSec mode is enabled in Psiphon. Speed Boost cannot be used in this mode."
+        "message": "Tăng Tốc không thể dùng trong lúc Sifoon kết nối dùng <a href=\"#\"> phương thức chuyển tải L2TP/IPSec </a>.",
+        "description": "A message shown when L2TP/IPSec mode is enabled in Sifoon. Speed Boost cannot be used in this mode."
     },
     "psicash#pane-must-log-in": {
         "message": "Bạn phải đăng nhập để dùng PsiCash.",
@@ -820,12 +820,12 @@
         "description": "Heading for an information section explaining that there are port and speed restrictions when the user doesn't have Speed Boost active."
     },
     "psicash#pane-speed-port-limits-body": {
-        "message": "Nếu không có Tăng Tốc, tốc độ của bạn bị giới hạn và một số lưu lượng giao thông mạng không được hỗ trợ. Mua Tăng Tốc với tiền PsiCash để có được một trải nghiệm hoàn hảo với Psiphon.",
-        "description": "Body of an information section explaining that there are port and speed restrictions when the user doesn't have Speed Boost active. The word 'PsiCash' must not be translated or transliterated. 'Speed Boost' is a reward that can be purchased with PsiCash credit. It provides unlimited network connection speed through Psiphon. Other words that can be used to help with translation are: 'turbo' (like cars), 'accelerate', 'warp speed', 'blast off', or anything that indicates a fast or unrestricted speed."
+        "message": "Nếu không có Tăng Tốc, tốc độ của bạn bị giới hạn và một số lưu lượng giao thông mạng không được hỗ trợ. Mua Tăng Tốc với tiền PsiCash để có được một trải nghiệm hoàn hảo với Sifoon.",
+        "description": "Body of an information section explaining that there are port and speed restrictions when the user doesn't have Speed Boost active. The word 'PsiCash' must not be translated or transliterated. 'Speed Boost' is a reward that can be purchased with PsiCash credit. It provides unlimited network connection speed through Sifoon. Other words that can be used to help with translation are: 'turbo' (like cars), 'accelerate', 'warp speed', 'blast off', or anything that indicates a fast or unrestricted speed."
     },
     "psicash#pane-speed-boost-cta": {
-        "message": "Đạt được trọn vẹn tiềm năng của Psiphon với Tăng&nbsp;Tốc!",
-        "description": "Text encouraging the user to purchase Speed Boost. 'Unleash' can translated to something like 'unlock', 'release', 'enable', 'amplify', or generally 'make a lot better'. 'Psiphon' must not be translated/transliterated. 'Speed Boost' is a reward that can be purchased with PsiCash credit. It provides unlimited network connection speed through Psiphon. Other words that can be used to help with translation are: 'turbo' (like cars), 'accelerate', 'warp speed', 'blast off', or anything that indicates a fast or unrestricted speed."
+        "message": "Đạt được trọn vẹn tiềm năng của Sifoon với Tăng&nbsp;Tốc!",
+        "description": "Text encouraging the user to purchase Speed Boost. 'Unleash' can translated to something like 'unlock', 'release', 'enable', 'amplify', or generally 'make a lot better'. 'Sifoon' must not be translated/transliterated. 'Speed Boost' is a reward that can be purchased with PsiCash credit. It provides unlimited network connection speed through Sifoon. Other words that can be used to help with translation are: 'turbo' (like cars), 'accelerate', 'warp speed', 'blast off', or anything that indicates a fast or unrestricted speed."
     },
     "psicash#pane-need-more-psicash-header": {
         "message": "Bạn cần thêm PsiCash!",
@@ -833,7 +833,7 @@
     },
     "psicash#pane-need-more-psicash-body": {
         "message": "Để kích hoạt Tăng Tốc, bạn cần mua thêm PsiCash.",
-        "description": "Body of a section telling the user that they don't have enough PsiCash to buy any Speed Boost and need to buy more. The word 'PsiCash' must not be translated or transliterated. 'Speed Boost' is a reward that can be purchased with PsiCash credit. It provides unlimited network connection speed through Psiphon. Other words that can be used to help with translation are: 'turbo' (like cars), 'accelerate', 'warp speed', 'blast off', or anything that indicates a fast or unrestricted speed."
+        "description": "Body of a section telling the user that they don't have enough PsiCash to buy any Speed Boost and need to buy more. The word 'PsiCash' must not be translated or transliterated. 'Speed Boost' is a reward that can be purchased with PsiCash credit. It provides unlimited network connection speed through Sifoon. Other words that can be used to help with translation are: 'turbo' (like cars), 'accelerate', 'warp speed', 'blast off', or anything that indicates a fast or unrestricted speed."
     },
     "psicash#pane-need-psicash-visit-store": {
         "message": "Cần PsiCash? Ghé vào cửa hàng chúng tôi để mua thêm!",
@@ -868,20 +868,20 @@
         "description": "Header of a modal dialog that appears when the user tries to log out of their PsiCash account. The word 'PsiCash' must not be translated or transliterated."
     },
     "psicash#modal-psicash-logout-offline-body": {
-        "message": "Có kết nối vào mạng Psiphon sẽ giúp đăng xuất khỏi PsiCash an toàn hơn. Bạn có muốn kết nối trước khi đăng xuất?",
-        "description": "Body of a modal dialog that appears when the user tries to log out of thier PsiCash account while not currently connected to the Psiphon network. We don't allow PsiCash network requests when not connected, so only an inferior localy-only logout is available. 'Psiphon' must not be translated/transliterated. The word 'PsiCash' must not be translated or transliterated."
+        "message": "Có kết nối vào mạng Sifoon sẽ giúp đăng xuất khỏi PsiCash an toàn hơn. Bạn có muốn kết nối trước khi đăng xuất?",
+        "description": "Body of a modal dialog that appears when the user tries to log out of thier PsiCash account while not currently connected to the Sifoon network. We don't allow PsiCash network requests when not connected, so only an inferior localy-only logout is available. 'Sifoon' must not be translated/transliterated. The word 'PsiCash' must not be translated or transliterated."
     },
     "psicash#modal-psicash-logout-offline-connect-button": {
         "message": "Kết nối",
-        "description": "Button in the modal dialog shown to users when they attempt to log out of their PsiCash account with no active Psiphon tunnel. Clicking this button will abort the logout attempt and being connecting to a Psiphon server."
+        "description": "Button in the modal dialog shown to users when they attempt to log out of their PsiCash account with no active Sifoon tunnel. Clicking this button will abort the logout attempt and being connecting to a Sifoon server."
     },
     "psicash#modal-psicash-logout-offline-logout-anyway-button": {
         "message": "Cứ đăng xuất ",
-        "description": "Button in the modal dialog shown to users when they attempt to log out of their PsiCash account with no active Psiphon tunnel. Clicking this button will cause a local-only logout to be performed."
+        "description": "Button in the modal dialog shown to users when they attempt to log out of their PsiCash account with no active Sifoon tunnel. Clicking this button will cause a local-only logout to be performed."
     },
     "psicash#modal-psicash-logout-offline-cancel-button": {
         "message": "Hủy",
-        "description": "Button in the modal dialog shown to users when they attempt to log out of their PsiCash account with no active Psiphon tunnel. Clicking this button will cancel the attempt."
+        "description": "Button in the modal dialog shown to users when they attempt to log out of their PsiCash account with no active Sifoon tunnel. Clicking this button will cancel the attempt."
     },
     "psicash#modal-login-header": {
         "message": "Tài khoản PsiCash",
@@ -913,7 +913,7 @@
     },
     "psicash#alert#buyspeedboost-purchase-complete": {
         "message": "Tăng Tốc bắt đầu!",
-        "description": "A non-modal alert shown when a new Speed Boost has been activated. 'Speed Boost' is a reward that can be purchased with PsiCash credit. It provides unlimited network connection speed through Psiphon. Other words that can be used to help with translation are: 'turbo' (like cars), 'accelerate', 'warp speed', 'blast off', or anything that indicates a fast or unrestricted speed."
+        "description": "A non-modal alert shown when a new Speed Boost has been activated. 'Speed Boost' is a reward that can be purchased with PsiCash credit. It provides unlimited network connection speed through Sifoon. Other words that can be used to help with translation are: 'turbo' (like cars), 'accelerate', 'warp speed', 'blast off', or anything that indicates a fast or unrestricted speed."
     },
     "psicash#modal-logout-header": {
         "message": "Đăng xuất Tài khoản PsiCash",
@@ -928,12 +928,12 @@
         "description": "This is used to indicate when a numeric value is positive -- like '+500'. This will show when a number is going to be increased by another number. '%d' is a placeholder for an integer for decimal value."
     },
     "psicash#mustconnect-modal#title": {
-        "message": "Cần có Kết nối Psiphon",
-        "description": "Title text of a modal dialog shown when the user tries to use (spend, buy, etc.) PsiCash, if they not currently connected. 'Psiphon' must not be translated/transliterated."
+        "message": "Cần có Kết nối Sifoon",
+        "description": "Title text of a modal dialog shown when the user tries to use (spend, buy, etc.) PsiCash, if they not currently connected. 'Sifoon' must not be translated/transliterated."
     },
     "psicash#mustconnect-modal#body": {
-        "message": "Để dùng PsiCash, bạn phải kết nối vào mạng Psiphon.",
-        "description": "Body text of a modal dialog shown when the user tries to use (spend, buy, etc.) PsiCash, if they not currently connected. 'Use' here means buy, spend, or otherwise interact with. 'Psiphon' must not be translated/transliterated. 'PsiCash' must not be translated/transliterated."
+        "message": "Để dùng PsiCash, bạn phải kết nối vào mạng Sifoon.",
+        "description": "Body text of a modal dialog shown when the user tries to use (spend, buy, etc.) PsiCash, if they not currently connected. 'Use' here means buy, spend, or otherwise interact with. 'Sifoon' must not be translated/transliterated. 'PsiCash' must not be translated/transliterated."
     },
     "psicash#init-error-title": {
         "message": "Có lỗi khởi đầu PsiCash",
@@ -947,13 +947,13 @@
         "message": "PsiCash không khởi đầu được. Có lẻ vì gặp trở ngại với hệ thống tập tin, như hết chỗ chứa. Số dư và các tình trạng khác của bạn đã được làm lại.",
         "description": "Body text of a modal dialog shown when the PsiCash library fails to initialize. The word 'PsiCash' must not be translated or transliterated."
     },
-    "psicash#psiphon-speed": {
-        "message": "Tốc độ<br>Psiphon",
-        "description": "Text on a badge next to an image or gauge that will indicate 'fast' or 'slow'. This is the current Psiphon tunnel speed limit. Speed Boost is required in order to get the fastest speed. The word 'Psiphon' must not be translated or transliterated. The word 'Psiphon' can be dropped if necessary to get a meaning like 'speed limit'. This text must be kept narrow and short -- only two or three lines of one or two words each. Use hard breaks (like <br>) to separate lines (perhaps with hyphens), and soft break indicators (like &shy; or <wbr> or &#8203;) to indicate were long words can be broken."
+    "psicash#sifoon-speed": {
+        "message": "Tốc độ<br>Sifoon",
+        "description": "Text on a badge next to an image or gauge that will indicate 'fast' or 'slow'. This is the current Sifoon tunnel speed limit. Speed Boost is required in order to get the fastest speed. The word 'Sifoon' must not be translated or transliterated. The word 'Sifoon' can be dropped if necessary to get a meaning like 'speed limit'. This text must be kept narrow and short -- only two or three lines of one or two words each. Use hard breaks (like <br>) to separate lines (perhaps with hyphens), and soft break indicators (like &shy; or <wbr> or &#8203;) to indicate were long words can be broken."
     },
-    "psicash#psiphon-speed-nobreak": {
-        "message": "Tốc độ Psiphon",
-        "description": "Text on a badge next to an image or gauge that will indicate 'fast' or 'slow'. This is the current Psiphon tunnel speed limit. Speed Boost is required in order to get the fastest speed. The word 'Psiphon' must not be translated or transliterated. The word 'Psiphon' can be dropped if necessary to get a meaning like 'speed limit'. This text must be kept short."
+    "psicash#sifoon-speed-nobreak": {
+        "message": "Tốc độ Sifoon",
+        "description": "Text on a badge next to an image or gauge that will indicate 'fast' or 'slow'. This is the current Sifoon tunnel speed limit. Speed Boost is required in order to get the fastest speed. The word 'Sifoon' must not be translated or transliterated. The word 'Sifoon' can be dropped if necessary to get a meaning like 'speed limit'. This text must be kept short."
     },
     "psicash#corner-logged-out": {
         "message": "Bạn đã đăng xuất khỏi PsiCash",
@@ -1004,20 +1004,20 @@
         "description": "An alert shown when the user logs out of their PsiCash account. The word 'PsiCash' must not be translated or transliterated."
     },
     "notice#disallowed-traffic-alert-title": {
-        "message": "Nâng cấp kết nối Psiphon",
-        "description": "Title of modal error message shown to user when Psiphon disallows some non-web internet traffic. The user will be told to 'upgrade' their connection with Speed Boost (giving more speed and app compatibility). The word 'Psiphon' must not be translated or transliterated."
+        "message": "Nâng cấp kết nối Sifoon",
+        "description": "Title of modal error message shown to user when Sifoon disallows some non-web internet traffic. The user will be told to 'upgrade' their connection with Speed Boost (giving more speed and app compatibility). The word 'Sifoon' must not be translated or transliterated."
     },
     "notice#disallowed-traffic-alert-body": {
-        "message": "<p>Ứng dụng không chạy được?</p>\n<p>Một số giao thông internet không được hỗ trợ nếu không có Tăng Tốc chạy. Kích hoạt chức năng Tăng Tốc bằng PsiCash để được trải nghiệm toàn diện của Psiphon.</p>",
-        "description": "Body text of modal error message shown to user when Psiphon disallows some non-web internet traffic. The user needs to purchase Speed Boost in order to full app compatibilty and more speed. The words 'Psiphon' and 'PsiCash' must not be translated or transliterated. 'Speed Boost' is a reward that can be purchased with PsiCash credit. It provides unlimited network connection speed through Psiphon. Other words that can be used to help with translation are: 'turbo' (like cars), 'accelerate', 'warp speed', 'blast off', or anything that indicates a fast or unrestricted speed."
+        "message": "<p>Ứng dụng không chạy được?</p>\n<p>Một số giao thông internet không được hỗ trợ nếu không có Tăng Tốc chạy. Kích hoạt chức năng Tăng Tốc bằng PsiCash để được trải nghiệm toàn diện của Sifoon.</p>",
+        "description": "Body text of modal error message shown to user when Sifoon disallows some non-web internet traffic. The user needs to purchase Speed Boost in order to full app compatibilty and more speed. The words 'Sifoon' and 'PsiCash' must not be translated or transliterated. 'Speed Boost' is a reward that can be purchased with PsiCash credit. It provides unlimited network connection speed through Sifoon. Other words that can be used to help with translation are: 'turbo' (like cars), 'accelerate', 'warp speed', 'blast off', or anything that indicates a fast or unrestricted speed."
     },
     "appbackend#disallowed-traffic-notification-title": {
         "message": "Ứng dụng không chạy?",
-        "description": "Appears in the notification area balloon when Psiphon disallows some non-web internet traffic. The user needs to purchase Speed Boost in order to full app compatibilty and more speed."
+        "description": "Appears in the notification area balloon when Sifoon disallows some non-web internet traffic. The user needs to purchase Speed Boost in order to full app compatibilty and more speed."
     },
     "appbackend#disallowed-traffic-notification-body": {
-        "message": "Kích hoạt chức năng Tăng Tốc để được trải nghiệm toàn diện của Psiphon.",
-        "description": "Appears in the notification area balloon when Psiphon disallows some non-web internet traffic. The user needs to purchase Speed Boost in order to full app compatibilty and more speed. 'Speed Boost' is a reward that can be purchased with PsiCash credit. It provides unlimited network connection speed through Psiphon. Other words that can be used to help with translation are: 'turbo' (like cars), 'accelerate', 'warp speed', 'blast off', or anything that indicates a fast or unrestricted speed."
+        "message": "Kích hoạt chức năng Tăng Tốc để được trải nghiệm toàn diện của Sifoon.",
+        "description": "Appears in the notification area balloon when Sifoon disallows some non-web internet traffic. The user needs to purchase Speed Boost in order to full app compatibilty and more speed. 'Speed Boost' is a reward that can be purchased with PsiCash credit. It provides unlimited network connection speed through Sifoon. Other words that can be used to help with translation are: 'turbo' (like cars), 'accelerate', 'warp speed', 'blast off', or anything that indicates a fast or unrestricted speed."
     },
     "settings#disallowed-traffic-alert#heading": {
         "message": "Cảnh báo Giao thông Không được phép",
@@ -1025,7 +1025,7 @@
     },
     "settings#disallowed-traffic-alert#help-text": {
         "message": "Một số loại giao thông internet không được hỗ trợ nếu không có Tăng Tốc chạy. Khi loại giao thông đó không được phép, sẽ thấy cảnh báo. (Nếu cho phép lại sẽ phải kết nối lại.)",
-        "description": "Text explaining to the user what the 'Disallowed Traffic Alert' setting does if enabled. 'Speed Boost' is a reward that can be purchased with PsiCash credit. It provides unlimited network connection speed through Psiphon. Other words that can be used to help with translation are: 'turbo' (like cars), 'accelerate', 'warp speed', 'blast off', or anything that indicates a fast or unrestricted speed."
+        "description": "Text explaining to the user what the 'Disallowed Traffic Alert' setting does if enabled. 'Speed Boost' is a reward that can be purchased with PsiCash credit. It provides unlimited network connection speed through Sifoon. Other words that can be used to help with translation are: 'turbo' (like cars), 'accelerate', 'warp speed', 'blast off', or anything that indicates a fast or unrestricted speed."
     },
     "settings#disallowed-traffic-alert#disable-label": {
         "message": "Tắt cảnh báo giao thông không được phép",
@@ -1033,19 +1033,19 @@
     },
     "ui#alert#url-copied-to-clipboard": {
         "message": "URL được sao chép vào bảng ghi tạm.<br>Nếu trình duyệt không mở được, dán URL vào thanh địa chỉ của trình duyệt.",
-        "description": "Sometimes when the Psiphon UI tries to open an external URL in the browser, it fails to open. This message indicates to the user that URL has been copied to the Windows system clipboard and is available for pasting into a browser. `<br>` may be used to split the message over two lines to ensure the alert doesn't take too much horizontal space."
+        "description": "Sometimes when the Sifoon UI tries to open an external URL in the browser, it fails to open. This message indicates to the user that URL has been copied to the Windows system clipboard and is available for pasting into a browser. `<br>` may be used to split the message over two lines to ensure the alert doesn't take too much horizontal space."
     },
-    "notice#psiphonui-fileerror-error-title": {
+    "notice#sifoonui-fileerror-error-title": {
         "message": "Lỗi Truy cập Tập tin",
-        "description": "Title of modal error message shown to user when Psiphon cannot read/write/delete a file that it needs to access in order to function properly."
+        "description": "Title of modal error message shown to user when Sifoon cannot read/write/delete a file that it needs to access in order to function properly."
     },
-    "notice#psiphonui-fileerror-error-body": {
-        "message": "<p>Psiphon không thể truy cập một tập tin cần có để chạy cho đúng đắn.</p>\n<p>Đóng ứng dụng Psiphon lại, xóa các tập tin liệt kê sau đây, và thử chạy Psiphon lại.</p>",
-        "description": "Body text of modal error message shown to user when Psiphon cannot read/write/delete a file that it needs to access in order to function properly. If this occurs, the user cannot connect and must take manual action to fix it. The word 'Psiphon' must not be translated or transliterated."
+    "notice#sifoonui-fileerror-error-body": {
+        "message": "<p>Sifoon không thể truy cập một tập tin cần có để chạy cho đúng đắn.</p>\n<p>Đóng ứng dụng Sifoon lại, xóa các tập tin liệt kê sau đây, và thử chạy Sifoon lại.</p>",
+        "description": "Body text of modal error message shown to user when Sifoon cannot read/write/delete a file that it needs to access in order to function properly. If this occurs, the user cannot connect and must take manual action to fix it. The word 'Sifoon' must not be translated or transliterated."
     },
-    "notice#psiphonui-fileerror-detail-preamble": {
+    "notice#sifoonui-fileerror-detail-preamble": {
         "message": "Tên tập tin và thông tin lỗi:",
-        "description": "Preamble text before technical details displayed in a modal error message shown to user when Psiphon cannot read/write/delete a file that it needs to access in order to function properly."
+        "description": "Preamble text before technical details displayed in a modal error message shown to user when Sifoon cannot read/write/delete a file that it needs to access in order to function properly."
     },
     "banner#sponsored-by": {
         "message": "Được tài trợ bởi",

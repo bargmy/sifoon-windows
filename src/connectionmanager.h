@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2011, Psiphon Inc.
+ * Copyright (c) 2011, Sifoon Inc.
  * All rights reserved.
  *
  * This program is free software: you can redistribute it and/or modify
@@ -63,20 +63,20 @@ public:
     /**
     Returns true when the VPN transport is connected and all system traffic
     is being tunneled through it, rather than only traffic routed through the
-    local Psiphon proxy; otherwise returns false. In other words, when the
+    local Sifoon proxy; otherwise returns false. In other words, when the
     selected transport is connected: returns true if the transport is the VPN
     transport (VPNTransport), and returns false if the transport is the
-    Psiphon Tunnel Core transport (CoreTransport); otherwise returns false.
+    Sifoon Tunnel Core transport (CoreTransport); otherwise returns false.
     */
     bool IsWholeSystemTunneled() const;
 
     /**
     Returns true when the selected transport has been started and it tunnels
     all system traffic, rather than only traffic routed through the local
-    Psiphon proxy; otherwise returns false. In other words, when
+    Sifoon proxy; otherwise returns false. In other words, when
     the selected transport has been started: returns true if the transport is
     the VPN transport (VPNTransport), and returns false if the transport is the
-    Psiphon Tunnel Core transport (CoreTransport); otherwise returns false.
+    Sifoon Tunnel Core transport (CoreTransport); otherwise returns false.
     */
     bool VPNModeStarted() const;
 
@@ -97,8 +97,8 @@ public:
         const std::vector<std::string>& activeIDs,
         const std::vector<std::string>& inactiveIDs) override;
 
-    // Results in WM_PSIPHON_FEEDBACK_SUCCESS being posted to the main window
-    // on success, WM_PSIPHON_FEEDBACK_FAILED on failure.
+    // Results in WM_SIFOON_FEEDBACK_SUCCESS being posted to the main window
+    // on success, WM_SIFOON_FEEDBACK_FAILED on failure.
     void SendFeedback(const string& utf8FeedbackJSON);
 
 private:

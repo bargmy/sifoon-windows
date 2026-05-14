@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018, Psiphon Inc.
+ * Copyright (c) 2018, Sifoon Inc.
  * All rights reserved.
  *
  * This program is free software: you can redistribute it and/or modify
@@ -248,7 +248,7 @@ public:
     error::Result<Purchases> ExpirePurchases();
 
     /// Force removal of purchases with the given transaction IDs.
-    /// This is to be called when the Psiphon server indicates that a purchase has
+    /// This is to be called when the Sifoon server indicates that a purchase has
     /// expired (even if the local clock hasn't yet indicated it).
     /// Returns the removed purchases.
     /// No error results if some or all of the transaction IDs are not found.
@@ -283,7 +283,7 @@ public:
     /// serialization problem, but that's very improbable.)
     /// So, the library user may want to call this _before_ showing the rewarded
     /// activity, to perhaps decide _not_ to show that activity. An exception may be
-    /// if the Psiphon connection attempt and subsequent RefreshClientState may
+    /// if the Sifoon connection attempt and subsequent RefreshClientState may
     /// occur _during_ the rewarded activity, so an earner token may be obtained
     /// before it's complete.
     error::Result<std::string> GetRewardedActivityData() const;

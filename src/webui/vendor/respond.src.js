@@ -42,12 +42,12 @@
       return xmlhttpmethod;
     };
   }(), ajax = function(url, callback) {
-    // PSIPHON
+    // SIFOON
     var dataUrlStart = 'data:text/css;base64,', dataUrlIndex = url.indexOf(dataUrlStart);
     if (dataUrlIndex >= 0) {
       return callback(base64.decode(url.slice(dataUrlIndex+dataUrlStart.length)));
     }
-    // /PSIPHON
+    // /SIFOON
 
     var req = xmlHttp();
     if (!req) {
@@ -150,10 +150,10 @@
         var ss = doc.createElement("style"), css = styleBlocks[k].join("\n");
         ss.type = "text/css";
         ss.media = k;
-        // PSIPHON
+        // SIFOON
         //head.insertBefore(ss, lastLink.nextSibling);
         head.insertBefore(ss, lastLink ? lastLink.nextSibling : head.lastChild);
-        // /PSIPHON
+        // /SIFOON
         if (ss.styleSheet) {
           ss.styleSheet.cssText = css;
         } else {
@@ -233,14 +233,14 @@
     }
     makeRequests();
 
-    // PSIPHON
+    // SIFOON
     for (var i = 0; i < doc.styleSheets.length; i++) {
       var sheet = doc.styleSheets[i];
       if (sheet.href) continue;
         var rawCss = sheet.rawCssText || sheet.cssText;
         translate(rawCss, "", "");
     }
-    // /PSIPHON
+    // /SIFOON
   };
   ripCSS();
   respond.update = ripCSS;

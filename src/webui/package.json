@@ -1,5 +1,5 @@
 {
-  "name": "psiphon-windows-ui",
+  "name": "sifoon-windows-ui",
   "private": true,
   "dependencies": {
     "grunt": "^1.0.4",

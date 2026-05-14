@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2012, Psiphon Inc.
+ * Copyright (c) 2012, Sifoon Inc.
  * All rights reserved.
  *
  * This program is free software: you can redistribute it and/or modify
@@ -43,9 +43,9 @@ bool DirectoryExists(LPCTSTR szPath);
 // If `pathSuffixes` is non-empty, they will be appended to the base data dir.
 // If `ensureExists` is true, the directory hierarchy will be created. (The base data
 // dir with no suffixes is always created.)
-bool GetPsiphonDataPath(const vector<tstring>& pathSuffixes, bool ensureExists, tstring& o_path);
+bool GetSifoonDataPath(const vector<tstring>& pathSuffixes, bool ensureExists, tstring& o_path);
 
-/// Returns the system temp path to be used for Psiphon files.
+/// Returns the system temp path to be used for Sifoon files.
 bool GetSysTempPath(filesystem::path& o_path);
 
 /// Makes an absolute path to a unique temp directory. The directory is created.
@@ -168,12 +168,12 @@ void SetUiLocale(const wstring& uiLocale);
 // running in. Returns ISO 3166-1 alpha-2 format.
 wstring GetDeviceRegion();
 
-/// Returns true if the current Windows version is unsupported by the Psiphon client.
+/// Returns true if the current Windows version is unsupported by the Sifoon client.
 /// In this case will not and cannot function and the user should be told.
 bool IsOSUnsupported();
 
 /// Returns true if the current Windows version is considered "legacy". This means that
-/// the Psiphon client will run on it, but future versions will not -- i.e., version
+/// the Sifoon client will run on it, but future versions will not -- i.e., version
 /// upgrades must be disabled.
 bool IsOSLegacy();
 

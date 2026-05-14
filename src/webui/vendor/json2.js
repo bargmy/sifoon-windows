@@ -6,7 +6,7 @@
 //  USE YOUR OWN COPY. IT IS EXTREMELY UNWISE TO LOAD CODE FROM SERVERS YOU DO
 //  NOT CONTROL.
 
-// PSIPHON: This file has been modified to patch any existing JSON functions _unconditionally_.
+// SIFOON: This file has been modified to patch any existing JSON functions _unconditionally_.
 // This is because IE8's JSON.stringify does not behave the way we want it to, so we want
 // it to e replaced by JSON2's stringify.
 
@@ -385,7 +385,7 @@ if (typeof JSON !== "object") {
 
 // If the JSON object does not yet have a stringify method, give it one.
 
-  // PSIPHON
+  // SIFOON
   if (true) {
   //if (typeof JSON.stringify !== "function") {
       meta = {    // table of character substitutions
@@ -444,7 +444,7 @@ if (typeof JSON !== "object") {
 
 // If the JSON object does not yet have a parse method, give it one.
 
-  // PSIPHON
+  // SIFOON
   //if (typeof JSON.parse !== "function") {
   if (true) {
       JSON.parse = function (text, reviver) {

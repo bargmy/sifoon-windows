@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2020, Psiphon Inc.
+* Copyright (c) 2020, Sifoon Inc.
 * All rights reserved.
 *
 * This program is free software: you can redistribute it and/or modify
@@ -28,7 +28,7 @@
 #include "embeddedvalues.h"
 #include "logging.h"
 #include "psiclient.h"
-#include "psiphon_tunnel_core_utilities.h"
+#include "sifoon_tunnel_core_utilities.h"
 #include "sessioninfo.h"
 #include "systemproxysettings.h"
 #include "utilities.h"
@@ -107,7 +107,7 @@ FeedbackUpload::~FeedbackUpload()
 
 bool FeedbackUpload::Cleanup()
 {
-    m_psiphonTunnelCore = nullptr;
+    m_sifoonTunnelCore = nullptr;
     return true;
 }
 
@@ -177,7 +177,7 @@ bool FeedbackUpload::SpawnFeedbackUploadProcess(const tstring& configFilename, c
                 return false;
             }
 
-            exePath = tempPath / "psiphon-feedback.exe";
+            exePath = tempPath / "sifoon-feedback.exe";
         }
         else {
             if (!GetUniqueTempFilename(_T(".exe"), exePath, i)) {
@@ -187,7 +187,7 @@ bool FeedbackUpload::SpawnFeedbackUploadProcess(const tstring& configFilename, c
             }
         }
 
-        if (!ExtractExecutable(IDR_PSIPHON_TUNNEL_CORE_EXE, exePath))
+        if (!ExtractExecutable(IDR_SIFOON_TUNNEL_CORE_EXE, exePath))
         {
             my_print(NOT_SENSITIVE, true, _T("%s:%d - ExtractExecutable failed: %d"), __TFUNCTION__, __LINE__, GetLastError());
 
@@ -199,10 +199,10 @@ bool FeedbackUpload::SpawnFeedbackUploadProcess(const tstring& configFilename, c
         tstringstream commandLineFlags;
         commandLineFlags << _T(" --config \"") << configFilename << _T("\" --feedbackUpload");
 
-        m_psiphonTunnelCore = make_unique<PsiphonTunnelCore>(this, exePath);
-        if (!m_psiphonTunnelCore->SpawnSubprocess(commandLineFlags.str())) {
+        m_sifoonTunnelCore = make_unique<SifoonTunnelCore>(this, exePath);
+        if (!m_sifoonTunnelCore->SpawnSubprocess(commandLineFlags.str())) {
             my_print(NOT_SENSITIVE, false, _T("%s:%d - SpawnSubprocess failed"), __TFUNCTION__, __LINE__);
-            // The PsiphonTunnelCore (Subprocess) destructor will clean up the executable file
+            // The SifoonTunnelCore (Subprocess) destructor will clean up the executable file
             continue;
         }
 
@@ -212,7 +212,7 @@ bool FeedbackUpload::SpawnFeedbackUploadProcess(const tstring& configFilename, c
 
     if (!startSuccess) {
         if (!fileErrorDetail.empty()) {
-            UI_Notice("PsiphonUI::FileError", fileErrorDetail);
+            UI_Notice("SifoonUI::FileError", fileErrorDetail);
         }
 
         my_print(NOT_SENSITIVE, true, _T("%s:%d - process spawning failed utterly: %d"), __TFUNCTION__, __LINE__, GetLastError());
@@ -224,7 +224,7 @@ bool FeedbackUpload::SpawnFeedbackUploadProcess(const tstring& configFilename, c
     DWORD totalNumWritten = 0;
     while (totalNumWritten < diagnosticData.length()) {
         DWORD numWritten = 0;
-        if (!WriteFile(m_psiphonTunnelCore->ParentInputPipe(), diagnosticData.c_str(), diagnosticData.length(), &numWritten, NULL)) {
+        if (!WriteFile(m_sifoonTunnelCore->ParentInputPipe(), diagnosticData.c_str(), diagnosticData.length(), &numWritten, NULL)) {
             my_print(NOT_SENSITIVE, false, _T("%s - failed to write diagnostic data to subprocess stdin (%d)"), __TFUNCTION__, GetLastError());
             return false;
         }
@@ -235,7 +235,7 @@ bool FeedbackUpload::SpawnFeedbackUploadProcess(const tstring& configFilename, c
         totalNumWritten += numWritten;
     }
 
-    if (!m_psiphonTunnelCore->CloseInputPipes()) {
+    if (!m_sifoonTunnelCore->CloseInputPipes()) {
         my_print(NOT_SENSITIVE, false, _T("%s - failed to close input pipes"), __TFUNCTION__);
         return false;
     }
@@ -255,24 +255,24 @@ bool FeedbackUpload::DoPeriodicCheck()
     // Check if the subprocess is still running, and consume any buffered output
 
     try {
-        DWORD status = m_psiphonTunnelCore->Status();
+        DWORD status = m_sifoonTunnelCore->Status();
         if (status == SUBPROCESS_STATUS_RUNNING) {
             if (m_stopInfo.stopSignal->CheckSignal(m_stopInfo.stopReasons))
             {
                 throw Abort();
             }
 
-            m_psiphonTunnelCore->ConsumeSubprocessOutput();
+            m_sifoonTunnelCore->ConsumeSubprocessOutput();
 
             return true;
         }
         else if (status == SUBPROCESS_STATUS_EXITED) {
             // The process has signalled -- which implies that it has died.
             // Consume any final output.
-            m_psiphonTunnelCore->ConsumeSubprocessOutput();
+            m_sifoonTunnelCore->ConsumeSubprocessOutput();
 
             DWORD exitCode;
-            if (!GetExitCodeProcess(m_psiphonTunnelCore->Process(), &exitCode)) {
+            if (!GetExitCodeProcess(m_sifoonTunnelCore->Process(), &exitCode)) {
                 my_print(NOT_SENSITIVE, false, _T("%s - GetExitCodeProcess failed (%d)"), __TFUNCTION__, GetLastError());
                 m_uploadStatus = FEEDBACK_UPLOAD_STATUS_ERROR;
                 return false;
@@ -307,7 +307,7 @@ bool FeedbackUpload::DoPeriodicCheck()
 }
 
 
-void FeedbackUpload::HandlePsiphonTunnelCoreNotice(const string& noticeType, const string& timestamp, const Json::Value& data)
+void FeedbackUpload::HandleSifoonTunnelCoreNotice(const string& noticeType, const string& timestamp, const Json::Value& data)
 {
 }
 

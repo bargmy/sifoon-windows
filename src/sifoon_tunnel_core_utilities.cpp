@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020, Psiphon Inc.
+ * Copyright (c) 2020, Sifoon Inc.
  * All rights reserved.
  *
  * This program is free software: you can redistribute it and/or modify
@@ -32,10 +32,10 @@
 #include "embeddedvalues.h"
 #include "utilities.h"
 #include "authenticated_data_package.h"
-#include "psiphon_tunnel_core_utilities.h"
+#include "sifoon_tunnel_core_utilities.h"
 
 
-#define UPGRADE_EXE_NAME                     _T("psiphon3.exe.upgrade")
+#define UPGRADE_EXE_NAME                     _T("sifoon3.exe.upgrade")
 
 string GetUpstreamProxyAddress()
 {
@@ -65,8 +65,8 @@ string GetUpstreamProxyAddress()
 bool WriteParameterFiles(const WriteParameterFilesIn& in, WriteParameterFilesOut& out)
 {
     tstring dataStoreDirectory;
-    if (!GetPsiphonDataPath({}, true, dataStoreDirectory)) {
-        my_print(NOT_SENSITIVE, false, _T("%s - GetPsiphonDataPath failed for dataStoreDirectory (%d)"), __TFUNCTION__, GetLastError());
+    if (!GetSifoonDataPath({}, true, dataStoreDirectory)) {
+        my_print(NOT_SENSITIVE, false, _T("%s - GetSifoonDataPath failed for dataStoreDirectory (%d)"), __TFUNCTION__, GetLastError());
         return false;
     }
 
@@ -100,7 +100,7 @@ bool WriteParameterFiles(const WriteParameterFilesIn& in, WriteParameterFilesOut
 
     // Don't use an upstream proxy when in VPN mode. If the proxy is on a private network,
     // we may not be able to route to it. If the proxy is on a public network we prefer not
-    // to use it for Psiphon requests (this assumes that this core transport has been created
+    // to use it for Sifoon requests (this assumes that this core transport has been created
     // as a temp tunnel or url proxy facilitator, since some underlying transport is already
     // providing whole system tunneling).
     if (!g_connectionManager.IsWholeSystemTunneled())
@@ -220,14 +220,14 @@ bool WriteParameterFiles(const WriteParameterFilesIn& in, WriteParameterFilesOut
         config["MigrateRemoteServerListDownloadFilename"] = WStringToUTF8(remoteServerListFilename.wstring());
 
         tstring oslDownloadDirectory;
-        if (GetPsiphonDataPath({ _T("osl") }, false, oslDownloadDirectory)) {
+        if (GetSifoonDataPath({ _T("osl") }, false, oslDownloadDirectory)) {
             config["MigrateObfuscatedServerListDownloadDirectory"] = WStringToUTF8(oslDownloadDirectory);
         }
 
         out.oldClientUpgradeFilename = filesystem::path(shortDataStoreDirectory).append(UPGRADE_EXE_NAME);
 
         config["MigrateUpgradeDownloadFilename"] = WStringToUTF8(out.oldClientUpgradeFilename);
-        config["UpgradeDownloadClientVersionHeader"] = string("x-amz-meta-psiphon-client-version");
+        config["UpgradeDownloadClientVersionHeader"] = string("x-amz-meta-sifoon-client-version");
         config["UpgradeDownloadURLs"] = LoadJSONArray(UPGRADE_URLS_JSON);
 
         // We do not want to upgrade if we're running on a legacy version of Windows.
@@ -242,10 +242,10 @@ bool WriteParameterFiles(const WriteParameterFilesIn& in, WriteParameterFilesOut
         }
 
         // Newer versions of tunnel-core download the upgrade file to its own data directory. Both oldClientUpgradeFilename and
-        // newClientUpgradeFilename should be deleted when Psiphon starts if they exist.
+        // newClientUpgradeFilename should be deleted when Sifoon starts if they exist.
         // TODO: when we switch to using tunnel-core as a library instead of a subprocess then we can call UpgradeDownloadFilePath()
         // rather than constructing the path here.
-        out.newClientUpgradeFilename = filesystem::path(shortDataStoreDirectory).append(_T("ca.psiphon.PsiphonTunnel.tunnel-core")).append(_T("upgrade"));
+        out.newClientUpgradeFilename = filesystem::path(shortDataStoreDirectory).append(_T("ca.sifoon.SifoonTunnel.tunnel-core")).append(_T("upgrade"));
     }
 
     ostringstream configDataStream;

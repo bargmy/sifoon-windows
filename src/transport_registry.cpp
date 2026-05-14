@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2015, Psiphon Inc.
+ * Copyright (c) 2015, Sifoon Inc.
  * All rights reserved.
  *
  * This program is free software: you can redistribute it and/or modify
@@ -92,7 +92,7 @@ void TransportRegistry::AddServerEntries(
                             const ServerEntry* serverEntry)
 {
     tstringstream results;
-    results << _T("Discovered new Psiphon servers: ");
+    results << _T("Discovered new Sifoon servers: ");
 
     bool discovered = false;
 

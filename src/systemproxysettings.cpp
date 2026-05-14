@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2013, Psiphon Inc.
+ * Copyright (c) 2013, Sifoon Inc.
  * All rights reserved.
  *
  * This program is free software: you can redistribute it and/or modify
@@ -57,8 +57,8 @@ static const TCHAR* SYSTEM_PROXY_SETTINGS_PROXY_BYPASS = _T("<local>;"
 bool GetCurrentSystemConnectionsProxyInfo(vector<ConnectionProxy>& o_proxyInfo);
 bool GetCurrentSystemConnectionProxy(tstring connectionName, ConnectionProxy& o_proxyInfo);
 bool SetCurrentSystemConnectionsProxy(const vector<ConnectionProxy>& connectionsProxies);
-void SetPsiphonProxyForConnections(vector<ConnectionProxy>& io_connectionsProxies,
-                                   const tstring& psiphonProxyAddress);
+void SetSifoonProxyForConnections(vector<ConnectionProxy>& io_connectionsProxies,
+                                   const tstring& sifoonProxyAddress);
 void ClearRegistryProxyInfo(const char* regKey);
 void ReadRegistryProxyInfo(const char* regKey, vector<ConnectionProxy>& o_proxyInfo);
 void WriteRegistryProxyInfo(const char* regKey, const vector<ConnectionProxy>& proxyInfo);
@@ -120,8 +120,8 @@ bool SystemProxySettings::Apply(bool allowedToSkipProxySettings)
 
     assert(!m_settingsApplied);
 
-    tstring psiphonProxyAddress = MakeProxySettingString();
-    if(psiphonProxyAddress.length() == 0)
+    tstring sifoonProxyAddress = MakeProxySettingString();
+    if(sifoonProxyAddress.length() == 0)
     {
         return false;
     }
@@ -132,8 +132,8 @@ bool SystemProxySettings::Apply(bool allowedToSkipProxySettings)
         return false;
     }
 
-    SetPsiphonProxyForConnections(proxyInfo, psiphonProxyAddress);
-    WriteRegistryProxyInfo(LOCAL_SETTINGS_REGISTRY_VALUE_PSIPHON_PROXY_INFO, proxyInfo);
+    SetSifoonProxyForConnections(proxyInfo, sifoonProxyAddress);
+    WriteRegistryProxyInfo(LOCAL_SETTINGS_REGISTRY_VALUE_SIFOON_PROXY_INFO, proxyInfo);
 
     if (allowedToSkipProxySettings && Settings::SkipProxySettings())
     {
@@ -185,7 +185,7 @@ bool SystemProxySettings::Revert()
 
     if (!m_settingsApplied)
     {
-        ClearRegistryProxyInfo(LOCAL_SETTINGS_REGISTRY_VALUE_PSIPHON_PROXY_INFO);
+        ClearRegistryProxyInfo(LOCAL_SETTINGS_REGISTRY_VALUE_SIFOON_PROXY_INFO);
         return true;
     }
 
@@ -200,7 +200,7 @@ bool SystemProxySettings::Revert()
         // Only clear this if we successfully restored the original System Proxy Settings,
         // since this is used to determine on subsequent runs whether to restore original System
         // Proxy Settings first.
-        ClearRegistryProxyInfo(LOCAL_SETTINGS_REGISTRY_VALUE_PSIPHON_PROXY_INFO);
+        ClearRegistryProxyInfo(LOCAL_SETTINGS_REGISTRY_VALUE_SIFOON_PROXY_INFO);
     }
 
     return success;
@@ -218,7 +218,7 @@ bool SystemProxySettings::IsApplied() const
 *
 
 Terminology:
-    native: the system proxy settings before Psiphon runs
+    native: the system proxy settings before Sifoon runs
     default: the default connection (there might be a lot of system connections with different proxies)
 
 **********************************************************/
@@ -453,8 +453,8 @@ bool GetCurrentSystemConnectionsProxyInfo(vector<ConnectionProxy>& o_proxyInfo)
 }
 
 
-void SetPsiphonProxyForConnections(vector<ConnectionProxy>& io_connectionsProxies,
-                                   const tstring& psiphonProxyAddress)
+void SetSifoonProxyForConnections(vector<ConnectionProxy>& io_connectionsProxies,
+                                   const tstring& sifoonProxyAddress)
 {
     for (vector<ConnectionProxy>::iterator ii = io_connectionsProxies.begin();
          ii != io_connectionsProxies.end();
@@ -462,7 +462,7 @@ void SetPsiphonProxyForConnections(vector<ConnectionProxy>& io_connectionsProxie
     {
         // These are the new proxy settings we want to use
         ii->flags = PROXY_TYPE_PROXY;
-        ii->proxy = psiphonProxyAddress;
+        ii->proxy = sifoonProxyAddress;
         ii->bypass = SYSTEM_PROXY_SETTINGS_PROXY_BYPASS;
     }
 }
@@ -498,7 +498,7 @@ ProxyConfig GetNativeDefaultProxyConfig()
 ProxyConfig GetTunneledDefaultProxyConfig()
 {
     vector<ConnectionProxy> proxyInfo;
-    ReadRegistryProxyInfo(LOCAL_SETTINGS_REGISTRY_VALUE_PSIPHON_PROXY_INFO, proxyInfo);
+    ReadRegistryProxyInfo(LOCAL_SETTINGS_REGISTRY_VALUE_SIFOON_PROXY_INFO, proxyInfo);
 
     ConnectionProxy undecomposedProxyInfo;
     GetDefaultProxyInfo(proxyInfo, undecomposedProxyInfo);
@@ -658,23 +658,23 @@ void GetSanitizedOriginalProxyInfo(vector<ConnectionProxy>& o_originalProxyInfo)
 
 /**
 We write the default system proxy info to the registry at every app start.
-When Psiphon connects, we also write that proxy info to the registry. When
-Psiphon disconnects/exists, we remove the Psiphon info.
-If Psiphon crashes while running, its proxy info will still be in the registry,
+When Sifoon connects, we also write that proxy info to the registry. When
+Sifoon disconnects/exists, we remove the Sifoon info.
+If Sifoon crashes while running, its proxy info will still be in the registry,
 and if this is detected we'll restore the default system proxy info.
 */
 void DoStartupSystemProxyWork()
 {
-    vector<ConnectionProxy> nativeProxyInfo, psiphonProxyInfo;
+    vector<ConnectionProxy> nativeProxyInfo, sifoonProxyInfo;
     ReadRegistryProxyInfo(LOCAL_SETTINGS_REGISTRY_VALUE_NATIVE_PROXY_INFO, nativeProxyInfo);
-    ReadRegistryProxyInfo(LOCAL_SETTINGS_REGISTRY_VALUE_PSIPHON_PROXY_INFO, psiphonProxyInfo);
+    ReadRegistryProxyInfo(LOCAL_SETTINGS_REGISTRY_VALUE_SIFOON_PROXY_INFO, sifoonProxyInfo);
 
-    if (psiphonProxyInfo.size())
+    if (sifoonProxyInfo.size())
     {
         if (!SetCurrentSystemConnectionsProxy(nativeProxyInfo))
         {
             // If we could not restore the original System Proxy Settings, don't clear
-            // PSIPHON_PROXY_INFO since it is used as a signal on subsequent runs to
+            // SIFOON_PROXY_INFO since it is used as a signal on subsequent runs to
             // restore the original System Proxy Settings.
             // Also, don't write the current System Proxy Settings to
             // NATIVE_PROXY_INFO since we don't know what state the system is in.
@@ -682,13 +682,13 @@ void DoStartupSystemProxyWork()
             return;
         }
 
-        ClearRegistryProxyInfo(LOCAL_SETTINGS_REGISTRY_VALUE_PSIPHON_PROXY_INFO);
+        ClearRegistryProxyInfo(LOCAL_SETTINGS_REGISTRY_VALUE_SIFOON_PROXY_INFO);
     }
 
     GetCurrentSystemConnectionsProxyInfo(nativeProxyInfo);
     WriteRegistryProxyInfo(LOCAL_SETTINGS_REGISTRY_VALUE_NATIVE_PROXY_INFO, nativeProxyInfo);
 
-    // In an older version of Psiphon, the system proxy settings may have been left configured to
+    // In an older version of Sifoon, the system proxy settings may have been left configured to
     // 127.0.0.1:<port> where port could have been 8080-8090.
     // Detect this condition, and check if there is actually anything running on the configured
     // system https proxy port. If there is nothing responding, we assume this case and will

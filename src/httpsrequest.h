@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2011, Psiphon Inc.
+ * Copyright (c) 2011, Sifoon Inc.
  * All rights reserved.
  *
  * This program is free software: you can redistribute it and/or modify
@@ -46,7 +46,7 @@ public:
     HTTPSRequest(bool silentMode=false);
     virtual ~HTTPSRequest();
 
-    enum class PsiphonProxy {
+    enum class SifoonProxy {
         DONT_USE = 0,
         USE,
         REQUIRE
@@ -63,7 +63,7 @@ public:
         const string& webServerCertificate,
         const TCHAR* requestPath,
         const StopInfo& stopInfo,
-        PsiphonProxy usePsiphonLocalProxy,
+        SifoonProxy useSifoonLocalProxy,
         HTTPSRequest::Response& response,
         bool failoverToURLProxy=false,
         LPCWSTR additionalHeaders=NULL,
@@ -85,7 +85,7 @@ private:
         const string& webServerCertificate,
         const TCHAR* requestPath,
         const StopInfo& stopInfo,
-        PsiphonProxy usePsiphonLocalProxy,
+        SifoonProxy useSifoonLocalProxy,
         HTTPSRequest::Response& response,
         bool useURLProxy,
         LPCWSTR additionalHeaders,

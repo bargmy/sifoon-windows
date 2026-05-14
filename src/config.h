@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2011, Psiphon Inc.
+ * Copyright (c) 2011, Sifoon Inc.
  * All rights reserved.
  *
  * This program is free software: you can redistribute it and/or modify
@@ -21,18 +21,18 @@
 
 #include <tchar.h>
 
-static const TCHAR* INFO_LINK_PROMPT = _T("About Psiphon 3");
-static const TCHAR* LOCAL_SETTINGS_APPDATA_SUBDIRECTORY = _T("Psiphon3");
-static const TCHAR* LOCAL_SETTINGS_APPDATA_CONFIG_FILENAME = _T("psiphon.config");
+static const TCHAR* INFO_LINK_PROMPT = _T("About Sifoon 3");
+static const TCHAR* LOCAL_SETTINGS_APPDATA_SUBDIRECTORY = _T("Sifoon3");
+static const TCHAR* LOCAL_SETTINGS_APPDATA_CONFIG_FILENAME = _T("sifoon.config");
 static const TCHAR* LOCAL_SETTINGS_APPDATA_FEEDBACK_CONFIG_FILENAME = _T("feedback.config");
 static const TCHAR* LOCAL_SETTINGS_APPDATA_URL_PROXY_CONFIG_FILENAME = _T("url_proxy.config");
 static const TCHAR* LOCAL_SETTINGS_APPDATA_SERVER_LIST_FILENAME = _T("server_list.dat");
 static const TCHAR* LOCAL_SETTINGS_APPDATA_REMOTE_SERVER_LIST_FILENAME = _T("remote_server_list");
-static const TCHAR* LOCAL_SETTINGS_REGISTRY_KEY = _T("Software\\Psiphon3");
+static const TCHAR* LOCAL_SETTINGS_REGISTRY_KEY = _T("Software\\Sifoon3");
 static const char* LOCAL_SETTINGS_REGISTRY_VALUE_SERVERS = "Servers";
 static const char* LOCAL_SETTINGS_REGISTRY_VALUE_LAST_CONNECTED = "LastConnected";
 static const char* LOCAL_SETTINGS_REGISTRY_VALUE_NATIVE_PROXY_INFO = "NativeProxyInfo";
-static const char* LOCAL_SETTINGS_REGISTRY_VALUE_PSIPHON_PROXY_INFO = "PsiphonProxyInfo";
+static const char* LOCAL_SETTINGS_REGISTRY_VALUE_SIFOON_PROXY_INFO = "SifoonProxyInfo";
 static const char* CLIENT_PLATFORM = "Windows";
 static const TCHAR* HTTP_HANDSHAKE_REQUEST_PATH = _T("/handshake");
 static const TCHAR* HTTP_CONNECTED_REQUEST_PATH = _T("/connected");

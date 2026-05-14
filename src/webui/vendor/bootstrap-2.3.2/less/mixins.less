@@ -413,7 +413,7 @@
   border-color: rgba(0,0,0,.1) rgba(0,0,0,.1) fadein(rgba(0,0,0,.1), 15%);
 }
 
-// PSIPHON: adding flat variant
+// SIFOON: adding flat variant
 .flatBar(@primaryColor, @secondaryColor, @textColor: #fff, @textShadow: 0 -1px 0 rgba(0,0,0,.25)) {
   color: @textColor;
   text-shadow: @textShadow;
@@ -435,7 +435,7 @@
     filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1)",argb(@startColor),argb(@endColor))); // IE9 and down
   }
   .vertical(@startColor: #555, @endColor: #333) {
-    background-color: @endColor; // mix(@startColor, @endColor, 60%); // PSIPHON: the mixed end color is too dark and is showing through
+    background-color: @endColor; // mix(@startColor, @endColor, 60%); // SIFOON: the mixed end color is too dark and is showing through
     background-image: -moz-linear-gradient(top, @startColor, @endColor); // FF 3.6+
     background-image: -webkit-gradient(linear, 0 0, 0 100%, from(@startColor), to(@endColor)); // Safari 4+, Chrome 2+
     background-image: -webkit-linear-gradient(top, @startColor, @endColor); // Safari 5.1+, Chrome 10+
@@ -788,7 +788,7 @@
       -ms-transform-origin: @origin; // IE9 only
           transform-origin: @origin;
 }
-// PSIPHON added
+// SIFOON added
 .transform(@transformations) {
   -ms-transform: @transformations; // IE9 only
       transform: @transformations;

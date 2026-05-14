@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021, Psiphon Inc.
+ * Copyright (c) 2021, Sifoon Inc.
  * All rights reserved.
  *
  * This program is free software: you can redistribute it and/or modify
@@ -69,7 +69,7 @@ static void InitSystrayIcon()
     g_notifyIconData.cbSize = sizeof(NOTIFYICONDATA);
     g_notifyIconData.hWnd = g_hWnd;
     g_notifyIconData.uID = 1;  // Used to identify multiple icons. We only use one.
-    g_notifyIconData.uCallbackMessage = WM_PSIPHON_TRAY_ICON_NOTIFY;
+    g_notifyIconData.uCallbackMessage = WM_SIFOON_TRAY_ICON_NOTIFY;
     g_notifyIconData.uTimeout = 30000;  // 30s is the max time the balloon can show
 
     g_notifyIconData.hIcon = g_notifyIconStopped;  // Begin with the stopped icon.
@@ -103,7 +103,7 @@ void UpdateSystrayIcon(HICON hIcon, const wstring& infoTitle, const wstring& inf
     // InitSystrayIcon only gets called once. Override defaults:
 
     g_notifyIconData.uCallbackMessage = connectedReminder ?
-        WM_PSIPHON_TRAY_CONNECTED_REMINDER_NOTIFY : WM_PSIPHON_TRAY_ICON_NOTIFY;
+        WM_SIFOON_TRAY_CONNECTED_REMINDER_NOTIFY : WM_SIFOON_TRAY_ICON_NOTIFY;
 
     if (noSound)
     {
@@ -243,7 +243,7 @@ void HandleMinimize()
 
 /*
 The systray state updating is a bit complicated. We want to avoid this:
-  When Psiphon quickly disconnects and reconnects, we don't want to spam the
+  When Sifoon quickly disconnects and reconnects, we don't want to spam the
   systray balloon text.
 What we want is:
   When a disconnect occurs, we wait a bit before changing the systray state.
@@ -418,7 +418,7 @@ static VOID CALLBACK ShowConnectedReminderBalloonTimer(HWND hWnd, UINT, UINT_PTR
 void SystrayWndProc(UINT message, WPARAM wParam, LPARAM lParam)
 {
     switch (message) {
-    case WM_PSIPHON_TRAY_CONNECTED_REMINDER_NOTIFY:
+    case WM_SIFOON_TRAY_CONNECTED_REMINDER_NOTIFY:
         if (lParam == NIN_BALLOONUSERCLICK &&
             CONNECTION_MANAGER_STATE_CONNECTED == g_connectionManager.GetState())
         {
@@ -426,9 +426,9 @@ void SystrayWndProc(UINT message, WPARAM wParam, LPARAM lParam)
             RestartConnectedReminderTimer();
             break;
         }
-        // fall through to WM_PSIPHON_TRAY_ICON_NOTIFY
+        // fall through to WM_SIFOON_TRAY_ICON_NOTIFY
 
-    case WM_PSIPHON_TRAY_ICON_NOTIFY:
+    case WM_SIFOON_TRAY_ICON_NOTIFY:
         // Restore/foreground the app on any kind of click
         if (lParam == WM_LBUTTONUP ||
             lParam == WM_LBUTTONDBLCLK ||

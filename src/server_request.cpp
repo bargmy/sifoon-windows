@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2012, Psiphon Inc.
+ * Copyright (c) 2012, Sifoon Inc.
  * All rights reserved.
  *
  * This program is free software: you can redistribute it and/or modify
@@ -132,7 +132,7 @@ bool ServerRequest::MakeRequest(
                 sessionInfo.GetWebServerCertificate(),
                 requestPath,
                 stopInfo,
-                HTTPSRequest::PsiphonProxy::USE,
+                HTTPSRequest::SifoonProxy::USE,
                 httpsResponse,
                 false, // don't fail over to URL proxy
                 additionalHeaders,
@@ -171,7 +171,7 @@ bool ServerRequest::MakeRequest(
                     sessionInfo.GetWebServerCertificate(),
                     requestPath,
                     stopInfo,
-                    HTTPSRequest::PsiphonProxy::DONT_USE, // don't try to tunnel -- there's no transport
+                    HTTPSRequest::SifoonProxy::DONT_USE, // don't try to tunnel -- there's no transport
                     httpsResponse,
                     false, // don't fail over to URL proxy
                     additionalHeaders,
@@ -231,7 +231,7 @@ bool ServerRequest::MakeRequest(
                     sessionInfo.GetWebServerCertificate(),
                     requestPath,
                     stopInfo,
-                    HTTPSRequest::PsiphonProxy::USE,
+                    HTTPSRequest::SifoonProxy::USE,
                     httpsResponse,
                     false, // don't fail over to URL proxy
                     additionalHeaders,

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021, Psiphon Inc.
+ * Copyright (c) 2021, Sifoon Inc.
  * All rights reserved.
  *
  * This program is free software: you can redistribute it and/or modify
@@ -20,14 +20,14 @@
 #pragma once
 
 // HTML control-related windows messages
-#define WM_PSIPHON_HTMLUI_BEFORENAVIGATE    WM_USER + 200
-#define WM_PSIPHON_HTMLUI_SETSTATE          WM_USER + 201
-#define WM_PSIPHON_HTMLUI_ADDLOG            WM_USER + 202
-#define WM_PSIPHON_HTMLUI_ADDNOTICE         WM_USER + 203
-#define WM_PSIPHON_HTMLUI_REFRESHSETTINGS   WM_USER + 204
-#define WM_PSIPHON_HTMLUI_UPDATEDPISCALING  WM_USER + 205
-#define WM_PSIPHON_HTMLUI_DEEPLINK          WM_USER + 206
-#define WM_PSIPHON_HTMLUI_PSICASHMESSAGE    WM_USER + 207
+#define WM_SIFOON_HTMLUI_BEFORENAVIGATE    WM_USER + 200
+#define WM_SIFOON_HTMLUI_SETSTATE          WM_USER + 201
+#define WM_SIFOON_HTMLUI_ADDLOG            WM_USER + 202
+#define WM_SIFOON_HTMLUI_ADDNOTICE         WM_USER + 203
+#define WM_SIFOON_HTMLUI_REFRESHSETTINGS   WM_USER + 204
+#define WM_SIFOON_HTMLUI_UPDATEDPISCALING  WM_USER + 205
+#define WM_SIFOON_HTMLUI_DEEPLINK          WM_USER + 206
+#define WM_SIFOON_HTMLUI_PSICASHMESSAGE    WM_USER + 207
 
 /// Should be called during app initialization
 void InitHTMLLib();
@@ -41,8 +41,8 @@ void CreateHTMLControl(HWND hWndParent, float dpiScaling);
 /// Retrieve a handle to the main HTML control
 HWND GetHTMLControl();
 
-/// Registers the `psiphon://` protocol handlers with the OS (used for deeplinking)
-void RegisterPsiphonProtocolHandler();
+/// Registers the `sifoon://` protocol handlers with the OS (used for deeplinking)
+void RegisterSifoonProtocolHandler();
 
 /// Process command line arguments. Must be called every time the app is started,
 /// _except_ if this is a non-primary instance that is about to be shut down
