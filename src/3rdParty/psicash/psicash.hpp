@@ -24,7 +24,7 @@
 #include <functional>
 #include <vector>
 #include <memory>
-#include "vendor/nonstd/optional.hpp"
+#include <optional>
 #include "vendor/nlohmann/json.hpp"
 #include "datetime.hpp"
 #include "error.hpp"
@@ -129,9 +129,9 @@ struct Purchase {
     datetime::DateTime server_time_created;
     std::string transaction_class;
     std::string distinguisher;
-    nonstd::optional<datetime::DateTime> server_time_expiry;
-    nonstd::optional<datetime::DateTime> local_time_expiry;
-    nonstd::optional<Authorization> authorization;
+    std::optional<datetime::DateTime> server_time_expiry;
+    std::optional<datetime::DateTime> local_time_expiry;
+    std::optional<Authorization> authorization;
 
     friend bool operator==(const Purchase& lhs, const Purchase& rhs);
     friend void to_json(nlohmann::json& j, const Purchase& p);
@@ -214,7 +214,7 @@ public:
     bool IsAccount() const;
 
     /// Returns the username of the logged-in account, if in a logged-in-account state.
-    nonstd::optional<std::string> AccountUsername() const;
+    std::optional<std::string> AccountUsername() const;
 
     /// Returns the stored user balance.
     int64_t Balance() const;
@@ -240,7 +240,7 @@ public:
     /// Get the next expiring purchase (with local_time_expiry populated).
     /// The returned optional will false if there is no outstanding expiring purchase (or
     /// no outstanding purchases at all). The returned purchase may already be expired.
-    nonstd::optional<Purchase> NextExpiringPurchase() const;
+    std::optional<Purchase> NextExpiringPurchase() const;
 
     /// Clear out expired purchases. Return the ones that were expired, if any.
     error::Result<Purchases> ExpirePurchases();
@@ -414,7 +414,7 @@ public:
     */
     struct NewExpiringPurchaseResponse {
         Status status;
-        nonstd::optional<Purchase> purchase;
+        std::optional<Purchase> purchase;
     };
     error::Result<NewExpiringPurchaseResponse> NewExpiringPurchase(
             const std::string& transaction_class,
@@ -473,7 +473,7 @@ public:
     */
     struct AccountLoginResponse {
         Status status;
-        nonstd::optional<bool> last_tracker_merge;
+        std::optional<bool> last_tracker_merge;
     };
 
     error::Result<AccountLoginResponse> AccountLogin(
@@ -492,7 +492,7 @@ protected:
     error::Result<HTTPResult> MakeHTTPRequestWithRetry(
             const std::string& method, const std::string& path, bool include_auth_tokens,
             const std::vector<std::pair<std::string, std::string>>& query_params,
-            const nonstd::optional<nlohmann::json>& body);
+            const std::optional<nlohmann::json>& body);
 
     virtual error::Result<HTTPParams> BuildRequestParams(
             const std::string& method, const std::string& path, bool include_auth_tokens,

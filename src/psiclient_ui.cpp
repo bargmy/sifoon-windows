@@ -994,7 +994,7 @@ nlohmann::json MakeRefreshPsiCashPayload() {
         { "buy_psi_url", nullptr }
     };
 
-    nonstd::optional<string> accountUsernameOpt = psicash::Lib::_().AccountUsername();
+    std::optional<string> accountUsernameOpt = psicash::Lib::_().AccountUsername();
     if (accountUsernameOpt) {
         res["account_username"] = *accountUsernameOpt;
     }
