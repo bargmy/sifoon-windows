@@ -1,0 +1,58 @@
+name: Build and Release
+
+on:
+  push:
+    branches: [ "master" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Setup MSBuild
+      uses: microsoft/setup-msbuild@v2
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+
+    - name: Create embeddedvalues.h
+      run: |
+        copy src\embeddedvalues.h.stub src\embeddedvalues.h
+
+    - name: Build WebUI
+      working-directory: src/webui
+      run: |
+        npm install
+        npx grunt default
+
+    - name: Build C++ Client
+      working-directory: src
+      run: |
+        msbuild psiclient2015.sln /p:Configuration=Release /p:Platform=Win32
+
+    - name: Prepare Artifacts
+      run: |
+        mkdir artifacts
+        copy src\Release\psiphon.exe artifacts\psiphon-windows.exe
+
+    - name: Create Release
+      uses: softprops/action-gh-release@v2
+      with:
+        tag_name: ${{ github.ref_name == 'master' && 'latest' || github.ref_name }}
+        name: ${{ github.ref_name == 'master' && 'Latest Build' || github.ref_name }}
+        draft: false
+        prerelease: ${{ github.ref_name == 'master' }}
+        files: artifacts/psiphon-windows.exe
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Development Release (Upload Artifact)
+      uses: actions/upload-artifact@v4
+      with:
+        name: psiphon-windows
+        path: artifacts/psiphon-windows.exe
