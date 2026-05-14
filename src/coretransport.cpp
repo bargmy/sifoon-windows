@@ -34,8 +34,6 @@
 #include "authenticated_data_package.h"
 #include "psiphon_tunnel_core_utilities.h"
 
-using namespace std::experimental;
-
 
 #define AUTOMATICALLY_ASSIGNED_PORT_NUMBER   0
 #define MAX_LEGACY_SERVER_ENTRIES            30

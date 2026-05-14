@@ -38,7 +38,6 @@
 #include <VersionHelpers.h>
 
 
-using namespace std::experimental;
 
 
 extern HINSTANCE g_hInst;

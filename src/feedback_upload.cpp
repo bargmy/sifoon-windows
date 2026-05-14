@@ -33,7 +33,6 @@
 #include "systemproxysettings.h"
 #include "utilities.h"
 
-using namespace std::experimental;
 
 // IWorkerThread boilerplate
 

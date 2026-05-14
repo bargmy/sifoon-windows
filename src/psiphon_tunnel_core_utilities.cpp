@@ -34,7 +34,6 @@
 #include "authenticated_data_package.h"
 #include "psiphon_tunnel_core_utilities.h"
 
-using namespace std::experimental;
 
 #define UPGRADE_EXE_NAME                     _T("psiphon3.exe.upgrade")
 
