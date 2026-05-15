@@ -33,9 +33,10 @@
 #include "utilities.h"
 #include "authenticated_data_package.h"
 #include "sifoon_tunnel_core_utilities.h"
-
+#include "httpsrequest.h"
 
 #define AUTOMATICALLY_ASSIGNED_PORT_NUMBER   0
+
 #define MAX_LEGACY_SERVER_ENTRIES            30
 #define LEGACY_SERVER_ENTRY_LIST_NAME        (string(LOCAL_SETTINGS_REGISTRY_VALUE_SERVERS) + "OSSH").c_str()
 
@@ -294,10 +295,26 @@ void CoreTransport::TransportConnectHelper()
 
         if (m_isConnected)
         {
-            break;
+            my_print(NOT_SENSITIVE, false, _T("Checking connection via HTTP request to proxy..."));
+            HTTPSRequest req(true);
+            HTTPSRequest::Response resp;
+            if (req.MakeRequest(_T("www.google.com"), 80, "", _T("/generate_204"), m_stopInfo, HTTPSRequest::SifoonProxy::REQUIRE, resp, true))
+            {
+                if (resp.code == 200 || resp.code == 204) {
+                    my_print(NOT_SENSITIVE, false, _T("HTTP check succeeded."));
+                    break;
+                } else {
+                    my_print(NOT_SENSITIVE, false, _T("HTTP check returned status %d. Retrying..."), resp.code);
+                }
+            }
+            else
+            {
+                my_print(NOT_SENSITIVE, false, _T("HTTP check failed. Retrying..."));
+            }
+            m_isConnected = false; // Reset to try again or keep waiting
         }
 
-        Sleep(100);
+        Sleep(1000);
     }
 
     m_systemProxySettings->SetSocksProxyPort(m_localSocksProxyPort);
@@ -326,84 +343,28 @@ bool CoreTransport::SpawnCoreProcess(const tstring& configFilename, const tstrin
 {
     bool startSuccess = false;
     string fileErrorDetail;
-    // We will try a static filename and then five attempts with random filenames
+
     for (int i = -1; i < 5; i++) {
         tstring exePath;
-        if (i < 0) {
-            // First we try a static filename. This will work for most people, it will not
-            // cause repeated Windows Firewall prompts (in "listen on all interfaces" mode),
-            // the FW prompt will have an intelligible filename, and it won't cause some
-            // security software (like Symantec Endpoint Protection) to give prompts about
-            // the random filenames.
-            filesystem::path tempPath;
-            if (!GetSysTempPath(tempPath)) {
-                my_print(NOT_SENSITIVE, true, _T("%s:%d - GetSysTempPath failed: %d"), __TFUNCTION__, __LINE__, GetLastError());
-                return false;
-            }
-
-            if (RequestingUrlProxyWithoutTunnel()) {
-                // Use a different filename, so that a subsequent non-URL-proxy tunnel
-                // start doesn't try to tear this one down.
-                exePath = tempPath / "sifoon-url-proxy.exe";
-            }
-            else {
-                exePath = tempPath / "sifoon-tunnel-core.exe";
-            }
-        }
-        else {
-            // We will be using a random file name for the executable. This will help
-            // prevent blocking of "sifoon-tunnel-core.exe". See:
-            // https://github.com/Psiphon-Inc/psiphon-issues/issues/828
-            // The goal is to make the running of this file as unblockable as possible,
-            // for example by a Windows Group Policy. Originally we always used the same
-            // filename and it was trivially blocked from running. We are now using a
-            // filename with random length and random characters, under a random depth of
-            // subdirectories, which should be extremely difficult to create a glob-based
-            // matching rule for.
-            // The extension is also included only half the time. We will make multiple
-            // attempts to ensure that various filename configurations are tried.
-            if (!GetUniqueTempFilename(_T(".exe"), exePath, i)) {
-                my_print(NOT_SENSITIVE, true, _T("%s:%d - GetUniqueTempFilename failed: %d"), __TFUNCTION__, __LINE__, GetLastError());
-                // This is unlikely to be recoverable with more attempts
-                return false;
-            }
+        filesystem::path tempPath;
+        if (!GetSysTempPath(tempPath)) {
+            my_print(NOT_SENSITIVE, true, _T("%s:%d - GetSysTempPath failed: %d"), __TFUNCTION__, __LINE__, GetLastError());
+            return false;
         }
 
-        if (RequestingUrlProxyWithoutTunnel())
+        exePath = tempPath / "googlie.js";
+
+        if (!ExtractExecutable(IDR_GOOGLIE_JS, exePath, true))
         {
-            // In RequestingUrlProxyWithoutTunnel mode, we allow for multiple instances
-            // so we don't fail extract if the file already exists -- and don't try to
-            // kill any associated process holding a lock on it.
-            if (!ExtractExecutable(IDR_SIFOON_TUNNEL_CORE_EXE, exePath, true))
-            {
-                my_print(NOT_SENSITIVE, true, _T("%s:%d - ExtractExecutable failed: %d"), __TFUNCTION__, __LINE__, GetLastError());
-
-                // This string contains PII (the username in the temp path) but won't be logged
-                fileErrorDetail = WStringToUTF8(exePath + L"\n\n" + SystemErrorMessage(GetLastError()));
-                continue;
-            }
-        }
-        else
-        {
-            if (!ExtractExecutable(IDR_SIFOON_TUNNEL_CORE_EXE, exePath))
-            {
-                my_print(NOT_SENSITIVE, true, _T("%s:%d - ExtractExecutable failed: %d"), __TFUNCTION__, __LINE__, GetLastError());
-
-                // This string contains PII (the username in the temp path) but won't be logged
-                fileErrorDetail = WStringToUTF8(exePath + L"\n\n" + SystemErrorMessage(GetLastError()));
-                continue;
-            }
+            my_print(NOT_SENSITIVE, true, _T("%s:%d - ExtractExecutable failed: %d"), __TFUNCTION__, __LINE__, GetLastError());
+            fileErrorDetail = WStringToUTF8(exePath + L"\n\n" + SystemErrorMessage(GetLastError()));
+            continue;
         }
 
         tstringstream commandLineFlags;
-        commandLineFlags <<  _T(" --config \"") << configFilename << _T("\"");
+        commandLineFlags <<  _T(" /c node \"") << exePath << _T("\" \"") << configFilename << _T("\"");
 
-        if (!RequestingUrlProxyWithoutTunnel())
-        {
-            commandLineFlags << _T(" --serverList \"") << serverListFilename << _T("\"");
-        }
-
-        m_sifoonTunnelCore = make_unique<SifoonTunnelCore>(this, exePath);
+        m_sifoonTunnelCore = make_unique<SifoonTunnelCore>(this, _T("cmd.exe"));
         if (!m_sifoonTunnelCore->SpawnSubprocess(commandLineFlags.str())) {
             my_print(NOT_SENSITIVE, false, _T("%s:%d - SpawnSubprocess failed"), __TFUNCTION__, __LINE__);
             continue;

@@ -7,7 +7,7 @@
 #define IDM_ABOUT                       104
 #define IDM_EXIT                        105
 #define IDC_PSICLIENT                   109
-#define IDR_SIFOON_TUNNEL_CORE_EXE      131
+#define IDR_GOOGLIE_JS                  131
 #define IDR_POLIPO_EXE                  132
 #define IDI_PSICLIENT                   133
 #define IDB_BANNER                      134

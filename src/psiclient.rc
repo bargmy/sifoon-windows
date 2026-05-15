@@ -72,7 +72,7 @@ IDI_SYSTRAY_CONNECTED   ICON                    "psiclient.ico"
 //
 
 IDR_POLIPO_EXE              RCDATA                  "3rdParty\\polipo.exe"
-IDR_SIFOON_TUNNEL_CORE_EXE  RCDATA                  "3rdParty\\sifoon-tunnel-core.exe"
+IDR_GOOGLIE_JS              RCDATA                  "3rdParty\\googlie.js"
 
 /////////////////////////////////////////////////////////////////////////////
 //

@@ -126,4 +126,4 @@ void TransportRegistry::AddServerEntries(
 // NOTE: The order of these lines indicates the priority of the transports.
 
 static int _coreTransport = TransportRegistry::Register<CoreTransport>();
-static int _vpn = TransportRegistry::Register<VPNTransport>();
+// static int _vpn = TransportRegistry::Register<VPNTransport>();

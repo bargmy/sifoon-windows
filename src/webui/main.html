@@ -179,13 +179,6 @@
           </a>
         </li>
 
-        <li id="connection-log-tab">
-          <a href="#connection-log-pane" data-toggle="tab" data-match-width=".main-nav > li > a">
-            <i class="icon-fixed-width icon-earth"></i>
-            <span>LOG+</span>
-          </a>
-        </li>
-
         <li id="language-tab">
           <a href="#language-pane" data-toggle="tab" data-match-width=".main-nav > li > a">
             <div class="multiline-tab-icon">
@@ -503,9 +496,6 @@
                   <span data-i18n="[html]connection#starting-msg">
                     Sifoon is <span class="state-word">connecting</span>…
                   </span>
-                  <small id="TriedIpsContainer" style="display: block; font-size: 0.5em; margin-top: 5px; font-family: monospace; color: #666;">
-                    <span data-i18n="connection#tried-ips#label">Tried IPs</span>: <span id="TriedIpsList">-</span>
-                  </small>
                 </h2>
               </div>
               <hr class="dotted">
@@ -879,55 +869,45 @@
 
           <div class="accordion" id="settings-accordion">
 
-            <div class="accordion-group vpn-incompatible">
+            <div class="accordion-group">
               <div class="accordion-heading">
-                <a class="accordion-toggle" href="#settings-accordion-protocol-selector"
+                <a class="accordion-toggle" href="#settings-accordion-google-script"
                    data-toggle="collapse" data-parent="#settings-accordion">
                   <i class="accordion-expand-icon icon-plus-square"
                      data-icon-closed="icon-plus-square" data-icon-opened="icon-minus-square"></i>
-                  <span data-i18n="settings#protocol-selector#heading">
-                    Manual Connection Mode
-                  </span>
-                  <span class="label label-warning vpn-incompatible-msg">
-                    <i class="icon-prohibited"></i>
-                    <span data-i18n="settings#vpn-incompatible-label">L2TP/IPSec</span>
-                  </span>
+                  <span>Google Script Configuration</span>
                 </a>
               </div>
-              <div id="settings-accordion-protocol-selector" class="js-accordion-body collapse">
+              <div id="settings-accordion-google-script" class="js-accordion-body collapse">
                 <div class="accordion-inner">
-                  <div class="control-group">
-                    <div class="controls">
-                      <ul id="TunnelProtocol" class="nav nav-list dropdown-menu" style="position: static; display: block; float: none; max-height: none; margin-bottom: 10px;">
-                        <li class="active" data-protocol="">
-                          <a href="#" tabindex="-1" data-i18n="settings#protocol-selector#automatic">Automatic</a>
-                        </li>
-                        <li data-protocol="SSH">
-                          <a href="#" tabindex="-1" data-i18n="settings#protocol-selector#ssh">SSH</a>
-                        </li>
-                        <li data-protocol="OSSH">
-                          <a href="#" tabindex="-1" data-i18n="settings#protocol-selector#ossh">Obfuscated SSH</a>
-                        </li>
-                        <li data-protocol="QUIC">
-                          <a href="#" tabindex="-1" data-i18n="settings#protocol-selector#quic">QUIC</a>
-                        </li>
-                        <li data-protocol="FRONTED-MEEK-HTTPS-OSSH">
-                          <a href="#" tabindex="-1" data-i18n="settings#protocol-selector#fronted-meek-https">CDN Fronting (HTTPS)</a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-
-                  <div id="ManualCdnIpsSection" class="hidden">
-                    <label class="control-label" for="ManualCdnIps" data-i18n="settings#manual-cdn-ips#label">Custom CDN IPs</label>
-                    <div class="controls">
-                      <textarea id="ManualCdnIps" class="input-block-level" rows="4" 
-                                placeholder="Enter IPs, one or more per line..."></textarea>
-                      <p class="help-block" data-i18n="settings#manual-cdn-ips#help-text">
-                        Specify manual IP addresses for CDN fronting.
-                      </p>
-                    </div>
-                  </div>
+                  <form action="">
+                    <fieldset>
+                      <div class="control-group">
+                        <label class="control-label" for="GoogleScriptId">Script ID</label>
+                        <div class="controls">
+                          <input type="text" id="GoogleScriptId" class="input-block-level" />
+                        </div>
+                      </div>
+                      <div class="control-group">
+                        <label class="control-label" for="GoogleAuthKey">Auth Key</label>
+                        <div class="controls">
+                          <input type="text" id="GoogleAuthKey" class="input-block-level" />
+                        </div>
+                      </div>
+                      <div class="control-group">
+                        <label class="control-label" for="GoogleFrontDomain">Front Domain</label>
+                        <div class="controls">
+                          <input type="text" id="GoogleFrontDomain" class="input-block-level" placeholder="www.google.com" />
+                        </div>
+                      </div>
+                      <div class="control-group">
+                        <label class="control-label" for="GoogleIp">Google IP</label>
+                        <div class="controls">
+                          <input type="text" id="GoogleIp" class="input-block-level" placeholder="216.239.38.120" />
+                        </div>
+                      </div>
+                    </fieldset>
+                  </form>
                 </div>
               </div>
             </div>
@@ -1887,19 +1867,6 @@
             </tr>
           </script>
         </div><!-- /logs-pane -->
-
-        <div class="tab-pane fade" id="connection-log-pane">
-          <div class="container-fluid">
-            <div class="row-fluid">
-              <div class="span12">
-                <h3 style="margin-top: 20px;">Connection Log (LOG+)</h3>
-                <div id="ConnectionLog" style="font-family: monospace; font-size: 1.1em; line-height: 1.6em; max-height: 600px; overflow-y: auto; background: #f9f9f9; padding: 15px; border: 1px solid #eee; border-radius: 4px; margin-top: 10px;">
-                  <div class="muted" data-i18n="connection#connection-log#empty">No connection attempts yet.</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
 
 
         <!-- ABOUT ======================================================-->

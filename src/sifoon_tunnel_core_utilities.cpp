@@ -70,9 +70,6 @@ bool WriteParameterFiles(const WriteParameterFilesIn& in, WriteParameterFilesOut
         return false;
     }
 
-    // Passing short path names for data store directories due to sqlite3 incompatibility
-    // with extended Unicode characters in paths (e.g., unicode user name in AppData or
-    // Temp path)
     tstring shortDataStoreDirectory;
     if (!GetShortPathName(dataStoreDirectory, shortDataStoreDirectory))
     {
@@ -81,219 +78,11 @@ bool WriteParameterFiles(const WriteParameterFilesIn& in, WriteParameterFilesOut
     }
 
     Json::Value config;
-    config["ClientPlatform"] = GetClientPlatform();
-    config["ClientVersion"] = CLIENT_VERSION;
-    config["PropagationChannelId"] = PROPAGATION_CHANNEL_ID;
-    config["SponsorId"] = SPONSOR_ID;
-    config["RemoteServerListURLs"] = LoadJSONArray(REMOTE_SERVER_LIST_URLS_JSON);
-    config["ObfuscatedServerListRootURLs"] = LoadJSONArray(OBFUSCATED_SERVER_LIST_ROOT_URLS_JSON);
-    config["RemoteServerListSignaturePublicKey"] = REMOTE_SERVER_LIST_SIGNATURE_PUBLIC_KEY;
-    config["ServerEntrySignaturePublicKey"] = SERVER_ENTRY_SIGNATURE_PUBLIC_KEY;
-    config["DataRootDirectory"] = WStringToUTF8(shortDataStoreDirectory);
-    config["MigrateDataStoreDirectory"] = WStringToUTF8(shortDataStoreDirectory);
-    config["UseIndistinguishableTLS"] = true;
-    config["DeviceRegion"] = WStringToUTF8(GetDeviceRegion());
-    config["EmitDiagnosticNotices"] = true;
-    config["EmitDiagnosticNetworkParameters"] = true;
-    config["EmitServerAlerts"] = true;
-    config["EmitCandidateNotices"] = true;
-    config["UseUserAgentFronting"] = true;
-    config["AdditionalParameters"] = ADDITIONAL_PARAMETERS;
-
-    // Don't use an upstream proxy when in VPN mode. If the proxy is on a private network,
-    // we may not be able to route to it. If the proxy is on a public network we prefer not
-    // to use it for Sifoon requests (this assumes that this core transport has been created
-    // as a temp tunnel or url proxy facilitator, since some underlying transport is already
-    // providing whole system tunneling).
-    if (!g_connectionManager.IsWholeSystemTunneled())
-    {
-        config["UpstreamProxyUrl"] = in.upstreamProxyAddress;
-    }
-
-    if (Settings::SplitTunnel())
-    {
-        config["SplitTunnelOwnRegion"] = true;
-    }
-
-    if (Settings::SplitTunnelChineseSites())
-    {
-        config["SplitTunnelRegions"] = LoadJSONArray("[\"CN\", \"HK\"]");
-    }
-
-    if (Settings::DisableTimeouts())
-    {
-        config["NetworkLatencyMultiplierLambda"] = 0.1;
-    }
-
-    string tunnelProtocol = Settings::TunnelProtocol();
-    if (!tunnelProtocol.empty())
-    {
-        Json::Value tunnelProtocols(Json::arrayValue);
-        tunnelProtocols.append(tunnelProtocol);
-        config["TunnelProtocols"] = tunnelProtocols;
-
-        // If a manual protocol is selected, also pass any manual CDN IPs
-        string manualCdnIpsStr = Settings::ManualCdnIps();
-        if (!manualCdnIpsStr.empty())
-        {
-            Json::Value manualCdnIps(Json::arrayValue);
-            
-            // Basic parser for IPs (works with space, comma, semicolon or newline)
-            std::regex ipRegex("[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}");
-            auto ipsBegin = std::sregex_iterator(manualCdnIpsStr.begin(), manualCdnIpsStr.end(), ipRegex);
-            auto ipsEnd = std::sregex_iterator();
-
-            std::set<string> uniqueIps;
-            for (std::sregex_iterator i = ipsBegin; i != ipsEnd; ++i) {
-                uniqueIps.insert(i->str());
-            }
-
-            for (const auto& ip : uniqueIps) {
-                manualCdnIps.append(ip);
-            }
-
-            if (!manualCdnIps.empty()) {
-                my_print(NOT_SENSITIVE, true, _T("Mandatory CDN Override: Using %d custom IPs"), manualCdnIps.size());
-                config["ManualCdnIps"] = manualCdnIps;
-                
-                // MANDATORY OVERRIDE: When manual CDN IPs are provided, 
-                // prioritize them and use aggressive discovery.
-                config["EnableStickyUpstreamProxy"] = true;
-                config["FetchRemoteServerListViaFronting"] = true;
-                config["UseUserAgentFronting"] = true;
-                
-                // We need the fetchers to be ENABLED so it can find servers
-                // through the manual IPs you provided.
-                config["DisableRemoteServerListFetcher"] = false;
-                config["DisableObfuscatedServerListFetcher"] = false;
-            }
-        }
-    }
-
-    if (in.encodedAuthorizations != NULL) {
-        config["Authorizations"] = in.encodedAuthorizations;
-    }
-
-    // TODO: Use a real network IDs
-    // See https://github.com/Psiphon-Inc/psiphon-issues/issues/404
-    config["NetworkID"] = "949F2E962ED7A9165B81E977A3B4758B";
-
-    // Feedback
-    config["FeedbackUploadURLs"] = LoadJSONArray(FEEDBACK_UPLOAD_URLS_JSON);
-    config["FeedbackEncryptionPublicKey"] = FEEDBACK_ENCRYPTION_PUBLIC_KEY;
-    config["EnableFeedbackUpload"] = true;
-
-    // In temporary tunnel mode, only the specific server should be connected to,
-    // and a handshake is not performed.
-    // For example, in VPN mode, the temporary tunnel is used by the VPN mode to
-    // perform its own handshake request to get a PSK.
-    //
-    // This same minimal setup is used in the RequestingUrlProxyWithoutTunnel mode,
-    // although in this case we don't set a deadline to connect since we don't
-    // expect to ever connect to a tunnel and we we want to allow the caller to
-    // complete the (direct) url proxied request
-    if (in.tempConnectServerEntry != NULL || in.requestingUrlProxyWithoutTunnel)
-    {
-        config["DisableApi"] = true;
-        config["DisableRemoteServerListFetcher"] = true;
-        string serverEntry = in.tempConnectServerEntry->ToString();
-        config["TargetServerEntry"] =
-            Hexlify((const unsigned char*)(serverEntry.c_str()), serverEntry.length());
-        // Use whichever region the server entry is located in
-        config["EgressRegion"] = "";
-
-        if (in.requestingUrlProxyWithoutTunnel)
-        {
-            // The URL proxy can and will be used while the main tunnel is connected,
-            // and multiple URL proxies might be used concurrently. Each one may/will
-            // try to open/create the tunnel-core datastore, so conflicts will occur
-            // if they try to use the same datastore directory as the main tunnel or
-            // as each other. So we'll give each one a unique, temporary directory.
-
-            tstring tempDir;
-            if (!GetUniqueTempDir(tempDir))
-            {
-                my_print(NOT_SENSITIVE, false, _T("%s - GetUniqueTempDir failed (%d)"), __TFUNCTION__, GetLastError());
-                return false;
-            }
-
-            // Passing short path names for data store directories due to sqlite3 incompatibility
-            // with extended Unicode characters in paths (e.g., unicode user name in AppData or
-            // Temp path).
-            tstring shortTempDir;
-            if (!GetShortPathName(tempDir, shortTempDir))
-            {
-                my_print(NOT_SENSITIVE, false, _T("%s - GetShortPathName failed (%d)"), __TFUNCTION__, GetLastError());
-                return false;
-            }
-
-            config["DataRootDirectory"] = WStringToUTF8(shortTempDir);
-            config["MigrateDataStoreDirectory"] = WStringToUTF8(shortTempDir);
-        }
-        else
-        {
-            config["EstablishTunnelTimeoutSeconds"] = TEMPORARY_TUNNEL_TIMEOUT_SECONDS;
-        }
-
-        out.oldClientUpgradeFilename.clear();
-        out.newClientUpgradeFilename.clear();
-    }
-    else
-    {
-        config["EgressRegion"] = Settings::EgressRegion();
-
-        unsigned int localHttpProxyPortSetting = Settings::LocalHttpProxyPort();
-        unsigned int localSocksProxyPortSetting = Settings::LocalSocksProxyPort();
-        if (localHttpProxyPortSetting > 0)
-        {
-            my_print(NOT_SENSITIVE, true, _T("Setting LocalHttpProxyPort to a user configured value"));
-        }
-        if (localSocksProxyPortSetting > 0)
-        {
-            my_print(NOT_SENSITIVE, true, _T("Setting LocalSocksProxyPort to a user configured value"));
-        }
-        config["LocalHttpProxyPort"] = localHttpProxyPortSetting;
-        config["LocalSocksProxyPort"] = localSocksProxyPortSetting;
-
-        if (Settings::ExposeLocalProxiesToLAN())
-        {
-            config["ListenInterface"] = "any";
-            config["ClientFeatures"] = LoadJSONArray("[\"listen-interface-any\"]");
-            my_print(NOT_SENSITIVE, true, _T("Setting ListenInterface to any"));
-        }
-
-        auto remoteServerListFilename = filesystem::path(dataStoreDirectory)
-            .append(LOCAL_SETTINGS_APPDATA_REMOTE_SERVER_LIST_FILENAME);
-        config["MigrateRemoteServerListDownloadFilename"] = WStringToUTF8(remoteServerListFilename.wstring());
-
-        tstring oslDownloadDirectory;
-        if (GetSifoonDataPath({ _T("osl") }, false, oslDownloadDirectory)) {
-            config["MigrateObfuscatedServerListDownloadDirectory"] = WStringToUTF8(oslDownloadDirectory);
-        }
-
-        out.oldClientUpgradeFilename = filesystem::path(shortDataStoreDirectory).append(UPGRADE_EXE_NAME);
-
-        config["MigrateUpgradeDownloadFilename"] = WStringToUTF8(out.oldClientUpgradeFilename);
-        config["UpgradeDownloadClientVersionHeader"] = string("x-amz-meta-psiphon-client-version");
-        config["UpgradeDownloadURLs"] = LoadJSONArray(UPGRADE_URLS_JSON);
-
-        // We do not want to upgrade if we're running on a legacy version of Windows.
-        if (IsOSLegacy())
-        {
-            my_print(NOT_SENSITIVE, false, _T("Legacy OS detected; disabling upgrade via tunnel-core"));
-            config["EnableUpgradeDownload"] = false;
-        }
-        else
-        {
-            config["EnableUpgradeDownload"] = true;
-        }
-
-        // Newer versions of tunnel-core download the upgrade file to its own data directory. Both oldClientUpgradeFilename and
-        // newClientUpgradeFilename should be deleted when Sifoon starts if they exist.
-        // TODO: when we switch to using tunnel-core as a library instead of a subprocess then we can call UpgradeDownloadFilePath()
-        // rather than constructing the path here.
-        out.newClientUpgradeFilename = filesystem::path(shortDataStoreDirectory).append(_T("ca.psiphon.PsiphonTunnel.tunnel-core")).append(_T("upgrade"));
-    }
+    config["script_id"] = Settings::GoogleScriptId();
+    config["auth_key"] = Settings::GoogleAuthKey();
+    config["front_domain"] = Settings::GoogleFrontDomain().empty() ? "www.google.com" : Settings::GoogleFrontDomain();
+    config["google_ip"] = Settings::GoogleIp().empty() ? "216.239.38.120" : Settings::GoogleIp();
+    config["listen_port"] = Settings::LocalHttpProxyPort() == 0 ? 8087 : Settings::LocalHttpProxyPort();
 
     ostringstream configDataStream;
     Json::FastWriter jsonWriter;
@@ -309,25 +98,11 @@ bool WriteParameterFiles(const WriteParameterFilesIn& in, WriteParameterFilesOut
         return false;
     }
 
-    // RequestingUrlProxyWithoutTunnel mode omits the server list file, since
-    // it's not trying to establish a tunnel.
-
     if (!in.requestingUrlProxyWithoutTunnel)
     {
         auto serverListPath = filesystem::path(dataStoreDirectory)
             .append(LOCAL_SETTINGS_APPDATA_SERVER_LIST_FILENAME);
         out.serverListFilename = serverListPath;
-
-        // Only write the embedded server list if the file doesn't exist yet.
-        // This prevents nuking the server database on every run.
-        if (!filesystem::exists(out.serverListFilename) || (strlen(EMBEDDED_SERVER_LIST) > 0))
-        {
-            if (!WriteFile(out.serverListFilename, EMBEDDED_SERVER_LIST))
-            {
-                my_print(NOT_SENSITIVE, false, _T("%s - write server list file failed (%d)"), __TFUNCTION__, GetLastError());
-                return false;
-            }
-        }
     }
 
     return true;

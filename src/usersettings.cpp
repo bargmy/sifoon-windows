@@ -55,11 +55,17 @@
 #define EGRESS_REGION_NAME              "EgressRegion"
 #define EGRESS_REGION_DEFAULT           ""
 
-#define TUNNEL_PROTOCOL_NAME            "TunnelProtocol"
-#define TUNNEL_PROTOCOL_DEFAULT         ""
+#define GOOGLE_SCRIPT_ID_NAME           "GoogleScriptId"
+#define GOOGLE_SCRIPT_ID_DEFAULT        ""
 
-#define MANUAL_CDN_IPS_NAME             "ManualCdnIps"
-#define MANUAL_CDN_IPS_DEFAULT          ""
+#define GOOGLE_AUTH_KEY_NAME            "GoogleAuthKey"
+#define GOOGLE_AUTH_KEY_DEFAULT         ""
+
+#define GOOGLE_FRONT_DOMAIN_NAME        "GoogleFrontDomain"
+#define GOOGLE_FRONT_DOMAIN_DEFAULT     "www.google.com"
+
+#define GOOGLE_IP_NAME                  "GoogleIp"
+#define GOOGLE_IP_DEFAULT               "216.239.38.120"
 
 #define SKIP_BROWSER_DEFAULT            FALSE
 
@@ -224,11 +230,17 @@ void Settings::ToJson(Json::Value& o_json)
       o_json["EgressRegion"] = Settings::EgressRegion();
       o_json["defaults"]["EgressRegion"] = EGRESS_REGION_DEFAULT;
 
-      o_json["TunnelProtocol"] = Settings::TunnelProtocol();
-      o_json["defaults"]["TunnelProtocol"] = TUNNEL_PROTOCOL_DEFAULT;
+      o_json["GoogleScriptId"] = Settings::GoogleScriptId();
+      o_json["defaults"]["GoogleScriptId"] = GOOGLE_SCRIPT_ID_DEFAULT;
 
-      o_json["ManualCdnIps"] = Settings::ManualCdnIps();
-      o_json["defaults"]["ManualCdnIps"] = MANUAL_CDN_IPS_DEFAULT;
+      o_json["GoogleAuthKey"] = Settings::GoogleAuthKey();
+      o_json["defaults"]["GoogleAuthKey"] = GOOGLE_AUTH_KEY_DEFAULT;
+
+      o_json["GoogleFrontDomain"] = Settings::GoogleFrontDomain();
+      o_json["defaults"]["GoogleFrontDomain"] = GOOGLE_FRONT_DOMAIN_DEFAULT;
+
+      o_json["GoogleIp"] = Settings::GoogleIp();
+      o_json["defaults"]["GoogleIp"] = GOOGLE_IP_DEFAULT;
 
       o_json["SystrayMinimize"] = Settings::SystrayMinimize() ? TRUE : FALSE;
       o_json["defaults"]["SystrayMinimize"] = SYSTRAY_MINIMIZE_DEFAULT;
@@ -338,19 +350,21 @@ bool Settings::FromJson(
             egressRegion,
             failReason);
 
-        string tunnelProtocol = json.get("TunnelProtocol", TUNNEL_PROTOCOL_DEFAULT).asString();
-        reconnectRequiredValueChanged = reconnectRequiredValueChanged || tunnelProtocol != Settings::TunnelProtocol();
-        WriteRegistryStringValue(
-            TUNNEL_PROTOCOL_NAME,
-            tunnelProtocol,
-            failReason);
+        string googleScriptId = json.get("GoogleScriptId", GOOGLE_SCRIPT_ID_DEFAULT).asString();
+        reconnectRequiredValueChanged = reconnectRequiredValueChanged || googleScriptId != Settings::GoogleScriptId();
+        WriteRegistryStringValue(GOOGLE_SCRIPT_ID_NAME, googleScriptId, failReason);
 
-        string manualCdnIps = json.get("ManualCdnIps", MANUAL_CDN_IPS_DEFAULT).asString();
-        reconnectRequiredValueChanged = reconnectRequiredValueChanged || manualCdnIps != Settings::ManualCdnIps();
-        WriteRegistryStringValue(
-            MANUAL_CDN_IPS_NAME,
-            manualCdnIps,
-            failReason);
+        string googleAuthKey = json.get("GoogleAuthKey", GOOGLE_AUTH_KEY_DEFAULT).asString();
+        reconnectRequiredValueChanged = reconnectRequiredValueChanged || googleAuthKey != Settings::GoogleAuthKey();
+        WriteRegistryStringValue(GOOGLE_AUTH_KEY_NAME, googleAuthKey, failReason);
+
+        string googleFrontDomain = json.get("GoogleFrontDomain", GOOGLE_FRONT_DOMAIN_DEFAULT).asString();
+        reconnectRequiredValueChanged = reconnectRequiredValueChanged || googleFrontDomain != Settings::GoogleFrontDomain();
+        WriteRegistryStringValue(GOOGLE_FRONT_DOMAIN_NAME, googleFrontDomain, failReason);
+
+        string googleIp = json.get("GoogleIp", GOOGLE_IP_DEFAULT).asString();
+        reconnectRequiredValueChanged = reconnectRequiredValueChanged || googleIp != Settings::GoogleIp();
+        WriteRegistryStringValue(GOOGLE_IP_NAME, googleIp, failReason);
 
         BOOL systrayMinimize = json.get("SystrayMinimize", SYSTRAY_MINIMIZE_DEFAULT).asUInt();
         // Does not require reconnect to apply change.
@@ -591,14 +605,24 @@ string Settings::EgressRegion()
     return GetSettingString(EGRESS_REGION_NAME, EGRESS_REGION_DEFAULT);
 }
 
-string Settings::TunnelProtocol()
+string Settings::GoogleScriptId()
 {
-    return GetSettingString(TUNNEL_PROTOCOL_NAME, TUNNEL_PROTOCOL_DEFAULT);
+    return GetSettingString(GOOGLE_SCRIPT_ID_NAME, GOOGLE_SCRIPT_ID_DEFAULT);
 }
 
-string Settings::ManualCdnIps()
+string Settings::GoogleAuthKey()
 {
-    return GetSettingString(MANUAL_CDN_IPS_NAME, MANUAL_CDN_IPS_DEFAULT);
+    return GetSettingString(GOOGLE_AUTH_KEY_NAME, GOOGLE_AUTH_KEY_DEFAULT);
+}
+
+string Settings::GoogleFrontDomain()
+{
+    return GetSettingString(GOOGLE_FRONT_DOMAIN_NAME, GOOGLE_FRONT_DOMAIN_DEFAULT);
+}
+
+string Settings::GoogleIp()
+{
+    return GetSettingString(GOOGLE_IP_NAME, GOOGLE_IP_DEFAULT);
 }
 
 bool Settings::SystrayMinimize()

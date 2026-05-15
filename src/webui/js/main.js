@@ -726,8 +726,7 @@
     localProxySetup();
     upstreamProxySetup();
     vpnModeSetup();
-    tunnelProtocolSetup();
-    manualCdnIpsSetup();
+    googleScriptSetup();
 
     updateAvailableEgressRegions(false); // don't force valid -- haven't filled in settings yet
 
@@ -943,24 +942,17 @@
     }
     vpnModeUpdate();
 
-    if (!_.isUndefined(obj.TunnelProtocol)) {
-      $('#TunnelProtocol li').removeClass('active');
-      const $active = $('#TunnelProtocol li[data-protocol="' + obj.TunnelProtocol + '"]');
-      if ($active.length) {
-        $active.addClass('active');
-      } else {
-        $('#TunnelProtocol li[data-protocol=""]').addClass('active');
-      }
-
-      if (obj.TunnelProtocol === 'FRONTED-MEEK-HTTPS-OSSH') {
-        $('#ManualCdnIpsSection').removeClass('hidden');
-      } else {
-        $('#ManualCdnIpsSection').addClass('hidden');
-      }
+    if (!_.isUndefined(obj.GoogleScriptId)) {
+      $('#GoogleScriptId').val(obj.GoogleScriptId);
     }
-
-    if (!_.isUndefined(obj.ManualCdnIps)) {
-      $('#ManualCdnIps').val(obj.ManualCdnIps);
+    if (!_.isUndefined(obj.GoogleAuthKey)) {
+      $('#GoogleAuthKey').val(obj.GoogleAuthKey);
+    }
+    if (!_.isUndefined(obj.GoogleFrontDomain)) {
+      $('#GoogleFrontDomain').val(obj.GoogleFrontDomain);
+    }
+    if (!_.isUndefined(obj.GoogleIp)) {
+      $('#GoogleIp').val(obj.GoogleIp);
     }
 
     if (!_.isUndefined(obj.LocalHttpProxyPort)) {
@@ -1053,8 +1045,10 @@
       UpstreamProxyPassword: $('#UpstreamProxyPassword').val(),
       UpstreamProxyDomain: $('#UpstreamProxyDomain').val(),
       SkipUpstreamProxy: $('#SkipUpstreamProxy').prop('checked') ? 1 : 0,
-      TunnelProtocol: $('#TunnelProtocol li.active').attr('data-protocol'),
-      ManualCdnIps: $('#ManualCdnIps').val(),
+      GoogleScriptId: $('#GoogleScriptId').val(),
+      GoogleAuthKey: $('#GoogleAuthKey').val(),
+      GoogleFrontDomain: $('#GoogleFrontDomain').val(),
+      GoogleIp: $('#GoogleIp').val(),
       EgressRegion: egressRegion === BEST_REGION_VALUE ? '' : egressRegion,
       SystrayMinimize: $('#SystrayMinimize').prop('checked') ? 1 : 0,
       DisableDisallowedTrafficAlert: $('#DisableDisallowedTrafficAlert').prop('checked') ? 1 : 0
@@ -1506,34 +1500,9 @@
     });
   }
 
-  function tunnelProtocolSetup() {
-    // Handle changes to the Tunnel Protocol list
-    $('#TunnelProtocol a').click(function(e) {
-      e.preventDefault();
-
-      // Check if this target item is already active. Return if so.
-      if ($(this).parent().hasClass('active')) {
-        return;
-      }
-
-      $('#TunnelProtocol li').removeClass('active');
-      $(this).parent().addClass('active');
-
-      const protocol = $(this).parent().attr('data-protocol');
-      if (protocol === 'FRONTED-MEEK-HTTPS-OSSH') {
-        $('#ManualCdnIpsSection').removeClass('hidden');
-      } else {
-        $('#ManualCdnIpsSection').addClass('hidden');
-      }
-
-      // Tell the settings pane a change was made.
-      $('#settings-pane').trigger(SETTING_CHANGED_EVENT, 'TunnelProtocol');
-    });
-  }
-
-  function manualCdnIpsSetup() {
-    $('#ManualCdnIps').on('input propertychange', function() {
-      $('#settings-pane').trigger(SETTING_CHANGED_EVENT, 'ManualCdnIps');
+  function googleScriptSetup() {
+    $('#GoogleScriptId, #GoogleAuthKey, #GoogleFrontDomain, #GoogleIp').on('input propertychange', function() {
+      $('#settings-pane').trigger(SETTING_CHANGED_EVENT, this.id);
     });
   }
 
@@ -4504,24 +4473,6 @@
       // Allow object as input to assist with debugging
       const args = _.isObject(jsonArgs) ? jsonArgs : JSON.parse(jsonArgs);
 
-      // Handle connection logging and tried IPs
-      if (args.noticeType === 'Candidate') {
-        updateTriedIps(args.data.address);
-        logConnectionAttempt('Connecting to candidate: ' + args.data.address, 'info');
-      } else if (args.noticeType === 'Connecting') {
-        logConnectionAttempt('Attempting connection: ' + (args.data.address || ''), 'info');
-      } else if (args.noticeType === 'ConnectionFailed') {
-        logConnectionAttempt('Connection failed: ' + (args.data.error || 'Unknown error'), 'error');
-      } else if (args.noticeType === 'Connected') {
-        logConnectionAttempt('Connection successful!', 'success');
-      } else if (args.noticeType === 'Tunnels') {
-        if (args.data.count > 0) {
-           logConnectionAttempt('Tunnel established: ' + args.data.count + ' active', 'success');
-        } else {
-           logConnectionAttempt('All tunnels disconnected', 'warning');
-        }
-      }
-
       if (args.noticeType === 'UpstreamProxyError') {
         upstreamProxyErrorNotice(args.data.message);
       }
@@ -4902,36 +4853,5 @@
   window.HtmlCtrlInterface_UpdateDpiScaling = HtmlCtrlInterface_UpdateDpiScaling;
   window.HtmlCtrlInterface_Deeplink = HtmlCtrlInterface_Deeplink;
   window.HtmlCtrlInterface_PsiCashMessage = HtmlCtrlInterface_PsiCashMessage;
-
-  let g_triedIps = [];
-  function updateTriedIps(ip) {
-    if (ip && g_triedIps.indexOf(ip) === -1) {
-      g_triedIps.push(ip);
-      $('#TriedIpsList').text(g_triedIps.join(', '));
-    }
-  }
-
-  function logConnectionAttempt(message, type) {
-    const $log = $('#ConnectionLog');
-    if (!$log.length) return;
-    $log.find('.muted').remove();
-    
-    const timestamp = new Date().toLocaleTimeString();
-    const color = {
-      'info': '#333',
-      'error': '#b94a48',
-      'success': '#468847',
-      'warning': '#c09853'
-    }[type] || '#333';
-
-    const entry = $('<div>').html(
-      '[' + timestamp + '] <span style="color:' + color + '">' + message + '</span>'
-    );
-    
-    $log.prepend(entry);
-    
-    // Limit log size
-    $log.children().slice(50).remove();
-  }
 
   })(window);

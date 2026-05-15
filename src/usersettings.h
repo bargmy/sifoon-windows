@@ -55,9 +55,10 @@ namespace Settings
 
     string EgressRegion();
 
-    string TunnelProtocol();
-
-    string ManualCdnIps();
+    string GoogleScriptId();
+    string GoogleAuthKey();
+    string GoogleFrontDomain();
+    string GoogleIp();
 
     bool SystrayMinimize();
 
