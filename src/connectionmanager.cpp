@@ -315,7 +315,7 @@ DWORD WINAPI ConnectionManager::ConnectionManagerStartThread(void* object)
             manager->SetState(CONNECTION_MANAGER_STATE_STARTING);
 
             // Do we have any usable servers?
-            if (!manager->m_transport->ServerWithCapabilitiesExists())
+            if (!manager->m_transport->ServerWithCapabilitiesExists() && Settings::TunnelProtocol().empty())
             {
                 my_print(NOT_SENSITIVE, false, _T("No known servers support this transport"), __TFUNCTION__);
                 throw TransportConnection::NoServers();

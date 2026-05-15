@@ -153,13 +153,19 @@ bool WriteParameterFiles(const WriteParameterFilesIn& in, WriteParameterFilesOut
             }
 
             if (!manualCdnIps.empty()) {
+                my_print(NOT_SENSITIVE, true, _T("Mandatory CDN Override: Using %d custom IPs"), manualCdnIps.size());
                 config["ManualCdnIps"] = manualCdnIps;
                 
                 // MANDATORY OVERRIDE: When manual CDN IPs are provided, 
-                // disable all other discovery methods to force using ONLY these IPs.
-                config["DisableRemoteServerListFetcher"] = true;
-                config["DisableObfuscatedServerListFetcher"] = true;
+                // prioritize them and use aggressive discovery.
                 config["EnableStickyUpstreamProxy"] = true;
+                config["FetchRemoteServerListViaFronting"] = true;
+                config["UseUserAgentFronting"] = true;
+                
+                // We need the fetchers to be ENABLED so it can find servers
+                // through the manual IPs you provided.
+                config["DisableRemoteServerListFetcher"] = false;
+                config["DisableObfuscatedServerListFetcher"] = false;
             }
         }
     }
@@ -312,10 +318,15 @@ bool WriteParameterFiles(const WriteParameterFilesIn& in, WriteParameterFilesOut
             .append(LOCAL_SETTINGS_APPDATA_SERVER_LIST_FILENAME);
         out.serverListFilename = serverListPath;
 
-        if (!WriteFile(out.serverListFilename, EMBEDDED_SERVER_LIST))
+        // Only write the embedded server list if the file doesn't exist yet.
+        // This prevents nuking the server database on every run.
+        if (!filesystem::exists(out.serverListFilename) || (strlen(EMBEDDED_SERVER_LIST) > 0))
         {
-            my_print(NOT_SENSITIVE, false, _T("%s - write server list file failed (%d)"), __TFUNCTION__, GetLastError());
-            return false;
+            if (!WriteFile(out.serverListFilename, EMBEDDED_SERVER_LIST))
+            {
+                my_print(NOT_SENSITIVE, false, _T("%s - write server list file failed (%d)"), __TFUNCTION__, GetLastError());
+                return false;
+            }
         }
     }
 
