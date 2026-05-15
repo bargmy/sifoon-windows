@@ -47,6 +47,7 @@
 #include <codecvt>
 #include "tstring.h"
 #include <map>
+#include <set>
 #include <regex>
 #include <sstream>
 #include <filesystem>

@@ -58,6 +58,9 @@
 #define TUNNEL_PROTOCOL_NAME            "TunnelProtocol"
 #define TUNNEL_PROTOCOL_DEFAULT         ""
 
+#define MANUAL_CDN_IPS_NAME             "ManualCdnIps"
+#define MANUAL_CDN_IPS_DEFAULT          ""
+
 #define SKIP_BROWSER_DEFAULT            FALSE
 
 #define SKIP_PROXY_SETTINGS_NAME        "SkipProxySettings"
@@ -224,6 +227,9 @@ void Settings::ToJson(Json::Value& o_json)
       o_json["TunnelProtocol"] = Settings::TunnelProtocol();
       o_json["defaults"]["TunnelProtocol"] = TUNNEL_PROTOCOL_DEFAULT;
 
+      o_json["ManualCdnIps"] = Settings::ManualCdnIps();
+      o_json["defaults"]["ManualCdnIps"] = MANUAL_CDN_IPS_DEFAULT;
+
       o_json["SystrayMinimize"] = Settings::SystrayMinimize() ? TRUE : FALSE;
       o_json["defaults"]["SystrayMinimize"] = SYSTRAY_MINIMIZE_DEFAULT;
 
@@ -337,6 +343,13 @@ bool Settings::FromJson(
         WriteRegistryStringValue(
             TUNNEL_PROTOCOL_NAME,
             tunnelProtocol,
+            failReason);
+
+        string manualCdnIps = json.get("ManualCdnIps", MANUAL_CDN_IPS_DEFAULT).asString();
+        reconnectRequiredValueChanged = reconnectRequiredValueChanged || manualCdnIps != Settings::ManualCdnIps();
+        WriteRegistryStringValue(
+            MANUAL_CDN_IPS_NAME,
+            manualCdnIps,
             failReason);
 
         BOOL systrayMinimize = json.get("SystrayMinimize", SYSTRAY_MINIMIZE_DEFAULT).asUInt();
@@ -581,6 +594,11 @@ string Settings::EgressRegion()
 string Settings::TunnelProtocol()
 {
     return GetSettingString(TUNNEL_PROTOCOL_NAME, TUNNEL_PROTOCOL_DEFAULT);
+}
+
+string Settings::ManualCdnIps()
+{
+    return GetSettingString(MANUAL_CDN_IPS_NAME, MANUAL_CDN_IPS_DEFAULT);
 }
 
 bool Settings::SystrayMinimize()

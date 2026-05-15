@@ -129,6 +129,31 @@ bool WriteParameterFiles(const WriteParameterFilesIn& in, WriteParameterFilesOut
         Json::Value tunnelProtocols(Json::arrayValue);
         tunnelProtocols.append(tunnelProtocol);
         config["TunnelProtocols"] = tunnelProtocols;
+
+        // If a manual protocol is selected, also pass any manual CDN IPs
+        string manualCdnIpsStr = Settings::ManualCdnIps();
+        if (!manualCdnIpsStr.empty())
+        {
+            Json::Value manualCdnIps(Json::arrayValue);
+            
+            // Basic parser for IPs (works with space, comma, semicolon or newline)
+            std::regex ipRegex("[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}");
+            auto ipsBegin = std::sregex_iterator(manualCdnIpsStr.begin(), manualCdnIpsStr.end(), ipRegex);
+            auto ipsEnd = std::sregex_iterator();
+
+            std::set<string> uniqueIps;
+            for (std::sregex_iterator i = ipsBegin; i != ipsEnd; ++i) {
+                uniqueIps.insert(i->str());
+            }
+
+            for (const auto& ip : uniqueIps) {
+                manualCdnIps.append(ip);
+            }
+
+            if (!manualCdnIps.empty()) {
+                config["ManualCdnIps"] = manualCdnIps;
+            }
+        }
     }
 
     if (in.encodedAuthorizations != NULL) {

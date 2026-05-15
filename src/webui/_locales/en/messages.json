@@ -523,6 +523,30 @@
     "message": "CDN Fronting (HTTPS)",
     "description": "Manual selection for the CDN Fronting (HTTPS) connection protocol."
   },
+  "settings#manual-cdn-ips#label": {
+    "message": "Custom CDN IPs",
+    "description": "Label for the custom CDN IPs textarea."
+  },
+  "settings#manual-cdn-ips#placeholder": {
+    "message": "Enter IPs, one or more per line...",
+    "description": "Placeholder for the custom CDN IPs textarea."
+  },
+  "settings#manual-cdn-ips#help-text": {
+    "message": "Specify manual IP addresses for CDN fronting. Supports multiple IPs per line.",
+    "description": "Help text for the custom CDN IPs setting."
+  },
+  "connection#tried-ips#label": {
+    "message": "Tried IPs",
+    "description": "Label for the display of tried IP addresses."
+  },
+  "connection#connection-log#label": {
+    "message": "Connection Log",
+    "description": "Label for the detailed connection log."
+  },
+  "connection#connection-log#empty": {
+    "message": "No connection attempts yet.",
+    "description": "Text shown when the connection log is empty."
+  },
 
   "settings#systray-minimize#heading": {
     "message": "Minimize to Notification Area (System Tray)",

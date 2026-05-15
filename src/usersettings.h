@@ -57,6 +57,8 @@ namespace Settings
 
     string TunnelProtocol();
 
+    string ManualCdnIps();
+
     bool SystrayMinimize();
 
     bool DisableDisallowedTrafficAlert();

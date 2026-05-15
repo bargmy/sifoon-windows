@@ -599,6 +599,19 @@
              </ul>
             </div>
           </div>
+
+          <div class="well text-left" style="margin-top: 20px;">
+            <div style="font-weight: bold; margin-bottom: 5px;">
+              <i class="icon-earth"></i> <span data-i18n="connection#tried-ips#label">Tried IPs</span>:
+              <span id="TriedIpsList" style="font-weight: normal; font-family: monospace; word-break: break-all;">-</span>
+            </div>
+            <div style="font-weight: bold; border-top: 1px solid #ddd; padding-top: 5px; margin-top: 5px;">
+              <i class="icon-list"></i> <span data-i18n="connection#connection-log#label">Connection Log</span>:
+            </div>
+            <div id="ConnectionLog" style="font-family: monospace; font-size: 0.9em; line-height: 1.4em; max-height: 150px; overflow-y: auto; background: #f9f9f9; padding: 5px; border: 1px solid #eee; border-radius: 4px; margin-top: 5px;">
+              <div class="muted" data-i18n="connection#connection-log#empty">No connection attempts yet.</div>
+            </div>
+          </div>
         </div><!-- /connection-pane -->
 
 
@@ -886,34 +899,39 @@
               </div>
               <div id="settings-accordion-protocol-selector" class="js-accordion-body collapse">
                 <div class="accordion-inner">
-                  <form action="">
-                    <fieldset>
-                      <div class="control-group">
-                        <div class="controls">
-                          <label class="radio">
-                            <input type="radio" name="TunnelProtocol" value="" checked />
-                            <span data-i18n="settings#protocol-selector#automatic">Automatic</span>
-                          </label>
-                          <label class="radio">
-                            <input type="radio" name="TunnelProtocol" value="SSH" />
-                            <span data-i18n="settings#protocol-selector#ssh">SSH</span>
-                          </label>
-                          <label class="radio">
-                            <input type="radio" name="TunnelProtocol" value="OSSH" />
-                            <span data-i18n="settings#protocol-selector#ossh">Obfuscated SSH</span>
-                          </label>
-                          <label class="radio">
-                            <input type="radio" name="TunnelProtocol" value="QUIC" />
-                            <span data-i18n="settings#protocol-selector#quic">QUIC</span>
-                          </label>
-                          <label class="radio">
-                            <input type="radio" name="TunnelProtocol" value="FRONTED-MEEK-HTTPS-OSSH" />
-                            <span data-i18n="settings#protocol-selector#fronted-meek-https">CDN Fronting (HTTPS)</span>
-                          </label>
-                        </div>
-                      </div>
-                    </fieldset>
-                  </form>
+                  <div class="control-group">
+                    <div class="controls">
+                      <ul id="TunnelProtocol" class="nav nav-list dropdown-menu" style="position: static; display: block; float: none; max-height: none; margin-bottom: 10px;">
+                        <li class="active" data-protocol="">
+                          <a href="#" tabindex="-1" data-i18n="settings#protocol-selector#automatic">Automatic</a>
+                        </li>
+                        <li data-protocol="SSH">
+                          <a href="#" tabindex="-1" data-i18n="settings#protocol-selector#ssh">SSH</a>
+                        </li>
+                        <li data-protocol="OSSH">
+                          <a href="#" tabindex="-1" data-i18n="settings#protocol-selector#ossh">Obfuscated SSH</a>
+                        </li>
+                        <li data-protocol="QUIC">
+                          <a href="#" tabindex="-1" data-i18n="settings#protocol-selector#quic">QUIC</a>
+                        </li>
+                        <li data-protocol="FRONTED-MEEK-HTTPS-OSSH">
+                          <a href="#" tabindex="-1" data-i18n="settings#protocol-selector#fronted-meek-https">CDN Fronting (HTTPS)</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div id="ManualCdnIpsSection" class="hidden">
+                    <label class="control-label" for="ManualCdnIps" data-i18n="settings#manual-cdn-ips#label">Custom CDN IPs</label>
+                    <div class="controls">
+                      <textarea id="ManualCdnIps" class="input-block-level" rows="4" 
+                                placeholder="Enter IPs, one or more per line..."
+                                data-i18n="[placeholder]settings#manual-cdn-ips#placeholder"></textarea>
+                      <p class="help-block" data-i18n="settings#manual-cdn-ips#help-text">
+                        Specify manual IP addresses for CDN fronting.
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
