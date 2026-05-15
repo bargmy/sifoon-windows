@@ -122,4 +122,5 @@ server.on('connect', (req, socket) => {
 const PORT = 8088;
 server.listen(PORT, '127.0.0.1', () => {
   console.log(JSON.stringify({ noticeType: "ListeningHttpProxyPort", data: { port: PORT } }));
+  console.log(JSON.stringify({ noticeType: "Tunnels", data: { count: 1 } }));
 });

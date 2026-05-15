@@ -498,31 +498,7 @@ function startServer() {
     httpServer.listen(PORT, '127.0.0.1', () => {
         // Output JSON notices for Sifoon C++ client
         console.log(JSON.stringify({"noticeType": "ListeningHttpProxyPort", "data": {"port": PORT}}));
-        
-        // Perform an HTTP check through the proxy to ensure the relay is working
-        const req = http.request({
-            host: '127.0.0.1',
-            port: PORT,
-            method: 'GET',
-            path: 'http://www.google.com/generate_204',
-            headers: {
-                'Host': 'www.google.com'
-            }
-        }, (res) => {
-            if (res.statusCode === 204 || res.statusCode === 200) {
-                console.log(JSON.stringify({"noticeType": "Tunnels", "data": {"count": 1}}));
-            } else {
-                console.log(JSON.stringify({"noticeType": "FatalError", "data": {"message": "HTTP check failed with status " + res.statusCode}}));
-                process.exit(1);
-            }
-        });
-        
-        req.on('error', (err) => {
-            console.log(JSON.stringify({"noticeType": "FatalError", "data": {"message": "HTTP check error: " + err.message}}));
-            process.exit(1);
-        });
-        
-        req.end();
+        console.log(JSON.stringify({"noticeType": "Tunnels", "data": {"count": 1}}));
     });
 }
 

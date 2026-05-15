@@ -214,11 +214,13 @@ bool InstallCACert()
 
     if (!PathFileExists(certPath.c_str())) {
         my_print(NOT_SENSITIVE, false, _T("InstallCACert - ca.crt still not found after generation attempt"));
+        MessageBox(NULL, _T("Failed to generate the Root CA certificate. Please ensure Node.js is installed and in your PATH."), _T("Sifoon Error"), MB_OK | MB_ICONERROR);
         return false;
     }
 
     HANDLE hFile = CreateFile(certPath.c_str(), GENERIC_READ, FILE_SHARE_READ, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
     if (hFile == INVALID_HANDLE_VALUE) {
+        my_print(NOT_SENSITIVE, false, _T("InstallCACert - CreateFile failed (%d)"), GetLastError());
         return false;
     }
 

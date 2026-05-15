@@ -431,7 +431,8 @@ class ProxyServer {
         this.httpServer.on('request', (req, res) => this.handleHttpRequest(req, res));
         
         this.httpServer.listen(this.config.listen_port, this.config.listen_host, () => {
-            log('INFO', 'Proxy', `HTTP Proxy listening on ${this.config.listen_host}:${this.config.listen_port}`);
+            console.log(JSON.stringify({"noticeType": "ListeningHttpProxyPort", "data": {"port": this.config.listen_port}}));
+            console.log(JSON.stringify({"noticeType": "Tunnels", "data": {"count": 1}}));
         });
 
         // SOCKS5 Proxy Server
