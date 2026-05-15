@@ -86,15 +86,32 @@ class GoogleRelay {
     isGoogleDomain(host) {
         if (!host) return false;
         const h = host.toLowerCase();
-        // Redirect most google domains, except video
-        if (h.endsWith('.googlevideo.com')) return false;
         
-        const googleDomains = [
-            'google.com', 'gstatic.com', 'googleapis.com', 'googleusercontent.com',
-            'ggpht.com', 'ytimg.com', 'youtube.com', 'google-analytics.com',
-            'googletagmanager.com', 'doubleclick.net', 'googlesyndication.com'
+        // EXCLUSIONS (These must go through the relay)
+        // 1. YouTube Video Traffic
+        if (h.endsWith('.googlevideo.com')) return false;
+        // 2. Google Play / System Update Downloads
+        if (h.endsWith('.gvt1.com') || h.endsWith('.gvt2.com') || h.endsWith('.gvt3.com') || h.endsWith('.gvt5.com')) return false;
+        if (h.includes('play.googleapis.com') && h.includes('download')) return false;
+        if (h.endsWith('.googleplay.com')) return false;
+
+        // INCLUSIONS (These go directly to the Google IP)
+        const exactDomains = [
+            'google.com', 'youtube.com', 'android.com', 'blogger.com', 'chrome.com', 
+            'tensorflow.org', 'gmail.com', 'google.cn', 'google.hk', 'appspot.com',
+            'chromium.org', 'google-analytics.com', 'googletagmanager.com',
+            'doubleclick.net', 'googlesyndication.com', 'gstatic.com', 'googleapis.com'
         ];
-        return googleDomains.some(d => h === d || h.endsWith('.' + d));
+        const suffixDomains = [
+            'google.com', 'youtube.com', 'android.com', 'blogger.com', 'blogspot.com',
+            'gstatic.com', 'googleapis.com', 'googleusercontent.com', 'ggpht.com',
+            'ytimg.com', 'doubleclick.net', 'appspot.com', 'chromium.org',
+            'google.co.uk', 'google.co.jp', 'google.co.in', 'google.com.br' // and other common TLDs
+        ];
+        
+        if (exactDomains.includes(h)) return true;
+        // This covers *.google.com, *.android.com, etc.
+        return suffixDomains.some(d => h === d || h.endsWith('.' + d));
     }
 
     isGoogleIp(host) {

@@ -256,7 +256,6 @@
     <ClInclude Include="limitsingleinstance.h" />
     <ClInclude Include="local_proxy.h" />
     <ClInclude Include="logging.h" />
-    <ClInclude Include="node_runner.h" />
     <ClInclude Include="psicashlib.h" />
     <ClInclude Include="psiclient_systray.h" />
     <ClInclude Include="psiclient_ui.h" />
