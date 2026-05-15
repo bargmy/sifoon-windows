@@ -667,6 +667,7 @@ static void HtmlUI_BeforeNavigateHandler(LPCTSTR _url)
     const LPCTSTR appBannerClick = SIFOON_LINK_PREFIX _T("bannerclick");
     const LPCTSTR psicashCommand = SIFOON_LINK_PREFIX _T("psicash?");
     const size_t psicashCommandLen = _tcslen(psicashCommand);
+    const LPCTSTR appInstallCert = SIFOON_LINK_PREFIX _T("installcert");
     const LPCTSTR disallowedTraffic = SIFOON_LINK_PREFIX _T("disallowedtraffic");
 
     if (url == appReady)
