@@ -326,15 +326,15 @@ function handleGenericRelay(socket, targetHost, initialData, relay) {
                     if (parts.length === 2) headers[parts[0].toLowerCase()] = parts[1];
                 }
 
-                let targetUrl = urlPath.startsWith('/') ? \`http://\${targetHost}\${urlPath}\` : urlPath;
+                let targetUrl = urlPath.startsWith('/') ? `http://${targetHost}${urlPath}` : urlPath;
                 
                 try {
                     const res = await relay.fetch(method, targetUrl, headers, body);
                     UI.downloaded += res.body.length;
                     UI.triggerDown();
                     
-                    socket.write(\`HTTP/1.1 \${res.status} OK\r\n\`);
-                    for (const h in res.headers) socket.write(\`\${h}: \${res.headers[h]}\r\n\`);
+                    socket.write(`HTTP/1.1 ${res.status} OK\r\n`);
+                    for (const h in res.headers) socket.write(`${h}: ${res.headers[h]}\r\n`);
                     socket.write('\r\n');
                     socket.write(res.body);
                     buffer = Buffer.alloc(0);
@@ -343,7 +343,7 @@ function handleGenericRelay(socket, targetHost, initialData, relay) {
             } else if (buffer.length < 4096) return;
         }
 
-        const targetUrl = isTelegram ? \`http://\${targetHost}/api\` : \`http://\${targetHost}/\`;
+        const targetUrl = isTelegram ? `http://${targetHost}/api` : `http://${targetHost}/`;
         try {
             const res = await relay.fetch('POST', targetUrl, { 'Content-Type': 'application/octet-stream' }, buffer);
             UI.downloaded += res.body.length;
