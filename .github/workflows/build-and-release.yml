@@ -38,7 +38,7 @@ jobs:
     - name: Build C++ Client
       working-directory: src
       run: |
-        msbuild psiclient2015.sln /p:Configuration=Release /p:Platform=Win32 /p:CL_AdditionalOptions="/D_HAS_STD_BYTE=0"
+        msbuild psiclient2015.sln /p:Configuration=Release /p:Platform=Win32 /p:WindowsTargetPlatformVersion=10.0 /p:CL_AdditionalOptions="/D_HAS_STD_BYTE=0"
 
     - name: Prepare Artifacts
       run: |
