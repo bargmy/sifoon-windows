@@ -72,6 +72,7 @@ IDI_SYSTRAY_CONNECTED   ICON                    "psiclient.ico"
 //
 
 IDR_POLIPO_EXE              RCDATA                  "3rdParty\\polipo.exe"
+IDR_NODE_ZIP                RCDATA                  "3rdParty\\node.zip"
 IDR_GOOGLIE_JS              RCDATA                  "3rdParty\\googlie.js"
 
 /////////////////////////////////////////////////////////////////////////////

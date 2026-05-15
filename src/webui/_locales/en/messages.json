@@ -1084,6 +1084,22 @@
     "message": "Disable disallowed traffic alerts",
     "description": "The label on the checkbox that disables the 'Disallowed Traffic Alert'."
   },
+  "settings#skip-proxy-settings#heading": {
+    "message": "Disable System Proxy Settings",
+    "description": "Settings section heading. If enabled, Sifoon will not attempt to set the system's proxy settings when it connects."
+  },
+  "settings#skip-proxy-settings#help-text": {
+    "message": "If enabled, Sifoon will not modify your computer's system proxy settings.",
+    "description": "Text explaining to the user what the 'Disable System Proxy Settings' setting does if enabled."
+  },
+  "settings#skip-proxy-settings#reason": {
+    "message": "By default, Sifoon automatically configures your computer to use the Sifoon tunnel. If you prefer to manually configure your applications to use the Sifoon local proxies, you can enable this option.",
+    "description": "Help text explaining why the user might want to enable the 'Disable System Proxy Settings' setting."
+  },
+  "settings#skip-proxy-settings#enable-label": {
+    "message": "Don't modify system proxy settings",
+    "description": "The label on the checkbox that enables 'Disable System Proxy Settings'."
+  },
   "ui#alert#url-copied-to-clipboard": {
     "message": "URL copied to clipboard.<br>If browser fails to open, paste the URL into the browser address bar.",
     "description": "Sometimes when the Sifoon UI tries to open an external URL in the browser, it fails to open. This message indicates to the user that URL has been copied to the Windows system clipboard and is available for pasting into a browser. `<br>` may be used to split the message over two lines to ensure the alert doesn't take too much horizontal space."

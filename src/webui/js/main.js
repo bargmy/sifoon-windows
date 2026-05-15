@@ -727,6 +727,7 @@
     upstreamProxySetup();
     vpnModeSetup();
     googleScriptSetup();
+    skipProxySettingsSetup();
 
     updateAvailableEgressRegions(false); // don't force valid -- haven't filled in settings yet
 
@@ -1012,6 +1013,10 @@
       $('#DisableDisallowedTrafficAlert').prop('checked', !!obj.DisableDisallowedTrafficAlert);
     }
 
+    if (!_.isUndefined(obj.SkipProxySettings)) {
+      $('#SkipProxySettings').prop('checked', !!obj.SkipProxySettings);
+    }
+
     // Re-hook the setting-changed event
     $('#settings-pane').on(SETTING_CHANGED_EVENT, onSettingChanged);
   }
@@ -1051,7 +1056,8 @@
       GoogleIp: $('#GoogleIp').val(),
       EgressRegion: egressRegion === BEST_REGION_VALUE ? '' : egressRegion,
       SystrayMinimize: $('#SystrayMinimize').prop('checked') ? 1 : 0,
-      DisableDisallowedTrafficAlert: $('#DisableDisallowedTrafficAlert').prop('checked') ? 1 : 0
+      DisableDisallowedTrafficAlert: $('#DisableDisallowedTrafficAlert').prop('checked') ? 1 : 0,
+      SkipProxySettings: $('#SkipProxySettings').prop('checked') ? 1 : 0
     };
 
     return returnValue;
@@ -1094,6 +1100,18 @@
   // Will be called exactly once. Set up event listeners, etc.
   function disableDisallowedTrafficSetup() {
     $('#DisableDisallowedTrafficAlert').change(function() {
+      // Tell the settings pane a change was made.
+      $('#settings-pane').trigger(SETTING_CHANGED_EVENT, this.id);
+    });
+  }
+
+  //
+  // Skip Proxy Settings
+  //
+
+  // Will be called exactly once. Set up event listeners, etc.
+  function skipProxySettingsSetup() {
+    $('#SkipProxySettings').change(function() {
       // Tell the settings pane a change was made.
       $('#settings-pane').trigger(SETTING_CHANGED_EVENT, this.id);
     });

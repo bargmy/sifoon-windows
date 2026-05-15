@@ -79,6 +79,104 @@ void TerminateProcessByName(const TCHAR* executableName)
 }
 
 
+#include <shldisp.h>
+
+bool UnzipFile(const tstring& zipPath, const tstring& destDir)
+{
+    // Use the Shell.Application COM object to extract the zip file.
+    // This works on Windows XP and later and doesn't require any
+    // third-party libraries.
+
+    HRESULT hr;
+    IShellDispatch *pISD;
+
+    hr = CoInitializeEx(NULL, COINIT_APARTMENTTHREADED);
+    if (FAILED(hr) && hr != RPC_E_CHANGED_MODE)
+    {
+        my_print(NOT_SENSITIVE, false, _T("UnzipFile - CoInitializeEx failed (0x%08X)"), hr);
+        return false;
+    }
+
+    bool success = false;
+
+    hr = CoCreateInstance(CLSID_Shell, NULL, CLSCTX_INPROC_SERVER, IID_IShellDispatch, (void **)&pISD);
+    if (SUCCEEDED(hr))
+    {
+        VARIANT vToFolder;
+        VariantInit(&vToFolder);
+        vToFolder.vt = VT_BSTR;
+        vToFolder.bstrVal = SysAllocString(destDir.c_str());
+
+        Folder *pToFolder;
+        hr = pISD->NameSpace(vToFolder, &pToFolder);
+        if (SUCCEEDED(hr))
+        {
+            VARIANT vZipFile;
+            VariantInit(&vZipFile);
+            vZipFile.vt = VT_BSTR;
+            vZipFile.bstrVal = SysAllocString(zipPath.c_str());
+
+            Folder *pFromFolder;
+            hr = pISD->NameSpace(vZipFile, &pFromFolder);
+            if (SUCCEEDED(hr))
+            {
+                FolderItems *pItems;
+                hr = pFromFolder->Items(&pItems);
+                if (SUCCEEDED(hr))
+                {
+                    VARIANT vItems;
+                    VariantInit(&vItems);
+                    vItems.vt = VT_DISPATCH;
+                    vItems.pdispVal = pItems;
+
+                    VARIANT vOptions;
+                    VariantInit(&vOptions);
+                    vOptions.vt = VT_I4;
+                    // FOF_NO_UI (4) | FOF_SILENT (16) | FOF_NOCONFIRMATION (512) | FOF_NOCONFIRMMKDIR (1024)
+                    vOptions.lVal = 4 | 16 | 512 | 1024;
+
+                    hr = pToFolder->CopyHere(vItems, vOptions);
+                    if (SUCCEEDED(hr))
+                    {
+                        success = true;
+                    }
+                    else
+                    {
+                        my_print(NOT_SENSITIVE, false, _T("UnzipFile - CopyHere failed (0x%08X)"), hr);
+                    }
+
+                    pItems->Release();
+                }
+                else
+                {
+                    my_print(NOT_SENSITIVE, false, _T("UnzipFile - Items failed (0x%08X)"), hr);
+                }
+                pFromFolder->Release();
+            }
+            else
+            {
+                my_print(NOT_SENSITIVE, false, _T("UnzipFile - NameSpace (from) failed (0x%08X)"), hr);
+            }
+            pToFolder->Release();
+            SysFreeString(vZipFile.bstrVal);
+        }
+        else
+        {
+            my_print(NOT_SENSITIVE, false, _T("UnzipFile - NameSpace (to) failed (0x%08X)"), hr);
+        }
+        SysFreeString(vToFolder.bstrVal);
+        pISD->Release();
+    }
+    else
+    {
+        my_print(NOT_SENSITIVE, false, _T("UnzipFile - CoCreateInstance failed (0x%08X)"), hr);
+    }
+
+    CoUninitialize();
+
+    return success;
+}
+
 bool ExtractExecutable(
     DWORD resourceID,
     const tstring& exeFilePath,
@@ -1844,8 +1942,8 @@ wstring GetDeviceRegion()
 
 bool IsOSUnsupported()
 {
-    // We no longer support Windows XP, Vista, 7, 8, 8.1
-    return !IsWindows10OrGreater();
+    // We support Windows 7 and later
+    return !IsWindows7OrGreater();
 }
 
 bool IsOSLegacy()

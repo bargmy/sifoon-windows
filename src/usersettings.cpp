@@ -247,6 +247,9 @@ void Settings::ToJson(Json::Value& o_json)
 
       o_json["DisableDisallowedTrafficAlert"] = Settings::DisableDisallowedTrafficAlert() ? TRUE : FALSE;
       o_json["defaults"]["DisableDisallowedTrafficAlert"] = DISABLE_DISALLOWED_TRAFFIC_ALERT_DEFAULT;
+
+      o_json["SkipProxySettings"] = Settings::SkipProxySettings() ? TRUE : FALSE;
+      o_json["defaults"]["SkipProxySettings"] = SKIP_PROXY_SETTINGS_DEFAULT;
 }
 
 // FromJson updates the stores settings from an object stored in JSON format.
@@ -275,6 +278,10 @@ bool Settings::FromJson(
         // Note: We're purposely not bothering to check registry write return values.
 
         RegistryFailureReason failReason;
+
+        BOOL skipProxySettings = json.get("SkipProxySettings", SKIP_PROXY_SETTINGS_DEFAULT).asUInt();
+        reconnectRequiredValueChanged = reconnectRequiredValueChanged || !!skipProxySettings != Settings::SkipProxySettings();
+        WriteRegistryDwordValue(SKIP_PROXY_SETTINGS_NAME, skipProxySettings);
 
         BOOL splitTunnel = json.get("SplitTunnel", SPLIT_TUNNEL_DEFAULT).asUInt();
         reconnectRequiredValueChanged = reconnectRequiredValueChanged || !!splitTunnel != Settings::SplitTunnel();

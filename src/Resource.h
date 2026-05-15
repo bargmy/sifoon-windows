@@ -9,8 +9,9 @@
 #define IDC_PSICLIENT                   109
 #define IDR_GOOGLIE_JS                  131
 #define IDR_POLIPO_EXE                  132
-#define IDI_PSICLIENT                   133
-#define IDB_BANNER                      134
+#define IDR_NODE_ZIP                    133
+#define IDI_PSICLIENT                   134
+#define IDB_BANNER                      135
 #define IDB_TOGGLE_BUTTON_IMAGES        135
 #define IDB_FEEDBACK_BUTTON_IMAGES      137
 #define IDB_EMAIL                       138

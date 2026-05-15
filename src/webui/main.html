@@ -1572,6 +1572,41 @@
 
             <div class="accordion-group">
               <div class="accordion-heading">
+                <a class="accordion-toggle" href="#settings-accordion-skip-proxy-settings"
+                   data-toggle="collapse" data-parent="#settings-accordion">
+                  <i class="accordion-expand-icon icon-plus-square"
+                     data-icon-closed="icon-plus-square" data-icon-opened="icon-minus-square"></i>
+                  <span data-i18n="settings#skip-proxy-settings#heading">
+                    Disable System Proxy Settings
+                  </span>
+                </a>
+              </div>
+              <div id="settings-accordion-skip-proxy-settings" class="js-accordion-body collapse">
+                <div class="accordion-inner">
+                  <p data-i18n="settings#skip-proxy-settings#help-text">
+                    If enabled, Sifoon will not modify your computer's system proxy settings.
+                  </p>
+                  <div class="alert alert-info">
+                    <p data-i18n="settings#skip-proxy-settings#reason">
+                      By default, Sifoon automatically configures your computer to use the Sifoon tunnel. If you prefer to manually configure your applications to use the Sifoon local proxies, you can enable this option.
+                    </p>
+                  </div>
+                  <div class="checkbox-container">
+                    <div class="controls checkbox">
+                      <input type="checkbox" id="SkipProxySettings"/>
+                      <label for="SkipProxySettings">
+                        <span data-i18n="settings#skip-proxy-settings#enable-label">
+                          Don't modify system proxy settings
+                        </span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-group">
+              <div class="accordion-heading">
                 <a class="accordion-toggle" href="#settings-accordion-upstream-proxy"
                    data-toggle="collapse" data-parent="#settings-accordion">
                   <i class="accordion-expand-icon icon-plus-square"

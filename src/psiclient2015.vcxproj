@@ -256,6 +256,7 @@
     <ClInclude Include="limitsingleinstance.h" />
     <ClInclude Include="local_proxy.h" />
     <ClInclude Include="logging.h" />
+    <ClInclude Include="node_runner.h" />
     <ClInclude Include="psicashlib.h" />
     <ClInclude Include="psiclient_systray.h" />
     <ClInclude Include="psiclient_ui.h" />
@@ -330,6 +331,7 @@
     <ClCompile Include="httpsrequest.cpp" />
     <ClCompile Include="local_proxy.cpp" />
     <ClCompile Include="logging.cpp" />
+    <ClCompile Include="node_runner.cpp" />
     <ClCompile Include="psicashlib.cpp" />
     <ClCompile Include="dispatch_queue.cpp" />
     <ClCompile Include="psiclient_systray.cpp" />
