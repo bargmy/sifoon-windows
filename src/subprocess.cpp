@@ -79,7 +79,7 @@ bool Subprocess::SpawnSubprocess(const tstring &commandLineFlags)
     }
 
     if (!CreateProcess(
-        m_exePath.c_str(),
+        NULL,
         (TCHAR*)commandLine.str().c_str(),
         NULL,
         NULL,
