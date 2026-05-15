@@ -96,6 +96,8 @@ bool WriteParameterFiles(const WriteParameterFilesIn& in, WriteParameterFilesOut
     config["EmitDiagnosticNotices"] = true;
     config["EmitDiagnosticNetworkParameters"] = true;
     config["EmitServerAlerts"] = true;
+    config["EmitCandidateNotices"] = true;
+    config["UseUserAgentFronting"] = true;
     config["AdditionalParameters"] = ADDITIONAL_PARAMETERS;
 
     // Don't use an upstream proxy when in VPN mode. If the proxy is on a private network,
