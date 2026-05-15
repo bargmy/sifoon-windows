@@ -1050,5 +1050,23 @@
     "banner#sponsored-by": {
         "message": "اسپانسر شده با  ",
         "description": "Text appears above the sponsor banner image. So it kind of reads 'Sponsored by BBC' (for example)."
+    },
+    "settings#manual-cdn-ips#label": {
+        "message": "IP های CDN سفارشی"
+    },
+    "settings#manual-cdn-ips#placeholder": {
+        "message": "IP ها را وارد کنید، یک یا چند مورد در هر خط..."
+    },
+    "settings#manual-cdn-ips#help-text": {
+        "message": "آدرس های IP دستی را برای فرانتینگ CDN مشخص کنید. از چندین IP در هر خط پشتیبانی می کند."
+    },
+    "connection#tried-ips#label": {
+        "message": "IP های تست شده"
+    },
+    "connection#connection-log#label": {
+        "message": "گزارش اتصال"
+    },
+    "connection#connection-log#empty": {
+        "message": "هنوز تلاشی برای اتصال صورت نگرفته است."
     }
 }

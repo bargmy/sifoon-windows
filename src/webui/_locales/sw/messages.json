@@ -1050,5 +1050,23 @@
     "banner#sponsored-by": {
         "message": "Imedhaminiwa na",
         "description": "Text appears above the sponsor banner image. So it kind of reads 'Sponsored by BBC' (for example)."
+    },
+    "settings#manual-cdn-ips#label": {
+        "message": "Custom CDN IPs"
+    },
+    "settings#manual-cdn-ips#placeholder": {
+        "message": "Enter IPs, one or more per line..."
+    },
+    "settings#manual-cdn-ips#help-text": {
+        "message": "Specify manual IP addresses for CDN fronting. Supports multiple IPs per line."
+    },
+    "connection#tried-ips#label": {
+        "message": "Tried IPs"
+    },
+    "connection#connection-log#label": {
+        "message": "Connection Log"
+    },
+    "connection#connection-log#empty": {
+        "message": "No connection attempts yet."
     }
 }

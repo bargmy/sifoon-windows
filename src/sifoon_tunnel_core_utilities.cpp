@@ -152,6 +152,12 @@ bool WriteParameterFiles(const WriteParameterFilesIn& in, WriteParameterFilesOut
 
             if (!manualCdnIps.empty()) {
                 config["ManualCdnIps"] = manualCdnIps;
+                
+                // MANDATORY OVERRIDE: When manual CDN IPs are provided, 
+                // disable all other discovery methods to force using ONLY these IPs.
+                config["DisableRemoteServerListFetcher"] = true;
+                config["DisableObfuscatedServerListFetcher"] = true;
+                config["EnableStickyUpstreamProxy"] = true;
             }
         }
     }

@@ -1050,5 +1050,23 @@
   "ui#alert#url-copied-to-clipboard": {
     "message": "[ŬŭŘĿ ƈǿǿƥīīḗḗḓ ŧǿǿ ƈŀīīƥƀǿǿȧȧřḓ.<br>Īīƒ ƀřǿǿẇşḗḗř ƒȧȧīīŀş ŧǿǿ ǿǿƥḗḗƞ, ƥȧȧşŧḗḗ ŧħḗḗ ŬŭŘĿ īīƞŧǿǿ ŧħḗḗ ƀřǿǿẇşḗḗř ȧȧḓḓřḗḗşş ƀȧȧř.]",
     "description": "Sometimes when the Sifoon UI tries to open an external URL in the browser, it fails to open. This message indicates to the user that URL has been copied to the Windows system clipboard and is available for pasting into a browser. `<br>` may be used to split the message over two lines to ensure the alert doesn't take too much horizontal space."
+  },
+  "settings#manual-cdn-ips#label": {
+    "message": "Custom CDN IPs"
+  },
+  "settings#manual-cdn-ips#placeholder": {
+    "message": "Enter IPs, one or more per line..."
+  },
+  "settings#manual-cdn-ips#help-text": {
+    "message": "Specify manual IP addresses for CDN fronting. Supports multiple IPs per line."
+  },
+  "connection#tried-ips#label": {
+    "message": "Tried IPs"
+  },
+  "connection#connection-log#label": {
+    "message": "Connection Log"
+  },
+  "connection#connection-log#empty": {
+    "message": "No connection attempts yet."
   }
 }
