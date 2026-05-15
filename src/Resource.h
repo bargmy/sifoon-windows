@@ -10,13 +10,14 @@
 #define IDR_GOOGLIE_JS                  131
 #define IDR_MHRCFW_JS                   132
 #define IDR_DOMAINFRONTING_JS           133
-#define IDR_POLIPO_EXE                  134
-#define IDI_PSICLIENT                   135
-#define IDB_BANNER                      136
-#define IDB_TOGGLE_BUTTON_IMAGES        137
-#define IDB_FEEDBACK_BUTTON_IMAGES      138
-#define IDB_EMAIL                       139
-#define IDB_SETTINGS_BUTTON_IMAGES      140
+#define IDR_SNISPOOF_JS                 134
+#define IDR_POLIPO_EXE                  135
+#define IDI_PSICLIENT                   136
+#define IDB_BANNER                      137
+#define IDB_TOGGLE_BUTTON_IMAGES        138
+#define IDB_FEEDBACK_BUTTON_IMAGES      139
+#define IDB_EMAIL                       140
+#define IDB_SETTINGS_BUTTON_IMAGES      141
 #define IDR_DEFAULT1                    143
 #define IDB_CONNECTION_BUTTON_IMAGES    145
 #define IDI_SYSTRAY_STOPPED             146
@@ -38,7 +39,7 @@
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_NO_MFC                     1
-#define _APS_NEXT_RESOURCE_VALUE        148
+#define _APS_NEXT_RESOURCE_VALUE        149
 #define _APS_NEXT_COMMAND_VALUE         32772
 #define _APS_NEXT_CONTROL_VALUE         1007
 #define _APS_NEXT_SYMED_VALUE           120

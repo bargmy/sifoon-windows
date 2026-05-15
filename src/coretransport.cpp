@@ -344,6 +344,9 @@ bool CoreTransport::SpawnCoreProcess(const tstring& configPath, const tstring& s
         if (egressRegion == _T("DF")) {
             scriptResourceID = IDR_DOMAINFRONTING_JS;
             scriptFilename = _T("domainfronting.js");
+        } else if (egressRegion == _T("SS")) {
+            scriptResourceID = IDR_SNISPOOF_JS;
+            scriptFilename = _T("googlesnispoof.js");
         } else if (Settings::EnableCloudflareWorker()) {
             scriptResourceID = IDR_MHRCFW_JS;
             scriptFilename = _T("mhrcfw.js");

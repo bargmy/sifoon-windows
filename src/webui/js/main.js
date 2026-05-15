@@ -610,6 +610,12 @@
 
         if (active) {
           $activeItem = $regionItem;
+          
+          if (region === 'DF' && !currentCertInstalled) {
+            if (confirm("Domain Fronting requires a Root CA certificate. Would you like to install it now?")) {
+              HtmlCtrlInterface_InstallCert();
+            }
+          }
         }
       }
 

@@ -708,9 +708,14 @@
         "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Germany will be used."
     },
     "settings#egress-region#select-df": {
-        "message": "Domain Fronting",
-        "description": "Connection mode using SNI repacking and direct IP redirection."
+      "message": "Domain Fronting",
+      "description": "Connection mode using SNI repacking and direct IP redirection."
     },
+    "settings#egress-region#select-ss": {
+      "message": "SNI Spoof",
+      "description": "Connection mode that redirects Google domains to fronting IPs without decryption."
+    },
+
     "settings#egress-region#select-dk": {
         "message": "Denmark",
         "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Denmark will be used."
