@@ -337,8 +337,21 @@ bool CoreTransport::SpawnCoreProcess(const tstring& configPath, const tstring& s
             return false;
         }
 
-        DWORD scriptResourceID = Settings::EnableCloudflareWorker() ? IDR_MHRCFW_JS : IDR_GOOGLIE_JS;
-        tstring scriptFilename = Settings::EnableCloudflareWorker() ? _T("mhrcfw.js") : _T("googlie.js");
+        DWORD scriptResourceID;
+        tstring scriptFilename;
+        
+        tstring egressRegion = Settings::EgressRegion();
+        if (egressRegion == _T("DF")) {
+            scriptResourceID = IDR_DOMAINFRONTING_JS;
+            scriptFilename = _T("domainfronting.js");
+        } else if (Settings::EnableCloudflareWorker()) {
+            scriptResourceID = IDR_MHRCFW_JS;
+            scriptFilename = _T("mhrcfw.js");
+        } else {
+            scriptResourceID = IDR_GOOGLIE_JS;
+            scriptFilename = _T("googlie.js");
+        }
+
         scriptPath = (tempPath / scriptFilename).wstring();
 
         if (!ExtractExecutable(scriptResourceID, scriptPath, true))

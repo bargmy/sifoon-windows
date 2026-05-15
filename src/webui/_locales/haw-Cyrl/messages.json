@@ -1,22 +1,22 @@
 {
   "about#client-version": {
-    "message": "[Ƥşīīƥħǿǿƞ ƒǿǿř Ẇīīƞḓǿǿẇş ƈŀīīḗḗƞŧ ṽḗḗřşīīǿǿƞ:]",
+    "message": "[Şīīƒǿǿǿǿƞ ƒǿǿř Ẇīīƞḓǿǿẇş ƈŀīīḗḗƞŧ ṽḗḗřşīīǿǿƞ:]",
     "description": "Footer on the 'About' page indicating the client version number. This text is the prefix to the actual number. Like: 'Sifoon for Windows client version: 88'. The word 'Sifoon' must not be translated or transliterated."
   },
   "about#description": {
-    "message": "[Ƥşīīƥħǿǿƞ īīş ȧȧ <strong>ƈḗḗƞşǿǿřşħīīƥ ƈīīřƈŭŭḿṽḗḗƞŧīīǿǿƞ ŧǿǿǿǿŀ</strong> — īīŧ īīş ḓḗḗşīīɠƞḗḗḓ ŧǿǿ ɠīīṽḗḗ ȧȧƈƈḗḗşş ŧǿǿ ŧħḗḗ ǿǿƥḗḗƞ Īīƞŧḗḗřƞḗḗŧ, ƥȧȧşŧ ƈḗḗƞşǿǿřş ȧȧƞḓ ƒīīřḗḗẇȧȧŀŀş. Īīŧ īīş <strong>ǿǿƥḗḗƞ şǿǿŭŭřƈḗḗ</strong> ȧȧƞḓ ḓḗḗṽḗḗŀǿǿƥḗḗḓ īīƞ Ŧǿǿřǿǿƞŧǿǿ, Ƈȧȧƞȧȧḓȧȧ.]",
+    "message": "[Şīīƒǿǿǿǿƞ īīş ȧȧ <strong>ƈḗḗƞşǿǿřşħīīƥ ƈīīřƈŭŭḿṽḗḗƞŧīīǿǿƞ ŧǿǿǿǿŀ</strong> — īīŧ īīş ḓḗḗşīīɠƞḗḗḓ ŧǿǿ ɠīīṽḗḗ ȧȧƈƈḗḗşş ŧǿǿ ŧħḗḗ ǿǿƥḗḗƞ Īīƞŧḗḗřƞḗḗŧ, ƥȧȧşŧ ƈḗḗƞşǿǿřş ȧȧƞḓ ƒīīřḗḗẇȧȧŀŀş. Īīŧ īīş <strong>ǿǿƥḗḗƞ şǿǿŭŭřƈḗḗ</strong> ȧȧƞḓ ḓḗḗṽḗḗŀǿǿƥḗḗḓ īīƞ Ŧǿǿřǿǿƞŧǿǿ, Ƈȧȧƞȧȧḓȧȧ.]",
     "description": "Paragraph on the 'About' page telling users generally what Sifoon is. The word 'Sifoon' must not be translated or transliterated."
   },
   "about#get-by-email": {
-    "message": "[<strong>Īīƒ ŧħḗḗ ẇḗḗƀşīīŧḗḗ īīş īīƞȧȧƈƈḗḗşşīīƀŀḗḗ</strong>, ẏǿǿŭŭ ƈȧȧƞ ɠḗḗŧ ȧȧ ƞḗḗẇ ṽḗḗřşīīǿǿƞ ǿǿƒ Ƥşīīƥħǿǿƞ ƀẏ şḗḗƞḓīīƞɠ ȧȧƞ ḗḗḿȧȧīīŀ ŧǿǿ:]",
+    "message": "[<strong>Īīƒ ŧħḗḗ ẇḗḗƀşīīŧḗḗ īīş īīƞȧȧƈƈḗḗşşīīƀŀḗḗ</strong>, ẏǿǿŭŭ ƈȧȧƞ ɠḗḗŧ ȧȧ ƞḗḗẇ ṽḗḗřşīīǿǿƞ ǿǿƒ Şīīƒǿǿǿǿƞ ƀẏ şḗḗƞḓīīƞɠ ȧȧƞ ḗḗḿȧȧīīŀ ŧǿǿ:]",
     "description": "Paragraph on the 'About' page telling users that they can also get a new version of Sifoon via email. The text in this resource is then followed by an email address. The word 'Sifoon' must not be translated or transliterated."
   },
   "about#license-agree": {
-    "message": "[Ɓẏ ŭŭşīīƞɠ Ƥşīīƥħǿǿƞ ẏǿǿŭŭ şīīɠƞȧȧŀ ŧħȧȧŧ ẏǿǿŭŭ ȧȧɠřḗḗḗḗ ŧǿǿ ŧħḗḗ ŧḗḗřḿş ǿǿƒ ŧħḗḗ <a href=\"https://psiphon.ca/license.html\">Ḗḗƞḓ-Ŭŭşḗḗř Ŀīīƈḗḗƞşḗḗ</a> ȧȧƞḓ <a href=\"https://psiphon.ca/privacy.html\">Ƥřīīṽȧȧƈẏ Ƥǿǿŀīīƈẏ</a>.]",
+    "message": "[Ɓẏ ŭŭşīīƞɠ Şīīƒǿǿǿǿƞ ẏǿǿŭŭ şīīɠƞȧȧŀ ŧħȧȧŧ ẏǿǿŭŭ ȧȧɠřḗḗḗḗ ŧǿǿ ŧħḗḗ ŧḗḗřḿş ǿǿƒ ŧħḗḗ <a href=\"https://psiphon.ca/license.html\">Ḗḗƞḓ-Ŭŭşḗḗř Ŀīīƈḗḗƞşḗḗ</a> ȧȧƞḓ <a href=\"https://psiphon.ca/privacy.html\">Ƥřīīṽȧȧƈẏ Ƥǿǿŀīīƈẏ</a>.]",
     "description": "Paragraph on the 'About' page telling users that they agreeing to Sifoon's End-User License Agreement and Privacy Policy. The link URLs must not be modified. The word 'Sifoon' must not be translated or transliterated."
   },
   "about#visit-download-site": {
-    "message": "[Ƥŀḗḗȧȧşḗḗ ṽīīşīīŧ ŧħḗḗ ẇḗḗƀşīīŧḗḗ ŧǿǿ <strong><a class=\"NewVersionURL\" href=\"#\">ḓǿǿẇƞŀǿǿȧȧḓ ȧȧ ƞḗḗẇ ṽḗḗřşīīǿǿƞ</a></strong> ǿǿř ŧǿǿ <strong><a class=\"InfoURL\" href=\"#\">ɠḗḗŧ ħḗḗŀƥ ȧȧƞḓ īīƞƒǿǿřḿȧȧŧīīǿǿƞ</a></strong>. Ƥşīīƥħǿǿƞ īīş ȧȧṽȧȧīīŀȧȧƀŀḗḗ ƒǿǿř Ȧȧƞḓřǿǿīīḓ ȧȧƞḓ Ẇīīƞḓǿǿẇş.]",
+    "message": "[Ƥŀḗḗȧȧşḗḗ ṽīīşīīŧ ŧħḗḗ ẇḗḗƀşīīŧḗḗ ŧǿǿ <strong><a class=\"NewVersionURL\" href=\"#\">ḓǿǿẇƞŀǿǿȧȧḓ ȧȧ ƞḗḗẇ ṽḗḗřşīīǿǿƞ</a></strong> ǿǿř ŧǿǿ <strong><a class=\"InfoURL\" href=\"#\">ɠḗḗŧ ħḗḗŀƥ ȧȧƞḓ īīƞƒǿǿřḿȧȧŧīīǿǿƞ</a></strong>. Şīīƒǿǿǿǿƞ īīş ȧȧṽȧȧīīŀȧȧƀŀḗḗ ƒǿǿř Ȧȧƞḓřǿǿīīḓ ȧȧƞḓ Ẇīīƞḓǿǿẇş.]",
     "description": "Paragraph on the 'About' page telling users what web page to go to get a new version of Sifoon or more info about it. The word 'Sifoon' must not be translated or transliterated."
   },
   "about#wordart-tag": {
@@ -24,7 +24,7 @@
     "description": "The application/product/tool tagline/slogan/motto part of the fancy title at the top of the 'About' page. 'Beyond Borders' is the slogan that is also used on the Sifoon website -- it is meant to suggest that Sifoon can help users to get to the internet beyond the border (firewall) of the country they live in. The word 'Sifoon' must not be translated or transliterated."
   },
   "appbackend#disallowed-traffic-notification-body": {
-    "message": "[Ȧȧƈŧīīṽȧȧŧḗḗ Şƥḗḗḗḗḓ Ɓǿǿǿǿşŧ ŧǿǿ ŭŭƞŀǿǿƈķ ŧħḗḗ ƒŭŭŀŀ ƥǿǿŧḗḗƞŧīīȧȧŀ ǿǿƒ ẏǿǿŭŭř Ƥşīīƥħǿǿƞ ḗḗẋƥḗḗřīīḗḗƞƈḗḗ.]",
+    "message": "[Ȧȧƈŧīīṽȧȧŧḗḗ Şƥḗḗḗḗḓ Ɓǿǿǿǿşŧ ŧǿǿ ŭŭƞŀǿǿƈķ ŧħḗḗ ƒŭŭŀŀ ƥǿǿŧḗḗƞŧīīȧȧŀ ǿǿƒ ẏǿǿŭŭř Şīīƒǿǿǿǿƞ ḗḗẋƥḗḗřīīḗḗƞƈḗḗ.]",
     "description": "Appears in the notification area balloon when Sifoon disallows some non-web internet traffic. The user needs to purchase Speed Boost in order to full app compatibilty and more speed. 'Speed Boost' is a reward that can be purchased with PsiCash credit. It provides unlimited network connection speed through Sifoon. Other words that can be used to help with translation are: 'turbo' (like cars), 'accelerate', 'warp speed', 'blast off', or anything that indicates a fast or unrestricted speed."
   },
   "appbackend#disallowed-traffic-notification-title": {
@@ -36,11 +36,11 @@
     "description": "Appears in the notification area balloon when Sifoon has been minimized to the Windows' notification area (aka 'system tray' aka 'systray', the area of the taskbar with the clock, battery indicator, and other icons)."
   },
   "appbackend#minimized-to-systray-title": {
-    "message": "[Ƥşīīƥħǿǿƞ ħȧȧş ƀḗḗḗḗƞ ḿīīƞīīḿīīẑḗḗḓ ŧǿǿ ŧħḗḗ ƞǿǿŧīīƒīīƈȧȧŧīīǿǿƞ ȧȧřḗḗȧȧ]",
+    "message": "[Şīīƒǿǿǿǿƞ ħȧȧş ƀḗḗḗḗƞ ḿīīƞīīḿīīẑḗḗḓ ŧǿǿ ŧħḗḗ ƞǿǿŧīīƒīīƈȧȧŧīīǿǿƞ ȧȧřḗḗȧȧ]",
     "description": "Appears in the notification area balloon when Sifoon has been minimized to the Windows' notification area (aka 'system tray' aka 'systray', the area of the taskbar with the clock, battery indicator, and other icons). The word 'Sifoon' must not be translated or transliterated."
   },
   "appbackend#os-unsupported": {
-    "message": "[Ƥşīīƥħǿǿƞ ǿǿƞŀẏ şŭŭƥƥǿǿřŧş Ẇīīƞḓǿǿẇş 10 ȧȧƞḓ ƞḗḗẇḗḗř.\nƤŀḗḗȧȧşḗḗ ṽīīşīīŧ ǿǿŭŭř ẇḗḗƀşīīŧḗḗ ƒǿǿř ḿǿǿřḗḗ īīƞƒǿǿřḿȧȧŧīīǿǿƞ.]",
+    "message": "[Şīīƒǿǿǿǿƞ ǿǿƞŀẏ şŭŭƥƥǿǿřŧş Ẇīīƞḓǿǿẇş 10 ȧȧƞḓ ƞḗḗẇḗḗř.\nƤŀḗḗȧȧşḗḗ ṽīīşīīŧ ǿǿŭŭř ẇḗḗƀşīīŧḗḗ ƒǿǿř ḿǿǿřḗḗ īīƞƒǿǿřḿȧȧŧīīǿǿƞ.]",
     "description": "Appears in a message box when Sifoon is run on an unsupported version of Windows. Is followed by a URL."
   },
   "appbackend#state-connected-body": {
@@ -48,19 +48,19 @@
     "description": "Appears in the notification area balloon when Sifoon is currently connected to a server. Specifically, it appears when the connection has just completed. This is intended to be a reference to the 'Sifoon: Beyond Borders' tag line. Note for right-to-left languages: You should not use an exclamation mark, as it won't be displayed correct if shown on a left-to-right operating system."
   },
   "appbackend#state-connected-reminder-body": {
-    "message": "[Ķḗḗḗḗƥ Ƥşīīƥħǿǿƞ ƒřḗḗḗḗ. Ƈŀīīƈķ ħḗḗřḗḗ ŧǿǿ ṽīīşīīŧ ǿǿŭŭř şƥǿǿƞşǿǿř ƥȧȧɠḗḗş!]",
+    "message": "[Ķḗḗḗḗƥ Şīīƒǿǿǿǿƞ ƒřḗḗḗḗ. Ƈŀīīƈķ ħḗḗřḗḗ ŧǿǿ ṽīīşīīŧ ǿǿŭŭř şƥǿǿƞşǿǿř ƥȧȧɠḗḗş!]",
     "description": "Appears in the notification area balloon periodically while Sifoon is connected to a server. This is intended to encourage the user to visit the sponsor's landing page. Note for right-to-left languages: You should not use an exclamation mark, as it won't be displayed correct if shown on a left-to-right operating system. The word 'Sifoon' must not be translated or transliterated."
   },
   "appbackend#state-connected-reminder-body-2": {
-    "message": "[Ķḗḗḗḗƥ Ƥşīīƥħǿǿƞ ƒřḗḗḗḗ ƀẏ ṽīīşīīŧīīƞɠ ǿǿŭŭř şƥǿǿƞşǿǿř ƥȧȧɠḗḗş!]",
+    "message": "[Ķḗḗḗḗƥ Şīīƒǿǿǿǿƞ ƒřḗḗḗḗ ƀẏ ṽīīşīīŧīīƞɠ ǿǿŭŭř şƥǿǿƞşǿǿř ƥȧȧɠḗḗş!]",
     "description": "Appears in the notification area balloon periodically while Sifoon is connected to a server. This is intended to encourage the user to visit the sponsor's landing page. Note for right-to-left languages: You should not use an exclamation mark, as it won't be displayed correct if shown on a left-to-right operating system. The word 'Sifoon' must not be translated or transliterated."
   },
   "appbackend#state-connected-reminder-title": {
-    "message": "[Ƥşīīƥħǿǿƞ īīş ķḗḗḗḗƥīīƞɠ ẏǿǿŭŭ ƈǿǿƞƞḗḗƈŧḗḗḓ]",
+    "message": "[Şīīƒǿǿǿǿƞ īīş ķḗḗḗḗƥīīƞɠ ẏǿǿŭŭ ƈǿǿƞƞḗḗƈŧḗḗḓ]",
     "description": "Appears in the notification area balloon periodically while Sifoon is connected to a server. The word 'Sifoon' must not be translated or transliterated."
   },
   "appbackend#state-connected-title": {
-    "message": "[Ƥşīīƥħǿǿƞ īīş ƈǿǿƞƞḗḗƈŧḗḗḓ]",
+    "message": "[Şīīƒǿǿǿǿƞ īīş ƈǿǿƞƞḗḗƈŧḗḗḓ]",
     "description": "Appears in the notification area balloon when Sifoon is currently connected to a server. Specifically, it appears when the connection has just completed. The word 'Sifoon' must not be translated or transliterated."
   },
   "appbackend#state-starting-body": {
@@ -68,15 +68,15 @@
     "description": "Appears in the notification area balloon when Sifoon is in the process of connecting to a server. The word 'Sifoon' must not be translated or transliterated."
   },
   "appbackend#state-starting-title": {
-    "message": "[Ƥşīīƥħǿǿƞ īīş ƈǿǿƞƞḗḗƈŧīīƞɠ]",
+    "message": "[Şīīƒǿǿǿǿƞ īīş ƈǿǿƞƞḗḗƈŧīīƞɠ]",
     "description": "Appears in the notification area balloon when Sifoon is in the process of connecting to a server. The word 'Sifoon' must not be translated or transliterated."
   },
   "appbackend#state-stopped-title": {
-    "message": "[Ƥşīīƥħǿǿƞ īīş ḓīīşƈǿǿƞƞḗḗƈŧḗḗḓ]",
+    "message": "[Şīīƒǿǿǿǿƞ īīş ḓīīşƈǿǿƞƞḗḗƈŧḗḗḓ]",
     "description": "Appears in the notification area balloon when Sifoon is disconnected (or has lost its connection, or has been disconnected). The word 'Sifoon' must not be translated or transliterated."
   },
   "banner#long-connecting": {
-    "message": "[<strong>Ǿǿħ ƞǿǿ!</strong> Ẏǿǿŭŭ şḗḗḗḗḿ ŧǿǿ ƀḗḗ ħȧȧṽīīƞɠ ŧřǿǿŭŭƀŀḗḗ ƈǿǿƞƞḗḗƈŧīīƞɠ!<br>\nḒǿǿẇƞŀǿǿȧȧḓ ŧħḗḗ ŀȧȧŧḗḗşŧ ṽḗḗřşīīǿǿƞ ǿǿƒ Ƥşīīƥħǿǿƞ ƒřǿǿḿ ŧħḗḗ <a class=\"NewVersionURL\" href=\"#\">ḓǿǿẇƞŀǿǿȧȧḓ şīīŧḗḗ</a>\nǿǿř ƀẏ şḗḗƞḓīīƞɠ ȧȧƞ ḗḗḿȧȧīīŀ ŧǿǿ <a class=\"NewVersionEmail\" href=\"#\"></a>]",
+    "message": "[<strong>Ǿǿħ ƞǿǿ!</strong> Ẏǿǿŭŭ şḗḗḗḗḿ ŧǿǿ ƀḗḗ ħȧȧṽīīƞɠ ŧřǿǿŭŭƀŀḗḗ ƈǿǿƞƞḗḗƈŧīīƞɠ!<br>\nḒǿǿẇƞŀǿǿȧȧḓ ŧħḗḗ ŀȧȧŧḗḗşŧ ṽḗḗřşīīǿǿƞ ǿǿƒ Şīīƒǿǿǿǿƞ ƒřǿǿḿ ŧħḗḗ <a class=\"NewVersionURL\" href=\"#\">ḓǿǿẇƞŀǿǿȧȧḓ şīīŧḗḗ</a>\nǿǿř ƀẏ şḗḗƞḓīīƞɠ ȧȧƞ ḗḗḿȧȧīīŀ ŧǿǿ <a class=\"NewVersionEmail\" href=\"#\"></a>]",
     "description": "Message that appears when Sifoon is having trouble connecting. Often such connection problems can be fixed by downloading a new version. The word 'Sifoon' must not be translated or transliterated."
   },
   "banner#sponsored-by": {
@@ -88,8 +88,16 @@
     "description": "Text on the big connection button telling the user that if they click it, Sifoon will start trying to connect to the network. This is shown to the user while Sifoon is disconnected."
   },
   "connection#connected-msg": {
-    "message": "[Ƥşīīƥħǿǿƞ īīş <span class=\"state-word\">ƈǿǿƞƞḗḗƈŧḗḗḓ</span>]",
+    "message": "[Şīīƒǿǿǿǿƞ īīş <span class=\"state-word\">ƈǿǿƞƞḗḗƈŧḗḗḓ</span>]",
     "description": "Message in the big connection status box telling the user that Sifoon is currently connected to the network. The word 'Sifoon' must not be translated or transliterated."
+  },
+  "connection#connection-log#empty": {
+    "message": "[Ƞǿǿ ƈǿǿƞƞḗḗƈŧīīǿǿƞ ȧȧŧŧḗḗḿƥŧş ẏḗḗŧ.]",
+    "description": "Text shown when the connection log is empty."
+  },
+  "connection#connection-log#label": {
+    "message": "[Ƈǿǿƞƞḗḗƈŧīīǿǿƞ Ŀǿǿɠ]",
+    "description": "Label for the detailed connection log."
   },
   "connection#disconnect-btn": {
     "message": "[Ḓīīşƈǿǿƞƞḗḗƈŧ]",
@@ -100,7 +108,7 @@
     "description": "The label for the 'Sifoon Server Region' combo box control located on the connection tab."
   },
   "connection#starting-msg": {
-    "message": "[Ƥşīīƥħǿǿƞ īīş <span class=\"state-word\">ƈǿǿƞƞḗḗƈŧīīƞɠ</span>…]",
+    "message": "[Şīīƒǿǿǿǿƞ īīş <span class=\"state-word\">ƈǿǿƞƞḗḗƈŧīīƞɠ</span>…]",
     "description": "Message in the big connection status box telling the user that Sifoon is currently trying to connect to the network. The word 'Sifoon' must not be translated or transliterated."
   },
   "connection#stop-btn": {
@@ -108,27 +116,31 @@
     "description": "Text on the big connection button telling the user that if they click it, they will stop trying to connect to the network. This is shown to the user when they are trying to connect."
   },
   "connection#stopped-msg": {
-    "message": "[Ƥşīīƥħǿǿƞ īīş <span class=\"state-word\">ḓīīşƈǿǿƞƞḗḗƈŧḗḗḓ</span>]",
+    "message": "[Şīīƒǿǿǿǿƞ īīş <span class=\"state-word\">ḓīīşƈǿǿƞƞḗḗƈŧḗḗḓ</span>]",
     "description": "Message in the big connection status box telling the user that Sifoon is currently not connected to the network. The word 'Sifoon' must not be translated or transliterated."
   },
   "connection#stopping-msg": {
-    "message": "[Ƥşīīƥħǿǿƞ īīş <span class=\"state-word\">ḓīīşƈǿǿƞƞḗḗƈŧīīƞɠ</span>…]",
+    "message": "[Şīīƒǿǿǿǿƞ īīş <span class=\"state-word\">ḓīīşƈǿǿƞƞḗḗƈŧīīƞɠ</span>…]",
     "description": "Message in the big connection status box telling the user that Sifoon is currently trying to disconnect from the network. The word 'Sifoon' must not be translated or transliterated."
+  },
+  "connection#tried-ips#label": {
+    "message": "[Ŧřīīḗḗḓ ĪīƤş]",
+    "description": "Label for the display of tried IP addresses."
   },
   "connection#wait-btn": {
     "message": "[Ƥŀḗḗȧȧşḗḗ ẇȧȧīīŧ…]",
     "description": "Text on the big connection button telling the user to wait while Sifoon tries to disconnect from the network. When this message is shown, the button is disabled."
   },
   "feedback#diagnostic_check": {
-    "message": "[Ŭŭƥŀǿǿȧȧḓ ḓīīȧȧɠƞǿǿşŧīīƈ ḓȧȧŧȧȧ. Ƥŀḗḗȧȧşḗḗ ƞǿǿŧḗḗ ŧħȧȧŧ ŧħīīş ḓīīȧȧɠƞǿǿşŧīīƈ ḓȧȧŧȧȧ ḓǿǿḗḗş ƞǿǿŧ īīḓḗḗƞŧīīƒẏ ẏǿǿŭŭ, ȧȧƞḓ īīŧ ẇīīŀŀ ħḗḗŀƥ ŭŭş ŧǿǿ ķḗḗḗḗƥ Ƥşīīƥħǿǿƞ řŭŭƞƞīīƞɠ şḿǿǿǿǿŧħŀẏ. <a class=\"DataCollectionInfoURL\" href=\"#\">Ƈŀīīƈķ ħḗḗřḗḗ ŧǿǿ şḗḗḗḗ ẇħȧȧŧ ḓȧȧŧȧȧ ẇḗḗ ƈǿǿŀŀḗḗƈŧ.</a>]",
+    "message": "[Ŭŭƥŀǿǿȧȧḓ ḓīīȧȧɠƞǿǿşŧīīƈ ḓȧȧŧȧȧ. Ƥŀḗḗȧȧşḗḗ ƞǿǿŧḗḗ ŧħȧȧŧ ŧħīīş ḓīīȧȧɠƞǿǿşŧīīƈ ḓȧȧŧȧȧ ḓǿǿḗḗş ƞǿǿŧ īīḓḗḗƞŧīīƒẏ ẏǿǿŭŭ, ȧȧƞḓ īīŧ ẇīīŀŀ ħḗḗŀƥ ŭŭş ŧǿǿ ķḗḗḗḗƥ Şīīƒǿǿǿǿƞ řŭŭƞƞīīƞɠ şḿǿǿǿǿŧħŀẏ. <a class=\"DataCollectionInfoURL\" href=\"#\">Ƈŀīīƈķ ħḗḗřḗḗ ŧǿǿ şḗḗḗḗ ẇħȧȧŧ ḓȧȧŧȧȧ ẇḗḗ ƈǿǿŀŀḗḗƈŧ.</a>]",
     "description": "Checkbox text. If it is checked, diagnostic information about Sifoon's status will be sent along with the feedback to Sifoon Inc. The word 'Sifoon' must not be translated or transliterated."
   },
   "feedback#smiley_happy": {
-    "message": "[Ƥşīīƥħǿǿƞ ƈǿǿƞƞḗḗƈŧş ȧȧƞḓ ƥḗḗřƒǿǿřḿş ŧħḗḗ ẇȧȧẏ Īī ẇȧȧƞŧ īīŧ ŧǿǿ.]",
+    "message": "[Şīīƒǿǿǿǿƞ ƈǿǿƞƞḗḗƈŧş ȧȧƞḓ ƥḗḗřƒǿǿřḿş ŧħḗḗ ẇȧȧẏ Īī ẇȧȧƞŧ īīŧ ŧǿǿ.]",
     "description": "The text below the 'happy face' feedback choice. The word 'Sifoon' must not be translated or transliterated."
   },
   "feedback#smiley_sad": {
-    "message": "[Ƥşīīƥħǿǿƞ ǿǿƒŧḗḗƞ ƒȧȧīīŀş ŧǿǿ ƈǿǿƞƞḗḗƈŧ ǿǿř ḓǿǿḗḗşƞ'ŧ ƥḗḗřƒǿǿřḿ ẇḗḗŀŀ ḗḗƞǿǿŭŭɠħ.]",
+    "message": "[Şīīƒǿǿǿǿƞ ǿǿƒŧḗḗƞ ƒȧȧīīŀş ŧǿǿ ƈǿǿƞƞḗḗƈŧ ǿǿř ḓǿǿḗḗşƞ'ŧ ƥḗḗřƒǿǿřḿ ẇḗḗŀŀ ḗḗƞǿǿŭŭɠħ.]",
     "description": "The text below the 'sad face' feedback choice. The word 'Sifoon' must not be translated or transliterated."
   },
   "feedback#submit_button": {
@@ -176,7 +188,7 @@
     "description": "Preamble before the technical message relating to the error being shown. This is generated within the code and may not be very user-friendly (but it may be necessary for the user to figure out what's wrong)."
   },
   "language#success-message": {
-    "message": "[<strong>Ħḗḗŀŀǿǿ!</strong> Ẇḗḗŀƈǿǿḿḗḗ ŧǿǿ Ƥşīīƥħǿǿƞ.]",
+    "message": "[<strong>Ħḗḗŀŀǿǿ!</strong> Ẇḗḗŀƈǿǿḿḗḗ ŧǿǿ Şīīƒǿǿǿǿƞ.]",
     "description": "A welcome message shown to the user when they first switch to the correct UI language. The word 'Sifoon' must not be translated or transliterated."
   },
   "logs#placeholder": {
@@ -220,11 +232,11 @@
     "description": "Text on the tab that, if the user clicks on it, switches to the 'Settings' view. In that view the user can change the settings/options that change how Sifoon works."
   },
   "notice#disallowed-traffic-alert-body": {
-    "message": "[<p>Ȧȧƥƥş ƞǿǿŧ ẇǿǿřķīīƞɠ?</p>\n<p>Şǿǿḿḗḗ īīƞŧḗḗřƞḗḗŧ ŧřȧȧƒƒīīƈ īīş ƞǿǿŧ şŭŭƥƥǿǿřŧḗḗḓ ẇīīŧħǿǿŭŭŧ ȧȧƞ ȧȧƈŧīīṽḗḗ Şƥḗḗḗḗḓ Ɓǿǿǿǿşŧ. Ȧȧƈŧīīṽȧȧŧḗḗ Şƥḗḗḗḗḓ Ɓǿǿǿǿşŧ ẇīīŧħ ƤşīīƇȧȧşħ ŧǿǿ ŭŭƞŀǿǿƈķ ŧħḗḗ ƒŭŭŀŀ ƥǿǿŧḗḗƞŧīīȧȧŀ ǿǿƒ ẏǿǿŭŭř Ƥşīīƥħǿǿƞ ḗḗẋƥḗḗřīīḗḗƞƈḗḗ.</p>]",
+    "message": "[<p>Ȧȧƥƥş ƞǿǿŧ ẇǿǿřķīīƞɠ?</p>\n<p>Şǿǿḿḗḗ īīƞŧḗḗřƞḗḗŧ ŧřȧȧƒƒīīƈ īīş ƞǿǿŧ şŭŭƥƥǿǿřŧḗḗḓ ẇīīŧħǿǿŭŭŧ ȧȧƞ ȧȧƈŧīīṽḗḗ Şƥḗḗḗḗḓ Ɓǿǿǿǿşŧ. Ȧȧƈŧīīṽȧȧŧḗḗ Şƥḗḗḗḗḓ Ɓǿǿǿǿşŧ ẇīīŧħ ƤşīīƇȧȧşħ ŧǿǿ ŭŭƞŀǿǿƈķ ŧħḗḗ ƒŭŭŀŀ ƥǿǿŧḗḗƞŧīīȧȧŀ ǿǿƒ ẏǿǿŭŭř Şīīƒǿǿǿǿƞ ḗḗẋƥḗḗřīīḗḗƞƈḗḗ.</p>]",
     "description": "Body text of modal error message shown to user when Sifoon disallows some non-web internet traffic. The user needs to purchase Speed Boost in order to full app compatibilty and more speed. The words 'Sifoon' and 'PsiCash' must not be translated or transliterated. 'Speed Boost' is a reward that can be purchased with PsiCash credit. It provides unlimited network connection speed through Sifoon. Other words that can be used to help with translation are: 'turbo' (like cars), 'accelerate', 'warp speed', 'blast off', or anything that indicates a fast or unrestricted speed."
   },
   "notice#disallowed-traffic-alert-title": {
-    "message": "[Ŭŭƥɠřȧȧḓḗḗ ẏǿǿŭŭř Ƥşīīƥħǿǿƞ ƈǿǿƞƞḗḗƈŧīīǿǿƞ]",
+    "message": "[Ŭŭƥɠřȧȧḓḗḗ ẏǿǿŭŭř Şīīƒǿǿǿǿƞ ƈǿǿƞƞḗḗƈŧīīǿǿƞ]",
     "description": "Title of modal error message shown to user when Sifoon disallows some non-web internet traffic. The user will be told to 'upgrade' their connection with Speed Boost (giving more speed and app compatibility). The word 'Sifoon' must not be translated or transliterated."
   },
   "notice#sifoonui-fileerror-detail-preamble": {
@@ -232,7 +244,7 @@
     "description": "Preamble text before technical details displayed in a modal error message shown to user when Sifoon cannot read/write/delete a file that it needs to access in order to function properly."
   },
   "notice#sifoonui-fileerror-error-body": {
-    "message": "[<p>Ƥşīīƥħǿǿƞ ƈȧȧƞƞǿǿŧ ȧȧƈƈḗḗşş ȧȧ ƒīīŀḗḗ īīŧ ƞḗḗḗḗḓş īīƞ ǿǿřḓḗḗř ŧǿǿ ẇǿǿřķ ƥřǿǿƥḗḗřŀẏ.</p>\n<p>Ƈŀǿǿşḗḗ ŧħḗḗ Ƥşīīƥħǿǿƞ ȧȧƥƥŀīīƈȧȧŧīīǿǿƞ, ḓḗḗŀḗḗŧḗḗ ŧħḗḗ ƒīīŀḗḗ ŀīīşŧḗḗḓ ƀḗḗŀǿǿẇ, ȧȧƞḓ ŧřẏ řŭŭƞƞīīƞɠ Ƥşīīƥħǿǿƞ ȧȧɠȧȧīīƞ.</p>]",
+    "message": "[<p>Şīīƒǿǿǿǿƞ ƈȧȧƞƞǿǿŧ ȧȧƈƈḗḗşş ȧȧ ƒīīŀḗḗ īīŧ ƞḗḗḗḗḓş īīƞ ǿǿřḓḗḗř ŧǿǿ ẇǿǿřķ ƥřǿǿƥḗḗřŀẏ.</p>\n<p>Ƈŀǿǿşḗḗ ŧħḗḗ Şīīƒǿǿǿǿƞ ȧȧƥƥŀīīƈȧȧŧīīǿǿƞ, ḓḗḗŀḗḗŧḗḗ ŧħḗḗ ƒīīŀḗḗ ŀīīşŧḗḗḓ ƀḗḗŀǿǿẇ, ȧȧƞḓ ŧřẏ řŭŭƞƞīīƞɠ Şīīƒǿǿǿǿƞ ȧȧɠȧȧīīƞ.</p>]",
     "description": "Body text of modal error message shown to user when Sifoon cannot read/write/delete a file that it needs to access in order to function properly. If this occurs, the user cannot connect and must take manual action to fix it. The word 'Sifoon' must not be translated or transliterated."
   },
   "notice#sifoonui-fileerror-error-title": {
@@ -240,7 +252,7 @@
     "description": "Title of modal error message shown to user when Sifoon cannot read/write/delete a file that it needs to access in order to function properly."
   },
   "notice#systemproxysettings-setproxy-error-body": {
-    "message": "[<p>Ƥşīīƥħǿǿƞ ƒȧȧīīŀḗḗḓ ŧǿǿ şḗḗŧ ŧħḗḗ şẏşŧḗḗḿ’ş ƥřǿǿẋẏ şḗḗŧŧīīƞɠş.</p>\n<p>Ŧħīīş ḿīīɠħŧ ƀḗḗ ḓŭŭḗḗ ŧǿǿ ȧȧ ƈǿǿƞƒŀīīƈŧ ẇīīŧħ ẏǿǿŭŭř ȧȧƞŧīīṽīīřŭŭş şǿǿƒŧẇȧȧřḗḗ. Ẏǿǿŭŭ ḿīīɠħŧ ƞḗḗḗḗḓ ŧǿǿ ḿȧȧƞŭŭȧȧŀŀẏ ƈǿǿƞƒīīɠŭŭřḗḗ ẏǿǿŭŭř ȧȧƥƥŀīīƈȧȧŧīīǿǿƞ ǿǿř şẏşŧḗḗḿ ƥřǿǿẋẏ şḗḗŧŧīīƞɠş ŧǿǿ ŭŭşḗḗ ŧħḗḗ ŀǿǿƈȧȧŀ Ƥşīīƥħǿǿƞ ƥřǿǿẋīīḗḗş.</p>]",
+    "message": "[<p>Şīīƒǿǿǿǿƞ ƒȧȧīīŀḗḗḓ ŧǿǿ şḗḗŧ ŧħḗḗ şẏşŧḗḗḿ’ş ƥřǿǿẋẏ şḗḗŧŧīīƞɠş.</p>\n<p>Ŧħīīş ḿīīɠħŧ ƀḗḗ ḓŭŭḗḗ ŧǿǿ ȧȧ ƈǿǿƞƒŀīīƈŧ ẇīīŧħ ẏǿǿŭŭř ȧȧƞŧīīṽīīřŭŭş şǿǿƒŧẇȧȧřḗḗ. Ẏǿǿŭŭ ḿīīɠħŧ ƞḗḗḗḗḓ ŧǿǿ ḿȧȧƞŭŭȧȧŀŀẏ ƈǿǿƞƒīīɠŭŭřḗḗ ẏǿǿŭŭř ȧȧƥƥŀīīƈȧȧŧīīǿǿƞ ǿǿř şẏşŧḗḗḿ ƥřǿǿẋẏ şḗḗŧŧīīƞɠş ŧǿǿ ŭŭşḗḗ ŧħḗḗ ŀǿǿƈȧȧŀ Şīīƒǿǿǿǿƞ ƥřǿǿẋīīḗḗş.</p>]",
     "description": "Body text of modal error message shown to user when Sifoon fails to set the user's system proxy settings. This means that Sifoon was able to connect, but was unable to configure the system to actually use Sifoon. The word 'Sifoon' must not be translated or transliterated."
   },
   "notice#systemproxysettings-setproxy-error-title": {
@@ -248,7 +260,7 @@
     "description": "Title of modal error message shown to user when Sifoon fails to set the user's system proxy settings. This means that Sifoon was able to connect, but was unable to configure the system to actually use Sifoon."
   },
   "notice#systemproxysettings-setproxy-warning-template": {
-    "message": "[Ƥşīīƥħǿǿƞ ƒȧȧīīŀḗḗḓ ŧǿǿ şḗḗŧ ŧħḗḗ şẏşŧḗḗḿ’ş ƥřǿǿẋẏ şḗḗŧŧīīƞɠş ƒǿǿř ŧħḗḗ Īīƞŧḗḗřƞḗḗŧ ƈǿǿƞƞḗḗƈŧīīǿǿƞ ƞȧȧḿḗḗḓ “<%- data %>”. Ŧħīīş ḿīīɠħŧ ƀḗḗ ḓŭŭḗḗ ŧǿǿ ȧȧ ƈǿǿƞƒŀīīƈŧ ẇīīŧħ ẏǿǿŭŭř ȧȧƞŧīīṽīīřŭŭş şǿǿƒŧẇȧȧřḗḗ. Ẏǿǿŭŭ ḿīīɠħŧ ƞḗḗḗḗḓ ŧǿǿ ḿȧȧƞŭŭȧȧŀŀẏ ƈǿǿƞƒīīɠŭŭřḗḗ ẏǿǿŭŭř ȧȧƥƥŀīīƈȧȧŧīīǿǿƞ ǿǿř şẏşŧḗḗḿ ƥřǿǿẋẏ şḗḗŧŧīīƞɠş ŧǿǿ ŭŭşḗḗ ŧħḗḗ ŀǿǿƈȧȧŀ Ƥşīīƥħǿǿƞ ƥřǿǿẋīīḗḗş.]",
+    "message": "[Şīīƒǿǿǿǿƞ ƒȧȧīīŀḗḗḓ ŧǿǿ şḗḗŧ ŧħḗḗ şẏşŧḗḗḿ’ş ƥřǿǿẋẏ şḗḗŧŧīīƞɠş ƒǿǿř ŧħḗḗ Īīƞŧḗḗřƞḗḗŧ ƈǿǿƞƞḗḗƈŧīīǿǿƞ ƞȧȧḿḗḗḓ “<%- data %>”. Ŧħīīş ḿīīɠħŧ ƀḗḗ ḓŭŭḗḗ ŧǿǿ ȧȧ ƈǿǿƞƒŀīīƈŧ ẇīīŧħ ẏǿǿŭŭř ȧȧƞŧīīṽīīřŭŭş şǿǿƒŧẇȧȧřḗḗ. Ẏǿǿŭŭ ḿīīɠħŧ ƞḗḗḗḗḓ ŧǿǿ ḿȧȧƞŭŭȧȧŀŀẏ ƈǿǿƞƒīīɠŭŭřḗḗ ẏǿǿŭŭř ȧȧƥƥŀīīƈȧȧŧīīǿǿƞ ǿǿř şẏşŧḗḗḿ ƥřǿǿẋẏ şḗḗŧŧīīƞɠş ŧǿǿ ŭŭşḗḗ ŧħḗḗ ŀǿǿƈȧȧŀ Şīīƒǿǿǿǿƞ ƥřǿǿẋīīḗḗş.]",
     "description": "'<%- data %>' is a placeholder and must not be modified. Log message emitted when Sifoon can't fully configure the system to use Sifoon. It may or may not be a fatal state, and may or may not need human intervention. The word 'Sifoon' must not be translated or transliterated."
   },
   "positive-value-indicator": {
@@ -384,7 +396,7 @@
     "description": "Header of modal dialog shown when the user attempts to log out of their PsiCash account and a message results. 'PsiCash' must not be translated or transliterated."
   },
   "psicash#modal-psicash-logout-offline-body": {
-    "message": "[Ɓḗḗīīƞɠ ƈǿǿƞƞḗḗƈŧḗḗḓ ŧǿǿ ŧħḗḗ Ƥşīīƥħǿǿƞ ƞḗḗŧẇǿǿřķ ḗḗƞȧȧƀŀḗḗş ȧȧ ḿǿǿřḗḗ şḗḗƈŭŭřḗḗ ƤşīīƇȧȧşħ ŀǿǿɠǿǿŭŭŧ. Ẇǿǿŭŭŀḓ ẏǿǿŭŭ ŀīīķḗḗ ŧǿǿ ƈǿǿƞƞḗḗƈŧ ƀḗḗƒǿǿřḗḗ ŀǿǿɠɠīīƞɠ ǿǿŭŭŧ?]",
+    "message": "[Ɓḗḗīīƞɠ ƈǿǿƞƞḗḗƈŧḗḗḓ ŧǿǿ ŧħḗḗ Şīīƒǿǿǿǿƞ ƞḗḗŧẇǿǿřķ ḗḗƞȧȧƀŀḗḗş ȧȧ ḿǿǿřḗḗ şḗḗƈŭŭřḗḗ ƤşīīƇȧȧşħ ŀǿǿɠǿǿŭŭŧ. Ẇǿǿŭŭŀḓ ẏǿǿŭŭ ŀīīķḗḗ ŧǿǿ ƈǿǿƞƞḗḗƈŧ ƀḗḗƒǿǿřḗḗ ŀǿǿɠɠīīƞɠ ǿǿŭŭŧ?]",
     "description": "Body of a modal dialog that appears when the user tries to log out of thier PsiCash account while not currently connected to the Sifoon network. We don't allow PsiCash network requests when not connected, so only an inferior localy-only logout is available. 'Sifoon' must not be translated/transliterated. The word 'PsiCash' must not be translated or transliterated."
   },
   "psicash#modal-psicash-logout-offline-cancel-button": {
@@ -408,11 +420,11 @@
     "description": "Label for a button that leads to more Speed Boost purchase choices. The translation can be like 'More options' or 'More choices' or 'See more'. Only use an ellipsis if it makes sense in your language."
   },
   "psicash#mustconnect-modal#body": {
-    "message": "[Īīƞ ǿǿřḓḗḗř ŧǿǿ ŭŭşḗḗ ƤşīīƇȧȧşħ, ẏǿǿŭŭ ḿŭŭşŧ ƀḗḗ ƈǿǿƞƞḗḗƈŧḗḗḓ ŧǿǿ ŧħḗḗ Ƥşīīƥħǿǿƞ ƞḗḗŧẇǿǿřķ.]",
+    "message": "[Īīƞ ǿǿřḓḗḗř ŧǿǿ ŭŭşḗḗ ƤşīīƇȧȧşħ, ẏǿǿŭŭ ḿŭŭşŧ ƀḗḗ ƈǿǿƞƞḗḗƈŧḗḗḓ ŧǿǿ ŧħḗḗ Şīīƒǿǿǿǿƞ ƞḗḗŧẇǿǿřķ.]",
     "description": "Body text of a modal dialog shown when the user tries to use (spend, buy, etc.) PsiCash, if they not currently connected. 'Use' here means buy, spend, or otherwise interact with. 'Sifoon' must not be translated/transliterated. 'PsiCash' must not be translated/transliterated."
   },
   "psicash#mustconnect-modal#title": {
-    "message": "[Ƥşīīƥħǿǿƞ Ƈǿǿƞƞḗḗƈŧīīǿǿƞ Řḗḗɋŭŭīīřḗḗḓ]",
+    "message": "[Şīīƒǿǿǿǿƞ Ƈǿǿƞƞḗḗƈŧīīǿǿƞ Řḗḗɋŭŭīīřḗḗḓ]",
     "description": "Title text of a modal dialog shown when the user tries to use (spend, buy, etc.) PsiCash, if they not currently connected. 'Sifoon' must not be translated/transliterated."
   },
   "psicash#overlay-logging-in": {
@@ -432,7 +444,7 @@
     "description": "Text for a link displayed when the user does not have a PsiCash account. This is an strong suggestion, hence the exclamation point -- use whatever makes sense in your language. It encourages them to make one. The word 'PsiCash' must not be translated or transliterated."
   },
   "psicash#pane-create-account-plea": {
-    "message": "[Ƈřḗḗȧȧŧīīƞɠ ȧȧ ƤşīīƇȧȧşħ ȧȧƈƈǿǿŭŭƞŧ ẇīīŀŀ ħḗḗŀƥ ƥřḗḗşḗḗřṽḗḗ ẏǿǿŭŭř ƤşīīƇȧȧşħ īīƒ ẏǿǿŭŭ ƈŀḗḗȧȧř ŧħḗḗ ȧȧƥƥ'ş şŧǿǿřȧȧɠḗḗ ǿǿř ŭŭşḗḗ Ƥşīīƥħǿǿƞ ǿǿƞ ȧȧƞǿǿŧħḗḗř ḓḗḗṽīīƈḗḗ. <a href=\"https://psiphon.ca/faq.html#psicash-account\">Ŀḗḗȧȧřƞ ḿǿǿřḗḗ.</a>]",
+    "message": "[Ƈřḗḗȧȧŧīīƞɠ ȧȧ ƤşīīƇȧȧşħ ȧȧƈƈǿǿŭŭƞŧ ẇīīŀŀ ħḗḗŀƥ ƥřḗḗşḗḗřṽḗḗ ẏǿǿŭŭř ƤşīīƇȧȧşħ īīƒ ẏǿǿŭŭ ƈŀḗḗȧȧř ŧħḗḗ ȧȧƥƥ'ş şŧǿǿřȧȧɠḗḗ ǿǿř ŭŭşḗḗ Şīīƒǿǿǿǿƞ ǿǿƞ ȧȧƞǿǿŧħḗḗř ḓḗḗṽīīƈḗḗ. <a href=\"https://psiphon.ca/faq.html#psicash-account\">Ŀḗḗȧȧřƞ ḿǿǿřḗḗ.</a>]",
     "description": "Text shown below the PsiCash balance when the user does not have a PsiCash account. 'Learn more' is a link to an FAQ entry explaining the benefits of creating an account. The word 'PsiCash' must not be translated or transliterated."
   },
   "psicash#pane-create-new-account": {
@@ -440,7 +452,7 @@
     "description": "Text on button that user can click to create a new account (opens an external web page)."
   },
   "psicash#pane-l2tp-incompatible": {
-    "message": "[Şƥḗḗḗḗḓ Ɓǿǿǿǿşŧ ƈȧȧƞƞǿǿŧ ƀḗḗ ŭŭşḗḗḓ ẇħīīŀḗḗ Ƥşīīƥħǿǿƞ īīş ƈǿǿƞƞḗḗƈŧḗḗḓ īīƞ <a href=\"#\">Ŀ2ŦƤ/ĪīƤŞḗḗƈ ŧřȧȧƞşƥǿǿřŧ ḿǿǿḓḗḗ</a>.]",
+    "message": "[Şƥḗḗḗḗḓ Ɓǿǿǿǿşŧ ƈȧȧƞƞǿǿŧ ƀḗḗ ŭŭşḗḗḓ ẇħīīŀḗḗ Şīīƒǿǿǿǿƞ īīş ƈǿǿƞƞḗḗƈŧḗḗḓ īīƞ <a href=\"#\">Ŀ2ŦƤ/ĪīƤŞḗḗƈ ŧřȧȧƞşƥǿǿřŧ ḿǿǿḓḗḗ</a>.]",
     "description": "A message shown when L2TP/IPSec mode is enabled in Sifoon. Speed Boost cannot be used in this mode."
   },
   "psicash#pane-log-in": {
@@ -472,11 +484,11 @@
     "description": "Text encouraging the user to buy PsiCash (with real money). The word 'PsiCash' must not be translated or transliterated."
   },
   "psicash#pane-speed-boost-cta": {
-    "message": "[Ŭŭƞŀḗḗȧȧşħ ŧħḗḗ ƒŭŭŀŀ ƥǿǿŧḗḗƞŧīīȧȧŀ ǿǿƒ Ƥşīīƥħǿǿƞ ẇīīŧħ Şƥḗḗḗḗḓ&nbsp;Ɓǿǿǿǿşŧ!]",
+    "message": "[Ŭŭƞŀḗḗȧȧşħ ŧħḗḗ ƒŭŭŀŀ ƥǿǿŧḗḗƞŧīīȧȧŀ ǿǿƒ Şīīƒǿǿǿǿƞ ẇīīŧħ Şƥḗḗḗḗḓ&nbsp;Ɓǿǿǿǿşŧ!]",
     "description": "Text encouraging the user to purchase Speed Boost. 'Unleash' can translated to something like 'unlock', 'release', 'enable', 'amplify', or generally 'make a lot better'. 'Sifoon' must not be translated/transliterated. 'Speed Boost' is a reward that can be purchased with PsiCash credit. It provides unlimited network connection speed through Sifoon. Other words that can be used to help with translation are: 'turbo' (like cars), 'accelerate', 'warp speed', 'blast off', or anything that indicates a fast or unrestricted speed."
   },
   "psicash#pane-speed-port-limits-body": {
-    "message": "[Ẇīīŧħǿǿŭŭŧ ȧȧƈŧīīṽḗḗ Şƥḗḗḗḗḓ Ɓǿǿǿǿşŧ, ẏǿǿŭŭř şƥḗḗḗḗḓ īīş ŀīīḿīīŧḗḗḓ ȧȧƞḓ şǿǿḿḗḗ īīƞŧḗḗřƞḗḗŧ ŧřȧȧƒƒīīƈ īīş ƞǿǿŧ şŭŭƥƥǿǿřŧḗḗḓ. Ȧȧƈŧīīṽȧȧŧḗḗ Şƥḗḗḗḗḓ Ɓǿǿǿǿşŧ ẇīīŧħ ƤşīīƇȧȧşħ ŧǿǿ ŭŭƞŀǿǿƈķ ŧħḗḗ ƒŭŭŀŀ ƥǿǿŧḗḗƞŧīīȧȧŀ ǿǿƒ ẏǿǿŭŭř Ƥşīīƥħǿǿƞ ḗḗẋƥḗḗřīīḗḗƞƈḗḗ.]",
+    "message": "[Ẇīīŧħǿǿŭŭŧ ȧȧƈŧīīṽḗḗ Şƥḗḗḗḗḓ Ɓǿǿǿǿşŧ, ẏǿǿŭŭř şƥḗḗḗḗḓ īīş ŀīīḿīīŧḗḗḓ ȧȧƞḓ şǿǿḿḗḗ īīƞŧḗḗřƞḗḗŧ ŧřȧȧƒƒīīƈ īīş ƞǿǿŧ şŭŭƥƥǿǿřŧḗḗḓ. Ȧȧƈŧīīṽȧȧŧḗḗ Şƥḗḗḗḗḓ Ɓǿǿǿǿşŧ ẇīīŧħ ƤşīīƇȧȧşħ ŧǿǿ ŭŭƞŀǿǿƈķ ŧħḗḗ ƒŭŭŀŀ ƥǿǿŧḗḗƞŧīīȧȧŀ ǿǿƒ ẏǿǿŭŭř Şīīƒǿǿǿǿƞ ḗḗẋƥḗḗřīīḗḗƞƈḗḗ.]",
     "description": "Body of an information section explaining that there are port and speed restrictions when the user doesn't have Speed Boost active. The word 'PsiCash' must not be translated or transliterated. 'Speed Boost' is a reward that can be purchased with PsiCash credit. It provides unlimited network connection speed through Sifoon. Other words that can be used to help with translation are: 'turbo' (like cars), 'accelerate', 'warp speed', 'blast off', or anything that indicates a fast or unrestricted speed."
   },
   "psicash#pane-speed-port-limits-head": {
@@ -484,11 +496,11 @@
     "description": "Heading for an information section explaining that there are port and speed restrictions when the user doesn't have Speed Boost active."
   },
   "psicash#sifoon-speed": {
-    "message": "[Ƥşīīƥħǿǿƞ<br>Şƥḗḗḗḗḓ]",
+    "message": "[Şīīƒǿǿǿǿƞ<br>Şƥḗḗḗḗḓ]",
     "description": "Text on a badge next to an image or gauge that will indicate 'fast' or 'slow'. This is the current Sifoon tunnel speed limit. Speed Boost is required in order to get the fastest speed. The word 'Sifoon' must not be translated or transliterated. The word 'Sifoon' can be dropped if necessary to get a meaning like 'speed limit'. This text must be kept narrow and short -- only two or three lines of one or two words each. Use hard breaks (like <br>) to separate lines (perhaps with hyphens), and soft break indicators (like &shy; or <wbr> or &#8203;) to indicate were long words can be broken."
   },
   "psicash#sifoon-speed-nobreak": {
-    "message": "[Ƥşīīƥħǿǿƞ Şƥḗḗḗḗḓ]",
+    "message": "[Şīīƒǿǿǿǿƞ Şƥḗḗḗḗḓ]",
     "description": "Text on a badge next to an image or gauge that will indicate 'fast' or 'slow'. This is the current Sifoon tunnel speed limit. Speed Boost is required in order to get the fastest speed. The word 'Sifoon' must not be translated or transliterated. The word 'Sifoon' can be dropped if necessary to get a meaning like 'speed limit'. This text must be kept short."
   },
   "psicash#transaction-ExistingTransaction-body": {
@@ -596,7 +608,7 @@
     "description": "Settings section heading. If the user clicks this, the 'Disable Timeouts for Slow Networks' section will expand and can be edited. If 'disable timeouts' is enabled, network timeouts between the Sifoon client and server will be disabled."
   },
   "settings#disable-timeouts#help-text": {
-    "message": "[Īīƒ ḗḗƞȧȧƀŀḗḗḓ, ƈǿǿḿḿŭŭƞīīƈȧȧŧīīǿǿƞ ẇīīŧħ ŧħḗḗ Ƥşīīƥħǿǿƞ şḗḗřṽḗḗř ẇīīŀŀ ƞǿǿŧ ŧīīḿḗḗ ǿǿŭŭŧ.]",
+    "message": "[Īīƒ ḗḗƞȧȧƀŀḗḗḓ, ƈǿǿḿḿŭŭƞīīƈȧȧŧīīǿǿƞ ẇīīŧħ ŧħḗḗ Şīīƒǿǿǿǿƞ şḗḗřṽḗḗř ẇīīŀŀ ƞǿǿŧ ŧīīḿḗḗ ǿǿŭŭŧ.]",
     "description": "Text explaining to the user what the 'Disable Timeouts' setting does if enabled. The word 'Sifoon' must not be translated or transliterated."
   },
   "settings#disable-timeouts#reason": {
@@ -616,28 +628,28 @@
     "description": "Text explaining to the user what the 'Disallowed Traffic Alert' setting does if enabled. 'Speed Boost' is a reward that can be purchased with PsiCash credit. It provides unlimited network connection speed through Sifoon. Other words that can be used to help with translation are: 'turbo' (like cars), 'accelerate', 'warp speed', 'blast off', or anything that indicates a fast or unrestricted speed."
   },
   "settings#egress-region#default": {
-    "message": "[Ƈħǿǿǿǿşīīƞɠ ŧħḗḗ ḓḗḗƒȧȧŭŭŀŧ <strong>“Ɓḗḗşŧ Ƥḗḗřƒǿǿřḿȧȧƞƈḗḗ”</strong> ǿǿƥŧīīǿǿƞ ȧȧŀŀǿǿẇş Ƥşīīƥħǿǿƞ ŧǿǿ ȧȧŭŭŧǿǿḿȧȧŧīīƈȧȧŀŀẏ ƈħǿǿǿǿşḗḗ ȧȧ şḗḗřṽḗḗř, ẇħīīƈħ ẇīīŀŀ ɠḗḗƞḗḗřȧȧŀŀẏ řḗḗşŭŭŀŧ īīƞ ŧħḗḗ ƀḗḗşŧ ƞḗḗŧẇǿǿřķ ƈǿǿƞƞḗḗƈŧīīǿǿƞ.]",
-    "description": "Help text below the 'Sifoon Server Region' combo box. It explains to the user what the default (and best) option is. The word 'Sifoon' must not be translated or transliterated."
+    "message": "[Ƈħǿǿǿǿşīīƞɠ ŧħḗḗ ḓḗḗƒȧȧŭŭŀŧ <strong>“Ɠǿǿǿǿɠŀḗḗ Şƈřīīƥŧş”</strong> ǿǿƥŧīīǿǿƞ ȧȧŀŀǿǿẇş Şīīƒǿǿǿǿƞ ŧǿǿ ȧȧŭŭŧǿǿḿȧȧŧīīƈȧȧŀŀẏ ƈħǿǿǿǿşḗḗ ȧȧ şḗḗřṽḗḗř.]",
+    "description": "Help text for the default connection mode."
   },
   "settings#egress-region#description": {
-    "message": "[Ƥşīīƥħǿǿƞ ħȧȧş şḗḗřṽḗḗřş īīƞ ḿȧȧƞẏ ḓīīƒƒḗḗřḗḗƞŧ ƈǿǿŭŭƞŧřīīḗḗş ȧȧƞḓ řḗḗɠīīǿǿƞş. Ŭŭşīīƞɠ ȧȧ Ƥşīīƥħǿǿƞ şḗḗřṽḗḗř īīƞ ȧȧ řḗḗɠīīǿǿƞ ƈŀǿǿşḗḗ ŧǿǿ ẏǿǿŭŭř ħǿǿḿḗḗ ƈǿǿŭŭƞŧřẏ ẇīīŀŀ ɠḗḗƞḗḗřȧȧŀŀẏ ƥřǿǿṽīīḓḗḗ ȧȧ ƀḗḗŧŧḗḗř ƞḗḗŧẇǿǿřķ ƈǿǿƞƞḗḗƈŧīīǿǿƞ, ƀŭŭŧ ẏǿǿŭŭ ḿȧȧẏ ẇīīşħ ŧǿǿ ȧȧƈƈḗḗşş ẇḗḗƀşīīŧḗḗş ȧȧƞḓ şḗḗřṽīīƈḗḗş ŀīīķḗḗ ẏǿǿŭŭ ȧȧřḗḗ ṽīīřŧŭŭȧȧŀŀẏ īīƞ ȧȧ şƥḗḗƈīīƒīīƈ ƈǿǿŭŭƞŧřẏ ǿǿř řḗḗɠīīǿǿƞ.]",
-    "description": "Help text in the 'Sifoon Server Region' settings section explaining what the option is and why the user may want to override the default ('best') setting value. The word 'Sifoon' must not be translated or transliterated."
+    "message": "[Ƈħǿǿǿǿşḗḗ ŧħḗḗ ƈǿǿƞƞḗḗƈŧīīǿǿƞ ḿǿǿḓḗḗ ŧħȧȧŧ ẇǿǿřķş ƀḗḗşŧ ƒǿǿř ẏǿǿŭŭř ƞḗḗŧẇǿǿřķ.]",
+    "description": "Description of the Connection Mode section."
   },
   "settings#egress-region#error-modal-body-http": {
-    "message": "[Ẏǿǿŭŭ ħȧȧṽḗḗ ƈǿǿƞƒīīɠŭŭřḗḗḓ Ƥşīīƥħǿǿƞ ŧǿǿ ŭŭşḗḗ ȧȧ şḗḗřṽḗḗř īīƞ ȧȧ şƥḗḗƈīīƒīīƈ řḗḗɠīīǿǿƞ.<br>\nĦǿǿẇḗḗṽḗḗř, ŧħȧȧŧ řḗḗɠīīǿǿƞ īīş ƞǿǿ ŀǿǿƞɠḗḗř ȧȧṽȧȧīīŀȧȧƀŀḗḗ.<br>\nẎǿǿŭŭ ḿŭŭşŧ ƈħǿǿǿǿşḗḗ ȧȧ ƞḗḗẇ řḗḗɠīīǿǿƞ ǿǿř ƈħȧȧƞɠḗḗ ŧǿǿ ŧħḗḗ ḓḗḗƒȧȧŭŭŀŧ “Ɓḗḗşŧ Ƥḗḗřƒǿǿřḿȧȧƞƈḗḗ” ƈħǿǿīīƈḗḗ.]",
-    "description": "Descriptive body text of the error modal dialog shown when it is detected that the user has an invalid 'Sifoon Server Region' currently configured. The word 'Sifoon' must not be translated or transliterated."
+    "message": "[Ẏǿǿŭŭ ħȧȧṽḗḗ ƈǿǿƞƒīīɠŭŭřḗḗḓ Şīīƒǿǿǿǿƞ ŧǿǿ ŭŭşḗḗ ȧȧ ƈǿǿƞƞḗḗƈŧīīǿǿƞ ḿǿǿḓḗḗ ŧħȧȧŧ īīş ƞǿǿ ŀǿǿƞɠḗḗř ȧȧṽȧȧīīŀȧȧƀŀḗḗ.<br>\nẎǿǿŭŭ ḿŭŭşŧ ƈħǿǿǿǿşḗḗ ȧȧ ƞḗḗẇ ḿǿǿḓḗḗ ǿǿř ƈħȧȧƞɠḗḗ ŧǿǿ ŧħḗḗ ḓḗḗƒȧȧŭŭŀŧ “Ɠǿǿǿǿɠŀḗḗ Şƈřīīƥŧş” ƈħǿǿīīƈḗḗ.]",
+    "description": "Descriptive body text of the error modal dialog shown when it is detected that the user has an invalid connection mode currently configured."
   },
   "settings#egress-region#error-modal-title": {
-    "message": "[Şḗḗřṽḗḗř Řḗḗɠīīǿǿƞ Ŭŭƞȧȧṽȧȧīīŀȧȧƀŀḗḗ]",
-    "description": "Title text of the error modal dialog shown when it is detected that the user has an invalid 'Sifoon Server Region' currently configured."
+    "message": "[Ƈǿǿƞƞḗḗƈŧīīǿǿƞ Ḿǿǿḓḗḗ Ŭŭƞȧȧṽȧȧīīŀȧȧƀŀḗḗ]",
+    "description": "Title text of the error modal dialog shown when it is detected that the user has an invalid connection mode currently configured."
   },
   "settings#egress-region#heading": {
-    "message": "[Ƥşīīƥħǿǿƞ Şḗḗřṽḗḗř Řḗḗɠīīǿǿƞ]",
-    "description": "Settings section heading. In this section the user can choose to use a Sifoon server in a specific country/region (or the default, which is just to choose the best/fastest region). The word 'Sifoon' must not be translated or transliterated."
+    "message": "[Ƈǿǿƞƞḗḗƈŧīīǿǿƞ Ḿǿǿḓḗḗ]",
+    "description": "Settings section heading. In this section the user can choose the connection mode: Google Scripts, Domain Fronting, or a specific region."
   },
   "settings#egress-region#invalid-error-msg": {
-    "message": "[Ƈħǿǿǿǿşḗḗ ȧȧ ṽȧȧŀīīḓ Ƥşīīƥħǿǿƞ şḗḗřṽḗḗř řḗḗɠīīǿǿƞ.]",
-    "description": "Error message that is visible when the 'Sifoon Server Region' setting is invalid or not yet set. The word 'Sifoon' must not be translated or transliterated."
+    "message": "[Ƈħǿǿǿǿşḗḗ ȧȧ ṽȧȧŀīīḓ ƈǿǿƞƞḗḗƈŧīīǿǿƞ ḿǿǿḓḗḗ.]",
+    "description": "Error message shown when an invalid connection mode is selected."
   },
   "settings#egress-region#select-ae": {
     "message": "[Ŭŭƞīīŧḗḗḓ Ȧȧřȧȧƀ Ḗḗḿīīřȧȧŧḗḗş]",
@@ -660,8 +672,8 @@
     "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Belgium will be used."
   },
   "settings#egress-region#select-best-performance": {
-    "message": "[Ɓḗḗşŧ Ƥḗḗřƒǿǿřḿȧȧƞƈḗḗ]",
-    "description": "One of the choices in the 'Sifoon Server Region' combo box. This is the default option and indicates that Sifoon will use a server in the best/fastest region."
+    "message": "[Ɠǿǿǿǿɠŀḗḗ Şƈřīīƥŧş]",
+    "description": "The default connection mode using Google Apps Script."
   },
   "settings#egress-region#select-bg": {
     "message": "[Ɓŭŭŀɠȧȧřīīȧȧ]",
@@ -694,6 +706,10 @@
   "settings#egress-region#select-de": {
     "message": "[Ɠḗḗřḿȧȧƞẏ]",
     "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Germany will be used."
+  },
+  "settings#egress-region#select-df": {
+    "message": "[Ḓǿǿḿȧȧīīƞ Ƒřǿǿƞŧīīƞɠ]",
+    "description": "Connection mode using SNI repacking and direct IP redirection."
   },
   "settings#egress-region#select-dk": {
     "message": "[Ḓḗḗƞḿȧȧřķ]",
@@ -839,6 +855,14 @@
     "message": "[Şǿǿŭŭŧħ Ȧȧƒřīīƈȧȧ]",
     "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in South Africa will be used."
   },
+  "settings#enable-cloudflare-worker": {
+    "message": "[Ḗḗƞȧȧƀŀḗḗ Ƈŀǿǿŭŭḓƒŀȧȧřḗḗ Ẇǿǿřķḗḗř Şŭŭƥƥǿǿřŧ]",
+    "description": "Label for the 'Enable Cloudflare Worker Support' checkbox in Google Script settings."
+  },
+  "settings#enable-https-support": {
+    "message": "[Ḗḗƞȧȧƀŀḗḗ ĦŦŦƤŞ Şŭŭƥƥǿǿřŧ]",
+    "description": "Label for the 'Enable HTTPS Support' checkbox in Google Script settings."
+  },
   "settings#error-alert": {
     "message": "[<strong>Ḗḗřřǿǿř!</strong> Ƥŀḗḗȧȧşḗḗ ƒīīẋ īīƞƈǿǿřřḗḗƈŧ ṽȧȧŀŭŭḗḗş ƀḗḗƒǿǿřḗḗ ƥřǿǿƈḗḗḗḗḓīīƞɠ.]",
     "description": "This alert is shown to the user if they enter incorrect values into one or more of the settings fields."
@@ -852,23 +876,27 @@
     "description": "This modal dialog box is shown when the user tries to save their settings, but there is an error in the values they have entered. This string is the title of the modal box."
   },
   "settings#expose-local-proxies-to-lan#enable-label": {
-    "message": "[Ȧȧŀŀǿǿẇ ǿǿŧħḗḗř ḓḗḗṽīīƈḗḗş ǿǿƞ ẏǿǿŭŭř ƞḗḗŧẇǿǿřķ ŧǿǿ ŭŭşḗḗ ŧħḗḗ ŀǿǿƈȧȧŀ Ƥşīīƥħǿǿƞ ƥřǿǿẋīīḗḗş]",
+    "message": "[Ȧȧŀŀǿǿẇ ǿǿŧħḗḗř ḓḗḗṽīīƈḗḗş ǿǿƞ ẏǿǿŭŭř ƞḗḗŧẇǿǿřķ ŧǿǿ ŭŭşḗḗ ŧħḗḗ ŀǿǿƈȧȧŀ Şīīƒǿǿǿǿƞ ƥřǿǿẋīīḗḗş]",
     "description": "Label for the setting to allow other devices on the network to use the local Sifoon proxies."
   },
   "settings#expose-local-proxies-to-lan#help-text": {
-    "message": "[Īīƒ ẏǿǿŭŭ ħȧȧṽḗḗ ǿǿŧħḗḗř ḓḗḗṽīīƈḗḗş ǿǿƞ ẏǿǿŭŭř ƞḗḗŧẇǿǿřķ, şŭŭƈħ ȧȧş ȧȧ şḿȧȧřŧ ŦṼ ǿǿř ɠȧȧḿīīƞɠ ƈǿǿƞşǿǿŀḗḗ, ẏǿǿŭŭ ƈȧȧƞ ȧȧŀŀǿǿẇ ŧħḗḗḿ ŧǿǿ ŭŭşḗḗ ŧħḗḗşḗḗ ĦŦŦƤ ȧȧƞḓ ŞǾǿƇĶŞ ƥřǿǿẋīīḗḗş ẇħīīŀḗḗ Ƥşīīƥħǿǿƞ īīş ƈǿǿƞƞḗḗƈŧḗḗḓ.]",
+    "message": "[Īīƒ ẏǿǿŭŭ ħȧȧṽḗḗ ǿǿŧħḗḗř ḓḗḗṽīīƈḗḗş ǿǿƞ ẏǿǿŭŭř ƞḗḗŧẇǿǿřķ, şŭŭƈħ ȧȧş ȧȧ şḿȧȧřŧ ŦṼ ǿǿř ɠȧȧḿīīƞɠ ƈǿǿƞşǿǿŀḗḗ, ẏǿǿŭŭ ƈȧȧƞ ȧȧŀŀǿǿẇ ŧħḗḗḿ ŧǿǿ ŭŭşḗḗ ŧħḗḗşḗḗ ĦŦŦƤ ȧȧƞḓ ŞǾǿƇĶŞ ƥřǿǿẋīīḗḗş ẇħīīŀḗḗ Şīīƒǿǿǿǿƞ īīş ƈǿǿƞƞḗḗƈŧḗḗḓ.]",
     "description": "Help text explaining the setting to allow other devices on the network to use the local Sifoon proxies. Smart TV refers to televisions that have Internet connectivity and apps that access Internet services."
   },
   "settings#expose-local-proxies-to-lan#hint": {
     "message": "[<strong>ĦĪīȠŦ:</strong> Ẏǿǿŭŭ şħǿǿŭŭŀḓ şƥḗḗƈīīƒẏ ȧȧŧ ŀḗḗȧȧşŧ ǿǿƞḗḗ ǿǿƒ ŧħḗḗ ƥǿǿřŧ ƞŭŭḿƀḗḗřş ȧȧƀǿǿṽḗḗ īīƞ ǿǿřḓḗḗř ŧǿǿ ŭŭşḗḗ ŧħīīş ƒḗḗȧȧŧŭŭřḗḗ. Ŧħḗḗ ȧȧḓḓřḗḗşşḗḗş ǿǿƒ ŧħḗḗ ŀǿǿƈȧȧŀ ƥřǿǿẋīīḗḗş ẇīīŀŀ ƀḗḗ ḓīīşƥŀȧȧẏḗḗḓ īīƞ ŧħḗḗ ŀǿǿɠş.]",
     "description": "Helpful hint suggesting to set port numbers for the local Sifoon proxies when using the setting to allow other devices on the network to use the local Sifoon proxies."
   },
+  "settings#google-script#heading": {
+    "message": "[Ɠǿǿǿǿɠŀḗḗ Şƈřīīƥŧş Şḗḗŧŧīīƞɠş]",
+    "description": "Heading for Google Scripts specific settings."
+  },
   "settings#local-proxy-ports#error-modal-body-http": {
-    "message": "[<p>\nẎǿǿŭŭ ħȧȧṽḗḗ ƈǿǿƞƒīīɠŭŭřḗḗḓ Ƥşīīƥħǿǿƞ ŧǿǿ ŭŭşḗḗ ȧȧ şƥḗḗƈīīƒīīƈ ŀǿǿƈȧȧŀ ƥǿǿřŧ ƒǿǿř īīŧş ĦŦŦƤ ƥřǿǿẋẏ.<br>\nĦǿǿẇḗḗṽḗḗř, ŧħȧȧŧ ƥǿǿřŧ ȧȧƥƥḗḗȧȧřş ŧǿǿ ƀḗḗ ȧȧŀřḗḗȧȧḓẏ īīƞ ŭŭşḗḗ ȧȧƞḓ şǿǿ Ƥşīīƥħǿǿƞ ƈȧȧƞƞǿǿŧ ŭŭşḗḗ īīŧ.\n</p>\n<p>\nƤŀḗḗȧȧşḗḗ ƈħȧȧƞɠḗḗ ŧħḗḗ ƈǿǿƞƒīīɠŭŭřḗḗḓ ĦŦŦƤ ƥřǿǿẋẏ ƥǿǿřŧ ṽȧȧŀŭŭḗḗ ȧȧƞḓ ŧřẏ ȧȧɠȧȧīīƞ. Ẇḗḗ řḗḗƈǿǿḿḿḗḗƞḓḗḗḓ ŧħȧȧŧ ẏǿǿŭŭ ƈŀḗḗȧȧř ŧħḗḗ ṽȧȧŀŭŭḗḗ şǿǿ ŧħȧȧŧ Ƥşīīƥħǿǿƞ ƈȧȧƞ ȧȧŭŭŧǿǿḿȧȧŧīīƈȧȧŀŀẏ ƥīīƈķ ȧȧƞ ȧȧṽȧȧīīŀȧȧƀŀḗḗ ƥǿǿřŧ.\n</p>]",
+    "message": "[<p>\nẎǿǿŭŭ ħȧȧṽḗḗ ƈǿǿƞƒīīɠŭŭřḗḗḓ Şīīƒǿǿǿǿƞ ŧǿǿ ŭŭşḗḗ ȧȧ şƥḗḗƈīīƒīīƈ ŀǿǿƈȧȧŀ ƥǿǿřŧ ƒǿǿř īīŧş ĦŦŦƤ ƥřǿǿẋẏ.<br>\nĦǿǿẇḗḗṽḗḗř, ŧħȧȧŧ ƥǿǿřŧ ȧȧƥƥḗḗȧȧřş ŧǿǿ ƀḗḗ ȧȧŀřḗḗȧȧḓẏ īīƞ ŭŭşḗḗ ȧȧƞḓ şǿǿ Şīīƒǿǿǿǿƞ ƈȧȧƞƞǿǿŧ ŭŭşḗḗ īīŧ.\n</p>\n<p>\nƤŀḗḗȧȧşḗḗ ƈħȧȧƞɠḗḗ ŧħḗḗ ƈǿǿƞƒīīɠŭŭřḗḗḓ ĦŦŦƤ ƥřǿǿẋẏ ƥǿǿřŧ ṽȧȧŀŭŭḗḗ ȧȧƞḓ ŧřẏ ȧȧɠȧȧīīƞ. Ẇḗḗ řḗḗƈǿǿḿḿḗḗƞḓḗḗḓ ŧħȧȧŧ ẏǿǿŭŭ ƈŀḗḗȧȧř ŧħḗḗ ṽȧȧŀŭŭḗḗ şǿǿ ŧħȧȧŧ Şīīƒǿǿǿǿƞ ƈȧȧƞ ȧȧŭŭŧǿǿḿȧȧŧīīƈȧȧŀŀẏ ƥīīƈķ ȧȧƞ ȧȧṽȧȧīīŀȧȧƀŀḗḗ ƥǿǿřŧ.\n</p>]",
     "description": "Main text in the 'Local Proxy Port Conflict' dialog box. This is shown when the conflict is with the HTTP proxy port, rather than the SOCKS proxy port. The word 'Sifoon' must not be translated or transliterated."
   },
   "settings#local-proxy-ports#error-modal-body-socks": {
-    "message": "[<p>\nẎǿǿŭŭ ħȧȧṽḗḗ ƈǿǿƞƒīīɠŭŭřḗḗḓ Ƥşīīƥħǿǿƞ ŧǿǿ ŭŭşḗḗ ȧȧ şƥḗḗƈīīƒīīƈ ŀǿǿƈȧȧŀ ƥǿǿřŧ ƒǿǿř īīŧş ŞǾǿƇĶŞ ƥřǿǿẋẏ.<br>\nĦǿǿẇḗḗṽḗḗř, ŧħȧȧŧ ƥǿǿřŧ ȧȧƥƥḗḗȧȧřş ŧǿǿ ƀḗḗ ȧȧŀřḗḗȧȧḓẏ īīƞ ŭŭşḗḗ ȧȧƞḓ şǿǿ Ƥşīīƥħǿǿƞ ƈȧȧƞƞǿǿŧ ŭŭşḗḗ īīŧ.\n</p>\n<p>\nƤŀḗḗȧȧşḗḗ ƈħȧȧƞɠḗḗ ŧħḗḗ ƈǿǿƞƒīīɠŭŭřḗḗḓ ŞǾǿƇĶŞ ƥřǿǿẋẏ ƥǿǿřŧ ṽȧȧŀŭŭḗḗ ȧȧƞḓ ŧřẏ ȧȧɠȧȧīīƞ. Ẇḗḗ řḗḗƈǿǿḿḿḗḗƞḓḗḗḓ ŧħȧȧŧ ẏǿǿŭŭ ƈŀḗḗȧȧř ŧħḗḗ ṽȧȧŀŭŭḗḗ şǿǿ ŧħȧȧŧ Ƥşīīƥħǿǿƞ ƈȧȧƞ ȧȧŭŭŧǿǿḿȧȧŧīīƈȧȧŀŀẏ ƥīīƈķ ȧȧƞ ȧȧṽȧȧīīŀȧȧƀŀḗḗ ƥǿǿřŧ.\n</p>]",
+    "message": "[<p>\nẎǿǿŭŭ ħȧȧṽḗḗ ƈǿǿƞƒīīɠŭŭřḗḗḓ Şīīƒǿǿǿǿƞ ŧǿǿ ŭŭşḗḗ ȧȧ şƥḗḗƈīīƒīīƈ ŀǿǿƈȧȧŀ ƥǿǿřŧ ƒǿǿř īīŧş ŞǾǿƇĶŞ ƥřǿǿẋẏ.<br>\nĦǿǿẇḗḗṽḗḗř, ŧħȧȧŧ ƥǿǿřŧ ȧȧƥƥḗḗȧȧřş ŧǿǿ ƀḗḗ ȧȧŀřḗḗȧȧḓẏ īīƞ ŭŭşḗḗ ȧȧƞḓ şǿǿ Şīīƒǿǿǿǿƞ ƈȧȧƞƞǿǿŧ ŭŭşḗḗ īīŧ.\n</p>\n<p>\nƤŀḗḗȧȧşḗḗ ƈħȧȧƞɠḗḗ ŧħḗḗ ƈǿǿƞƒīīɠŭŭřḗḗḓ ŞǾǿƇĶŞ ƥřǿǿẋẏ ƥǿǿřŧ ṽȧȧŀŭŭḗḗ ȧȧƞḓ ŧřẏ ȧȧɠȧȧīīƞ. Ẇḗḗ řḗḗƈǿǿḿḿḗḗƞḓḗḗḓ ŧħȧȧŧ ẏǿǿŭŭ ƈŀḗḗȧȧř ŧħḗḗ ṽȧȧŀŭŭḗḗ şǿǿ ŧħȧȧŧ Şīīƒǿǿǿǿƞ ƈȧȧƞ ȧȧŭŭŧǿǿḿȧȧŧīīƈȧȧŀŀẏ ƥīīƈķ ȧȧƞ ȧȧṽȧȧīīŀȧȧƀŀḗḗ ƥǿǿřŧ.\n</p>]",
     "description": "Main text in the 'Local Proxy Port Conflict' dialog box. This is shown when the conflict is with the SOCKS proxy port, rather than the HTTP proxy port. The word 'Sifoon' must not be translated or transliterated."
   },
   "settings#local-proxy-ports#error-modal-title": {
@@ -888,7 +916,7 @@
     "description": "Help text that appears above the 'Local Proxy Ports' settings. 'blank' is the default and best value, and is bolded."
   },
   "settings#local-proxy-ports#reason": {
-    "message": "[Īīƒ ẏǿǿŭŭ ŭŭşḗḗ ŧǿǿǿǿŀş ǿǿƞ ẏǿǿŭŭř ƈǿǿḿƥŭŭŧḗḗř ŧħȧȧŧ řḗḗɋŭŭīīřḗḗ ḿȧȧƞŭŭȧȧŀ ƈǿǿƞƒīīɠŭŭřȧȧŧīīǿǿƞ ŧǿǿ ẇǿǿřķ ẇīīŧħ Ƥşīīƥħǿǿƞ, ẏǿǿŭŭ ẇīīŀŀ ẇȧȧƞŧ Ƥşīīƥħǿǿƞ ŧǿǿ ƈǿǿƞşīīşŧḗḗƞŧŀẏ ŭŭşḗḗ ŧħḗḗ şȧȧḿḗḗ ŀǿǿƈȧȧŀ ƥǿǿřŧ ƞŭŭḿƀḗḗřş. Īīƒ ẏǿǿŭŭ ḓǿǿƞ’ŧ ħȧȧṽḗḗ ȧȧ řḗḗȧȧşǿǿƞ ŧǿǿ şƥḗḗƈīīƒẏ ƥǿǿřŧ ƞŭŭḿƀḗḗřş, ẏǿǿŭŭ şħǿǿŭŭŀḓ ȧȧŀŀǿǿẇ Ƥşīīƥħǿǿƞ ŧǿǿ ƈħǿǿǿǿşḗḗ ŧħḗḗḿ ȧȧŭŭŧǿǿḿȧȧŧīīƈȧȧŀŀẏ ŧǿǿ ħḗḗŀƥ ȧȧṽǿǿīīḓ ƈǿǿƞƒŀīīƈŧş.]",
+    "message": "[Īīƒ ẏǿǿŭŭ ŭŭşḗḗ ŧǿǿǿǿŀş ǿǿƞ ẏǿǿŭŭř ƈǿǿḿƥŭŭŧḗḗř ŧħȧȧŧ řḗḗɋŭŭīīřḗḗ ḿȧȧƞŭŭȧȧŀ ƈǿǿƞƒīīɠŭŭřȧȧŧīīǿǿƞ ŧǿǿ ẇǿǿřķ ẇīīŧħ Şīīƒǿǿǿǿƞ, ẏǿǿŭŭ ẇīīŀŀ ẇȧȧƞŧ Şīīƒǿǿǿǿƞ ŧǿǿ ƈǿǿƞşīīşŧḗḗƞŧŀẏ ŭŭşḗḗ ŧħḗḗ şȧȧḿḗḗ ŀǿǿƈȧȧŀ ƥǿǿřŧ ƞŭŭḿƀḗḗřş. Īīƒ ẏǿǿŭŭ ḓǿǿƞ’ŧ ħȧȧṽḗḗ ȧȧ řḗḗȧȧşǿǿƞ ŧǿǿ şƥḗḗƈīīƒẏ ƥǿǿřŧ ƞŭŭḿƀḗḗřş, ẏǿǿŭŭ şħǿǿŭŭŀḓ ȧȧŀŀǿǿẇ Şīīƒǿǿǿǿƞ ŧǿǿ ƈħǿǿǿǿşḗḗ ŧħḗḗḿ ȧȧŭŭŧǿǿḿȧȧŧīīƈȧȧŀŀẏ ŧǿǿ ħḗḗŀƥ ȧȧṽǿǿīīḓ ƈǿǿƞƒŀīīƈŧş.]",
     "description": "Help text in the 'Local Proxy Ports' settings area. This explains to the user why they might want to override the default (automatic) settings values. The word 'Sifoon' must not be translated or transliterated."
   },
   "settings#local-proxy-ports#socks-label": {
@@ -899,9 +927,49 @@
     "message": "[Ŀǿǿƈȧȧŀ ƥǿǿřŧş ḿŭŭşŧ ƀḗḗ ḓīīşŧīīƞƈŧ ƒřǿǿḿ ḗḗȧȧƈħ ǿǿŧħḗḗř.]",
     "description": "Error message that shows if the HTTP local proxy port and SOCKS local proxy port are set to a value and are the same as each other. The local ports must be different from each other. Or one or both of the fields can be empty, which means 'automatic selection'."
   },
+  "settings#manual-cdn-ips#help-text": {
+    "message": "[Şƥḗḗƈīīƒẏ ḿȧȧƞŭŭȧȧŀ ĪīƤ ȧȧḓḓřḗḗşşḗḗş ƒǿǿř ƇḒȠ ƒřǿǿƞŧīīƞɠ. Şŭŭƥƥǿǿřŧş ḿŭŭŀŧīīƥŀḗḗ ĪīƤş ƥḗḗř ŀīīƞḗḗ.]",
+    "description": "Help text for the custom CDN IPs setting."
+  },
+  "settings#manual-cdn-ips#label": {
+    "message": "[Ƈŭŭşŧǿǿḿ ƇḒȠ ĪīƤş]",
+    "description": "Label for the custom CDN IPs textarea."
+  },
+  "settings#manual-cdn-ips#placeholder": {
+    "message": "[Ḗḗƞŧḗḗř ĪīƤş, ǿǿƞḗḗ ǿǿř ḿǿǿřḗḗ ƥḗḗř ŀīīƞḗḗ...]",
+    "description": "Placeholder for the custom CDN IPs textarea."
+  },
   "settings#port-value-error-msg": {
     "message": "[Ḿŭŭşŧ ƀḗḗ ƀḗḗŧẇḗḗḗḗƞ 1 ȧȧƞḓ 65535.]",
     "description": "Error text that appears when the user enters an invalid network port number. As indicated, a valid port number must be a number between 1 and 65535, inclusive. This text is not visible until an invalid value is entered."
+  },
+  "settings#protocol-selector#automatic": {
+    "message": "[Ȧȧŭŭŧǿǿḿȧȧŧīīƈ]",
+    "description": "Option to allow Sifoon to automatically select the best connection protocol."
+  },
+  "settings#protocol-selector#fronted-meek-https": {
+    "message": "[ƇḒȠ Ƒřǿǿƞŧīīƞɠ (ĦŦŦƤŞ)]",
+    "description": "Manual selection for the CDN Fronting (HTTPS) connection protocol."
+  },
+  "settings#protocol-selector#heading": {
+    "message": "[Ḿȧȧƞŭŭȧȧŀ Ƈǿǿƞƞḗḗƈŧīīǿǿƞ Ḿǿǿḓḗḗ]",
+    "description": "Settings section heading where the user can manually select the connection protocol."
+  },
+  "settings#protocol-selector#ossh": {
+    "message": "[Ǿǿƀƒŭŭşƈȧȧŧḗḗḓ ŞŞĦ]",
+    "description": "Manual selection for the Obfuscated SSH connection protocol."
+  },
+  "settings#protocol-selector#quic": {
+    "message": "[ɊŬŭĪīƇ]",
+    "description": "Manual selection for the QUIC connection protocol."
+  },
+  "settings#protocol-selector#ssh": {
+    "message": "[ŞŞĦ]",
+    "description": "Manual selection for the SSH connection protocol."
+  },
+  "settings#proxy-google-ips": {
+    "message": "[Ƥřǿǿẋẏ Ɠǿǿǿǿɠŀḗḗ ĪīƤş]",
+    "description": "Label for the 'Proxy Google IPs' checkbox in Google Script settings."
   },
   "settings#reset-button": {
     "message": "[Řḗḗşḗḗŧ ŧǿǿ Ḓḗḗƒȧȧŭŭŀŧ]",
@@ -910,6 +978,30 @@
   "settings#saved-message": {
     "message": "[Şḗḗŧŧīīƞɠş şȧȧṽḗḗḓ.]",
     "description": "Pop-up message shown to users after they have changed their settings (but they aren't currently connected, so there's no reconnect or further action)."
+  },
+  "settings#skip-proxy-settings#enable-label": {
+    "message": "[Ḓǿǿƞ'ŧ ḿǿǿḓīīƒẏ şẏşŧḗḗḿ ƥřǿǿẋẏ şḗḗŧŧīīƞɠş]",
+    "description": "The label on the checkbox that enables 'Disable System Proxy Settings'."
+  },
+  "settings#skip-proxy-settings#heading": {
+    "message": "[Ḓīīşȧȧƀŀḗḗ Şẏşŧḗḗḿ Ƥřǿǿẋẏ Şḗḗŧŧīīƞɠş]",
+    "description": "Settings section heading. If enabled, Sifoon will not attempt to set the system's proxy settings when it connects."
+  },
+  "settings#skip-proxy-settings#help-text": {
+    "message": "[Īīƒ ḗḗƞȧȧƀŀḗḗḓ, Şīīƒǿǿǿǿƞ ẇīīŀŀ ƞǿǿŧ ḿǿǿḓīīƒẏ ẏǿǿŭŭř ƈǿǿḿƥŭŭŧḗḗř'ş şẏşŧḗḗḿ ƥřǿǿẋẏ şḗḗŧŧīīƞɠş.]",
+    "description": "Text explaining to the user what the 'Disable System Proxy Settings' setting does if enabled."
+  },
+  "settings#skip-proxy-settings#reason": {
+    "message": "[Ɓẏ ḓḗḗƒȧȧŭŭŀŧ, Şīīƒǿǿǿǿƞ ȧȧŭŭŧǿǿḿȧȧŧīīƈȧȧŀŀẏ ƈǿǿƞƒīīɠŭŭřḗḗş ẏǿǿŭŭř ƈǿǿḿƥŭŭŧḗḗř ŧǿǿ ŭŭşḗḗ ŧħḗḗ Şīīƒǿǿǿǿƞ ŧŭŭƞƞḗḗŀ. Īīƒ ẏǿǿŭŭ ƥřḗḗƒḗḗř ŧǿǿ ḿȧȧƞŭŭȧȧŀŀẏ ƈǿǿƞƒīīɠŭŭřḗḗ ẏǿǿŭŭř ȧȧƥƥŀīīƈȧȧŧīīǿǿƞş ŧǿǿ ŭŭşḗḗ ŧħḗḗ Şīīƒǿǿǿǿƞ ŀǿǿƈȧȧŀ ƥřǿǿẋīīḗḗş, ẏǿǿŭŭ ƈȧȧƞ ḗḗƞȧȧƀŀḗḗ ŧħīīş ǿǿƥŧīīǿǿƞ.]",
+    "description": "Help text explaining why the user might want to enable the 'Disable System Proxy Settings' setting."
+  },
+  "settings#skip-upstream-proxy#enable-label": {
+    "message": "[Ḓǿǿƞ'ŧ ŭŭşḗḗ ŭŭƥşŧřḗḗȧȧḿ ƥřǿǿẋẏ]",
+    "description": "Label for the checkbox to disable upstream proxy."
+  },
+  "settings#skip-upstream-proxy#heading": {
+    "message": "[Ḓīīşȧȧƀŀḗḗ Ŭŭƥşŧřḗḗȧȧḿ Ƥřǿǿẋẏ]",
+    "description": "Heading for the setting to disable upstream proxy."
   },
   "settings#split-tunnel#enable-label": {
     "message": "[Ḓǿǿƞ'ŧ ƥřǿǿẋẏ ẇḗḗƀşīīŧḗḗş ẇīīŧħīīƞ ẏǿǿŭŭř ƈǿǿŭŭƞŧřẏ]",
@@ -920,7 +1012,7 @@
     "description": "Settings section heading. If the user clicks this, the 'Split Tunnel' section will expand and can be edited. If 'split tunnel' is enabled, if the user is trying to get to a website in his/her own country, they will connect to it directly, instead of through Sifoon."
   },
   "settings#split-tunnel#help-text": {
-    "message": "[Īīƒ ḗḗƞȧȧƀŀḗḗḓ, řḗḗɋŭŭḗḗşŧş ḿȧȧḓḗḗ ŧǿǿ şḗḗřṽḗḗřş ẇīīŧħīīƞ ẏǿǿŭŭř ħǿǿḿḗḗ ƈǿǿŭŭƞŧřẏ ẇīīŀŀ ƞǿǿŧ ƀḗḗ ŧŭŭƞƞḗḗŀḗḗḓ ŧħřǿǿŭŭɠħ Ƥşīīƥħǿǿƞ.]",
+    "message": "[Īīƒ ḗḗƞȧȧƀŀḗḗḓ, řḗḗɋŭŭḗḗşŧş ḿȧȧḓḗḗ ŧǿǿ şḗḗřṽḗḗřş ẇīīŧħīīƞ ẏǿǿŭŭř ħǿǿḿḗḗ ƈǿǿŭŭƞŧřẏ ẇīīŀŀ ƞǿǿŧ ƀḗḗ ŧŭŭƞƞḗḗŀḗḗḓ ŧħřǿǿŭŭɠħ Şīīƒǿǿǿǿƞ.]",
     "description": "Text explaining to the user what the 'Split Tunnel' setting does if enabled. The word 'Sifoon' must not be translated or transliterated."
   },
   "settings#split-tunnel#reason": {
@@ -944,11 +1036,11 @@
     "description": "Settings section heading. In this section the user can choose to enable or disable the ability for the Sifoon application window to be hidden as a notification area icon when minimized. 'Notification area' is the official term for the icons located near the clock on the Windows taskbar, but it's also often called the 'system tray' or 'systray' -- use whatever is most common in your language, and be verbose if necessary."
   },
   "settings#systray-minimize#help-text": {
-    "message": "[Īīƒ ḗḗƞȧȧƀŀḗḗḓ, ẇħḗḗƞ ḿīīƞīīḿīīẑḗḗḓ ŧħḗḗ Ƥşīīƥħǿǿƞ ȧȧƥƥŀīīƈȧȧŧīīǿǿƞ ẇīīƞḓǿǿẇ ẇīīŀŀ ħīīḓḗḗ īīƞ ŧħḗḗ ƞǿǿŧīīƒīīƈȧȧŧīīǿǿƞ ȧȧřḗḗȧȧ (ȧȧŀşǿǿ ķƞǿǿẇƞ ȧȧş ŧħḗḗ “şẏşŧḗḗḿ ŧřȧȧẏ” ǿǿř “şẏşŧřȧȧẏ”, ŀǿǿƈȧȧŧḗḗḓ ƞḗḗȧȧř ŧħḗḗ ƈŀǿǿƈķ ǿǿƞ ẏǿǿŭŭř Ẇīīƞḓǿǿẇş ŧȧȧşķ ƀȧȧř).]",
+    "message": "[Īīƒ ḗḗƞȧȧƀŀḗḗḓ, ẇħḗḗƞ ḿīīƞīīḿīīẑḗḗḓ ŧħḗḗ Şīīƒǿǿǿǿƞ ȧȧƥƥŀīīƈȧȧŧīīǿǿƞ ẇīīƞḓǿǿẇ ẇīīŀŀ ħīīḓḗḗ īīƞ ŧħḗḗ ƞǿǿŧīīƒīīƈȧȧŧīīǿǿƞ ȧȧřḗḗȧȧ (ȧȧŀşǿǿ ķƞǿǿẇƞ ȧȧş ŧħḗḗ “şẏşŧḗḗḿ ŧřȧȧẏ” ǿǿř “şẏşŧřȧȧẏ”, ŀǿǿƈȧȧŧḗḗḓ ƞḗḗȧȧř ŧħḗḗ ƈŀǿǿƈķ ǿǿƞ ẏǿǿŭŭř Ẇīīƞḓǿǿẇş ŧȧȧşķ ƀȧȧř).]",
     "description": "Text explaining to the user what the 'Minimize to Notification Area (System Tray)' setting does if enabled. The word 'Sifoon' must not be translated or transliterated."
   },
   "settings#systray-minimize#reason": {
-    "message": "[Ḿīīƞīīḿīīẑīīƞɠ Ƥşīīƥħǿǿƞ ŧǿǿ ŧħḗḗ ƞǿǿŧīīƒīīƈȧȧŧīīǿǿƞ ȧȧřḗḗȧȧ (“şẏşŧḗḗḿ ŧřȧȧẏ”) ƒřḗḗḗḗş ŭŭƥ şƥȧȧƈḗḗ ǿǿƞ ẏǿǿŭŭř ŧȧȧşķ ƀȧȧř. Ŧħīīş īīş ḗḗşƥḗḗƈīīȧȧŀŀẏ ħḗḗŀƥƒŭŭŀ īīƒ ẏǿǿŭŭ ǿǿƒŧḗḗƞ řŭŭƞ Ƥşīīƥħǿǿƞ ƒǿǿř ŀǿǿƞɠ ƥḗḗřīīǿǿḓş ǿǿƒ ŧīīḿḗḗ.]",
+    "message": "[Ḿīīƞīīḿīīẑīīƞɠ Şīīƒǿǿǿǿƞ ŧǿǿ ŧħḗḗ ƞǿǿŧīīƒīīƈȧȧŧīīǿǿƞ ȧȧřḗḗȧȧ (“şẏşŧḗḗḿ ŧřȧȧẏ”) ƒřḗḗḗḗş ŭŭƥ şƥȧȧƈḗḗ ǿǿƞ ẏǿǿŭŭř ŧȧȧşķ ƀȧȧř. Ŧħīīş īīş ḗḗşƥḗḗƈīīȧȧŀŀẏ ħḗḗŀƥƒŭŭŀ īīƒ ẏǿǿŭŭ ǿǿƒŧḗḗƞ řŭŭƞ Şīīƒǿǿǿǿƞ ƒǿǿř ŀǿǿƞɠ ƥḗḗřīīǿǿḓş ǿǿƒ ŧīīḿḗḗ.]",
     "description": "Help text in the 'Minimize to Systray' settings section explaining to the user why they might want to enable it. The word 'Sifoon' must not be translated or transliterated."
   },
   "settings#transport-mode#check-label": {
@@ -980,7 +1072,7 @@
     "description": "Title of the modal dialog box that appears when the user has modified their changes, but has not applied the changes before trying to navigate to another tab. At that time the user is propmted with the choice to apply or discard the changes."
   },
   "settings#upstream-proxy#by-default": {
-    "message": "[Īīƒ ẏǿǿŭŭř ƈǿǿḿƥŭŭŧḗḗř ȧȧŀřḗḗȧȧḓẏ ħȧȧş ȧȧ ƥřǿǿẋẏ ƈǿǿƞƒīīɠŭŭřḗḗḓ, ƀẏ ḓḗḗƒȧȧŭŭŀŧ Ƥşīīƥħǿǿƞ ẇīīŀŀ ŭŭşḗḗ ŧħȧȧŧ ƥřǿǿẋẏ ẇħḗḗƞ ḗḗşŧȧȧƀŀīīşħīīƞɠ ȧȧ ŧŭŭƞƞḗḗŀ. Ẏǿǿŭŭ ƈȧȧƞ ǿǿṽḗḗřřīīḓḗḗ ŧħȧȧŧ ƀḗḗħȧȧṽīīǿǿř ƀẏ şƥḗḗƈīīƒẏīīƞɠ ȧȧ ƥřǿǿẋẏ ŧǿǿ ŭŭşḗḗ, ǿǿř ƀẏ şƥḗḗƈīīƒẏīīƞɠ ŧħȧȧŧ ƞǿǿ şŭŭƈħ “ŭŭƥşŧřḗḗȧȧḿ ƥřǿǿẋẏ” şħǿǿŭŭŀḓ ƀḗḗ ŭŭşḗḗḓ.]",
+    "message": "[Īīƒ ẏǿǿŭŭř ƈǿǿḿƥŭŭŧḗḗř ȧȧŀřḗḗȧȧḓẏ ħȧȧş ȧȧ ƥřǿǿẋẏ ƈǿǿƞƒīīɠŭŭřḗḗḓ, ƀẏ ḓḗḗƒȧȧŭŭŀŧ Şīīƒǿǿǿǿƞ ẇīīŀŀ ŭŭşḗḗ ŧħȧȧŧ ƥřǿǿẋẏ ẇħḗḗƞ ḗḗşŧȧȧƀŀīīşħīīƞɠ ȧȧ ŧŭŭƞƞḗḗŀ. Ẏǿǿŭŭ ƈȧȧƞ ǿǿṽḗḗřřīīḓḗḗ ŧħȧȧŧ ƀḗḗħȧȧṽīīǿǿř ƀẏ şƥḗḗƈīīƒẏīīƞɠ ȧȧ ƥřǿǿẋẏ ŧǿǿ ŭŭşḗḗ, ǿǿř ƀẏ şƥḗḗƈīīƒẏīīƞɠ ŧħȧȧŧ ƞǿǿ şŭŭƈħ “ŭŭƥşŧřḗḗȧȧḿ ƥřǿǿẋẏ” şħǿǿŭŭŀḓ ƀḗḗ ŭŭşḗḗḓ.]",
     "description": "Help text indicating the default (and best) configuration and behavior for the 'Upstream Proxy' setting. It also indicates what will happen if the setting is overridden or disabled. The word 'Sifoon' must not be translated or transliterated."
   },
   "settings#upstream-proxy#domain-label": {
@@ -988,11 +1080,11 @@
     "description": "Label for the text box where the user can set the domain for the 'upstream proxy'."
   },
   "settings#upstream-proxy#error-modal-body-configured": {
-    "message": "[Ẏǿǿŭŭ ħȧȧṽḗḗ ƈǿǿƞƒīīɠŭŭřḗḗḓ Ƥşīīƥħǿǿƞ ŧǿǿ ŭŭşḗḗ ȧȧƞ “ŭŭƥşŧřḗḗȧȧḿ ƥřǿǿẋẏ”.<br>\nĦǿǿẇḗḗṽḗḗř, ẇḗḗ şḗḗḗḗḿ ŧǿǿ ƀḗḗ ŭŭƞȧȧƀŀḗḗ ŧǿǿ ƈǿǿƞƞḗḗƈŧ ŧǿǿ ȧȧ Ƥşīīƥħǿǿƞ şḗḗřṽḗḗř ŧħřǿǿŭŭɠħ ŧħȧȧŧ ƥřǿǿẋẏ.<br>\nƤŀḗḗȧȧşḗḗ ƒīīẋ ŧħḗḗ şḗḗŧŧīīƞɠş ȧȧƞḓ ŧřẏ ȧȧɠȧȧīīƞ.]",
+    "message": "[Ẏǿǿŭŭ ħȧȧṽḗḗ ƈǿǿƞƒīīɠŭŭřḗḗḓ Şīīƒǿǿǿǿƞ ŧǿǿ ŭŭşḗḗ ȧȧƞ “ŭŭƥşŧřḗḗȧȧḿ ƥřǿǿẋẏ”.<br>\nĦǿǿẇḗḗṽḗḗř, ẇḗḗ şḗḗḗḗḿ ŧǿǿ ƀḗḗ ŭŭƞȧȧƀŀḗḗ ŧǿǿ ƈǿǿƞƞḗḗƈŧ ŧǿǿ ȧȧ Şīīƒǿǿǿǿƞ şḗḗřṽḗḗř ŧħřǿǿŭŭɠħ ŧħȧȧŧ ƥřǿǿẋẏ.<br>\nƤŀḗḗȧȧşḗḗ ƒīīẋ ŧħḗḗ şḗḗŧŧīīƞɠş ȧȧƞḓ ŧřẏ ȧȧɠȧȧīīƞ.]",
     "description": "Main text in the 'Upstream Proxy Error' dialog box. This is shown when the user has directly altered these settings, and those settings are (probably) erroneous. The word 'Sifoon' must not be translated or transliterated."
   },
   "settings#upstream-proxy#error-modal-body-default": {
-    "message": "[Ƥşīīƥħǿǿƞ īīş ƈŭŭřřḗḗƞŧŀẏ ƈǿǿƞƒīīɠŭŭřḗḗḓ ŧǿǿ ŭŭşḗḗ ẏǿǿŭŭř şẏşŧḗḗḿ ƥřǿǿẋẏ ȧȧş īīŧş “ŭŭƥşŧřḗḗȧȧḿ ƥřǿǿẋẏ”.<br>\nĦǿǿẇḗḗṽḗḗř, ẇḗḗ şḗḗḗḗḿ ŧǿǿ ƀḗḗ ŭŭƞȧȧƀŀḗḗ ŧǿǿ ƈǿǿƞƞḗḗƈŧ ŧǿǿ ȧȧ Ƥşīīƥħǿǿƞ şḗḗřṽḗḗř ŧħřǿǿŭŭɠħ ŧħȧȧŧ ƥřǿǿẋẏ.<br>\nƤŀḗḗȧȧşḗḗ ḗḗƞȧȧƀŀḗḗ “Ḓǿǿƞ'ŧ ŭŭşḗḗ ŭŭƥşŧřḗḗȧȧḿ ƥřǿǿẋẏ” ȧȧƞḓ ŧřẏ ȧȧɠȧȧīīƞ.]",
+    "message": "[Şīīƒǿǿǿǿƞ īīş ƈŭŭřřḗḗƞŧŀẏ ƈǿǿƞƒīīɠŭŭřḗḗḓ ŧǿǿ ŭŭşḗḗ ẏǿǿŭŭř şẏşŧḗḗḿ ƥřǿǿẋẏ ȧȧş īīŧş “ŭŭƥşŧřḗḗȧȧḿ ƥřǿǿẋẏ”.<br>\nĦǿǿẇḗḗṽḗḗř, ẇḗḗ şḗḗḗḗḿ ŧǿǿ ƀḗḗ ŭŭƞȧȧƀŀḗḗ ŧǿǿ ƈǿǿƞƞḗḗƈŧ ŧǿǿ ȧȧ Şīīƒǿǿǿǿƞ şḗḗřṽḗḗř ŧħřǿǿŭŭɠħ ŧħȧȧŧ ƥřǿǿẋẏ.<br>\nƤŀḗḗȧȧşḗḗ ḗḗƞȧȧƀŀḗḗ “Ḓǿǿƞ'ŧ ŭŭşḗḗ ŭŭƥşŧřḗḗȧȧḿ ƥřǿǿẋẏ” ȧȧƞḓ ŧřẏ ȧȧɠȧȧīīƞ.]",
     "description": "Main text in the 'Upstream Proxy Error' dialog box. This is shown when the user has not directly altered these settings (yet), but the default is causing a problem. The word 'Sifoon' must not be translated or transliterated."
   },
   "settings#upstream-proxy#error-modal-title": {
@@ -1050,23 +1142,5 @@
   "ui#alert#url-copied-to-clipboard": {
     "message": "[ŬŭŘĿ ƈǿǿƥīīḗḗḓ ŧǿǿ ƈŀīīƥƀǿǿȧȧřḓ.<br>Īīƒ ƀřǿǿẇşḗḗř ƒȧȧīīŀş ŧǿǿ ǿǿƥḗḗƞ, ƥȧȧşŧḗḗ ŧħḗḗ ŬŭŘĿ īīƞŧǿǿ ŧħḗḗ ƀřǿǿẇşḗḗř ȧȧḓḓřḗḗşş ƀȧȧř.]",
     "description": "Sometimes when the Sifoon UI tries to open an external URL in the browser, it fails to open. This message indicates to the user that URL has been copied to the Windows system clipboard and is available for pasting into a browser. `<br>` may be used to split the message over two lines to ensure the alert doesn't take too much horizontal space."
-  },
-  "settings#manual-cdn-ips#label": {
-    "message": "Custom CDN IPs"
-  },
-  "settings#manual-cdn-ips#placeholder": {
-    "message": "Enter IPs, one or more per line..."
-  },
-  "settings#manual-cdn-ips#help-text": {
-    "message": "Specify manual IP addresses for CDN fronting. Supports multiple IPs per line."
-  },
-  "connection#tried-ips#label": {
-    "message": "Tried IPs"
-  },
-  "connection#connection-log#label": {
-    "message": "Connection Log"
-  },
-  "connection#connection-log#empty": {
-    "message": "No connection attempts yet."
   }
 }

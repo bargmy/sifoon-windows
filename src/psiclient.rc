@@ -73,6 +73,7 @@ IDI_SYSTRAY_CONNECTED   ICON                    "psiclient.ico"
 
 IDR_GOOGLIE_JS              RCDATA                  "3rdParty\\googlie.js"
 IDR_MHRCFW_JS               RCDATA                  "3rdParty\\mhrcfw.js"
+IDR_DOMAINFRONTING_JS       RCDATA                  "3rdParty\\domainfronting.js"
 IDR_POLIPO_EXE              RCDATA                  "3rdParty\\polipo.exe"
 
 /////////////////////////////////////////////////////////////////////////////

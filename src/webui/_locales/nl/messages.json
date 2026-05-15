@@ -1,39 +1,109 @@
 {
+    "about#client-version": {
+        "message": "Sifoon voor Windows klant versie:",
+        "description": "Footer on the 'About' page indicating the client version number. This text is the prefix to the actual number. Like: 'Sifoon for Windows client version: 88'. The word 'Sifoon' must not be translated or transliterated."
+    },
+    "about#description": {
+        "message": "Sifoon is een <strong>censors omzeilings hulpmiddel</strong> — het is ontworpen om de toegang tot het open internet te geven, langs censors en firewalls. Het is <strong>open source</strong> en ontwikkeld in Toronto, Canada.",
+        "description": "Paragraph on the 'About' page telling users generally what Sifoon is. The word 'Sifoon' must not be translated or transliterated."
+    },
+    "about#get-by-email": {
+        "message": "<strong>Als de website ontoegankelijk is</strong>, kunt u een nieuwe versie van Sifoon krijgen door het sturen van een e-mail naar:",
+        "description": "Paragraph on the 'About' page telling users that they can also get a new version of Sifoon via email. The text in this resource is then followed by an email address. The word 'Sifoon' must not be translated or transliterated."
+    },
+    "about#license-agree": {
+        "message": "By using Sifoon you signal that you agree to the terms of the <a href=\"https://psiphon.ca/license.html\">End-User License</a> and <a href=\"https://psiphon.ca/privacy.html\">Privacy Policy</a>.",
+        "description": "Paragraph on the 'About' page telling users that they agreeing to Sifoon's End-User License Agreement and Privacy Policy. The link URLs must not be modified. The word 'Sifoon' must not be translated or transliterated."
+    },
+    "about#visit-download-site": {
+        "message": "Nieuwsgierig bezoek de website en <strong><a class=\"NewVersionURL\" href=\"#\">download een nieuw versie</a></strong> of naar <strong><a class=\"InfoURL\" href=\"#\">help en informatie</a></strong>. Sifoon is beschikbaar voor Android en Windows.",
+        "description": "Paragraph on the 'About' page telling users what web page to go to get a new version of Sifoon or more info about it. The word 'Sifoon' must not be translated or transliterated."
+    },
+    "about#wordart-tag": {
+        "message": "Voorbij de Grenzen",
+        "description": "The application/product/tool tagline/slogan/motto part of the fancy title at the top of the 'About' page. 'Beyond Borders' is the slogan that is also used on the Sifoon website -- it is meant to suggest that Sifoon can help users to get to the internet beyond the border (firewall) of the country they live in. The word 'Sifoon' must not be translated or transliterated."
+    },
+    "appbackend#disallowed-traffic-notification-body": {
+        "message": "Activeer Speed Boost om het volledige potentieel van de Sifoon-ervaring te ontgrendelen.",
+        "description": "Appears in the notification area balloon when Sifoon disallows some non-web internet traffic. The user needs to purchase Speed Boost in order to full app compatibilty and more speed. 'Speed Boost' is a reward that can be purchased with PsiCash credit. It provides unlimited network connection speed through Sifoon. Other words that can be used to help with translation are: 'turbo' (like cars), 'accelerate', 'warp speed', 'blast off', or anything that indicates a fast or unrestricted speed."
+    },
+    "appbackend#disallowed-traffic-notification-title": {
+        "message": "Apps werken niet?",
+        "description": "Appears in the notification area balloon when Sifoon disallows some non-web internet traffic. The user needs to purchase Speed Boost in order to full app compatibilty and more speed."
+    },
+    "appbackend#minimized-to-systray-body": {
+        "message": "Klik op het pictogram om de toepassing te herstellen",
+        "description": "Appears in the notification area balloon when Sifoon has been minimized to the Windows' notification area (aka 'system tray' aka 'systray', the area of the taskbar with the clock, battery indicator, and other icons)."
+    },
+    "appbackend#minimized-to-systray-title": {
+        "message": "Sifoon is geminimaliseerd naar het systeemvak",
+        "description": "Appears in the notification area balloon when Sifoon has been minimized to the Windows' notification area (aka 'system tray' aka 'systray', the area of the taskbar with the clock, battery indicator, and other icons). The word 'Sifoon' must not be translated or transliterated."
+    },
+    "appbackend#os-unsupported": {
+        "message": "Sifoon only supports Windows 10 and newer.\nPlease visit our website for more information.",
+        "description": "Appears in a message box when Sifoon is run on an unsupported version of Windows. Is followed by a URL."
+    },
+    "appbackend#state-connected-body": {
+        "message": "Verkennen voorbij jouw grenzen!",
+        "description": "Appears in the notification area balloon when Sifoon is currently connected to a server. Specifically, it appears when the connection has just completed. This is intended to be a reference to the 'Sifoon: Beyond Borders' tag line. Note for right-to-left languages: You should not use an exclamation mark, as it won't be displayed correct if shown on a left-to-right operating system."
+    },
+    "appbackend#state-connected-reminder-body": {
+        "message": "Houd Sifoon gratis. Klik hier om onze sponsorpagina's te bezoeken! ",
+        "description": "Appears in the notification area balloon periodically while Sifoon is connected to a server. This is intended to encourage the user to visit the sponsor's landing page. Note for right-to-left languages: You should not use an exclamation mark, as it won't be displayed correct if shown on a left-to-right operating system. The word 'Sifoon' must not be translated or transliterated."
+    },
+    "appbackend#state-connected-reminder-body-2": {
+        "message": "Houd Sifoon gratis door onze sponsorpagina's te bezoeken! ",
+        "description": "Appears in the notification area balloon periodically while Sifoon is connected to a server. This is intended to encourage the user to visit the sponsor's landing page. Note for right-to-left languages: You should not use an exclamation mark, as it won't be displayed correct if shown on a left-to-right operating system. The word 'Sifoon' must not be translated or transliterated."
+    },
+    "appbackend#state-connected-reminder-title": {
+        "message": "Sifoon houdt je verbonden",
+        "description": "Appears in the notification area balloon periodically while Sifoon is connected to a server. The word 'Sifoon' must not be translated or transliterated."
+    },
+    "appbackend#state-connected-title": {
+        "message": "Sifoon is verbonden",
+        "description": "Appears in the notification area balloon when Sifoon is currently connected to a server. Specifically, it appears when the connection has just completed. The word 'Sifoon' must not be translated or transliterated."
+    },
+    "appbackend#state-starting-body": {
+        "message": "Wacht A.u.b.",
+        "description": "Appears in the notification area balloon when Sifoon is in the process of connecting to a server. The word 'Sifoon' must not be translated or transliterated."
+    },
+    "appbackend#state-starting-title": {
+        "message": "Sifoon is aan het verbinden",
+        "description": "Appears in the notification area balloon when Sifoon is in the process of connecting to a server. The word 'Sifoon' must not be translated or transliterated."
+    },
+    "appbackend#state-stopped-title": {
+        "message": "Sifoon is verbroken",
+        "description": "Appears in the notification area balloon when Sifoon is disconnected (or has lost its connection, or has been disconnected). The word 'Sifoon' must not be translated or transliterated."
+    },
     "banner#long-connecting": {
         "message": "<strong>Oh nee!</strong> Je lijkt moeite te hebben met verbinden!<br>\nDownload de laatste versie van Sifoon van de <a class=\"NewVersionURL\" href=\"#\">download site</a>\nof stuur een email naar <a class=\"NewVersionEmail\" href=\"#\"></a>",
         "description": "Message that appears when Sifoon is having trouble connecting. Often such connection problems can be fixed by downloading a new version. The word 'Sifoon' must not be translated or transliterated."
     },
-    "nav#connection#starting": {
-        "message": "Verbinden",
-        "description": "Text on the tab that, if the user clicks on it, switches to the 'Connection' view, that has the connect button. This particular text is shown when Sifoon is connecting."
+    "banner#sponsored-by": {
+        "message": "Gesponsord door",
+        "description": "Text appears above the sponsor banner image. So it kind of reads 'Sponsored by BBC' (for example)."
     },
-    "nav#connection#connected": {
-        "message": "Verbonden",
-        "description": "Text on the tab that, if the user clicks on it, switches to the 'Connection' view, that has the connect button. This particular text is shown when Sifoon is connected."
+    "connection#connect-btn": {
+        "message": "Verbind",
+        "description": "Text on the big connection button telling the user that if they click it, Sifoon will start trying to connect to the network. This is shown to the user while Sifoon is disconnected."
     },
-    "nav#connection#stopping": {
+    "connection#connected-msg": {
+        "message": "Sifoon is <span class=\"state-word\">verbonden</span>",
+        "description": "Message in the big connection status box telling the user that Sifoon is currently connected to the network. The word 'Sifoon' must not be translated or transliterated."
+    },
+    "connection#connection-log#empty": {
+        "message": "No connection attempts yet."
+    },
+    "connection#connection-log#label": {
+        "message": "Connection Log"
+    },
+    "connection#disconnect-btn": {
         "message": "Verbreek",
-        "description": "Text on the tab that, if the user clicks on it, switches to the 'Connection' view, that has the connect button. This particular text is shown when Sifoon is disconnecting."
+        "description": "Text on the big connection button telling the user that if they click it, they will be disconnected from the network. This is shown when the user is currently connected."
     },
-    "nav#connection#stopped": {
-        "message": "Verbroken",
-        "description": "Text on the tab that, if the user clicks on it, switches to the 'Connection' view, that has the connect button. This particular text is shown when Sifoon is disconnected."
-    },
-    "nav#settings": {
-        "message": "Instellingen",
-        "description": "Text on the tab that, if the user clicks on it, switches to the 'Settings' view. In that view the user can change the settings/options that change how Sifoon works."
-    },
-    "nav#feedback": {
-        "message": "Feedback",
-        "description": "Text on the tab that, if the user clicks on it, switches to the 'Feeback' view. In that view the user can send feedback about their experience to Sifoon."
-    },
-    "nav#logs": {
-        "message": "Logbestanden",
-        "description": "Text on the tab that, if the user clicks on it, switches to the 'Logs' view. In that view the user can see the status messages that Sifoon produces as it connects, disconnects, etc."
-    },
-    "nav#about": {
-        "message": "Over",
-        "description": "Text on the tab that, if the user clicks on it, switches to the 'About' view. In that view the user can see info about the app, info about Sifoon Inc., and click links for more information."
+    "connection#egress-region-combo-label": {
+        "message": "Selecteer een server regio",
+        "description": "The label for the 'Sifoon Server Region' combo box control located on the connection tab."
     },
     "connection#starting-msg": {
         "message": "Sifoon is aan het <span class=\"state-word\">verbinden</span>…",
@@ -43,489 +113,52 @@
         "message": "Stop",
         "description": "Text on the big connection button telling the user that if they click it, they will stop trying to connect to the network. This is shown to the user when they are trying to connect."
     },
-    "connection#connected-msg": {
-        "message": "Sifoon is <span class=\"state-word\">verbonden</span>",
-        "description": "Message in the big connection status box telling the user that Sifoon is currently connected to the network. The word 'Sifoon' must not be translated or transliterated."
-    },
-    "connection#disconnect-btn": {
-        "message": "Verbreek",
-        "description": "Text on the big connection button telling the user that if they click it, they will be disconnected from the network. This is shown when the user is currently connected."
+    "connection#stopped-msg": {
+        "message": "Sifoon is <span class=\"state-word\">verbroken</span>",
+        "description": "Message in the big connection status box telling the user that Sifoon is currently not connected to the network. The word 'Sifoon' must not be translated or transliterated."
     },
     "connection#stopping-msg": {
         "message": "Sifoon is aan het <span class=\"state-word\">verbreken</span>…",
         "description": "Message in the big connection status box telling the user that Sifoon is currently trying to disconnect from the network. The word 'Sifoon' must not be translated or transliterated."
     },
+    "connection#tried-ips#label": {
+        "message": "Tried IPs"
+    },
     "connection#wait-btn": {
         "message": "Wacht A.u.b.",
         "description": "Text on the big connection button telling the user to wait while Sifoon tries to disconnect from the network. When this message is shown, the button is disabled."
     },
-    "connection#stopped-msg": {
-        "message": "Sifoon is <span class=\"state-word\">verbroken</span>",
-        "description": "Message in the big connection status box telling the user that Sifoon is currently not connected to the network. The word 'Sifoon' must not be translated or transliterated."
-    },
-    "connection#connect-btn": {
-        "message": "Verbind",
-        "description": "Text on the big connection button telling the user that if they click it, Sifoon will start trying to connect to the network. This is shown to the user while Sifoon is disconnected."
-    },
-    "connection#egress-region-combo-label": {
-        "message": "Selecteer een server regio",
-        "description": "The label for the 'Sifoon Server Region' combo box control located on the connection tab."
-    },
-    "settings#error-alert": {
-        "message": "<strong>Fout!</strong> A.u.b Corrigeer onjuiste waarden alvorens verder te gaan.",
-        "description": "This alert is shown to the user if they enter incorrect values into one or more of the settings fields."
-    },
-    "settings#reset-button": {
-        "message": "Standaardinstellingen",
-        "description": "Text on the button that resets the Sifoon settings values to default. This will typically be pressed if the user has configured something incorrectly and needs to get back to the default state."
-    },
-    "settings#apply-button": {
-        "message": "Wijzigingen Toepassen",
-        "description": "Text on the button that applies (saves and makes active) the changes that the user has made to their settings. It is only enabled when changes have been made. The text is effectively an abbreviation of 'Apply the changes you have made to your settings'."
-    },
-    "settings#unapplied-changes-prompt#title": {
-        "message": "Instellingen Gewijzigd",
-        "description": "Title of the modal dialog box that appears when the user has modified their changes, but has not applied the changes before trying to navigate to another tab. At that time the user is propmted with the choice to apply or discard the changes."
-    },
-    "settings#unapplied-changes-prompt#body": {
-        "message": "Je hebt wijzigingen aangebracht in de instellingen, maar je hebt niet de veranderingen toegepast.<br><br>Wilt u uw wijzigingen nu toepassen of afwijzen?",
-        "description": "Body text of the modal dialog box that appears when the user has modified their changes, but has not applied the changes before trying to navigate to another tab. At that time the user is propmted with the choice to apply or discard the changes."
-    },
-    "settings#unapplied-changes-prompt#apply-button": {
-        "message": "Toepassen",
-        "description": "Text on a button of the modal dialog box that appears when the user has modified their changes, but has not applied the changes before trying to navigate to another tab. At that time the user is propmted with the choice to apply or discard the changes. This button will apply the changes -- that is, save the changes and make them immediately take effect. Should be read like the verb in 'Apply your changes'."
-    },
-    "settings#unapplied-changes-prompt#discard-button": {
-        "message": "Afwijzen",
-        "description": "Text on a button of the modal dialog box that appears when the user has modified their changes, but has not applied the changes before trying to navigate to another tab. At that time the user is propmted with the choice to apply or discard the changes. This button will discard the changes -- that is, throw away the changes to the settings the user has made since viewing the settings tab.  Should be read like the verb in 'Discard your changes'."
-    },
-    "settings#vpn-incompatible-msg": {
-        "message": "(Werkt niet met L2TP/IPSec mode.)",
-        "description": "If 'L2TP/IPSec mode' is enabled, this text is displayed under or beside settings which are incompatible with L2TP/IPSec mode and have been disabled because of it. It is intended to let the user know why the setting has been disabled."
-    },
-    "settings#vpn-incompatible-label": {
-        "message": "L2TP/IPSec",
-        "description": "If 'L2TP/IPSec mode' is enabled, this text shows up in a label beside the Settings sections which are incompatible with L2TP/IPSec mode. It is intended to draw the user's attention to the fact that some of the other settings have become disabled."
-    },
-    "settings#split-tunnel#heading": {
-        "message": "Split Tunnel",
-        "description": "Settings section heading. If the user clicks this, the 'Split Tunnel' section will expand and can be edited. If 'split tunnel' is enabled, if the user is trying to get to a website in his/her own country, they will connect to it directly, instead of through Sifoon."
-    },
-    "settings#split-tunnel#help-text": {
-        "message": "Indien ingeschakeld, worden verzoeken aan servers in uw thuisland niet getunneld via Sifoon.",
-        "description": "Text explaining to the user what the 'Split Tunnel' setting does if enabled. The word 'Sifoon' must not be translated or transliterated."
-    },
-    "settings#split-tunnel#reason": {
-        "message": "Websites in uw thuisland zijn over het algemeen niet geblokkeerd, dus als u deze optie inschakelt, krijgt u sneller toegang tot die sites en kunt u soms de kosten voor ISP-gegevensgebruik verlagen.",
-        "description": "Help text in the 'Split Tunnel' settings section explaining to the user why they might want to modify (enable) the setting."
-    },
-    "settings#split-tunnel#enable-label": {
-        "message": "Geen proxy websites in uw land",
-        "description": "The label on the checkbox that enables 'Split Tunnel'."
-    },
-    "settings#split-tunnel-chinese-sites#enable-label": {
-        "message": "Don't proxy Chinese websites",
-        "description": "The label on the checkbox that enables 'Split Tunnel' for Chinese websites, regardless of what region the user is in."
-    },
-    "settings#split-tunnel-chinese-sites#note": {
-        "message": "<strong>WARNING:</strong> This feature uses data which may not always be reliable. Use caution when enabling this feature as some censored websites may be unintentionally excluded from the proxy.",
-        "description": "A note cautioning the user that this feature may result in some sites being unproxied unintentionally."
-    },
-    "settings#disable-timeouts#heading": {
-        "message": "Uitschakelen Time-outs Voor Trage Netwerken",
-        "description": "Settings section heading. If the user clicks this, the 'Disable Timeouts for Slow Networks' section will expand and can be edited. If 'disable timeouts' is enabled, network timeouts between the Sifoon client and server will be disabled."
-    },
-    "settings#disable-timeouts#help-text": {
-        "message": "Indien ingeschakeld, de communicatie met de Sifoon server geen time-out.",
-        "description": "Text explaining to the user what the 'Disable Timeouts' setting does if enabled. The word 'Sifoon' must not be translated or transliterated."
-    },
-    "settings#disable-timeouts#reason": {
-        "message": "Als u dit inschakelt voor een zeer trage netwerkverbinding, is de kans kleiner dat u onverwachte verbroken verbindingen ervaart.",
-        "description": "Help text in the 'Disable Timeouts' settings section explaining to the user why they might want to modify (enable) the setting."
-    },
-    "settings#disable-timeouts#enable-label": {
-        "message": "Uitschakelen time-outs voor trage netwerken",
-        "description": "The label on the checkbox that enables 'Disable Timeouts' mode."
-    },
-    "settings#egress-region#heading": {
-        "message": "Sifoon Regio Server",
-        "description": "Settings section heading. In this section the user can choose to use a Sifoon server in a specific country/region (or the default, which is just to choose the best/fastest region). The word 'Sifoon' must not be translated or transliterated."
-    },
-    "settings#egress-region#select-best-performance": {
-        "message": "Beste Prestaties",
-        "description": "One of the choices in the 'Sifoon Server Region' combo box. This is the default option and indicates that Sifoon will use a server in the best/fastest region."
-    },
-    "settings#egress-region#select-us": {
-        "message": "Verenigde Staten",
-        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in the United States will be used."
-    },
-    "settings#egress-region#select-ca": {
-        "message": "Canada",
-        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in the Canada will be used."
-    },
-    "settings#egress-region#select-gb": {
-        "message": "Verenigd Koningkrijk",
-        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in the UK will be used."
-    },
-    "settings#egress-region#select-jp": {
-        "message": "Japan",
-        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Japan will be used."
-    },
-    "settings#egress-region#select-sg": {
-        "message": "Singapore",
-        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Singapore will be used."
-    },
-    "settings#egress-region#select-sk": {
-        "message": "Slovakije",
-        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Slovakia will be used."
-    },
-    "settings#egress-region#select-nl": {
-        "message": "Nederland",
-        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in the Netherlands will be used."
-    },
-    "settings#egress-region#select-de": {
-        "message": "Duitsland",
-        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Germany will be used."
-    },
-    "settings#egress-region#select-in": {
-        "message": "India",
-        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in India will be used."
-    },
-    "settings#egress-region#select-es": {
-        "message": "Spanje",
-        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Spain will be used."
-    },
-    "settings#egress-region#select-hk": {
-        "message": "Hong Kong",
-        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Hong Kong will be used."
-    },
-    "settings#egress-region#select-at": {
-        "message": "Oostenrijk",
-        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Austria will be used."
-    },
-    "settings#egress-region#select-be": {
-        "message": "Belgie",
-        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Belgium will be used."
-    },
-    "settings#egress-region#select-bg": {
-        "message": "Bulgarije",
-        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Bulgaria will be used."
-    },
-    "settings#egress-region#select-ch": {
-        "message": "Zwitserland",
-        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Switzerland will be used."
-    },
-    "settings#egress-region#select-cz": {
-        "message": "Tsjechische Republiek",
-        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Czech Republic will be used."
-    },
-    "settings#egress-region#select-dk": {
-        "message": "Denemarken",
-        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Denmark will be used."
-    },
-    "settings#egress-region#select-fr": {
-        "message": "Frankrijk",
-        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in France will be used."
-    },
-    "settings#egress-region#select-hu": {
-        "message": "Hongarije",
-        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Hungary will be used."
-    },
-    "settings#egress-region#select-it": {
-        "message": "Italië",
-        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Italy will be used."
-    },
-    "settings#egress-region#select-no": {
-        "message": "Noorwegen",
-        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Norway will be used."
-    },
-    "settings#egress-region#select-ro": {
-        "message": "Roemenië",
-        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Romania will be used."
-    },
-    "settings#egress-region#select-se": {
-        "message": "Zweden",
-        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Sweden will be used."
-    },
-    "settings#egress-region#select-pl": {
-        "message": "Polen",
-        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Sweden will be used."
-    },
-    "settings#egress-region#select-rs": {
-        "message": "Servië",
-        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Serbia will be used."
-    },
-    "settings#egress-region#select-au": {
-        "message": "Australië",
-        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Australia will be used."
-    },
-    "settings#egress-region#select-ar": {
-        "message": "Argentinië",
-        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Argentina will be used."
-    },
-    "settings#egress-region#select-br": {
-        "message": "Brazilië",
-        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Brazil will be used."
-    },
-    "settings#egress-region#select-cl": {
-        "message": "Chili",
-        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Chile will be used."
-    },
-    "settings#egress-region#select-fi": {
-        "message": "Finland",
-        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Finland will be used."
-    },
-    "settings#egress-region#select-is": {
-        "message": "Ijsland",
-        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Iceland will be used."
-    },
-    "settings#egress-region#select-ie": {
-        "message": "Ierland",
-        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Ireland will be used."
-    },
-    "settings#egress-region#select-ke": {
-        "message": "Kenya",
-        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Kenya will be used."
-    },
-    "settings#egress-region#select-mx": {
-        "message": "Mexico",
-        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Mexico will be used."
-    },
-    "settings#egress-region#select-za": {
-        "message": "Zuidafrika",
-        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in South Africa will be used."
-    },
-    "settings#egress-region#select-kr": {
-        "message": "Korea",
-        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Korea will be used."
-    },
-    "settings#egress-region#select-tw": {
-        "message": "Taiwan",
-        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Taiwan will be used."
-    },
-    "settings#egress-region#select-ae": {
-        "message": "Verenigde Arabische Emiraten",
-        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in United Arab Emirates will be used."
-    },
-    "settings#egress-region#select-ee": {
-        "message": "Estland",
-        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Estonia will be used."
-    },
-    "settings#egress-region#select-lv": {
-        "message": "Letland",
-        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Latvia will be used."
-    },
-    "settings#egress-region#select-lt": {
-        "message": "Litouwen",
-        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Lithuania will be used."
-    },
-    "settings#egress-region#select-id": {
-        "message": "Indonesië",
-        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Indonesia will be used."
-    },
-    "settings#egress-region#select-nz": {
-        "message": "Nieuw Zeeland",
-        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in New Zealand will be used."
-    },
-    "settings#egress-region#select-gr": {
-        "message": "Griekenland",
-        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Greece will be used."
-    },
-    "settings#egress-region#select-hr": {
-        "message": "Kroatië",
-        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Croatia will be used."
-    },
-    "settings#egress-region#select-pt": {
-        "message": "Portugal",
-        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Portugal will be used."
-    },
-    "settings#egress-region#select-ua": {
-        "message": "Oekraine",
-        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Ukraine will be used."
-    },
-    "settings#egress-region#select-co": {
-        "message": "Colombia",
-        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Colombia will be used."
-    },
-    "settings#egress-region#select-my": {
-        "message": "Malaysië",
-        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Malaysia will be used."
-    },
-    "settings#egress-region#description": {
-        "message": "Sifoon heeft servers in veel verschillende landen en regio's. Het gebruik van een Sifoon-server in een regio dicht bij uw thuisland levert over het algemeen een betere netwerkverbinding op, maar u wilt wellicht toegang krijgen tot websites en services alsof u zich virtueel in een bepaald land of regio bevindt.",
-        "description": "Help text in the 'Sifoon Server Region' settings section explaining what the option is and why the user may want to override the default ('best') setting value. The word 'Sifoon' must not be translated or transliterated."
-    },
-    "settings#egress-region#default": {
-        "message": "Door de standaardoptie <strong>\"Beste prestaties\"</strong> te kiezen, kan Sifoon automatisch een server kiezen, wat doorgaans resulteert in de beste netwerkverbinding.",
-        "description": "Help text below the 'Sifoon Server Region' combo box. It explains to the user what the default (and best) option is. The word 'Sifoon' must not be translated or transliterated."
-    },
-    "settings#egress-region#invalid-error-msg": {
-        "message": "Kies een geldige Sifoon regio server.",
-        "description": "Error message that is visible when the 'Sifoon Server Region' setting is invalid or not yet set. The word 'Sifoon' must not be translated or transliterated."
-    },
-    "settings#egress-region#error-modal-title": {
-        "message": "Regio Server Niet Beschikbaar",
-        "description": "Title text of the error modal dialog shown when it is detected that the user has an invalid 'Sifoon Server Region' currently configured."
-    },
-    "settings#egress-region#error-modal-body-http": {
-        "message": "Je hebt Sifoon geconfigureerd om een server in een specifieke regio te gebruiken.<br>\nDie regio is echter niet meer beschikbaar.<br>\nU moet een nieuwe regio kiezen of overschakelen naar de standaardkeuze \"Beste prestaties\".",
-        "description": "Descriptive body text of the error modal dialog shown when it is detected that the user has an invalid 'Sifoon Server Region' currently configured. The word 'Sifoon' must not be translated or transliterated."
-    },
-    "settings#local-proxy-ports#heading": {
-        "message": "Lokale Proxy Poorten",
-        "description": "Settings section heading. In this section the user can specify what network ports the local Sifoon processes should use (Sifoon uses two such ports). For most people, this should be set to automatic."
-    },
-    "settings#local-proxy-ports#leave-blank": {
-        "message": "Laat <strong>leeg</strong> voor automatische poort selectie (aanbevolen).",
-        "description": "Help text that appears above the 'Local Proxy Ports' settings. 'blank' is the default and best value, and is bolded."
-    },
-    "settings#local-proxy-ports#reason": {
-        "message": "Als u hulpmiddelen gebruik op uw computer die handmatige configuratie nodig hebben om te werken met Sifoon, wil je dat Sifoon op hetzelfde lokale poortnummers gebruik gaat maken. Als je niet heb’t een reden om poortnummers op te geven, u moet Sifoon toestaan om ze automatisch te laten kiezen om conflicten te vermijden.",
-        "description": "Help text in the 'Local Proxy Ports' settings area. This explains to the user why they might want to override the default (automatic) settings values. The word 'Sifoon' must not be translated or transliterated."
-    },
-    "settings#local-proxy-ports#http-label": {
-        "message": "HTTP/HTTPS",
-        "description": "Label for the text box where the user will enter their desired local port for the Sifoon HTTP/HTTPS process. The full term for this would be 'Desired HTTP and HTTPS local proxy port', but is shortened."
-    },
-    "settings#port-value-error-msg": {
-        "message": "Moet zijn tussen 1 en 65535.",
-        "description": "Error text that appears when the user enters an invalid network port number. As indicated, a valid port number must be a number between 1 and 65535, inclusive. This text is not visible until an invalid value is entered."
-    },
-    "settings#local-proxy-ports#socks-label": {
-        "message": "SOCKS",
-        "description": "Label for the text box where the user will enter their desired local port for the Sifoon SOCKS process. The full term for this would be 'Desired SOCKS local proxy port', but is shortened. 'SOCKS' is a proxy protocol. Any user for whom this setting is useful will know what that means."
-    },
-    "settings#local-proxy-ports#unique-error-msg": {
-        "message": "Lokale poorten moeten worden onderscheiden van elkaar.",
-        "description": "Error message that shows if the HTTP local proxy port and SOCKS local proxy port are set to a value and are the same as each other. The local ports must be different from each other. Or one or both of the fields can be empty, which means 'automatic selection'."
-    },
-    "settings#local-proxy-ports#error-modal-title": {
-        "message": "Lokale Proxy Poort Conflict",
-        "description": "Title of the message box showing the error message when it is detected that the user has chosen a local proxy port (either HTTP or SOCKS) that is already in use and therefore can't be used by Sifoon."
-    },
-    "settings#local-proxy-ports#error-modal-body-http": {
-        "message": "<p>\nJe hebt Sifoon geconfigureerd om een specifieke lokale poort te gebruiken voor zijn HTTP proxy.<br>\nEchter, die poort blijkt al in gebruik te zijn en Sifoon kan die niet gebruiken.\n</p>\n<p>\nA.u.b verander de geconfigureerde HTTP proxy-poort waarde en probeer het opnieuw. Wij raden u aan de waarde te wissen, zodat Sifoon automatisch een beschikbare poort kan halen.\n</p>",
-        "description": "Main text in the 'Local Proxy Port Conflict' dialog box. This is shown when the conflict is with the HTTP proxy port, rather than the SOCKS proxy port. The word 'Sifoon' must not be translated or transliterated."
-    },
-    "settings#local-proxy-ports#error-modal-body-socks": {
-        "message": "<p>\nJe hebt Sifoon geconfigureerd om een specifieke lokale poort te gebruiken voor zijn SOCKS proxy.<br>\nEchter, Blijkt dat de poort al in gebruik is en Sifoon  kan die niet gebruiken.\n</p>\n<p>\nA.u.b verander de geconfigureerde SOCKS proxy-poort waarde en probeer het opnieuw. Wij raden u aan de waarde te wissen, zodat Sifoon automatisch een beschikbare poort kan halen.\n</p>",
-        "description": "Main text in the 'Local Proxy Port Conflict' dialog box. This is shown when the conflict is with the SOCKS proxy port, rather than the HTTP proxy port. The word 'Sifoon' must not be translated or transliterated."
-    },
-    "settings#expose-local-proxies-to-lan#help-text": {
-        "message": "Als je andere apparaten in je netwerk hebt, zoals een smart-tv of gameconsole, kun je deze toestaan deze HTTP- en SOCKS-proxy's te gebruiken terwijl Sifoon is aangesloten. ",
-        "description": "Help text explaining the setting to allow other devices on the network to use the local Sifoon proxies. Smart TV refers to televisions that have Internet connectivity and apps that access Internet services."
-    },
-    "settings#expose-local-proxies-to-lan#hint": {
-        "message": "<strong>HINT:</strong>U moet ten minste één van de bovenstaande poortnummers opgeven om deze functie te kunnen gebruiken. De adressen van de lokale proxy's worden weergegeven in de logboeken.",
-        "description": "Helpful hint suggesting to set port numbers for the local Sifoon proxies when using the setting to allow other devices on the network to use the local Sifoon proxies."
-    },
-    "settings#expose-local-proxies-to-lan#enable-label": {
-        "message": "Toestaan dat andere apparaten in uw netwerk de lokale Sifoon-proxy's gebruiken",
-        "description": "Label for the setting to allow other devices on the network to use the local Sifoon proxies."
-    },
-    "settings#upstream-proxy#heading": {
-        "message": "Upstream Proxy",
-        "description": "Settings section heading. In this section the user can specify network information to use an 'upstream proxy', which is a separate proxy that Sifoon will connect through to get to its own server. This is most often used by people in school or work networks that force them to connect out to the Internet through a particular server. This setting can also disable automatic upstream proxy use."
-    },
-    "settings#upstream-proxy#by-default": {
-        "message": "Als jouw computer al een proxy geconfigureerd heeft, standaard zal Sifoon dat proxy gebruiken bij het vaststellen van een tunnel. Jij kan overschrijven dat gedrag door specificeren van een proxy te gebruiken, of specificeren dat een dergelijke “upstream proxy” zal worden gebruikt.",
-        "description": "Help text indicating the default (and best) configuration and behavior for the 'Upstream Proxy' setting. It also indicates what will happen if the setting is overridden or disabled. The word 'Sifoon' must not be translated or transliterated."
-    },
-    "settings#upstream-proxy#reason": {
-        "message": "Upstream proxies zijn soms nodig door scholen, universiteiten of bedrijven. Als uw provider u upstream proxy-instellingen heeft gegeven, kan ze vervolgens handmatig instellen om van hier verbinden te maken.",
-        "description": "Help text describing why the user might need to modify the upstream proxy settings in order to successfully connect to the Sifoon server."
-    },
-    "settings#upstream-proxy#proxy-reqs": {
-        "message": "Alleen HTTP proxy's die HTTPS ondersteunen, worden toegestaan.",
-        "description": "Help text beside the upstream proxy settings indicating what type of upstream proxies can by used by Sifoon (different proxies are of different types and have different capabilities, and Sifoon has certain requirements)."
-    },
-    "settings#upstream-proxy#hostname-label": {
-        "message": "Hostnaam",
-        "description": "Label for the text box where the user can set the hostname for the 'upstream proxy'. 'Hostname' means approximately the same thing as 'server network name or identifier'."
-    },
-    "settings#upstream-proxy#port-label": {
-        "message": "Poort",
-        "description": "Label for the text box where the user can set the network port number for the 'upstream proxy' that they would like to use."
-    },
-    "settings#upstream-proxy#username-label": {
-        "message": "Gebruikersnaam",
-        "description": "Label for the text box where the user can set the username for the 'upstream proxy'."
-    },
-    "settings#upstream-proxy#password-label": {
-        "message": "Paswoord ",
-        "description": "Label for the text box where the user can set the password for the 'upstream proxy'."
-    },
-    "settings#upstream-proxy#domain-label": {
-        "message": "Domein",
-        "description": "Label for the text box where the user can set the domain for the 'upstream proxy'."
-    },
-    "settings#upstream-proxy#skip-label": {
-        "message": "Gebruik geen upstream proxy",
-        "description": "Label for the checkbox that allows the user to override the default 'upstream proxy' usage and totally disable the feature."
-    },
-    "settings#upstream-proxy#set-hostname-error-msg": {
-        "message": "U moet een hostnaam opgeven of alle velden voor de upstream-proxy leeg laten voor automatische selectie.",
-        "description": "Error message that is shown if the user enters a value for one of the other upstream proxy fields but not for 'hostname', which is required. Alternatively, the user can leave all fields blank to allow the automatic behaviour."
-    },
-    "settings#upstream-proxy#set-username-error-msg": {
-        "message": "U moet een gebruikersnaam opgeven als u een wachtwoord of domein instelt; of laat alle authenticatievelden leeg voor geen authenticatie.",
-        "description": "Error message that is shown if the user enters a value for one of 'Password' or 'Domain', but does not provide a 'Username' -- this is not valid, as username is are required. Alternatively, the user can leave all authentication fields blank to use an upstream proxy which doesn't require authentication."
-    },
-    "settings#upstream-proxy#error-modal-title": {
-        "message": "Upstream Proxy Fout",
-        "description": "Title of the message box showing the error message when a problem is detected with the user's 'upstream proxy settings'."
-    },
-    "settings#upstream-proxy#error-modal-body-default": {
-        "message": "Sifoon is momenteel zo geconfigureerd om uw systeem proxy gebruiken als “upstream proxy”.<br>\nEchter, Lijken we niet in staat te zijn om verbinding te maken met een Sifoon server via die proxyo.<br>\nA.u.b. Inschakelen “Gebruik geen upstream proxy” en probeer opnieuw.",
-        "description": "Main text in the 'Upstream Proxy Error' dialog box. This is shown when the user has not directly altered these settings (yet), but the default is causing a problem. The word 'Sifoon' must not be translated or transliterated."
-    },
-    "settings#upstream-proxy#error-modal-body-configured": {
-        "message": "Je hebt Sifoon geconfigureert voor een “upstream proxy”.<br>\nEchter we lijken niet in staat om verbinding te maken met een Sifoon server via die proxy.<br>\nA.u.b. Corrigeer de instellingen en probeer het opnieuw.",
-        "description": "Main text in the 'Upstream Proxy Error' dialog box. This is shown when the user has directly altered these settings, and those settings are (probably) erroneous. The word 'Sifoon' must not be translated or transliterated."
-    },
-    "settings#transport-mode#heading": {
-        "message": "Transport mode",
-        "description": "Settings section heading. In this section the user can choose to use an alternative connection and data transfer method -- also known as 'transport'."
-    },
-    "settings#transport-mode#check-label": {
-        "message": "Gebruik L2TP/IPSec mode",
-        "description": "Label for the checkbox that allows the user to indicate that they want to use the non-default network transport mode. This mode is generally inferior for circumvention and not recommended. 'L2TP/IPSec' is the technical name for a type of virtual private network and should probably not be translated."
-    },
-    "settings#transport-mode#help-text": {
-        "message": "Gebruik Windows L2TP/IPSec virtual netwerken. Deze mode wil tunnel al je apps, maar het nie’t leveren van obfuscatie en heeft geen krachtig censuur omzeilings mogelijkheden. Het is <strong>niet aanbevolen</strong> voor het omzeilen van de meeste firewalls.",
-        "description": "Help text for the 'Use L2TP/IPSec mode' transport selection checkbox. It gives some technical details and indicates that this mode is not recommended."
-    },
-    "settings#systray-minimize#heading": {
-        "message": "Minimaliseren naar de plaats (Systeemvak)",
-        "description": "Settings section heading. In this section the user can choose to enable or disable the ability for the Sifoon application window to be hidden as a notification area icon when minimized. 'Notification area' is the official term for the icons located near the clock on the Windows taskbar, but it's also often called the 'system tray' or 'systray' -- use whatever is most common in your language, and be verbose if necessary."
-    },
-    "settings#systray-minimize#help-text": {
-        "message": "Indien ingeschakeld, als deze is geminimaliseerd de toepassing venster Sifoon zal verbergen in het systeemvak (ook bekend als “systeemvak” of “statusindicatie”, bevindt zich dichtbij de klok op uw (Windows-taakbalk).",
-        "description": "Text explaining to the user what the 'Minimize to Notification Area (System Tray)' setting does if enabled. The word 'Sifoon' must not be translated or transliterated."
-    },
-    "settings#systray-minimize#reason": {
-        "message": "Minimaliceer Sifoon naar de plaats (“systeemvak”) bespaart ruimte op je taakbalk. Dit is vooral handig als je Sifoon gebruikt voor langere tijd.",
-        "description": "Help text in the 'Minimize to Systray' settings section explaining to the user why they might want to enable it. The word 'Sifoon' must not be translated or transliterated."
-    },
-    "settings#systray-minimize#enable-label": {
-        "message": "Minimaliseren naar het systeemvak (system tray)",
-        "description": "The label on the checkbox that enables 'Minimize to Notification Area (System Tray)'."
-    },
-    "settings#applying-message": {
-        "message": "Opnieuw verbinding om uw instellingen toe te passen.",
-        "description": "Pop-up message shown to users after they have changed their settings and a reconnection is happening to apply the new settings."
-    },
-    "settings#saved-message": {
-        "message": "Instellingen Opslaan.",
-        "description": "Pop-up message shown to users after they have changed their settings (but they aren't currently connected, so there's no reconnect or further action)."
-    },
-    "settings#error-modal#title": {
-        "message": "Instellings Fout",
-        "description": "This modal dialog box is shown when the user tries to save their settings, but there is an error in the values they have entered. This string is the title of the modal box."
-    },
-    "settings#error-modal#body": {
-        "message": "Er zijn fouten in de instellingen van je waarden. Gelieve te corrigeren alvorens verder te gaan.",
-        "description": "This modal dialog box is shown when the user tries to save their settings, but there is an error in the values they have entered. This body is the title of the modal box."
+    "feedback#diagnostic_check": {
+        "message": "Upload diagnostische gegevens. Opmerking dat de diagnosegegevens U niet zal indentificeren, maar het zal ons helpen Sifoon te verbeteren. <a class=\"DataCollectionInfoURL\" href=\"#\">Klik hier om te zien welke gegevens wij verzamelen.</a>",
+        "description": "Checkbox text. If it is checked, diagnostic information about Sifoon's status will be sent along with the feedback to Sifoon Inc. The word 'Sifoon' must not be translated or transliterated."
+    },
+    "feedback#smiley_happy": {
+        "message": "Sifoon verbindt en presteert de manier waarop ik het wil.",
+        "description": "The text below the 'happy face' feedback choice. The word 'Sifoon' must not be translated or transliterated."
+    },
+    "feedback#smiley_sad": {
+        "message": "Pishon kan niet goed Verbinding maken of het presteren er van.",
+        "description": "The text below the 'sad face' feedback choice. The word 'Sifoon' must not be translated or transliterated."
+    },
+    "feedback#submit_button": {
+        "message": "Akkoord",
+        "description": "Submit button text. If the user clicks it, their feedback will be sent to Sifoon Inc."
+    },
+    "feedback#success-message": {
+        "message": "<strong>Dank U!</strong> Je feedback is verstuurt.",
+        "description": "Message shown to user after their feedback has been sent successufully"
+    },
+    "feedback#text_feedback_bottom_para": {
+        "message": "Als bovenstaand formulier niet werkt, of u wilt screenshots te sturen, kunt u mailen naar <a id=\"FeedbackEmailAddress\" href=\"mailto:feedback@psiphon.ca\">feedback@psiphon.ca</a>.",
+        "description": "Message showing the user an email they can use to contact Sifoon Inc."
+    },
+    "feedback#text_feedback_email_prompt": {
+        "message": "Als je wil, dat wij U terug schrijven, plaats hier dan je email adres:",
+        "description": "Label for a text field where the user can provide an email address to Sifoon Inc. along with their feedback."
+    },
+    "feedback#text_feedback_prompt": {
+        "message": "Gelieve hier je probleem te plaatsen:",
+        "description": "Label for a text box where the user can provide a feedback message to Sifoon Inc."
     },
     "feedback#top_content_title": {
         "message": "Geef Ons Je Feedback",
@@ -539,74 +172,6 @@
         "message": "U kunt ook oplossingen voor veel voorkomende problemen in vinden onze <a class=\"FaqURL\" href=\"#\">Veel gestelde vragen</a>.",
         "description": "Text telling the user how to get to the Sifoon FAQ."
     },
-    "feedback#smiley_happy": {
-        "message": "Sifoon verbindt en presteert de manier waarop ik het wil.",
-        "description": "The text below the 'happy face' feedback choice. The word 'Sifoon' must not be translated or transliterated."
-    },
-    "feedback#smiley_sad": {
-        "message": "Pishon kan niet goed Verbinding maken of het presteren er van.",
-        "description": "The text below the 'sad face' feedback choice. The word 'Sifoon' must not be translated or transliterated."
-    },
-    "feedback#text_feedback_prompt": {
-        "message": "Gelieve hier je probleem te plaatsen:",
-        "description": "Label for a text box where the user can provide a feedback message to Sifoon Inc."
-    },
-    "feedback#text_feedback_email_prompt": {
-        "message": "Als je wil, dat wij U terug schrijven, plaats hier dan je email adres:",
-        "description": "Label for a text field where the user can provide an email address to Sifoon Inc. along with their feedback."
-    },
-    "feedback#diagnostic_check": {
-        "message": "Upload diagnostische gegevens. Opmerking dat de diagnosegegevens U niet zal indentificeren, maar het zal ons helpen Sifoon te verbeteren. <a class=\"DataCollectionInfoURL\" href=\"#\">Klik hier om te zien welke gegevens wij verzamelen.</a>",
-        "description": "Checkbox text. If it is checked, diagnostic information about Sifoon's status will be sent along with the feedback to Sifoon Inc. The word 'Sifoon' must not be translated or transliterated."
-    },
-    "feedback#submit_button": {
-        "message": "Akkoord",
-        "description": "Submit button text. If the user clicks it, their feedback will be sent to Sifoon Inc."
-    },
-    "feedback#text_feedback_bottom_para": {
-        "message": "Als bovenstaand formulier niet werkt, of u wilt screenshots te sturen, kunt u mailen naar <a id=\"FeedbackEmailAddress\" href=\"mailto:feedback@psiphon.ca\">feedback@psiphon.ca</a>.",
-        "description": "Message showing the user an email they can use to contact Sifoon Inc."
-    },
-    "feedback#success-message": {
-        "message": "<strong>Dank U!</strong> Je feedback is verstuurt.",
-        "description": "Message shown to user after their feedback has been sent successufully"
-    },
-    "logs#show-debug-label": {
-        "message": "Toon debug logbestanden",
-        "description": "Label on a checkbox. If the user checks it, debug log messages will be shown to the user."
-    },
-    "logs#placeholder": {
-        "message": "Geen logbestanden",
-        "description": "Placeholder text shown when there are not yet any log messages to show. This message is removed when the first log message is added."
-    },
-    "language#success-message": {
-        "message": "<strong>Hallo!</strong> Welkom bij Sifoon.",
-        "description": "A welcome message shown to the user when they first switch to the correct UI language. The word 'Sifoon' must not be translated or transliterated."
-    },
-    "about#wordart-tag": {
-        "message": "Voorbij de Grenzen",
-        "description": "The application/product/tool tagline/slogan/motto part of the fancy title at the top of the 'About' page. 'Beyond Borders' is the slogan that is also used on the Sifoon website -- it is meant to suggest that Sifoon can help users to get to the internet beyond the border (firewall) of the country they live in. The word 'Sifoon' must not be translated or transliterated."
-    },
-    "about#description": {
-        "message": "Sifoon is een <strong>censors omzeilings hulpmiddel</strong> — het is ontworpen om de toegang tot het open internet te geven, langs censors en firewalls. Het is <strong>open source</strong> en ontwikkeld in Toronto, Canada.",
-        "description": "Paragraph on the 'About' page telling users generally what Sifoon is. The word 'Sifoon' must not be translated or transliterated."
-    },
-    "about#visit-download-site": {
-        "message": "Nieuwsgierig bezoek de website en <strong><a class=\"NewVersionURL\" href=\"#\">download een nieuw versie</a></strong> of naar <strong><a class=\"InfoURL\" href=\"#\">help en informatie</a></strong>. Sifoon is beschikbaar voor Android en Windows.",
-        "description": "Paragraph on the 'About' page telling users what web page to go to get a new version of Sifoon or more info about it. The word 'Sifoon' must not be translated or transliterated."
-    },
-    "about#get-by-email": {
-        "message": "<strong>Als de website ontoegankelijk is</strong>, kunt u een nieuwe versie van Sifoon krijgen door het sturen van een e-mail naar:",
-        "description": "Paragraph on the 'About' page telling users that they can also get a new version of Sifoon via email. The text in this resource is then followed by an email address. The word 'Sifoon' must not be translated or transliterated."
-    },
-    "about#license-agree": {
-        "message": "By using Sifoon you signal that you agree to the terms of the <a href=\"https://psiphon.ca/license.html\">End-User License</a> and <a href=\"https://psiphon.ca/privacy.html\">Privacy Policy</a>.",
-        "description": "Paragraph on the 'About' page telling users that they agreeing to Sifoon's End-User License Agreement and Privacy Policy. The link URLs must not be modified. The word 'Sifoon' must not be translated or transliterated."
-    },
-    "about#client-version": {
-        "message": "Sifoon voor Windows klant versie:",
-        "description": "Footer on the 'About' page indicating the client version number. This text is the prefix to the actual number. Like: 'Sifoon for Windows client version: 88'. The word 'Sifoon' must not be translated or transliterated."
-    },
     "general#modal-close-button": {
         "message": "Sluit",
         "description": "Text in the button that dismisses a modal dialog. It is often the only button (no 'OK' or 'Cancel', etc.)."
@@ -619,173 +184,273 @@
         "message": "Hier is de technische fout informatie.",
         "description": "Preamble before the technical message relating to the error being shown. This is generated within the code and may not be very user-friendly (but it may be necessary for the user to figure out what's wrong)."
     },
-    "notice#systemproxysettings-setproxy-error-title": {
-        "message": "Fout Systeem Proxy",
-        "description": "Title of modal error message shown to user when Sifoon fails to set the user's system proxy settings. This means that Sifoon was able to connect, but was unable to configure the system to actually use Sifoon."
+    "language#success-message": {
+        "message": "<strong>Hallo!</strong> Welkom bij Sifoon.",
+        "description": "A welcome message shown to the user when they first switch to the correct UI language. The word 'Sifoon' must not be translated or transliterated."
+    },
+    "logs#placeholder": {
+        "message": "Geen logbestanden",
+        "description": "Placeholder text shown when there are not yet any log messages to show. This message is removed when the first log message is added."
+    },
+    "logs#show-debug-label": {
+        "message": "Toon debug logbestanden",
+        "description": "Label on a checkbox. If the user checks it, debug log messages will be shown to the user."
+    },
+    "nav#about": {
+        "message": "Over",
+        "description": "Text on the tab that, if the user clicks on it, switches to the 'About' view. In that view the user can see info about the app, info about Sifoon Inc., and click links for more information."
+    },
+    "nav#connection#connected": {
+        "message": "Verbonden",
+        "description": "Text on the tab that, if the user clicks on it, switches to the 'Connection' view, that has the connect button. This particular text is shown when Sifoon is connected."
+    },
+    "nav#connection#starting": {
+        "message": "Verbinden",
+        "description": "Text on the tab that, if the user clicks on it, switches to the 'Connection' view, that has the connect button. This particular text is shown when Sifoon is connecting."
+    },
+    "nav#connection#stopped": {
+        "message": "Verbroken",
+        "description": "Text on the tab that, if the user clicks on it, switches to the 'Connection' view, that has the connect button. This particular text is shown when Sifoon is disconnected."
+    },
+    "nav#connection#stopping": {
+        "message": "Verbreek",
+        "description": "Text on the tab that, if the user clicks on it, switches to the 'Connection' view, that has the connect button. This particular text is shown when Sifoon is disconnecting."
+    },
+    "nav#feedback": {
+        "message": "Feedback",
+        "description": "Text on the tab that, if the user clicks on it, switches to the 'Feeback' view. In that view the user can send feedback about their experience to Sifoon."
+    },
+    "nav#logs": {
+        "message": "Logbestanden",
+        "description": "Text on the tab that, if the user clicks on it, switches to the 'Logs' view. In that view the user can see the status messages that Sifoon produces as it connects, disconnects, etc."
+    },
+    "nav#settings": {
+        "message": "Instellingen",
+        "description": "Text on the tab that, if the user clicks on it, switches to the 'Settings' view. In that view the user can change the settings/options that change how Sifoon works."
+    },
+    "notice#disallowed-traffic-alert-body": {
+        "message": "<p>Apps werken niet?</p>\n<p>Sommig internetverkeer wordt niet ondersteund zonder een actieve Speed Boost. Activeer Speed Boost met PsiCash om het volledige potentieel van uw Sifoon-ervaring te ontgrendelen.</p>",
+        "description": "Body text of modal error message shown to user when Sifoon disallows some non-web internet traffic. The user needs to purchase Speed Boost in order to full app compatibilty and more speed. The words 'Sifoon' and 'PsiCash' must not be translated or transliterated. 'Speed Boost' is a reward that can be purchased with PsiCash credit. It provides unlimited network connection speed through Sifoon. Other words that can be used to help with translation are: 'turbo' (like cars), 'accelerate', 'warp speed', 'blast off', or anything that indicates a fast or unrestricted speed."
+    },
+    "notice#disallowed-traffic-alert-title": {
+        "message": "Upgrade uw Sifoon-verbinding ",
+        "description": "Title of modal error message shown to user when Sifoon disallows some non-web internet traffic. The user will be told to 'upgrade' their connection with Speed Boost (giving more speed and app compatibility). The word 'Sifoon' must not be translated or transliterated."
+    },
+    "notice#sifoonui-fileerror-detail-preamble": {
+        "message": "Filename and error message:",
+        "description": "Preamble text before technical details displayed in a modal error message shown to user when Sifoon cannot read/write/delete a file that it needs to access in order to function properly."
+    },
+    "notice#sifoonui-fileerror-error-body": {
+        "message": "<p>Sifoon cannot access a file it needs in order to work properly.</p>\n<p>Close the Sifoon application, delete the file listed below, and try running Sifoon again.</p>",
+        "description": "Body text of modal error message shown to user when Sifoon cannot read/write/delete a file that it needs to access in order to function properly. If this occurs, the user cannot connect and must take manual action to fix it. The word 'Sifoon' must not be translated or transliterated."
+    },
+    "notice#sifoonui-fileerror-error-title": {
+        "message": "File Access Error",
+        "description": "Title of modal error message shown to user when Sifoon cannot read/write/delete a file that it needs to access in order to function properly."
     },
     "notice#systemproxysettings-setproxy-error-body": {
         "message": "<p>Sifoon faald om instellen de systeem’s proxy instellingen.</p>\n<p>Dit zou te wijten zijn aan een conflict met uw antivirussoftware. Je zou handmatig moeten configureren van uw toepassing of het systeem proxy-instellingen te gebruiken, de lokale Sifoon proxies.</p>",
         "description": "Body text of modal error message shown to user when Sifoon fails to set the user's system proxy settings. This means that Sifoon was able to connect, but was unable to configure the system to actually use Sifoon. The word 'Sifoon' must not be translated or transliterated."
     },
+    "notice#systemproxysettings-setproxy-error-title": {
+        "message": "Fout Systeem Proxy",
+        "description": "Title of modal error message shown to user when Sifoon fails to set the user's system proxy settings. This means that Sifoon was able to connect, but was unable to configure the system to actually use Sifoon."
+    },
     "notice#systemproxysettings-setproxy-warning-template": {
         "message": "Sifoon faald om instellen de systeem’s proxy instelingen voor de Internet verbinding genaamd “<%- data %>”. Dit zou te wijten zijn aan een conflict met uw antivirussoftware. Je zou handmatig moeten configureren van uw toepassing of het systeem proxy-instellingen te gebruiken, de lokale Sifoon proxies.",
         "description": "'<%- data %>' is a placeholder and must not be modified. Log message emitted when Sifoon can't fully configure the system to use Sifoon. It may or may not be a fatal state, and may or may not need human intervention. The word 'Sifoon' must not be translated or transliterated."
     },
-    "appbackend#state-stopped-title": {
-        "message": "Sifoon is verbroken",
-        "description": "Appears in the notification area balloon when Sifoon is disconnected (or has lost its connection, or has been disconnected). The word 'Sifoon' must not be translated or transliterated."
-    },
-    "appbackend#state-starting-title": {
-        "message": "Sifoon is aan het verbinden",
-        "description": "Appears in the notification area balloon when Sifoon is in the process of connecting to a server. The word 'Sifoon' must not be translated or transliterated."
-    },
-    "appbackend#state-starting-body": {
-        "message": "Wacht A.u.b.",
-        "description": "Appears in the notification area balloon when Sifoon is in the process of connecting to a server. The word 'Sifoon' must not be translated or transliterated."
-    },
-    "appbackend#state-connected-title": {
-        "message": "Sifoon is verbonden",
-        "description": "Appears in the notification area balloon when Sifoon is currently connected to a server. Specifically, it appears when the connection has just completed. The word 'Sifoon' must not be translated or transliterated."
-    },
-    "appbackend#state-connected-body": {
-        "message": "Verkennen voorbij jouw grenzen!",
-        "description": "Appears in the notification area balloon when Sifoon is currently connected to a server. Specifically, it appears when the connection has just completed. This is intended to be a reference to the 'Sifoon: Beyond Borders' tag line. Note for right-to-left languages: You should not use an exclamation mark, as it won't be displayed correct if shown on a left-to-right operating system."
-    },
-    "appbackend#state-connected-reminder-title": {
-        "message": "Sifoon houdt je verbonden",
-        "description": "Appears in the notification area balloon periodically while Sifoon is connected to a server. The word 'Sifoon' must not be translated or transliterated."
-    },
-    "appbackend#state-connected-reminder-body": {
-        "message": "Houd Sifoon gratis. Klik hier om onze sponsorpagina's te bezoeken! ",
-        "description": "Appears in the notification area balloon periodically while Sifoon is connected to a server. This is intended to encourage the user to visit the sponsor's landing page. Note for right-to-left languages: You should not use an exclamation mark, as it won't be displayed correct if shown on a left-to-right operating system. The word 'Sifoon' must not be translated or transliterated."
-    },
-    "appbackend#state-connected-reminder-body-2": {
-        "message": "Houd Sifoon gratis door onze sponsorpagina's te bezoeken! ",
-        "description": "Appears in the notification area balloon periodically while Sifoon is connected to a server. This is intended to encourage the user to visit the sponsor's landing page. Note for right-to-left languages: You should not use an exclamation mark, as it won't be displayed correct if shown on a left-to-right operating system. The word 'Sifoon' must not be translated or transliterated."
-    },
-    "appbackend#minimized-to-systray-title": {
-        "message": "Sifoon is geminimaliseerd naar het systeemvak",
-        "description": "Appears in the notification area balloon when Sifoon has been minimized to the Windows' notification area (aka 'system tray' aka 'systray', the area of the taskbar with the clock, battery indicator, and other icons). The word 'Sifoon' must not be translated or transliterated."
-    },
-    "appbackend#minimized-to-systray-body": {
-        "message": "Klik op het pictogram om de toepassing te herstellen",
-        "description": "Appears in the notification area balloon when Sifoon has been minimized to the Windows' notification area (aka 'system tray' aka 'systray', the area of the taskbar with the clock, battery indicator, and other icons)."
-    },
-    "appbackend#os-unsupported": {
-        "message": "Sifoon only supports Windows 10 and newer.\nPlease visit our website for more information.",
-        "description": "Appears in a message box when Sifoon is run on an unsupported version of Windows. Is followed by a URL."
-    },
-    "psicash#transaction-error-title": {
-        "message": "PsiCash-transactiefout",
-        "description": "Title of a modal dialog shown when a PsiCash transaction (like Speed Boost purchase) fails. The word 'PsiCash' must not be translated or transliterated."
-    },
-    "psicash#transaction-error-body": {
-        "message": "Uw PsiCash-transactiepoging is onverwacht mislukt.",
-        "description": "Body text of a modal dialog shown when a PsiCash transaction (like Speed Boost purchase) fails. The word 'PsiCash' must not be translated or transliterated."
-    },
-    "psicash#transaction-ExistingTransaction-title": {
-        "message": "PsiCash-aankoop bestaat al",
-        "description": "Title of a modal dialog shown when a PsiCash transaction (like Speed Boost purchase) fails. The word 'PsiCash' must not be translated or transliterated."
-    },
-    "psicash#transaction-ExistingTransaction-body": {
-        "message": "U hebt een bestaande PsiCash-aankoop van dit type. Een andere aankoop van dit type is niet toegestaan totdat de vorige verloopt. Uw PsiCash-status wordt nu vernieuwd.",
-        "description": "Body text of a modal dialog shown when a PsiCash transaction (like Speed Boost purchase) fails. The word 'PsiCash' must not be translated or transliterated."
-    },
-    "psicash#transaction-InsufficientBalance-title": {
-        "message": "Onvoldoende PsiCash-saldo",
-        "description": "Title of a modal dialog shown when a PsiCash transaction (like Speed Boost purchase) fails. The user doesn't have enough PsiCash to make the attempted purchase. The word 'PsiCash' must not be translated or transliterated."
-    },
-    "psicash#transaction-InsufficientBalance-body": {
-        "message": "U hebt niet voldoende PsiCash-saldo voor deze aankoop.",
-        "description": "Body text of a modal dialog shown when a PsiCash transaction (like Speed Boost purchase) fails. The user doesn't have enough PsiCash to make the attempted purchase. The word 'PsiCash' must not be translated or transliterated."
-    },
-    "psicash#transaction-TransactionAmountMismatch-title": {
-        "message": "PsiCash-aankoopprijs komt niet overeen",
-        "description": "Title of a modal dialog shown when a PsiCash transaction (like Speed Boost purchase) fails. The word 'PsiCash' must not be translated or transliterated."
-    },
-    "psicash#transaction-TransactionAmountMismatch-body": {
-        "message": "De aankoopprijzen van PsiCash zijn verouderd. Uw PsiCash staat zal nu worden vernieuwd.",
-        "description": "Body text of a modal dialog shown when a PsiCash transaction (like Speed Boost purchase) fails. The word 'PsiCash' must not be translated or transliterated."
-    },
-    "psicash#transaction-TransactionTypeNotFound-title": {
-        "message": "Aankooptype PsiCash niet gevonden",
-        "description": "Title of a modal dialog shown when a PsiCash transaction (like Speed Boost purchase) fails. The word 'PsiCash' must not be translated or transliterated."
-    },
-    "psicash#transaction-TransactionTypeNotFound-body": {
-        "message": "Het product dat u probeert te kopen bestaat niet meer. Mogelijk moet u de toepassing bijwerken of opnieuw installeren.",
-        "description": "Body text of a modal dialog shown when a PsiCash transaction (like Speed Boost purchase) fails. The word 'PsiCash' must not be translated or transliterated."
-    },
-    "psicash#transaction-InvalidTokens-title-tracker": {
-        "message": "Ongeldige PsiCash-status",
-        "description": "Title of a modal dialog shown when a PsiCash transaction (like Speed Boost purchase) fails. This error is extremely rare and should only occur if there's data corruption. The word 'PsiCash' must not be translated or transliterated."
-    },
-    "psicash#transaction-InvalidTokens-body-tracker": {
-        "message": "Uw PsiCash-status is ongeldig. Probeer de applicatie opnieuw te starten. Als dat niet werkt, moet u <a href=\"https://psiphon3.com/faq.html#clear-windows-data\">uw lokale opslag wissen</a>. ",
-        "description": "Body text of a modal dialog shown when a PsiCash transaction (like Speed Boost purchase) fails. This error is extremely rare and should only occur if there's data corruption. The word 'PsiCash' must not be translated or transliterated."
-    },
-    "psicash#transaction-InvalidTokens-title-account": {
-        "message": "PsiCash login verlopen",
-        "description": "Title of a modal dialog shown when a PsiCash transaction (like Speed Boost purchase) fails. The word 'PsiCash' must not be translated or transliterated."
-    },
-    "psicash#transaction-InvalidTokens-body-account": {
-        "message": "Your PsiCash login has expired. Log into your account and try again.",
-        "description": "Body text of a modal dialog shown when a PsiCash transaction (like Speed Boost purchase) fails. The word 'PsiCash' must not be translated or transliterated."
-    },
-    "psicash#transaction-ServerError-title": {
-        "message": "PsiCash-serverfout",
-        "description": "Title of a modal dialog shown when a PsiCash transaction (like Speed Boost purchase) fails. The word 'PsiCash' must not be translated or transliterated."
-    },
-    "psicash#transaction-ServerError-body": {
-        "message": "De PsiCash-server reageerde met een fout tijdens een poging om de aankoop te doen. Probeer uw aankoop later opnieuw.",
-        "description": "Body text of a modal dialog shown when a PsiCash transaction (like Speed Boost purchase) fails. The word 'PsiCash' must not be translated or transliterated."
-    },
-    "psicash#ui-speedboost-active": {
-        "message": "Speed&nbsp;Boost actief voor %s",
-        "description": "When the user has Speed Boost active, this shows them how much time they have remaining. '%s' is like 'an hour' or '30 minutes' (localized). This text will be shown on a narrow button that should have at most 3 lines. You may use `&nbsp;`, `<br>`, `<wbr>`, `&shy;`, etc. to control word wrap. 'Speed Boost' is a reward that can be purchased with PsiCash credit. It provides unlimited network connection speed through Sifoon. Other words that can be used to help with translation are: 'turbo' (like cars), 'accelerate', 'warp speed', 'blast off', or anything that indicates a fast or unrestricted speed."
-    },
-    "psicash#ui-buypsi": {
-        "message": "Koop PsiCash",
-        "description": "Label for a button/link that opens a store web page were users can spend money to buy PsiCash. At this point, the user has no PsiCash at all. The word 'PsiCash' must not be translated or transliterated."
-    },
-    "psicash#ui-buymorepsi": {
-        "message": "Koop meer PsiCash",
-        "description": "Label for a button/link that opens a store web page were users can spend money to buy PsiCash. At this point, the user already has some PsiCash, but may wish to buy more. The word 'PsiCash' must not be translated or transliterated."
-    },
-    "psicash#ui-nsfbalance-buttontext": {
-        "message": "Nodig voor Snelheid&nbsp;Boost",
-        "description": "Label on a disabled button, followed by a value in PsiCash indicating how much it costs to buy an hour of Speed Boost. When the user has enough PsiCash, the button will be enabled and the text will change. You may use `&nbsp;`, `<br>`, `<wbr>`, `&shy;`, etc. to control word wrap. 'Speed Boost' is a reward that can be purchased with PsiCash credit. It provides unlimited network connection speed through Sifoon. Other words that can be used to help with translation are: 'turbo' (like cars), 'accelerate', 'warp speed', 'blast off', or anything that indicates a fast or unrestricted speed."
-    },
-    "psicash#ui-speedboost-button": {
-        "message": "Speed Boost",
-        "description": "Label on a button. The text is followed by a value in PsiCash indicating how much it costs to buy an hour of Speed Boost. Clicking the button will buy Speed Boost. 'Speed Boost' is a reward that can be purchased with PsiCash credit. It provides unlimited network connection speed through Sifoon. Other words that can be used to help with translation are: 'turbo' (like cars), 'accelerate', 'warp speed', 'blast off', or anything that indicates a fast or unrestricted speed."
-    },
-    "psicash#1-hour": {
-        "message": "1 uur",
-        "description": "Label on a button. Clicking this button will buy 1 hour of Speed Boost."
+    "positive-value-indicator": {
+        "message": "+%d",
+        "description": "This is used to indicate when a numeric value is positive -- like '+500'. This will show when a number is going to be increased by another number. '%d' is a placeholder for an integer for decimal value."
     },
     "psicash#1-day": {
         "message": "1 dag",
         "description": "Label on a button. Clicking this button will buy 1 day (24 hours) of Speed Boost."
     },
-    "psicash#1-week": {
-        "message": "1 week",
-        "description": "Label on a button. Clicking this button will buy 1 week (7 days) of Speed Boost."
+    "psicash#1-hour": {
+        "message": "1 uur",
+        "description": "Label on a button. Clicking this button will buy 1 hour of Speed Boost."
     },
     "psicash#1-month": {
         "message": "1 maand",
         "description": "Label on a button. Clicking this button will buy 1 month (31 days) of Speed Boost."
     },
-    "psicash#ui-buyingboost-buttontext": {
-        "message": "Starten Snelheid&nbsp;Boost!",
-        "description": "Label for a disabled button. The user has clicked the button in order to buy an hour of Speed Boost, and now the purchase is completing and Speed Boost is activating. You may use `&nbsp;`, `<br>`, `<wbr>`, `&shy;`, etc. to control word wrap. 'Speed Boost' is a reward that can be purchased with PsiCash credit. It provides unlimited network connection speed through Sifoon. Other words that can be used to help with translation are: 'turbo' (like cars), 'accelerate', 'warp speed', 'blast off', or anything that indicates a fast or unrestricted speed."
+    "psicash#1-week": {
+        "message": "1 week",
+        "description": "Label on a button. Clicking this button will buy 1 week (7 days) of Speed Boost."
+    },
+    "psicash#alert#buyspeedboost-purchase-complete": {
+        "message": "Snelheidsboost begonnen!",
+        "description": "A non-modal alert shown when a new Speed Boost has been activated. 'Speed Boost' is a reward that can be purchased with PsiCash credit. It provides unlimited network connection speed through Sifoon. Other words that can be used to help with translation are: 'turbo' (like cars), 'accelerate', 'warp speed', 'blast off', or anything that indicates a fast or unrestricted speed."
+    },
+    "psicash#alert#logged-out": {
+        "message": "PsiCash-account uitloggen voltooid.",
+        "description": "An alert shown when the user logs out of their PsiCash account. The word 'PsiCash' must not be translated or transliterated."
+    },
+    "psicash#alert#tokens-expired": {
+        "message": "PsiCash login verlopen. Gelieve opnieuw in te loggen.",
+        "description": "An alert shown when the user's PsiCash account tokens expire. This is a normal occurrence (once per year), and the user needs to log into their PsiCash account again to continue to use it. The word 'PsiCash' must not be translated or transliterated."
+    },
+    "psicash#corner-logged-out": {
+        "message": "U bent uitgelogd bij PsiCash",
+        "description": "Message shown to the user when they have a PsiCash account, but they are logged out. The word 'PsiCash' must not be translated or transliterated."
+    },
+    "psicash#init-error-body-recovered": {
+        "message": "PsiCash kan niet worden geïnitialiseerd. Dit komt waarschijnlijk door een probleem met het bestandssysteem, zoals onvoldoende schijfruimte. Uw saldo en andere status zijn gereset.",
+        "description": "Body text of a modal dialog shown when the PsiCash library fails to initialize. The word 'PsiCash' must not be translated or transliterated."
+    },
+    "psicash#init-error-body-unrecovered": {
+        "message": "PsiCash kan niet worden geïnitialiseerd. Dit komt waarschijnlijk door een probleem met het bestandssysteem, zoals onvoldoende schijfruimte. Je saldo en andere status zijn verloren. PsiCash zal niet bruikbaar zijn. U kunt proberen de toepassing opnieuw te starten om het probleem te verhelpen.",
+        "description": "Body text of a modal dialog shown when the PsiCash library fails to initialize. The word 'PsiCash' must not be translated or transliterated."
+    },
+    "psicash#init-error-title": {
+        "message": "PsiCash-initialisatiefout",
+        "description": "Title of a modal dialog shown when the PsiCash library fails to initialize. The word 'PsiCash' must not be translated or transliterated."
+    },
+    "psicash#login#badrequest-error-body": {
+        "message": "De PsiCash-server gaf aan dat het inlogverzoek ongeldig was. Voer uw inloggegevens opnieuw in en probeer het opnieuw. ",
+        "description": "Body text of a modal dialog shown when a PsiCash account login fails due to a 'bad request' error. The word 'PsiCash' must not be translated or transliterated."
+    },
+    "psicash#login#catastrophic-error-body": {
+        "message": "Uw PsiCash-inlogpoging is onverwacht mislukt. ",
+        "description": "Body text of a modal dialog shown when a PsiCash login fails without a specific reason. The word 'PsiCash' must not be translated or transliterated."
+    },
+    "psicash#login#failure-modal-title": {
+        "message": "Inloggen bij PsiCash mislukt",
+        "description": "Title of modal dialog shown when the PsiCash account login attempt fails for some reason. Text within the modal will explain why. The word 'PsiCash' must not be translated or transliterated."
+    },
+    "psicash#login#invalid-credentials-body": {
+        "message": "De gebruikersnaam of wachtwoord onjuist was.",
+        "description": "Body text of a modal dialog shown when a PsiCash login fails due to bad username or password."
+    },
+    "psicash#login#invalid-credentials-body-multiple-attempts": {
+        "message": "Would you instead like to <a class=\"js-psicash-account-signup\" href=\"#\">create an account</a> or <a class=\"js-psicash-forgot-account\" href=\"#\">recover your account</a>?",
+        "description": "Body text of a modal dialog shown when a PsiCash login fails due to bad username or password."
+    },
+    "psicash#login#last-tracker-merge-body": {
+        "message": "U bent ingelogd op uw PsiCash-account. Het bestaande saldo van dit apparaat is overgezet naar uw account, maar dit is de laatste keer dat een saldo wordt samengevoegd. ",
+        "description": "Body text of a modal dialog shown when a PsiCash login succeeds. There is a fixed number of times that a user can merge a pre-account balance into a PsiCash account. This message indicates that the user has hit that limit and the merge that occurred is the last one allowed. The word 'PsiCash' must not be translated or transliterated."
+    },
+    "psicash#login#server-error-body": {
+        "message": "De PsiCash-server reageerde met een fout tijdens het inloggen. Probeer het later opnieuw.",
+        "description": "Body text of a modal dialog shown when a PsiCash account login fails due to a server error. The word 'PsiCash' must not be translated or transliterated."
+    },
+    "psicash#login#success-modal-title": {
+        "message": "PsiCash Inloggen Succes",
+        "description": "Title of modal dialog shown when the PsiCash account login attempt succeeds, if additional information needs to be conveyed. The word 'PsiCash' must not be translated or transliterated."
+    },
+    "psicash#modal-create-psicash-account-body": {
+        "message": "We raden u ten zeerste aan om een PsiCash-account aan te maken voordat u PsiCash koopt. Met een account kunt u uw saldo tussen apparaten delen en uw aankopen beschermen. ",
+        "description": "Body of a modal dialog that appears when the user tries to buy PsiCash with real money but doens't have an account. The word 'PsiCash' must not be translated or transliterated."
+    },
+    "psicash#modal-create-psicash-account-continue-button": {
+        "message": "Doorgaan zonder account",
+        "description": "Button in the modal dialog encouraging users to create an account when they attempt to buy PsiCash with real money without one. If they click this button, they will continue on to the PsiCash store."
+    },
+    "psicash#modal-create-psicash-account-create-button": {
+        "message": "Account aanmaken of inloggen",
+        "description": "Button in the modal dialog encouraging users to create an account when they attempt to buy PsiCash with real money without one. If they click this button, they will be taken to a screen where they can create an account or log into an existing one."
+    },
+    "psicash#modal-create-psicash-account-header": {
+        "message": "Maak een PsiCash-account",
+        "description": "Header of a modal dialog that appears when the user tries to buy PsiCash with real money but doens't have an account. The word 'PsiCash' must not be translated or transliterated."
+    },
+    "psicash#modal-login-body": {
+        "message": "<a class=\"js-psicash-account-signup\" href=\"#\">Maak een nieuw account</a> of onderstaand inloggen.",
+        "description": "Body of modal dialog in which the user can log in to an existing account or click a link to create a new one."
+    },
+    "psicash#modal-login-cancel-button": {
+        "message": "Annuleren",
+        "description": "Text on the cancel button in the PsiCash account login modal dialog."
+    },
+    "psicash#modal-login-forgot-password-link": {
+        "message": "Forgot your password or username?",
+        "description": "Link for text in the PsiCash account login modal dialog. Clicking it will bring the user to a page where they can recover their account."
+    },
+    "psicash#modal-login-header": {
+        "message": "PsiCash Account",
+        "description": "Header of modal dialog in which the user can log in to an existing account or click a link to create a new one. The word 'PsiCash' must not be translated or transliterated."
+    },
+    "psicash#modal-login-password-field": {
+        "message": "Wachtwoord",
+        "description": "Label for a password field in the PsiCash account login modal dialog."
+    },
+    "psicash#modal-login-submit-button": {
+        "message": "Verzenden",
+        "description": "Text on the submit button in the PsiCash account login modal dialog."
+    },
+    "psicash#modal-login-username-field": {
+        "message": "PsiCash username",
+        "description": "Label for a username field in the PsiCash account login modal dialog."
+    },
+    "psicash#modal-logout-error-body": {
+        "message": "Uw uitlogpoging is onverwacht mislukt. Probeer de applicatie opnieuw te starten. Als dat niet werkt, moet u <a href=\"https://psiphon3.com/faq.html#clear-windows-data\">wis uw lokale opslag</a>.",
+        "description": "Body of modal dialog shown when the user attempts to log out of their PsiCash account and an unexpected error occurs. Please don't modify the link URL."
+    },
+    "psicash#modal-logout-header": {
+        "message": "PsiCash-account uitloggen",
+        "description": "Header of modal dialog shown when the user attempts to log out of their PsiCash account and a message results. 'PsiCash' must not be translated or transliterated."
+    },
+    "psicash#modal-psicash-logout-offline-body": {
+        "message": "Als u verbonden bent met het Sifoon-netwerk, kunt u veiliger PsiCash uitloggen. Wil je verbinding maken voordat je uitlogt? ",
+        "description": "Body of a modal dialog that appears when the user tries to log out of thier PsiCash account while not currently connected to the Sifoon network. We don't allow PsiCash network requests when not connected, so only an inferior localy-only logout is available. 'Sifoon' must not be translated/transliterated. The word 'PsiCash' must not be translated or transliterated."
+    },
+    "psicash#modal-psicash-logout-offline-cancel-button": {
+        "message": "Annuleren",
+        "description": "Button in the modal dialog shown to users when they attempt to log out of their PsiCash account with no active Sifoon tunnel. Clicking this button will cancel the attempt."
+    },
+    "psicash#modal-psicash-logout-offline-connect-button": {
+        "message": "Verbinden",
+        "description": "Button in the modal dialog shown to users when they attempt to log out of their PsiCash account with no active Sifoon tunnel. Clicking this button will abort the logout attempt and being connecting to a Sifoon server."
+    },
+    "psicash#modal-psicash-logout-offline-header": {
+        "message": "PsiCash-account uitloggen",
+        "description": "Header of a modal dialog that appears when the user tries to log out of their PsiCash account. The word 'PsiCash' must not be translated or transliterated."
+    },
+    "psicash#modal-psicash-logout-offline-logout-anyway-button": {
+        "message": "Log toch uit",
+        "description": "Button in the modal dialog shown to users when they attempt to log out of their PsiCash account with no active Sifoon tunnel. Clicking this button will cause a local-only logout to be performed."
+    },
+    "psicash#more-ellipsis": {
+        "message": "Meer…",
+        "description": "Label for a button that leads to more Speed Boost purchase choices. The translation can be like 'More options' or 'More choices' or 'See more'. Only use an ellipsis if it makes sense in your language."
+    },
+    "psicash#mustconnect-modal#body": {
+        "message": "Om PsiCash te gebruiken, moet u verbonden zijn met het Sifoon-netwerk.",
+        "description": "Body text of a modal dialog shown when the user tries to use (spend, buy, etc.) PsiCash, if they not currently connected. 'Use' here means buy, spend, or otherwise interact with. 'Sifoon' must not be translated/transliterated. 'PsiCash' must not be translated/transliterated."
+    },
+    "psicash#mustconnect-modal#title": {
+        "message": "Sifoon-verbinding vereist",
+        "description": "Title text of a modal dialog shown when the user tries to use (spend, buy, etc.) PsiCash, if they not currently connected. 'Sifoon' must not be translated/transliterated."
+    },
+    "psicash#overlay-logging-in": {
+        "message": "Inloggen…",
+        "description": "Text on a screen shown while the user's log-in request is in progress."
+    },
+    "psicash#overlay-logging-out": {
+        "message": "Uitloggen…",
+        "description": "Text on a screen shown while the user's log-out request is in progress."
+    },
+    "psicash#pane-balance-header": {
+        "message": "Balans:",
+        "description": "Text before showing the user's PsiCash balance. So it will appear like: 'Balance: Ⓟ100'."
     },
     "psicash#pane-create-account": {
         "message": "Maak een account aan om uw PsiCash te beschermen! ",
         "description": "Text for a link displayed when the user does not have a PsiCash account. This is an strong suggestion, hence the exclamation point -- use whatever makes sense in your language. It encourages them to make one. The word 'PsiCash' must not be translated or transliterated."
     },
-    "psicash#pane-balance-header": {
-        "message": "Balans:",
-        "description": "Text before showing the user's PsiCash balance. So it will appear like: 'Balance: Ⓟ100'."
+    "psicash#pane-create-account-plea": {
+        "message": "Door een PsiCash-account aan te maken, kunt u uw PsiCash behouden als u de opslagruimte van de app wist of Sifoon op een ander apparaat gebruikt.<a href=\"https://psiphon.ca/faq.html#psicash-account\">Kom meer te weten.</a> ",
+        "description": "Text shown below the PsiCash balance when the user does not have a PsiCash account. 'Learn more' is a link to an FAQ entry explaining the benefits of creating an account. The word 'PsiCash' must not be translated or transliterated."
+    },
+    "psicash#pane-create-new-account": {
+        "message": "Maak een nieuw Account",
+        "description": "Text on button that user can click to create a new account (opens an external web page)."
+    },
+    "psicash#pane-l2tp-incompatible": {
+        "message": "Speed Boost kan niet worden gebruikt terwijl de Sifoon is aangesloten in de <a href=\"#\">L2TP/IPSec-transportmodus</a>. ",
+        "description": "A message shown when L2TP/IPSec mode is enabled in Sifoon. Speed Boost cannot be used in this mode."
     },
     "psicash#pane-log-in": {
         "message": "Log In!",
@@ -799,153 +464,33 @@
         "message": "Beheer op het web",
         "description": "Text for a link to a web site where users can manage their PsiCash account."
     },
-    "psicash#pane-create-account-plea": {
-        "message": "Door een PsiCash-account aan te maken, kunt u uw PsiCash behouden als u de opslagruimte van de app wist of Sifoon op een ander apparaat gebruikt.<a href=\"https://psiphon.ca/faq.html#psicash-account\">Kom meer te weten.</a> ",
-        "description": "Text shown below the PsiCash balance when the user does not have a PsiCash account. 'Learn more' is a link to an FAQ entry explaining the benefits of creating an account. The word 'PsiCash' must not be translated or transliterated."
-    },
-    "psicash#pane-l2tp-incompatible": {
-        "message": "Speed Boost kan niet worden gebruikt terwijl de Sifoon is aangesloten in de <a href=\"#\">L2TP/IPSec-transportmodus</a>. ",
-        "description": "A message shown when L2TP/IPSec mode is enabled in Sifoon. Speed Boost cannot be used in this mode."
-    },
     "psicash#pane-must-log-in": {
         "message": "U moet inloggen om PsiCash te gebruiken. ",
         "description": "Message shown when the user was logged in with an account and then logged out. It's telling the user that they have to log in again. The word 'PsiCash' must not be translated or transliterated."
-    },
-    "psicash#pane-create-new-account": {
-        "message": "Maak een nieuw Account",
-        "description": "Text on button that user can click to create a new account (opens an external web page)."
-    },
-    "psicash#pane-speed-port-limits-head": {
-        "message": "Snelheids- en poortlimieten",
-        "description": "Heading for an information section explaining that there are port and speed restrictions when the user doesn't have Speed Boost active."
-    },
-    "psicash#pane-speed-port-limits-body": {
-        "message": "Zonder actieve Speed Boost is je snelheid beperkt en wordt een deel van het internetverkeer niet ondersteund. Activeer Speed Boost met PsiCash om het volledige potentieel van je Sifoon-ervaring te ontgrendelen. ",
-        "description": "Body of an information section explaining that there are port and speed restrictions when the user doesn't have Speed Boost active. The word 'PsiCash' must not be translated or transliterated. 'Speed Boost' is a reward that can be purchased with PsiCash credit. It provides unlimited network connection speed through Sifoon. Other words that can be used to help with translation are: 'turbo' (like cars), 'accelerate', 'warp speed', 'blast off', or anything that indicates a fast or unrestricted speed."
-    },
-    "psicash#pane-speed-boost-cta": {
-        "message": "Ontketen het volledige potentieel van Sifoon met Speed&nbsp;Boost! ",
-        "description": "Text encouraging the user to purchase Speed Boost. 'Unleash' can translated to something like 'unlock', 'release', 'enable', 'amplify', or generally 'make a lot better'. 'Sifoon' must not be translated/transliterated. 'Speed Boost' is a reward that can be purchased with PsiCash credit. It provides unlimited network connection speed through Sifoon. Other words that can be used to help with translation are: 'turbo' (like cars), 'accelerate', 'warp speed', 'blast off', or anything that indicates a fast or unrestricted speed."
-    },
-    "psicash#pane-need-more-psicash-header": {
-        "message": "Je hebt meer PsiCash nodig!",
-        "description": "Header for a section telling the user that they don't have enough PsiCash to buy any Speed Boost and need to buy more. The word 'PsiCash' must not be translated or transliterated."
     },
     "psicash#pane-need-more-psicash-body": {
         "message": "Om Speed Boost te activeren, moet je meer PsiCash kopen. ",
         "description": "Body of a section telling the user that they don't have enough PsiCash to buy any Speed Boost and need to buy more. The word 'PsiCash' must not be translated or transliterated. 'Speed Boost' is a reward that can be purchased with PsiCash credit. It provides unlimited network connection speed through Sifoon. Other words that can be used to help with translation are: 'turbo' (like cars), 'accelerate', 'warp speed', 'blast off', or anything that indicates a fast or unrestricted speed."
     },
+    "psicash#pane-need-more-psicash-header": {
+        "message": "Je hebt meer PsiCash nodig!",
+        "description": "Header for a section telling the user that they don't have enough PsiCash to buy any Speed Boost and need to buy more. The word 'PsiCash' must not be translated or transliterated."
+    },
     "psicash#pane-need-psicash-visit-store": {
         "message": "PsiCash nodig? Bezoek onze winkel om meer te kopen! ",
         "description": "Text encouraging the user to buy PsiCash (with real money). The word 'PsiCash' must not be translated or transliterated."
     },
-    "psicash#overlay-logging-in": {
-        "message": "Inloggen…",
-        "description": "Text on a screen shown while the user's log-in request is in progress."
+    "psicash#pane-speed-boost-cta": {
+        "message": "Ontketen het volledige potentieel van Sifoon met Speed&nbsp;Boost! ",
+        "description": "Text encouraging the user to purchase Speed Boost. 'Unleash' can translated to something like 'unlock', 'release', 'enable', 'amplify', or generally 'make a lot better'. 'Sifoon' must not be translated/transliterated. 'Speed Boost' is a reward that can be purchased with PsiCash credit. It provides unlimited network connection speed through Sifoon. Other words that can be used to help with translation are: 'turbo' (like cars), 'accelerate', 'warp speed', 'blast off', or anything that indicates a fast or unrestricted speed."
     },
-    "psicash#overlay-logging-out": {
-        "message": "Uitloggen…",
-        "description": "Text on a screen shown while the user's log-out request is in progress."
+    "psicash#pane-speed-port-limits-body": {
+        "message": "Zonder actieve Speed Boost is je snelheid beperkt en wordt een deel van het internetverkeer niet ondersteund. Activeer Speed Boost met PsiCash om het volledige potentieel van je Sifoon-ervaring te ontgrendelen. ",
+        "description": "Body of an information section explaining that there are port and speed restrictions when the user doesn't have Speed Boost active. The word 'PsiCash' must not be translated or transliterated. 'Speed Boost' is a reward that can be purchased with PsiCash credit. It provides unlimited network connection speed through Sifoon. Other words that can be used to help with translation are: 'turbo' (like cars), 'accelerate', 'warp speed', 'blast off', or anything that indicates a fast or unrestricted speed."
     },
-    "psicash#modal-create-psicash-account-header": {
-        "message": "Maak een PsiCash-account",
-        "description": "Header of a modal dialog that appears when the user tries to buy PsiCash with real money but doens't have an account. The word 'PsiCash' must not be translated or transliterated."
-    },
-    "psicash#modal-create-psicash-account-body": {
-        "message": "We raden u ten zeerste aan om een PsiCash-account aan te maken voordat u PsiCash koopt. Met een account kunt u uw saldo tussen apparaten delen en uw aankopen beschermen. ",
-        "description": "Body of a modal dialog that appears when the user tries to buy PsiCash with real money but doens't have an account. The word 'PsiCash' must not be translated or transliterated."
-    },
-    "psicash#modal-create-psicash-account-create-button": {
-        "message": "Account aanmaken of inloggen",
-        "description": "Button in the modal dialog encouraging users to create an account when they attempt to buy PsiCash with real money without one. If they click this button, they will be taken to a screen where they can create an account or log into an existing one."
-    },
-    "psicash#modal-create-psicash-account-continue-button": {
-        "message": "Doorgaan zonder account",
-        "description": "Button in the modal dialog encouraging users to create an account when they attempt to buy PsiCash with real money without one. If they click this button, they will continue on to the PsiCash store."
-    },
-    "psicash#modal-psicash-logout-offline-header": {
-        "message": "PsiCash-account uitloggen",
-        "description": "Header of a modal dialog that appears when the user tries to log out of their PsiCash account. The word 'PsiCash' must not be translated or transliterated."
-    },
-    "psicash#modal-psicash-logout-offline-body": {
-        "message": "Als u verbonden bent met het Sifoon-netwerk, kunt u veiliger PsiCash uitloggen. Wil je verbinding maken voordat je uitlogt? ",
-        "description": "Body of a modal dialog that appears when the user tries to log out of thier PsiCash account while not currently connected to the Sifoon network. We don't allow PsiCash network requests when not connected, so only an inferior localy-only logout is available. 'Sifoon' must not be translated/transliterated. The word 'PsiCash' must not be translated or transliterated."
-    },
-    "psicash#modal-psicash-logout-offline-connect-button": {
-        "message": "Verbinden",
-        "description": "Button in the modal dialog shown to users when they attempt to log out of their PsiCash account with no active Sifoon tunnel. Clicking this button will abort the logout attempt and being connecting to a Sifoon server."
-    },
-    "psicash#modal-psicash-logout-offline-logout-anyway-button": {
-        "message": "Log toch uit",
-        "description": "Button in the modal dialog shown to users when they attempt to log out of their PsiCash account with no active Sifoon tunnel. Clicking this button will cause a local-only logout to be performed."
-    },
-    "psicash#modal-psicash-logout-offline-cancel-button": {
-        "message": "Annuleren",
-        "description": "Button in the modal dialog shown to users when they attempt to log out of their PsiCash account with no active Sifoon tunnel. Clicking this button will cancel the attempt."
-    },
-    "psicash#modal-login-header": {
-        "message": "PsiCash Account",
-        "description": "Header of modal dialog in which the user can log in to an existing account or click a link to create a new one. The word 'PsiCash' must not be translated or transliterated."
-    },
-    "psicash#modal-login-body": {
-        "message": "<a class=\"js-psicash-account-signup\" href=\"#\">Maak een nieuw account</a> of onderstaand inloggen.",
-        "description": "Body of modal dialog in which the user can log in to an existing account or click a link to create a new one."
-    },
-    "psicash#modal-login-username-field": {
-        "message": "PsiCash username",
-        "description": "Label for a username field in the PsiCash account login modal dialog."
-    },
-    "psicash#modal-login-password-field": {
-        "message": "Wachtwoord",
-        "description": "Label for a password field in the PsiCash account login modal dialog."
-    },
-    "psicash#modal-login-forgot-password-link": {
-        "message": "Forgot your password or username?",
-        "description": "Link for text in the PsiCash account login modal dialog. Clicking it will bring the user to a page where they can recover their account."
-    },
-    "psicash#modal-login-submit-button": {
-        "message": "Verzenden",
-        "description": "Text on the submit button in the PsiCash account login modal dialog."
-    },
-    "psicash#modal-login-cancel-button": {
-        "message": "Annuleren",
-        "description": "Text on the cancel button in the PsiCash account login modal dialog."
-    },
-    "psicash#alert#buyspeedboost-purchase-complete": {
-        "message": "Snelheidsboost begonnen!",
-        "description": "A non-modal alert shown when a new Speed Boost has been activated. 'Speed Boost' is a reward that can be purchased with PsiCash credit. It provides unlimited network connection speed through Sifoon. Other words that can be used to help with translation are: 'turbo' (like cars), 'accelerate', 'warp speed', 'blast off', or anything that indicates a fast or unrestricted speed."
-    },
-    "psicash#modal-logout-header": {
-        "message": "PsiCash-account uitloggen",
-        "description": "Header of modal dialog shown when the user attempts to log out of their PsiCash account and a message results. 'PsiCash' must not be translated or transliterated."
-    },
-    "psicash#modal-logout-error-body": {
-        "message": "Uw uitlogpoging is onverwacht mislukt. Probeer de applicatie opnieuw te starten. Als dat niet werkt, moet u <a href=\"https://psiphon3.com/faq.html#clear-windows-data\">wis uw lokale opslag</a>.",
-        "description": "Body of modal dialog shown when the user attempts to log out of their PsiCash account and an unexpected error occurs. Please don't modify the link URL."
-    },
-    "positive-value-indicator": {
-        "message": "+%d",
-        "description": "This is used to indicate when a numeric value is positive -- like '+500'. This will show when a number is going to be increased by another number. '%d' is a placeholder for an integer for decimal value."
-    },
-    "psicash#mustconnect-modal#title": {
-        "message": "Sifoon-verbinding vereist",
-        "description": "Title text of a modal dialog shown when the user tries to use (spend, buy, etc.) PsiCash, if they not currently connected. 'Sifoon' must not be translated/transliterated."
-    },
-    "psicash#mustconnect-modal#body": {
-        "message": "Om PsiCash te gebruiken, moet u verbonden zijn met het Sifoon-netwerk.",
-        "description": "Body text of a modal dialog shown when the user tries to use (spend, buy, etc.) PsiCash, if they not currently connected. 'Use' here means buy, spend, or otherwise interact with. 'Sifoon' must not be translated/transliterated. 'PsiCash' must not be translated/transliterated."
-    },
-    "psicash#init-error-title": {
-        "message": "PsiCash-initialisatiefout",
-        "description": "Title of a modal dialog shown when the PsiCash library fails to initialize. The word 'PsiCash' must not be translated or transliterated."
-    },
-    "psicash#init-error-body-unrecovered": {
-        "message": "PsiCash kan niet worden geïnitialiseerd. Dit komt waarschijnlijk door een probleem met het bestandssysteem, zoals onvoldoende schijfruimte. Je saldo en andere status zijn verloren. PsiCash zal niet bruikbaar zijn. U kunt proberen de toepassing opnieuw te starten om het probleem te verhelpen.",
-        "description": "Body text of a modal dialog shown when the PsiCash library fails to initialize. The word 'PsiCash' must not be translated or transliterated."
-    },
-    "psicash#init-error-body-recovered": {
-        "message": "PsiCash kan niet worden geïnitialiseerd. Dit komt waarschijnlijk door een probleem met het bestandssysteem, zoals onvoldoende schijfruimte. Uw saldo en andere status zijn gereset.",
-        "description": "Body text of a modal dialog shown when the PsiCash library fails to initialize. The word 'PsiCash' must not be translated or transliterated."
+    "psicash#pane-speed-port-limits-head": {
+        "message": "Snelheids- en poortlimieten",
+        "description": "Heading for an information section explaining that there are port and speed restrictions when the user doesn't have Speed Boost active."
     },
     "psicash#sifoon-speed": {
         "message": "Sifoon<br>snelheid",
@@ -955,69 +500,121 @@
         "message": "Sifoon Snelheid",
         "description": "Text on a badge next to an image or gauge that will indicate 'fast' or 'slow'. This is the current Sifoon tunnel speed limit. Speed Boost is required in order to get the fastest speed. The word 'Sifoon' must not be translated or transliterated. The word 'Sifoon' can be dropped if necessary to get a meaning like 'speed limit'. This text must be kept short."
     },
-    "psicash#corner-logged-out": {
-        "message": "U bent uitgelogd bij PsiCash",
-        "description": "Message shown to the user when they have a PsiCash account, but they are logged out. The word 'PsiCash' must not be translated or transliterated."
+    "psicash#transaction-ExistingTransaction-body": {
+        "message": "U hebt een bestaande PsiCash-aankoop van dit type. Een andere aankoop van dit type is niet toegestaan totdat de vorige verloopt. Uw PsiCash-status wordt nu vernieuwd.",
+        "description": "Body text of a modal dialog shown when a PsiCash transaction (like Speed Boost purchase) fails. The word 'PsiCash' must not be translated or transliterated."
     },
-    "psicash#more-ellipsis": {
-        "message": "Meer…",
-        "description": "Label for a button that leads to more Speed Boost purchase choices. The translation can be like 'More options' or 'More choices' or 'See more'. Only use an ellipsis if it makes sense in your language."
+    "psicash#transaction-ExistingTransaction-title": {
+        "message": "PsiCash-aankoop bestaat al",
+        "description": "Title of a modal dialog shown when a PsiCash transaction (like Speed Boost purchase) fails. The word 'PsiCash' must not be translated or transliterated."
     },
-    "psicash#login#failure-modal-title": {
-        "message": "Inloggen bij PsiCash mislukt",
-        "description": "Title of modal dialog shown when the PsiCash account login attempt fails for some reason. Text within the modal will explain why. The word 'PsiCash' must not be translated or transliterated."
+    "psicash#transaction-InsufficientBalance-body": {
+        "message": "U hebt niet voldoende PsiCash-saldo voor deze aankoop.",
+        "description": "Body text of a modal dialog shown when a PsiCash transaction (like Speed Boost purchase) fails. The user doesn't have enough PsiCash to make the attempted purchase. The word 'PsiCash' must not be translated or transliterated."
     },
-    "psicash#login#catastrophic-error-body": {
-        "message": "Uw PsiCash-inlogpoging is onverwacht mislukt. ",
-        "description": "Body text of a modal dialog shown when a PsiCash login fails without a specific reason. The word 'PsiCash' must not be translated or transliterated."
+    "psicash#transaction-InsufficientBalance-title": {
+        "message": "Onvoldoende PsiCash-saldo",
+        "description": "Title of a modal dialog shown when a PsiCash transaction (like Speed Boost purchase) fails. The user doesn't have enough PsiCash to make the attempted purchase. The word 'PsiCash' must not be translated or transliterated."
     },
-    "psicash#login#invalid-credentials-body": {
-        "message": "De gebruikersnaam of wachtwoord onjuist was.",
-        "description": "Body text of a modal dialog shown when a PsiCash login fails due to bad username or password."
+    "psicash#transaction-InvalidTokens-body-account": {
+        "message": "Your PsiCash login has expired. Log into your account and try again.",
+        "description": "Body text of a modal dialog shown when a PsiCash transaction (like Speed Boost purchase) fails. The word 'PsiCash' must not be translated or transliterated."
     },
-    "psicash#login#invalid-credentials-body-multiple-attempts": {
-        "message": "Would you instead like to <a class=\"js-psicash-account-signup\" href=\"#\">create an account</a> or <a class=\"js-psicash-forgot-account\" href=\"#\">recover your account</a>?",
-        "description": "Body text of a modal dialog shown when a PsiCash login fails due to bad username or password."
+    "psicash#transaction-InvalidTokens-body-tracker": {
+        "message": "Uw PsiCash-status is ongeldig. Probeer de applicatie opnieuw te starten. Als dat niet werkt, moet u <a href=\"https://psiphon3.com/faq.html#clear-windows-data\">uw lokale opslag wissen</a>. ",
+        "description": "Body text of a modal dialog shown when a PsiCash transaction (like Speed Boost purchase) fails. This error is extremely rare and should only occur if there's data corruption. The word 'PsiCash' must not be translated or transliterated."
     },
-    "psicash#login#server-error-body": {
-        "message": "De PsiCash-server reageerde met een fout tijdens het inloggen. Probeer het later opnieuw.",
-        "description": "Body text of a modal dialog shown when a PsiCash account login fails due to a server error. The word 'PsiCash' must not be translated or transliterated."
+    "psicash#transaction-InvalidTokens-title-account": {
+        "message": "PsiCash login verlopen",
+        "description": "Title of a modal dialog shown when a PsiCash transaction (like Speed Boost purchase) fails. The word 'PsiCash' must not be translated or transliterated."
     },
-    "psicash#login#badrequest-error-body": {
-        "message": "De PsiCash-server gaf aan dat het inlogverzoek ongeldig was. Voer uw inloggegevens opnieuw in en probeer het opnieuw. ",
-        "description": "Body text of a modal dialog shown when a PsiCash account login fails due to a 'bad request' error. The word 'PsiCash' must not be translated or transliterated."
+    "psicash#transaction-InvalidTokens-title-tracker": {
+        "message": "Ongeldige PsiCash-status",
+        "description": "Title of a modal dialog shown when a PsiCash transaction (like Speed Boost purchase) fails. This error is extremely rare and should only occur if there's data corruption. The word 'PsiCash' must not be translated or transliterated."
     },
-    "psicash#login#success-modal-title": {
-        "message": "PsiCash Inloggen Succes",
-        "description": "Title of modal dialog shown when the PsiCash account login attempt succeeds, if additional information needs to be conveyed. The word 'PsiCash' must not be translated or transliterated."
+    "psicash#transaction-ServerError-body": {
+        "message": "De PsiCash-server reageerde met een fout tijdens een poging om de aankoop te doen. Probeer uw aankoop later opnieuw.",
+        "description": "Body text of a modal dialog shown when a PsiCash transaction (like Speed Boost purchase) fails. The word 'PsiCash' must not be translated or transliterated."
     },
-    "psicash#login#last-tracker-merge-body": {
-        "message": "U bent ingelogd op uw PsiCash-account. Het bestaande saldo van dit apparaat is overgezet naar uw account, maar dit is de laatste keer dat een saldo wordt samengevoegd. ",
-        "description": "Body text of a modal dialog shown when a PsiCash login succeeds. There is a fixed number of times that a user can merge a pre-account balance into a PsiCash account. This message indicates that the user has hit that limit and the merge that occurred is the last one allowed. The word 'PsiCash' must not be translated or transliterated."
+    "psicash#transaction-ServerError-title": {
+        "message": "PsiCash-serverfout",
+        "description": "Title of a modal dialog shown when a PsiCash transaction (like Speed Boost purchase) fails. The word 'PsiCash' must not be translated or transliterated."
     },
-    "psicash#alert#tokens-expired": {
-        "message": "PsiCash login verlopen. Gelieve opnieuw in te loggen.",
-        "description": "An alert shown when the user's PsiCash account tokens expire. This is a normal occurrence (once per year), and the user needs to log into their PsiCash account again to continue to use it. The word 'PsiCash' must not be translated or transliterated."
+    "psicash#transaction-TransactionAmountMismatch-body": {
+        "message": "De aankoopprijzen van PsiCash zijn verouderd. Uw PsiCash staat zal nu worden vernieuwd.",
+        "description": "Body text of a modal dialog shown when a PsiCash transaction (like Speed Boost purchase) fails. The word 'PsiCash' must not be translated or transliterated."
     },
-    "psicash#alert#logged-out": {
-        "message": "PsiCash-account uitloggen voltooid.",
-        "description": "An alert shown when the user logs out of their PsiCash account. The word 'PsiCash' must not be translated or transliterated."
+    "psicash#transaction-TransactionAmountMismatch-title": {
+        "message": "PsiCash-aankoopprijs komt niet overeen",
+        "description": "Title of a modal dialog shown when a PsiCash transaction (like Speed Boost purchase) fails. The word 'PsiCash' must not be translated or transliterated."
     },
-    "notice#disallowed-traffic-alert-title": {
-        "message": "Upgrade uw Sifoon-verbinding ",
-        "description": "Title of modal error message shown to user when Sifoon disallows some non-web internet traffic. The user will be told to 'upgrade' their connection with Speed Boost (giving more speed and app compatibility). The word 'Sifoon' must not be translated or transliterated."
+    "psicash#transaction-TransactionTypeNotFound-body": {
+        "message": "Het product dat u probeert te kopen bestaat niet meer. Mogelijk moet u de toepassing bijwerken of opnieuw installeren.",
+        "description": "Body text of a modal dialog shown when a PsiCash transaction (like Speed Boost purchase) fails. The word 'PsiCash' must not be translated or transliterated."
     },
-    "notice#disallowed-traffic-alert-body": {
-        "message": "<p>Apps werken niet?</p>\n<p>Sommig internetverkeer wordt niet ondersteund zonder een actieve Speed Boost. Activeer Speed Boost met PsiCash om het volledige potentieel van uw Sifoon-ervaring te ontgrendelen.</p>",
-        "description": "Body text of modal error message shown to user when Sifoon disallows some non-web internet traffic. The user needs to purchase Speed Boost in order to full app compatibilty and more speed. The words 'Sifoon' and 'PsiCash' must not be translated or transliterated. 'Speed Boost' is a reward that can be purchased with PsiCash credit. It provides unlimited network connection speed through Sifoon. Other words that can be used to help with translation are: 'turbo' (like cars), 'accelerate', 'warp speed', 'blast off', or anything that indicates a fast or unrestricted speed."
+    "psicash#transaction-TransactionTypeNotFound-title": {
+        "message": "Aankooptype PsiCash niet gevonden",
+        "description": "Title of a modal dialog shown when a PsiCash transaction (like Speed Boost purchase) fails. The word 'PsiCash' must not be translated or transliterated."
     },
-    "appbackend#disallowed-traffic-notification-title": {
-        "message": "Apps werken niet?",
-        "description": "Appears in the notification area balloon when Sifoon disallows some non-web internet traffic. The user needs to purchase Speed Boost in order to full app compatibilty and more speed."
+    "psicash#transaction-error-body": {
+        "message": "Uw PsiCash-transactiepoging is onverwacht mislukt.",
+        "description": "Body text of a modal dialog shown when a PsiCash transaction (like Speed Boost purchase) fails. The word 'PsiCash' must not be translated or transliterated."
     },
-    "appbackend#disallowed-traffic-notification-body": {
-        "message": "Activeer Speed Boost om het volledige potentieel van de Sifoon-ervaring te ontgrendelen.",
-        "description": "Appears in the notification area balloon when Sifoon disallows some non-web internet traffic. The user needs to purchase Speed Boost in order to full app compatibilty and more speed. 'Speed Boost' is a reward that can be purchased with PsiCash credit. It provides unlimited network connection speed through Sifoon. Other words that can be used to help with translation are: 'turbo' (like cars), 'accelerate', 'warp speed', 'blast off', or anything that indicates a fast or unrestricted speed."
+    "psicash#transaction-error-title": {
+        "message": "PsiCash-transactiefout",
+        "description": "Title of a modal dialog shown when a PsiCash transaction (like Speed Boost purchase) fails. The word 'PsiCash' must not be translated or transliterated."
+    },
+    "psicash#ui-buyingboost-buttontext": {
+        "message": "Starten Snelheid&nbsp;Boost!",
+        "description": "Label for a disabled button. The user has clicked the button in order to buy an hour of Speed Boost, and now the purchase is completing and Speed Boost is activating. You may use `&nbsp;`, `<br>`, `<wbr>`, `&shy;`, etc. to control word wrap. 'Speed Boost' is a reward that can be purchased with PsiCash credit. It provides unlimited network connection speed through Sifoon. Other words that can be used to help with translation are: 'turbo' (like cars), 'accelerate', 'warp speed', 'blast off', or anything that indicates a fast or unrestricted speed."
+    },
+    "psicash#ui-buymorepsi": {
+        "message": "Koop meer PsiCash",
+        "description": "Label for a button/link that opens a store web page were users can spend money to buy PsiCash. At this point, the user already has some PsiCash, but may wish to buy more. The word 'PsiCash' must not be translated or transliterated."
+    },
+    "psicash#ui-buypsi": {
+        "message": "Koop PsiCash",
+        "description": "Label for a button/link that opens a store web page were users can spend money to buy PsiCash. At this point, the user has no PsiCash at all. The word 'PsiCash' must not be translated or transliterated."
+    },
+    "psicash#ui-nsfbalance-buttontext": {
+        "message": "Nodig voor Snelheid&nbsp;Boost",
+        "description": "Label on a disabled button, followed by a value in PsiCash indicating how much it costs to buy an hour of Speed Boost. When the user has enough PsiCash, the button will be enabled and the text will change. You may use `&nbsp;`, `<br>`, `<wbr>`, `&shy;`, etc. to control word wrap. 'Speed Boost' is a reward that can be purchased with PsiCash credit. It provides unlimited network connection speed through Sifoon. Other words that can be used to help with translation are: 'turbo' (like cars), 'accelerate', 'warp speed', 'blast off', or anything that indicates a fast or unrestricted speed."
+    },
+    "psicash#ui-speedboost-active": {
+        "message": "Speed&nbsp;Boost actief voor %s",
+        "description": "When the user has Speed Boost active, this shows them how much time they have remaining. '%s' is like 'an hour' or '30 minutes' (localized). This text will be shown on a narrow button that should have at most 3 lines. You may use `&nbsp;`, `<br>`, `<wbr>`, `&shy;`, etc. to control word wrap. 'Speed Boost' is a reward that can be purchased with PsiCash credit. It provides unlimited network connection speed through Sifoon. Other words that can be used to help with translation are: 'turbo' (like cars), 'accelerate', 'warp speed', 'blast off', or anything that indicates a fast or unrestricted speed."
+    },
+    "psicash#ui-speedboost-button": {
+        "message": "Speed Boost",
+        "description": "Label on a button. The text is followed by a value in PsiCash indicating how much it costs to buy an hour of Speed Boost. Clicking the button will buy Speed Boost. 'Speed Boost' is a reward that can be purchased with PsiCash credit. It provides unlimited network connection speed through Sifoon. Other words that can be used to help with translation are: 'turbo' (like cars), 'accelerate', 'warp speed', 'blast off', or anything that indicates a fast or unrestricted speed."
+    },
+    "settings#apply-button": {
+        "message": "Wijzigingen Toepassen",
+        "description": "Text on the button that applies (saves and makes active) the changes that the user has made to their settings. It is only enabled when changes have been made. The text is effectively an abbreviation of 'Apply the changes you have made to your settings'."
+    },
+    "settings#applying-message": {
+        "message": "Opnieuw verbinding om uw instellingen toe te passen.",
+        "description": "Pop-up message shown to users after they have changed their settings and a reconnection is happening to apply the new settings."
+    },
+    "settings#disable-timeouts#enable-label": {
+        "message": "Uitschakelen time-outs voor trage netwerken",
+        "description": "The label on the checkbox that enables 'Disable Timeouts' mode."
+    },
+    "settings#disable-timeouts#heading": {
+        "message": "Uitschakelen Time-outs Voor Trage Netwerken",
+        "description": "Settings section heading. If the user clicks this, the 'Disable Timeouts for Slow Networks' section will expand and can be edited. If 'disable timeouts' is enabled, network timeouts between the Sifoon client and server will be disabled."
+    },
+    "settings#disable-timeouts#help-text": {
+        "message": "Indien ingeschakeld, de communicatie met de Sifoon server geen time-out.",
+        "description": "Text explaining to the user what the 'Disable Timeouts' setting does if enabled. The word 'Sifoon' must not be translated or transliterated."
+    },
+    "settings#disable-timeouts#reason": {
+        "message": "Als u dit inschakelt voor een zeer trage netwerkverbinding, is de kans kleiner dat u onverwachte verbroken verbindingen ervaart.",
+        "description": "Help text in the 'Disable Timeouts' settings section explaining to the user why they might want to modify (enable) the setting."
+    },
+    "settings#disallowed-traffic-alert#disable-label": {
+        "message": "Uitschakelen niet toegestaan dataverkeer waarschuwingen",
+        "description": "The label on the checkbox that disables the 'Disallowed Traffic Alert'."
     },
     "settings#disallowed-traffic-alert#heading": {
         "message": "Niet toegestaan dataverkeer Waarschuwing",
@@ -1027,29 +624,308 @@
         "message": "Sommige soorten internetverkeer worden niet ondersteund zonder een actieve Speed Boost. Als dergelijk verkeer niet is toegestaan, wordt er een waarschuwing weergegeven. (Voor het opnieuw inschakelen is een nieuwe verbinding vereist.)",
         "description": "Text explaining to the user what the 'Disallowed Traffic Alert' setting does if enabled. 'Speed Boost' is a reward that can be purchased with PsiCash credit. It provides unlimited network connection speed through Sifoon. Other words that can be used to help with translation are: 'turbo' (like cars), 'accelerate', 'warp speed', 'blast off', or anything that indicates a fast or unrestricted speed."
     },
-    "settings#disallowed-traffic-alert#disable-label": {
-        "message": "Uitschakelen niet toegestaan dataverkeer waarschuwingen",
-        "description": "The label on the checkbox that disables the 'Disallowed Traffic Alert'."
+    "settings#egress-region#default": {
+        "message": "Choosing the default <strong>“Google Scripts”</strong> option allows Sifoon to automatically choose a server.",
+        "description": "Help text for the default connection mode."
     },
-    "ui#alert#url-copied-to-clipboard": {
-        "message": "URL gekopieerd naar klembord.<br> Als de browser niet kan worden geopend, plakt u de URL in de adresbalk van de browser. ",
-        "description": "Sometimes when the Sifoon UI tries to open an external URL in the browser, it fails to open. This message indicates to the user that URL has been copied to the Windows system clipboard and is available for pasting into a browser. `<br>` may be used to split the message over two lines to ensure the alert doesn't take too much horizontal space."
+    "settings#egress-region#description": {
+        "message": "Choose the connection mode that works best for your network.",
+        "description": "Description of the Connection Mode section."
     },
-    "notice#sifoonui-fileerror-error-title": {
-        "message": "File Access Error",
-        "description": "Title of modal error message shown to user when Sifoon cannot read/write/delete a file that it needs to access in order to function properly."
+    "settings#egress-region#error-modal-body-http": {
+        "message": "Je hebt Sifoon geconfigureerd om een server in een specifieke regio te gebruiken.<br>\nDie regio is echter niet meer beschikbaar.<br>\nU moet een nieuwe regio kiezen of overschakelen naar de standaardkeuze \"Beste prestaties\".",
+        "description": "Descriptive body text of the error modal dialog shown when it is detected that the user has an invalid 'Sifoon Server Region' currently configured. The word 'Sifoon' must not be translated or transliterated."
     },
-    "notice#sifoonui-fileerror-error-body": {
-        "message": "<p>Sifoon cannot access a file it needs in order to work properly.</p>\n<p>Close the Sifoon application, delete the file listed below, and try running Sifoon again.</p>",
-        "description": "Body text of modal error message shown to user when Sifoon cannot read/write/delete a file that it needs to access in order to function properly. If this occurs, the user cannot connect and must take manual action to fix it. The word 'Sifoon' must not be translated or transliterated."
+    "settings#egress-region#error-modal-title": {
+        "message": "Regio Server Niet Beschikbaar",
+        "description": "Title text of the error modal dialog shown when it is detected that the user has an invalid 'Sifoon Server Region' currently configured."
     },
-    "notice#sifoonui-fileerror-detail-preamble": {
-        "message": "Filename and error message:",
-        "description": "Preamble text before technical details displayed in a modal error message shown to user when Sifoon cannot read/write/delete a file that it needs to access in order to function properly."
+    "settings#egress-region#heading": {
+        "message": "Verbindingsmodus",
+        "description": "Settings section heading. In this section the user can choose the connection mode: Google Scripts, Domain Fronting, or a specific region."
     },
-    "banner#sponsored-by": {
-        "message": "Gesponsord door",
-        "description": "Text appears above the sponsor banner image. So it kind of reads 'Sponsored by BBC' (for example)."
+    "settings#egress-region#invalid-error-msg": {
+        "message": "Choose a valid connection mode.",
+        "description": "Error message shown when an invalid connection mode is selected."
+    },
+    "settings#egress-region#select-ae": {
+        "message": "Verenigde Arabische Emiraten",
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in United Arab Emirates will be used."
+    },
+    "settings#egress-region#select-ar": {
+        "message": "Argentinië",
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Argentina will be used."
+    },
+    "settings#egress-region#select-at": {
+        "message": "Oostenrijk",
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Austria will be used."
+    },
+    "settings#egress-region#select-au": {
+        "message": "Australië",
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Australia will be used."
+    },
+    "settings#egress-region#select-be": {
+        "message": "Belgie",
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Belgium will be used."
+    },
+    "settings#egress-region#select-best-performance": {
+        "message": "Google Scripts",
+        "description": "The default connection mode using Google Apps Script."
+    },
+    "settings#egress-region#select-bg": {
+        "message": "Bulgarije",
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Bulgaria will be used."
+    },
+    "settings#egress-region#select-br": {
+        "message": "Brazilië",
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Brazil will be used."
+    },
+    "settings#egress-region#select-ca": {
+        "message": "Canada",
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in the Canada will be used."
+    },
+    "settings#egress-region#select-ch": {
+        "message": "Zwitserland",
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Switzerland will be used."
+    },
+    "settings#egress-region#select-cl": {
+        "message": "Chili",
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Chile will be used."
+    },
+    "settings#egress-region#select-co": {
+        "message": "Colombia",
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Colombia will be used."
+    },
+    "settings#egress-region#select-cz": {
+        "message": "Tsjechische Republiek",
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Czech Republic will be used."
+    },
+    "settings#egress-region#select-de": {
+        "message": "Duitsland",
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Germany will be used."
+    },
+    "settings#egress-region#select-df": {
+        "message": "Domain Fronting",
+        "description": "Connection mode using SNI repacking and direct IP redirection."
+    },
+    "settings#egress-region#select-dk": {
+        "message": "Denemarken",
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Denmark will be used."
+    },
+    "settings#egress-region#select-ee": {
+        "message": "Estland",
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Estonia will be used."
+    },
+    "settings#egress-region#select-es": {
+        "message": "Spanje",
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Spain will be used."
+    },
+    "settings#egress-region#select-fi": {
+        "message": "Finland",
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Finland will be used."
+    },
+    "settings#egress-region#select-fr": {
+        "message": "Frankrijk",
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in France will be used."
+    },
+    "settings#egress-region#select-gb": {
+        "message": "Verenigd Koningkrijk",
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in the UK will be used."
+    },
+    "settings#egress-region#select-gr": {
+        "message": "Griekenland",
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Greece will be used."
+    },
+    "settings#egress-region#select-hk": {
+        "message": "Hong Kong",
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Hong Kong will be used."
+    },
+    "settings#egress-region#select-hr": {
+        "message": "Kroatië",
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Croatia will be used."
+    },
+    "settings#egress-region#select-hu": {
+        "message": "Hongarije",
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Hungary will be used."
+    },
+    "settings#egress-region#select-id": {
+        "message": "Indonesië",
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Indonesia will be used."
+    },
+    "settings#egress-region#select-ie": {
+        "message": "Ierland",
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Ireland will be used."
+    },
+    "settings#egress-region#select-in": {
+        "message": "India",
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in India will be used."
+    },
+    "settings#egress-region#select-is": {
+        "message": "Ijsland",
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Iceland will be used."
+    },
+    "settings#egress-region#select-it": {
+        "message": "Italië",
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Italy will be used."
+    },
+    "settings#egress-region#select-jp": {
+        "message": "Japan",
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Japan will be used."
+    },
+    "settings#egress-region#select-ke": {
+        "message": "Kenya",
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Kenya will be used."
+    },
+    "settings#egress-region#select-kr": {
+        "message": "Korea",
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Korea will be used."
+    },
+    "settings#egress-region#select-lt": {
+        "message": "Litouwen",
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Lithuania will be used."
+    },
+    "settings#egress-region#select-lv": {
+        "message": "Letland",
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Latvia will be used."
+    },
+    "settings#egress-region#select-mx": {
+        "message": "Mexico",
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Mexico will be used."
+    },
+    "settings#egress-region#select-my": {
+        "message": "Malaysië",
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Malaysia will be used."
+    },
+    "settings#egress-region#select-nl": {
+        "message": "Nederland",
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in the Netherlands will be used."
+    },
+    "settings#egress-region#select-no": {
+        "message": "Noorwegen",
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Norway will be used."
+    },
+    "settings#egress-region#select-nz": {
+        "message": "Nieuw Zeeland",
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in New Zealand will be used."
+    },
+    "settings#egress-region#select-pl": {
+        "message": "Polen",
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Sweden will be used."
+    },
+    "settings#egress-region#select-pt": {
+        "message": "Portugal",
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Portugal will be used."
+    },
+    "settings#egress-region#select-ro": {
+        "message": "Roemenië",
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Romania will be used."
+    },
+    "settings#egress-region#select-rs": {
+        "message": "Servië",
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Serbia will be used."
+    },
+    "settings#egress-region#select-se": {
+        "message": "Zweden",
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Sweden will be used."
+    },
+    "settings#egress-region#select-sg": {
+        "message": "Singapore",
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Singapore will be used."
+    },
+    "settings#egress-region#select-sk": {
+        "message": "Slovakije",
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Slovakia will be used."
+    },
+    "settings#egress-region#select-tw": {
+        "message": "Taiwan",
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Taiwan will be used."
+    },
+    "settings#egress-region#select-ua": {
+        "message": "Oekraine",
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in Ukraine will be used."
+    },
+    "settings#egress-region#select-us": {
+        "message": "Verenigde Staten",
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in the United States will be used."
+    },
+    "settings#egress-region#select-za": {
+        "message": "Zuidafrika",
+        "description": "One of the choices in the 'Sifoon Server Region' combo box. If selected, a Sifoon server in South Africa will be used."
+    },
+    "settings#enable-cloudflare-worker": {
+        "message": "Enable Cloudflare Worker Support",
+        "description": "Label for the 'Enable Cloudflare Worker Support' checkbox in Google Script settings."
+    },
+    "settings#enable-https-support": {
+        "message": "Enable HTTPS Support",
+        "description": "Label for the 'Enable HTTPS Support' checkbox in Google Script settings."
+    },
+    "settings#error-alert": {
+        "message": "<strong>Fout!</strong> A.u.b Corrigeer onjuiste waarden alvorens verder te gaan.",
+        "description": "This alert is shown to the user if they enter incorrect values into one or more of the settings fields."
+    },
+    "settings#error-modal#body": {
+        "message": "Er zijn fouten in de instellingen van je waarden. Gelieve te corrigeren alvorens verder te gaan.",
+        "description": "This modal dialog box is shown when the user tries to save their settings, but there is an error in the values they have entered. This body is the title of the modal box."
+    },
+    "settings#error-modal#title": {
+        "message": "Instellings Fout",
+        "description": "This modal dialog box is shown when the user tries to save their settings, but there is an error in the values they have entered. This string is the title of the modal box."
+    },
+    "settings#expose-local-proxies-to-lan#enable-label": {
+        "message": "Toestaan dat andere apparaten in uw netwerk de lokale Sifoon-proxy's gebruiken",
+        "description": "Label for the setting to allow other devices on the network to use the local Sifoon proxies."
+    },
+    "settings#expose-local-proxies-to-lan#help-text": {
+        "message": "Als je andere apparaten in je netwerk hebt, zoals een smart-tv of gameconsole, kun je deze toestaan deze HTTP- en SOCKS-proxy's te gebruiken terwijl Sifoon is aangesloten. ",
+        "description": "Help text explaining the setting to allow other devices on the network to use the local Sifoon proxies. Smart TV refers to televisions that have Internet connectivity and apps that access Internet services."
+    },
+    "settings#expose-local-proxies-to-lan#hint": {
+        "message": "<strong>HINT:</strong>U moet ten minste één van de bovenstaande poortnummers opgeven om deze functie te kunnen gebruiken. De adressen van de lokale proxy's worden weergegeven in de logboeken.",
+        "description": "Helpful hint suggesting to set port numbers for the local Sifoon proxies when using the setting to allow other devices on the network to use the local Sifoon proxies."
+    },
+    "settings#google-script#heading": {
+        "message": "Google Scripts Settings",
+        "description": "Heading for Google Scripts specific settings."
+    },
+    "settings#local-proxy-ports#error-modal-body-http": {
+        "message": "<p>\nJe hebt Sifoon geconfigureerd om een specifieke lokale poort te gebruiken voor zijn HTTP proxy.<br>\nEchter, die poort blijkt al in gebruik te zijn en Sifoon kan die niet gebruiken.\n</p>\n<p>\nA.u.b verander de geconfigureerde HTTP proxy-poort waarde en probeer het opnieuw. Wij raden u aan de waarde te wissen, zodat Sifoon automatisch een beschikbare poort kan halen.\n</p>",
+        "description": "Main text in the 'Local Proxy Port Conflict' dialog box. This is shown when the conflict is with the HTTP proxy port, rather than the SOCKS proxy port. The word 'Sifoon' must not be translated or transliterated."
+    },
+    "settings#local-proxy-ports#error-modal-body-socks": {
+        "message": "<p>\nJe hebt Sifoon geconfigureerd om een specifieke lokale poort te gebruiken voor zijn SOCKS proxy.<br>\nEchter, Blijkt dat de poort al in gebruik is en Sifoon  kan die niet gebruiken.\n</p>\n<p>\nA.u.b verander de geconfigureerde SOCKS proxy-poort waarde en probeer het opnieuw. Wij raden u aan de waarde te wissen, zodat Sifoon automatisch een beschikbare poort kan halen.\n</p>",
+        "description": "Main text in the 'Local Proxy Port Conflict' dialog box. This is shown when the conflict is with the SOCKS proxy port, rather than the HTTP proxy port. The word 'Sifoon' must not be translated or transliterated."
+    },
+    "settings#local-proxy-ports#error-modal-title": {
+        "message": "Lokale Proxy Poort Conflict",
+        "description": "Title of the message box showing the error message when it is detected that the user has chosen a local proxy port (either HTTP or SOCKS) that is already in use and therefore can't be used by Sifoon."
+    },
+    "settings#local-proxy-ports#heading": {
+        "message": "Lokale Proxy Poorten",
+        "description": "Settings section heading. In this section the user can specify what network ports the local Sifoon processes should use (Sifoon uses two such ports). For most people, this should be set to automatic."
+    },
+    "settings#local-proxy-ports#http-label": {
+        "message": "HTTP/HTTPS",
+        "description": "Label for the text box where the user will enter their desired local port for the Sifoon HTTP/HTTPS process. The full term for this would be 'Desired HTTP and HTTPS local proxy port', but is shortened."
+    },
+    "settings#local-proxy-ports#leave-blank": {
+        "message": "Laat <strong>leeg</strong> voor automatische poort selectie (aanbevolen).",
+        "description": "Help text that appears above the 'Local Proxy Ports' settings. 'blank' is the default and best value, and is bolded."
+    },
+    "settings#local-proxy-ports#reason": {
+        "message": "Als u hulpmiddelen gebruik op uw computer die handmatige configuratie nodig hebben om te werken met Sifoon, wil je dat Sifoon op hetzelfde lokale poortnummers gebruik gaat maken. Als je niet heb’t een reden om poortnummers op te geven, u moet Sifoon toestaan om ze automatisch te laten kiezen om conflicten te vermijden.",
+        "description": "Help text in the 'Local Proxy Ports' settings area. This explains to the user why they might want to override the default (automatic) settings values. The word 'Sifoon' must not be translated or transliterated."
+    },
+    "settings#local-proxy-ports#socks-label": {
+        "message": "SOCKS",
+        "description": "Label for the text box where the user will enter their desired local port for the Sifoon SOCKS process. The full term for this would be 'Desired SOCKS local proxy port', but is shortened. 'SOCKS' is a proxy protocol. Any user for whom this setting is useful will know what that means."
+    },
+    "settings#local-proxy-ports#unique-error-msg": {
+        "message": "Lokale poorten moeten worden onderscheiden van elkaar.",
+        "description": "Error message that shows if the HTTP local proxy port and SOCKS local proxy port are set to a value and are the same as each other. The local ports must be different from each other. Or one or both of the fields can be empty, which means 'automatic selection'."
+    },
+    "settings#manual-cdn-ips#help-text": {
+        "message": "Specify manual IP addresses for CDN fronting. Supports multiple IPs per line."
     },
     "settings#manual-cdn-ips#label": {
         "message": "Custom CDN IPs"
@@ -1057,16 +933,168 @@
     "settings#manual-cdn-ips#placeholder": {
         "message": "Enter IPs, one or more per line..."
     },
-    "settings#manual-cdn-ips#help-text": {
-        "message": "Specify manual IP addresses for CDN fronting. Supports multiple IPs per line."
+    "settings#port-value-error-msg": {
+        "message": "Moet zijn tussen 1 en 65535.",
+        "description": "Error text that appears when the user enters an invalid network port number. As indicated, a valid port number must be a number between 1 and 65535, inclusive. This text is not visible until an invalid value is entered."
     },
-    "connection#tried-ips#label": {
-        "message": "Tried IPs"
+    "settings#proxy-google-ips": {
+        "message": "Proxy Google IPs",
+        "description": "Label for the 'Proxy Google IPs' checkbox in Google Script settings."
     },
-    "connection#connection-log#label": {
-        "message": "Connection Log"
+    "settings#reset-button": {
+        "message": "Standaardinstellingen",
+        "description": "Text on the button that resets the Sifoon settings values to default. This will typically be pressed if the user has configured something incorrectly and needs to get back to the default state."
     },
-    "connection#connection-log#empty": {
-        "message": "No connection attempts yet."
+    "settings#saved-message": {
+        "message": "Instellingen Opslaan.",
+        "description": "Pop-up message shown to users after they have changed their settings (but they aren't currently connected, so there's no reconnect or further action)."
+    },
+    "settings#skip-upstream-proxy#enable-label": {
+        "message": "Don't use upstream proxy",
+        "description": "Label for the checkbox to disable upstream proxy."
+    },
+    "settings#skip-upstream-proxy#heading": {
+        "message": "Disable Upstream Proxy",
+        "description": "Heading for the setting to disable upstream proxy."
+    },
+    "settings#split-tunnel#enable-label": {
+        "message": "Geen proxy websites in uw land",
+        "description": "The label on the checkbox that enables 'Split Tunnel'."
+    },
+    "settings#split-tunnel#heading": {
+        "message": "Split Tunnel",
+        "description": "Settings section heading. If the user clicks this, the 'Split Tunnel' section will expand and can be edited. If 'split tunnel' is enabled, if the user is trying to get to a website in his/her own country, they will connect to it directly, instead of through Sifoon."
+    },
+    "settings#split-tunnel#help-text": {
+        "message": "Indien ingeschakeld, worden verzoeken aan servers in uw thuisland niet getunneld via Sifoon.",
+        "description": "Text explaining to the user what the 'Split Tunnel' setting does if enabled. The word 'Sifoon' must not be translated or transliterated."
+    },
+    "settings#split-tunnel#reason": {
+        "message": "Websites in uw thuisland zijn over het algemeen niet geblokkeerd, dus als u deze optie inschakelt, krijgt u sneller toegang tot die sites en kunt u soms de kosten voor ISP-gegevensgebruik verlagen.",
+        "description": "Help text in the 'Split Tunnel' settings section explaining to the user why they might want to modify (enable) the setting."
+    },
+    "settings#split-tunnel-chinese-sites#enable-label": {
+        "message": "Don't proxy Chinese websites",
+        "description": "The label on the checkbox that enables 'Split Tunnel' for Chinese websites, regardless of what region the user is in."
+    },
+    "settings#split-tunnel-chinese-sites#note": {
+        "message": "<strong>WARNING:</strong> This feature uses data which may not always be reliable. Use caution when enabling this feature as some censored websites may be unintentionally excluded from the proxy.",
+        "description": "A note cautioning the user that this feature may result in some sites being unproxied unintentionally."
+    },
+    "settings#systray-minimize#enable-label": {
+        "message": "Minimaliseren naar het systeemvak (system tray)",
+        "description": "The label on the checkbox that enables 'Minimize to Notification Area (System Tray)'."
+    },
+    "settings#systray-minimize#heading": {
+        "message": "Minimaliseren naar de plaats (Systeemvak)",
+        "description": "Settings section heading. In this section the user can choose to enable or disable the ability for the Sifoon application window to be hidden as a notification area icon when minimized. 'Notification area' is the official term for the icons located near the clock on the Windows taskbar, but it's also often called the 'system tray' or 'systray' -- use whatever is most common in your language, and be verbose if necessary."
+    },
+    "settings#systray-minimize#help-text": {
+        "message": "Indien ingeschakeld, als deze is geminimaliseerd de toepassing venster Sifoon zal verbergen in het systeemvak (ook bekend als “systeemvak” of “statusindicatie”, bevindt zich dichtbij de klok op uw (Windows-taakbalk).",
+        "description": "Text explaining to the user what the 'Minimize to Notification Area (System Tray)' setting does if enabled. The word 'Sifoon' must not be translated or transliterated."
+    },
+    "settings#systray-minimize#reason": {
+        "message": "Minimaliceer Sifoon naar de plaats (“systeemvak”) bespaart ruimte op je taakbalk. Dit is vooral handig als je Sifoon gebruikt voor langere tijd.",
+        "description": "Help text in the 'Minimize to Systray' settings section explaining to the user why they might want to enable it. The word 'Sifoon' must not be translated or transliterated."
+    },
+    "settings#transport-mode#check-label": {
+        "message": "Gebruik L2TP/IPSec mode",
+        "description": "Label for the checkbox that allows the user to indicate that they want to use the non-default network transport mode. This mode is generally inferior for circumvention and not recommended. 'L2TP/IPSec' is the technical name for a type of virtual private network and should probably not be translated."
+    },
+    "settings#transport-mode#heading": {
+        "message": "Transport mode",
+        "description": "Settings section heading. In this section the user can choose to use an alternative connection and data transfer method -- also known as 'transport'."
+    },
+    "settings#transport-mode#help-text": {
+        "message": "Gebruik Windows L2TP/IPSec virtual netwerken. Deze mode wil tunnel al je apps, maar het nie’t leveren van obfuscatie en heeft geen krachtig censuur omzeilings mogelijkheden. Het is <strong>niet aanbevolen</strong> voor het omzeilen van de meeste firewalls.",
+        "description": "Help text for the 'Use L2TP/IPSec mode' transport selection checkbox. It gives some technical details and indicates that this mode is not recommended."
+    },
+    "settings#unapplied-changes-prompt#apply-button": {
+        "message": "Toepassen",
+        "description": "Text on a button of the modal dialog box that appears when the user has modified their changes, but has not applied the changes before trying to navigate to another tab. At that time the user is propmted with the choice to apply or discard the changes. This button will apply the changes -- that is, save the changes and make them immediately take effect. Should be read like the verb in 'Apply your changes'."
+    },
+    "settings#unapplied-changes-prompt#body": {
+        "message": "Je hebt wijzigingen aangebracht in de instellingen, maar je hebt niet de veranderingen toegepast.<br><br>Wilt u uw wijzigingen nu toepassen of afwijzen?",
+        "description": "Body text of the modal dialog box that appears when the user has modified their changes, but has not applied the changes before trying to navigate to another tab. At that time the user is propmted with the choice to apply or discard the changes."
+    },
+    "settings#unapplied-changes-prompt#discard-button": {
+        "message": "Afwijzen",
+        "description": "Text on a button of the modal dialog box that appears when the user has modified their changes, but has not applied the changes before trying to navigate to another tab. At that time the user is propmted with the choice to apply or discard the changes. This button will discard the changes -- that is, throw away the changes to the settings the user has made since viewing the settings tab.  Should be read like the verb in 'Discard your changes'."
+    },
+    "settings#unapplied-changes-prompt#title": {
+        "message": "Instellingen Gewijzigd",
+        "description": "Title of the modal dialog box that appears when the user has modified their changes, but has not applied the changes before trying to navigate to another tab. At that time the user is propmted with the choice to apply or discard the changes."
+    },
+    "settings#upstream-proxy#by-default": {
+        "message": "Als jouw computer al een proxy geconfigureerd heeft, standaard zal Sifoon dat proxy gebruiken bij het vaststellen van een tunnel. Jij kan overschrijven dat gedrag door specificeren van een proxy te gebruiken, of specificeren dat een dergelijke “upstream proxy” zal worden gebruikt.",
+        "description": "Help text indicating the default (and best) configuration and behavior for the 'Upstream Proxy' setting. It also indicates what will happen if the setting is overridden or disabled. The word 'Sifoon' must not be translated or transliterated."
+    },
+    "settings#upstream-proxy#domain-label": {
+        "message": "Domein",
+        "description": "Label for the text box where the user can set the domain for the 'upstream proxy'."
+    },
+    "settings#upstream-proxy#error-modal-body-configured": {
+        "message": "Je hebt Sifoon geconfigureert voor een “upstream proxy”.<br>\nEchter we lijken niet in staat om verbinding te maken met een Sifoon server via die proxy.<br>\nA.u.b. Corrigeer de instellingen en probeer het opnieuw.",
+        "description": "Main text in the 'Upstream Proxy Error' dialog box. This is shown when the user has directly altered these settings, and those settings are (probably) erroneous. The word 'Sifoon' must not be translated or transliterated."
+    },
+    "settings#upstream-proxy#error-modal-body-default": {
+        "message": "Sifoon is momenteel zo geconfigureerd om uw systeem proxy gebruiken als “upstream proxy”.<br>\nEchter, Lijken we niet in staat te zijn om verbinding te maken met een Sifoon server via die proxyo.<br>\nA.u.b. Inschakelen “Gebruik geen upstream proxy” en probeer opnieuw.",
+        "description": "Main text in the 'Upstream Proxy Error' dialog box. This is shown when the user has not directly altered these settings (yet), but the default is causing a problem. The word 'Sifoon' must not be translated or transliterated."
+    },
+    "settings#upstream-proxy#error-modal-title": {
+        "message": "Upstream Proxy Fout",
+        "description": "Title of the message box showing the error message when a problem is detected with the user's 'upstream proxy settings'."
+    },
+    "settings#upstream-proxy#heading": {
+        "message": "Upstream Proxy",
+        "description": "Settings section heading. In this section the user can specify network information to use an 'upstream proxy', which is a separate proxy that Sifoon will connect through to get to its own server. This is most often used by people in school or work networks that force them to connect out to the Internet through a particular server. This setting can also disable automatic upstream proxy use."
+    },
+    "settings#upstream-proxy#hostname-label": {
+        "message": "Hostnaam",
+        "description": "Label for the text box where the user can set the hostname for the 'upstream proxy'. 'Hostname' means approximately the same thing as 'server network name or identifier'."
+    },
+    "settings#upstream-proxy#password-label": {
+        "message": "Paswoord ",
+        "description": "Label for the text box where the user can set the password for the 'upstream proxy'."
+    },
+    "settings#upstream-proxy#port-label": {
+        "message": "Poort",
+        "description": "Label for the text box where the user can set the network port number for the 'upstream proxy' that they would like to use."
+    },
+    "settings#upstream-proxy#proxy-reqs": {
+        "message": "Alleen HTTP proxy's die HTTPS ondersteunen, worden toegestaan.",
+        "description": "Help text beside the upstream proxy settings indicating what type of upstream proxies can by used by Sifoon (different proxies are of different types and have different capabilities, and Sifoon has certain requirements)."
+    },
+    "settings#upstream-proxy#reason": {
+        "message": "Upstream proxies zijn soms nodig door scholen, universiteiten of bedrijven. Als uw provider u upstream proxy-instellingen heeft gegeven, kan ze vervolgens handmatig instellen om van hier verbinden te maken.",
+        "description": "Help text describing why the user might need to modify the upstream proxy settings in order to successfully connect to the Sifoon server."
+    },
+    "settings#upstream-proxy#set-hostname-error-msg": {
+        "message": "U moet een hostnaam opgeven of alle velden voor de upstream-proxy leeg laten voor automatische selectie.",
+        "description": "Error message that is shown if the user enters a value for one of the other upstream proxy fields but not for 'hostname', which is required. Alternatively, the user can leave all fields blank to allow the automatic behaviour."
+    },
+    "settings#upstream-proxy#set-username-error-msg": {
+        "message": "U moet een gebruikersnaam opgeven als u een wachtwoord of domein instelt; of laat alle authenticatievelden leeg voor geen authenticatie.",
+        "description": "Error message that is shown if the user enters a value for one of 'Password' or 'Domain', but does not provide a 'Username' -- this is not valid, as username is are required. Alternatively, the user can leave all authentication fields blank to use an upstream proxy which doesn't require authentication."
+    },
+    "settings#upstream-proxy#skip-label": {
+        "message": "Gebruik geen upstream proxy",
+        "description": "Label for the checkbox that allows the user to override the default 'upstream proxy' usage and totally disable the feature."
+    },
+    "settings#upstream-proxy#username-label": {
+        "message": "Gebruikersnaam",
+        "description": "Label for the text box where the user can set the username for the 'upstream proxy'."
+    },
+    "settings#vpn-incompatible-label": {
+        "message": "L2TP/IPSec",
+        "description": "If 'L2TP/IPSec mode' is enabled, this text shows up in a label beside the Settings sections which are incompatible with L2TP/IPSec mode. It is intended to draw the user's attention to the fact that some of the other settings have become disabled."
+    },
+    "settings#vpn-incompatible-msg": {
+        "message": "(Werkt niet met L2TP/IPSec mode.)",
+        "description": "If 'L2TP/IPSec mode' is enabled, this text is displayed under or beside settings which are incompatible with L2TP/IPSec mode and have been disabled because of it. It is intended to let the user know why the setting has been disabled."
+    },
+    "ui#alert#url-copied-to-clipboard": {
+        "message": "URL gekopieerd naar klembord.<br> Als de browser niet kan worden geopend, plakt u de URL in de adresbalk van de browser. ",
+        "description": "Sometimes when the Sifoon UI tries to open an external URL in the browser, it fails to open. This message indicates to the user that URL has been copied to the Windows system clipboard and is available for pasting into a browser. `<br>` may be used to split the message over two lines to ensure the alert doesn't take too much horizontal space."
     }
 }

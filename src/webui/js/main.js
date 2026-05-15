@@ -615,11 +615,16 @@
 
       // Update the button
       if ($activeItem) {
-        // Most of the list items have an `a` element as an immediate child, but the "Best
-        // Performance" element has its `data-i18n` attribute on a `strong` element under
+        // Most of the list items have an `a` element as an immediate child, but the "Google
+        // Scripts" and "Domain Fronting" elements have their `data-i18n` attribute on a `strong` element under
         // the `a` element.
+        var $labelElem = $activeItem.find('[data-i18n]');
+        if ($labelElem.length === 0) {
+           $labelElem = $activeItem.find('a');
+        }
+
         $('#EgressRegionCombo .btn span.flag')
-          .attr('data-i18n', $activeItem.find('[data-i18n]').data('i18n'))
+          .attr('data-i18n', $labelElem.data('i18n'))
           .attr('class', $activeItem.find('a').attr('class'))
           .text($activeItem.find('a').text());
       }

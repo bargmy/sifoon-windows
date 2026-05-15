@@ -166,31 +166,31 @@ class DomainFronter {
     }
 
     isGoogleDomain(host) {
+        if (typeof PROXY_GOOGLE_IPS !== 'undefined' && PROXY_GOOGLE_IPS) return false;
         if (!host) return false;
         const h = host.toLowerCase();
         
         // EXCLUSIONS
-        if (h.endsWith('.googlevideo.com')) return false;
-        if (h.endsWith('.gvt1.com') || h.endsWith('.gvt2.com') || h.endsWith('.gvt3.com') || h.endsWith('.gvt5.com')) return false;
+        if (h === 'googlevideo.com' || h.endsWith('.googlevideo.com')) return false;
+        if (h.match(/(^|\.)gvt[1235]\.com$/)) return false;
+        if (h === 'googleplay.com' || h.endsWith('.googleplay.com')) return false;
         if (h.includes('play.googleapis.com') && h.includes('download')) return false;
-        if (h.endsWith('.googleplay.com')) return false;
 
         // INCLUSIONS
-        const exactDomains = [
-            'google.com', 'youtube.com', 'android.com', 'blogger.com', 'chrome.com', 
-            'tensorflow.org', 'gmail.com', 'google.cn', 'google.hk', 'appspot.com',
-            'chromium.org', 'google-analytics.com', 'googletagmanager.com',
-            'doubleclick.net', 'googlesyndication.com', 'gstatic.com', 'googleapis.com'
-        ];
-        const suffixDomains = [
+        const baseDomains = [
             'google.com', 'youtube.com', 'android.com', 'blogger.com', 'blogspot.com',
+            'chrome.com', 'chromium.org', 'tensorflow.org', 'gmail.com', 'appspot.com',
             'gstatic.com', 'googleapis.com', 'googleusercontent.com', 'ggpht.com',
-            'ytimg.com', 'doubleclick.net', 'appspot.com', 'chromium.org',
-            'google.co.uk', 'google.co.jp', 'google.co.in', 'google.com.br'
+            'ytimg.com', 'doubleclick.net', 'googletagmanager.com', 'google-analytics.com',
+            'googlesyndication.com'
         ];
         
-        if (exactDomains.includes(h)) return true;
-        return suffixDomains.some(d => h === d || h.endsWith('.' + d));
+        if (baseDomains.some(d => h === d || h.endsWith('.' + d))) return true;
+
+        // International Google Domains (e.g. google.co.uk, google.co.jp, google.cn)
+        if (h.match(/(^|\.)google\.[a-z]{2,3}(\.[a-z]{2})?$/)) return true;
+
+        return false;
     }
 
     isGoogleIp(host) {
