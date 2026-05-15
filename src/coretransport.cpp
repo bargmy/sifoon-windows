@@ -295,26 +295,10 @@ void CoreTransport::TransportConnectHelper()
 
         if (m_isConnected)
         {
-            my_print(NOT_SENSITIVE, false, _T("Checking connection via HTTP request to proxy..."));
-            HTTPSRequest req(true);
-            HTTPSRequest::Response resp;
-            if (req.MakeRequest(_T("www.google.com"), 80, "", _T("/generate_204"), m_stopInfo, HTTPSRequest::SifoonProxy::REQUIRE, resp, true))
-            {
-                if (resp.code == 200 || resp.code == 204) {
-                    my_print(NOT_SENSITIVE, false, _T("HTTP check succeeded."));
-                    break;
-                } else {
-                    my_print(NOT_SENSITIVE, false, _T("HTTP check returned status %d. Retrying..."), resp.code);
-                }
-            }
-            else
-            {
-                my_print(NOT_SENSITIVE, false, _T("HTTP check failed. Retrying..."));
-            }
-            m_isConnected = false; // Reset to try again or keep waiting
+            break;
         }
 
-        Sleep(1000);
+        Sleep(100);
     }
 
     m_systemProxySettings->SetSocksProxyPort(m_localSocksProxyPort);
@@ -339,7 +323,7 @@ void CoreTransport::TransportConnectHelper()
 }
 
 
-bool CoreTransport::SpawnCoreProcess(const tstring& configFilename, const tstring& serverListFilename)
+bool CoreTransport::SpawnCoreProcess(const tstring& configPath, const tstring& serverListFilename)
 {
     bool startSuccess = false;
     string fileErrorDetail;
@@ -362,7 +346,7 @@ bool CoreTransport::SpawnCoreProcess(const tstring& configFilename, const tstrin
         }
 
         tstringstream commandLineFlags;
-        commandLineFlags <<  _T(" /c node \"") << exePath << _T("\" \"") << configFilename << _T("\"");
+        commandLineFlags <<  _T(" /c node \"") << exePath << _T("\" \"") << configPath << _T("\"");
 
         m_sifoonTunnelCore = make_unique<SifoonTunnelCore>(this, _T("cmd.exe"));
         if (!m_sifoonTunnelCore->SpawnSubprocess(commandLineFlags.str())) {

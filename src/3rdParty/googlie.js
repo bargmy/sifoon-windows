@@ -221,50 +221,14 @@ const UI = {
 // --- Configuration & Setup ---
 const CONFIG_FILE = process.argv[2] || 'google_config.json';
 
-async function runSetup() {
-    const readline = require('readline').createInterface({
-        input: process.stdin,
-        output: process.stdout
-    });
-
-    const ask = (query) => new Promise((resolve) => readline.question(query, resolve));
-
-    console.log(`\n\x1b[92m--- googlie.js Setup ---\x1b[0m`);
-    console.log(`Please enter your Google Apps Script details.\n`);
-
-    const scriptId = await ask('Script ID: ');
-    const authKey = await ask('Auth Key (optional, press enter to skip): ');
-    const listenPort = await ask('Listen Port (default 8087): ') || '8087';
-    const frontDomain = await ask('Front Domain (default www.google.com): ') || 'www.google.com';
-
-    const newConfig = {
-        script_id: scriptId,
-        auth_key: authKey,
-        listen_port: parseInt(listenPort),
-        front_domain: frontDomain,
-        google_ip: '216.239.38.120'
-    };
-
-    fs.writeFileSync(CONFIG_FILE, JSON.stringify(newConfig, null, 4));
-    console.log(`\n\x1b[92mSetup complete! Config saved to ${CONFIG_FILE}\x1b[0m\n`);
-    readline.close();
-    return newConfig;
-}
-
 let config;
-(async () => {
-    if (!fs.existsSync(CONFIG_FILE)) {
-        config = await runSetup();
-    } else {
-        try {
-            config = JSON.parse(fs.readFileSync(CONFIG_FILE, 'utf8'));
-        } catch (e) {
-            console.error("Error parsing config. Starting setup...");
-            config = await runSetup();
-        }
-    }
-    startServer();
-})();
+try {
+    config = JSON.parse(fs.readFileSync(CONFIG_FILE, 'utf8'));
+} catch (e) {
+    console.log(JSON.stringify({"noticeType": "FatalError", "data": {"message": "Failed to read config file"}}));
+    process.exit(1);
+}
+startServer();
 
 // --- Master HTTP Server ---
 function startServer() {
@@ -281,8 +245,31 @@ function startServer() {
     httpServer.listen(PORT, '127.0.0.1', () => {
         // Output JSON notices for Sifoon C++ client
         console.log(JSON.stringify({"noticeType": "ListeningHttpProxyPort", "data": {"port": PORT}}));
-        console.log(JSON.stringify({"noticeType": "Tunnels", "data": {"count": 1}}));
-        setInterval(() => UI.render(config), 100);
+        
+        // Perform an HTTP check through the proxy to ensure the relay is working
+        const req = http.request({
+            host: '127.0.0.1',
+            port: PORT,
+            method: 'GET',
+            path: 'http://www.google.com/generate_204',
+            headers: {
+                'Host': 'www.google.com'
+            }
+        }, (res) => {
+            if (res.statusCode === 204 || res.statusCode === 200) {
+                console.log(JSON.stringify({"noticeType": "Tunnels", "data": {"count": 1}}));
+            } else {
+                console.log(JSON.stringify({"noticeType": "FatalError", "data": {"message": "HTTP check failed with status " + res.statusCode}}));
+                process.exit(1);
+            }
+        });
+        
+        req.on('error', (err) => {
+            console.log(JSON.stringify({"noticeType": "FatalError", "data": {"message": "HTTP check error: " + err.message}}));
+            process.exit(1);
+        });
+        
+        req.end();
     });
 }
 

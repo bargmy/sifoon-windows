@@ -471,9 +471,10 @@ DWORD WINAPI ConnectionManager::ConnectionManagerStartThread(void* object)
 
         // Continue while-loop to try next server
 
-        manager->FetchRemoteServerList();
+        // Google Relay Mode: We do not fetch remote server lists.
+        // manager->FetchRemoteServerList();
 
-        // Wait between 1 and 2 seconds before retrying. This is a quick
+        // Wait between 1 and 2 seconds before retrying.
         // fix to deal with the following problem: when a client can
         // make an HTTPS connection but not a VPN connection, it ends
         // up spamming "handshake" requests, resulting in PSK race conditions

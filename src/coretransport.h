@@ -66,7 +66,7 @@ protected:
 
     bool RequestingUrlProxyWithoutTunnel();
     void TransportConnectHelper();
-    bool SpawnCoreProcess(const tstring& configFilename, const tstring& serverListFilename);
+    bool SpawnCoreProcess(const tstring& configPath, const tstring& serverListFilename);
     bool ValidateAndPaveUpgrade(const tstring& clientUpgradeFilename);
 
 protected:
