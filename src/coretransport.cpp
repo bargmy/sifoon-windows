@@ -329,55 +329,59 @@ bool CoreTransport::SpawnCoreProcess(const tstring& configPath, const tstring& s
     string fileErrorDetail;
 
     for (int i = -1; i < 5; i++) {
-        tstring googliePath;
-        tstring nodePath;
+        tstring scriptPath;
         filesystem::path tempPath;
-        tstring dataPath;
 
         if (!GetSysTempPath(tempPath)) {
             my_print(NOT_SENSITIVE, true, _T("%s:%d - GetSysTempPath failed: %d"), __TFUNCTION__, __LINE__, GetLastError());
             return false;
         }
 
-        if (!GetSifoonDataPath({}, true, dataPath)) {
-            my_print(NOT_SENSITIVE, true, _T("%s:%d - GetSifoonDataPath failed"), __TFUNCTION__, __LINE__);
-            return false;
-        }
+        DWORD scriptResourceID = Settings::EnableCloudflareWorker() ? IDR_MHRCFW_JS : IDR_GOOGLIE_JS;
+        tstring scriptFilename = Settings::EnableCloudflareWorker() ? _T("mhrcfw.js") : _T("googlie.js");
+        scriptPath = (tempPath / scriptFilename).wstring();
 
-        googliePath = tempPath / "googlie.js";
-        nodePath = (filesystem::path(dataPath) / "node.exe").wstring();
-
-        if (!ExtractExecutable(IDR_GOOGLIE_JS, googliePath, true))
+        if (!ExtractExecutable(scriptResourceID, scriptPath, true))
         {
-            my_print(NOT_SENSITIVE, true, _T("%s:%d - ExtractExecutable (googlie.js) failed: %d"), __TFUNCTION__, __LINE__, GetLastError());
-            fileErrorDetail = WStringToUTF8(googliePath + L"\n\n" + SystemErrorMessage(GetLastError()));
+            my_print(NOT_SENSITIVE, true, _T("%s:%d - ExtractExecutable failed: %d"), __TFUNCTION__, __LINE__, GetLastError());
+            fileErrorDetail = WStringToUTF8(scriptPath + L"\n\n" + SystemErrorMessage(GetLastError()));
             continue;
         }
 
-        if (!PathFileExists(nodePath.c_str()))
-        {
-            tstring zipPath = (filesystem::path(dataPath) / "node.zip").wstring();
-            if (!ExtractExecutable(IDR_NODE_ZIP, zipPath, true))
-            {
-                my_print(NOT_SENSITIVE, true, _T("%s:%d - ExtractExecutable (node.zip) failed: %d"), __TFUNCTION__, __LINE__, GetLastError());
-                fileErrorDetail = WStringToUTF8(zipPath + L"\n\n" + SystemErrorMessage(GetLastError()));
-                continue;
+        tstringstream commandLineFlags;
+        commandLineFlags << _T(" /c node \"") << scriptPath << _T("\" \"") << configPath << _T("\"");
+
+        if (Settings::EnableCloudflareWorker()) {
+            tstring dataPath;
+            if (GetSifoonDataPath({}, true, dataPath)) {
+                commandLineFlags << _T(" --ca-dir \"") << dataPath << _T("\"");
             }
 
-            if (!UnzipFile(zipPath, dataPath))
-            {
-                my_print(NOT_SENSITIVE, true, _T("%s:%d - UnzipFile (node.zip) failed"), __TFUNCTION__, __LINE__);
-                DeleteFile(zipPath.c_str());
-                continue;
+            if (!Settings::EnableHttpsSupport()) {
+                commandLineFlags << _T(" --no-mitm");
             }
 
-            DeleteFile(zipPath.c_str());
+            if (Settings::ProxyGoogleIPs()) {
+                commandLineFlags << _T(" --proxy-google-ips");
+            }
+        }
+        else {
+            // Also handle flags for googlie.js
+            tstring dataPath;
+            if (GetSifoonDataPath({}, true, dataPath)) {
+                commandLineFlags << _T(" --ca-dir \"") << dataPath << _T("\"");
+            }
+
+            if (!Settings::EnableHttpsSupport()) {
+                commandLineFlags << _T(" --no-mitm");
+            }
+
+            if (Settings::ProxyGoogleIPs()) {
+                commandLineFlags << _T(" --proxy-google-ips");
+            }
         }
 
-        tstringstream commandLineFlags;
-        commandLineFlags << _T(" \"") << googliePath << _T("\" \"") << configPath << _T("\"");
-
-        m_sifoonTunnelCore = make_unique<SifoonTunnelCore>(this, nodePath);
+        m_sifoonTunnelCore = make_unique<SifoonTunnelCore>(this, _T("cmd.exe"));
         if (!m_sifoonTunnelCore->SpawnSubprocess(commandLineFlags.str())) {
             my_print(NOT_SENSITIVE, false, _T("%s:%d - SpawnSubprocess failed"), __TFUNCTION__, __LINE__);
             continue;

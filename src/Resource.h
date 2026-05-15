@@ -8,8 +8,8 @@
 #define IDM_EXIT                        105
 #define IDC_PSICLIENT                   109
 #define IDR_GOOGLIE_JS                  131
-#define IDR_POLIPO_EXE                  132
-#define IDR_NODE_ZIP                    133
+#define IDR_MHRCFW_JS                   132
+#define IDR_POLIPO_EXE                  133
 #define IDI_PSICLIENT                   134
 #define IDB_BANNER                      135
 #define IDB_TOGGLE_BUTTON_IMAGES        135

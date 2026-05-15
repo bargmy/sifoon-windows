@@ -177,6 +177,77 @@ bool UnzipFile(const tstring& zipPath, const tstring& destDir)
     return success;
 }
 
+#include <wincrypt.h>
+#pragma comment(lib, "crypt32.lib")
+
+bool InstallCACert()
+{
+    tstring dataPath;
+    if (!GetSifoonDataPath({}, true, dataPath)) {
+        return false;
+    }
+
+    tstring certPath = (filesystem::path(dataPath) / "ca.crt").wstring();
+    
+    if (!PathFileExists(certPath.c_str())) {
+        my_print(NOT_SENSITIVE, false, _T("InstallCACert - ca.crt not found, triggering generation..."));
+        
+        filesystem::path tempPath;
+        if (GetSysTempPath(tempPath)) {
+            tstring scriptPath = (tempPath / "mhrcfw.js").wstring();
+            if (ExtractExecutable(IDR_MHRCFW_JS, scriptPath, true)) {
+                tstringstream cmd;
+                cmd << _T("cmd.exe /c node \"") << scriptPath << _T("\" --ca-dir \"") << dataPath << _T("\" --generate-only");
+                
+                STARTUPINFO si = { sizeof(si) };
+                si.dwFlags = STARTF_USESHOWWINDOW;
+                si.wShowWindow = SW_HIDE;
+                PROCESS_INFORMATION pi = { 0 };
+                if (CreateProcess(NULL, &cmd.str()[0], NULL, NULL, FALSE, CREATE_NO_WINDOW, NULL, NULL, &si, &pi)) {
+                    WaitForSingleObject(pi.hProcess, 20000); // 20s timeout
+                    CloseHandle(pi.hProcess);
+                    CloseHandle(pi.hThread);
+                }
+            }
+        }
+    }
+
+    if (!PathFileExists(certPath.c_str())) {
+        my_print(NOT_SENSITIVE, false, _T("InstallCACert - ca.crt still not found after generation attempt"));
+        return false;
+    }
+
+    HANDLE hFile = CreateFile(certPath.c_str(), GENERIC_READ, FILE_SHARE_READ, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
+    if (hFile == INVALID_HANDLE_VALUE) {
+        return false;
+    }
+
+    DWORD dwSize = GetFileSize(hFile, NULL);
+    if (dwSize == INVALID_FILE_SIZE) {
+        CloseHandle(hFile);
+        return false;
+    }
+
+    vector<BYTE> certData(dwSize);
+    DWORD dwRead = 0;
+    if (!ReadFile(hFile, certData.data(), dwSize, &dwRead, NULL)) {
+        CloseHandle(hFile);
+        return false;
+    }
+    CloseHandle(hFile);
+
+    HCERTSTORE hStore = CertOpenStore(CERT_STORE_PROV_SYSTEM, 0, NULL, CERT_SYSTEM_STORE_CURRENT_USER, L"ROOT");
+    if (!hStore) {
+        return false;
+    }
+
+    bool success = !!CertAddEncodedCertificateToStore(hStore, X509_ASN_ENCODING | PKCS_7_ASN_ENCODING, certData.data(), dwSize, CERT_STORE_ADD_REPLACE_EXISTING, NULL);
+    
+    CertCloseStore(hStore, 0);
+    
+    return success;
+}
+
 bool ExtractExecutable(
     DWORD resourceID,
     const tstring& exeFilePath,

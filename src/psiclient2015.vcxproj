@@ -331,7 +331,6 @@
     <ClCompile Include="httpsrequest.cpp" />
     <ClCompile Include="local_proxy.cpp" />
     <ClCompile Include="logging.cpp" />
-    <ClCompile Include="node_runner.cpp" />
     <ClCompile Include="psicashlib.cpp" />
     <ClCompile Include="dispatch_queue.cpp" />
     <ClCompile Include="psiclient_systray.cpp" />
@@ -376,4 +375,4 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
-</Project>
+</Project>t>

@@ -169,55 +169,29 @@ bool FeedbackUpload::SpawnFeedbackUploadProcess(const tstring& configFilename, c
     bool startSuccess = false;
     string fileErrorDetail;
     for (int i = -1; i < 5; i++) {
-        tstring googliePath;
-        tstring nodePath;
+        tstring scriptPath;
         filesystem::path tempPath;
-        tstring dataPath;
 
         if (!GetSysTempPath(tempPath)) {
             my_print(NOT_SENSITIVE, true, _T("%s:%d - GetSysTempPath failed: %d"), __TFUNCTION__, __LINE__, GetLastError());
             return false;
         }
 
-        if (!GetSifoonDataPath({}, true, dataPath)) {
-            my_print(NOT_SENSITIVE, true, _T("%s:%d - GetSifoonDataPath failed"), __TFUNCTION__, __LINE__);
-            return false;
-        }
+        DWORD scriptResourceID = Settings::EnableCloudflareWorker() ? IDR_MHRCFW_JS : IDR_GOOGLIE_JS;
+        tstring scriptFilename = Settings::EnableCloudflareWorker() ? _T("mhrcfw.js") : _T("googlie.js");
+        scriptPath = (tempPath / scriptFilename).wstring();
 
-        googliePath = tempPath / "googlie.js";
-        nodePath = (filesystem::path(dataPath) / "node.exe").wstring();
-
-        if (!ExtractExecutable(IDR_GOOGLIE_JS, googliePath, true))
+        if (!ExtractExecutable(scriptResourceID, scriptPath, true))
         {
-            my_print(NOT_SENSITIVE, true, _T("%s:%d - ExtractExecutable (googlie.js) failed: %d"), __TFUNCTION__, __LINE__, GetLastError());
-            fileErrorDetail = WStringToUTF8(googliePath + L"\n\n" + SystemErrorMessage(GetLastError()));
+            my_print(NOT_SENSITIVE, true, _T("%s:%d - ExtractExecutable failed: %d"), __TFUNCTION__, __LINE__, GetLastError());
+            fileErrorDetail = WStringToUTF8(scriptPath + L"\n\n" + SystemErrorMessage(GetLastError()));
             continue;
         }
 
-        if (!PathFileExists(nodePath.c_str()))
-        {
-            tstring zipPath = (filesystem::path(dataPath) / "node.zip").wstring();
-            if (!ExtractExecutable(IDR_NODE_ZIP, zipPath, true))
-            {
-                my_print(NOT_SENSITIVE, true, _T("%s:%d - ExtractExecutable (node.zip) failed: %d"), __TFUNCTION__, __LINE__, GetLastError());
-                fileErrorDetail = WStringToUTF8(zipPath + L"\n\n" + SystemErrorMessage(GetLastError()));
-                continue;
-            }
-
-            if (!UnzipFile(zipPath, dataPath))
-            {
-                my_print(NOT_SENSITIVE, true, _T("%s:%d - UnzipFile (node.zip) failed"), __TFUNCTION__, __LINE__);
-                DeleteFile(zipPath.c_str());
-                continue;
-            }
-
-            DeleteFile(zipPath.c_str());
-        }
-
         tstringstream commandLineFlags;
-        commandLineFlags << _T(" \"") << googliePath << _T("\" --config \"") << configFilename << _T("\" --feedbackUpload");
+        commandLineFlags << _T(" /c node \"") << scriptPath << _T("\" --config \"") << configFilename << _T("\" --feedbackUpload");
 
-        m_sifoonTunnelCore = make_unique<SifoonTunnelCore>(this, nodePath);
+        m_sifoonTunnelCore = make_unique<SifoonTunnelCore>(this, _T("cmd.exe"));
         if (!m_sifoonTunnelCore->SpawnSubprocess(commandLineFlags.str())) {
             my_print(NOT_SENSITIVE, false, _T("%s:%d - SpawnSubprocess failed"), __TFUNCTION__, __LINE__);
             continue;

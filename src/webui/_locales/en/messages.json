@@ -1100,6 +1100,18 @@
     "message": "Don't modify system proxy settings",
     "description": "The label on the checkbox that enables 'Disable System Proxy Settings'."
   },
+  "settings#enable-https-support": {
+    "message": "Enable HTTPS Support",
+    "description": "Label for the 'Enable HTTPS Support' checkbox in Google Script settings."
+  },
+  "settings#enable-cloudflare-worker": {
+    "message": "Enable Cloudflare Worker Support",
+    "description": "Label for the 'Enable Cloudflare Worker Support' checkbox in Google Script settings."
+  },
+  "settings#proxy-google-ips": {
+    "message": "Proxy Google IPs",
+    "description": "Label for the 'Proxy Google IPs' checkbox in Google Script settings."
+  },
   "ui#alert#url-copied-to-clipboard": {
     "message": "URL copied to clipboard.<br>If browser fails to open, paste the URL into the browser address bar.",
     "description": "Sometimes when the Sifoon UI tries to open an external URL in the browser, it fails to open. This message indicates to the user that URL has been copied to the Windows system clipboard and is available for pasting into a browser. `<br>` may be used to split the message over two lines to ensure the alert doesn't take too much horizontal space."

@@ -37,6 +37,8 @@
   // We often test in-browser and need to behave a bit differently
   var IS_BROWSER = true;
 
+  var currentCertInstalled = false;
+
   // Parse whatever JSON parameters were passed by the application.
   var g_initObj = { Cookies: {} };
   (function() {
@@ -956,6 +958,22 @@
       $('#GoogleIp').val(obj.GoogleIp);
     }
 
+    if (!_.isUndefined(obj.EnableHttpsSupport)) {
+      $('#EnableHttpsSupport').prop('checked', !!obj.EnableHttpsSupport);
+    }
+
+    if (!_.isUndefined(obj.EnableCloudflareWorker)) {
+      $('#EnableCloudflareWorker').prop('checked', !!obj.EnableCloudflareWorker);
+    }
+
+    if (!_.isUndefined(obj.ProxyGoogleIPs)) {
+      $('#ProxyGoogleIPs').prop('checked', !!obj.ProxyGoogleIPs);
+    }
+
+    if (!_.isUndefined(obj.CertInstalled)) {
+      currentCertInstalled = !!obj.CertInstalled;
+    }
+
     if (!_.isUndefined(obj.LocalHttpProxyPort)) {
       $('#LocalHttpProxyPort').val(obj.LocalHttpProxyPort > 0 ? obj.LocalHttpProxyPort : '');
     }
@@ -1054,6 +1072,10 @@
       GoogleAuthKey: $('#GoogleAuthKey').val(),
       GoogleFrontDomain: $('#GoogleFrontDomain').val(),
       GoogleIp: $('#GoogleIp').val(),
+      EnableHttpsSupport: $('#EnableHttpsSupport').prop('checked') ? 1 : 0,
+      EnableCloudflareWorker: $('#EnableCloudflareWorker').prop('checked') ? 1 : 0,
+      ProxyGoogleIPs: $('#ProxyGoogleIPs').prop('checked') ? 1 : 0,
+      CertInstalled: currentCertInstalled ? 1 : 0,
       EgressRegion: egressRegion === BEST_REGION_VALUE ? '' : egressRegion,
       SystrayMinimize: $('#SystrayMinimize').prop('checked') ? 1 : 0,
       DisableDisallowedTrafficAlert: $('#DisableDisallowedTrafficAlert').prop('checked') ? 1 : 0,
@@ -1522,6 +1544,31 @@
     $('#GoogleScriptId, #GoogleAuthKey, #GoogleFrontDomain, #GoogleIp').on('input propertychange', function() {
       $('#settings-pane').trigger(SETTING_CHANGED_EVENT, this.id);
     });
+
+    $('#EnableHttpsSupport').change(function() {
+      $('#settings-pane').trigger(SETTING_CHANGED_EVENT, this.id);
+      
+      if ($(this).is(':checked') && !currentCertInstalled) {
+        if (confirm("Enabling HTTPS Support requires installing a Root CA certificate. Would you like to install it now?")) {
+          HtmlCtrlInterface_InstallCert();
+        } else {
+          $(this).prop('checked', false);
+          $('#settings-pane').trigger(SETTING_CHANGED_EVENT, this.id);
+        }
+      }
+    });
+
+    $('#EnableCloudflareWorker').change(function() {
+      $('#settings-pane').trigger(SETTING_CHANGED_EVENT, this.id);
+    });
+
+    $('#ProxyGoogleIPs').change(function() {
+      $('#settings-pane').trigger(SETTING_CHANGED_EVENT, this.id);
+    });
+  }
+
+  function HtmlCtrlInterface_InstallCert() {
+    window.location = 'sifoon:installcert';
   }
 
   // Some of the settings are incompatible with VPN mode. We'll modify the

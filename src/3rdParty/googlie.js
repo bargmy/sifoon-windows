@@ -6,10 +6,71 @@ const fs = require('fs');
 const crypto = require('crypto');
 const zlib = require('zlib');
 const { URL } = require('url');
+const path = require('path');
+const os = require('os');
+const { execSync } = require('child_process');
 
 /**
  * googlie.js - Mixed Protocol (HTTP + SOCKS4/5) Google Apps Script Relay Proxy
  */
+
+const CA_ARG_INDEX = process.argv.indexOf('--ca-dir');
+const CA_DIR = CA_ARG_INDEX !== -1 ? process.argv[CA_ARG_INDEX + 1] : path.join(process.cwd(), 'ca');
+const NO_MITM = process.argv.includes('--no-mitm');
+const PROXY_GOOGLE_IPS = process.argv.includes('--proxy-google-ips');
+
+const CA_KEY_FILE = path.join(CA_DIR, 'ca.key');
+const CA_CERT_FILE = path.join(CA_DIR, 'ca.crt');
+
+// --- Certificate Manager (MITM) ---
+class CertManager {
+    constructor() {
+        this.ctxCache = new Map();
+        this.certDir = fs.mkdtempSync(path.join(os.tmpdir(), 'googlie_certs_'));
+        if (!NO_MITM) {
+            this.initCA();
+        }
+    }
+
+    initCA() {
+        if (fs.existsSync(CA_KEY_FILE) && fs.existsSync(CA_CERT_FILE)) {
+            return;
+        }
+        if (!fs.existsSync(CA_DIR)) fs.mkdirSync(CA_DIR, { recursive: true });
+
+        try {
+            execSync(`openssl genrsa -out "${CA_KEY_FILE}" 2048`);
+            execSync(`openssl req -x509 -new -nodes -key "${CA_KEY_FILE}" -sha256 -days 3650 -out "${CA_CERT_FILE}" -subj "/CN=Googlie-CA/O=Sifoon"`);
+        } catch (e) {
+            console.error('Failed to generate CA: ' + e.message);
+        }
+    }
+
+    getSSLContext(domain) {
+        if (this.ctxCache.has(domain)) return this.ctxCache.get(domain);
+        const safe = domain.replace(/[^a-z0-9.-]/g, '_');
+        const keyFile = path.join(this.certDir, `${safe}.key`);
+        const certFile = path.join(this.certDir, `${safe}.crt`);
+        const cnfFile = path.join(this.certDir, `${safe}.cnf`);
+
+        try {
+            const cnf = `[req]\ndistinguished_name=dn\n[dn]\n[ext]\nsubjectAltName=DNS:${domain}`;
+            fs.writeFileSync(cnfFile, cnf);
+            execSync(`openssl genrsa -out "${keyFile}" 2048`);
+            execSync(`openssl req -new -key "${keyFile}" -out "${certFile}.csr" -subj "/CN=${domain}"`);
+            execSync(`openssl x509 -req -in "${certFile}.csr" -CA "${CA_CERT_FILE}" -CAkey "${CA_KEY_FILE}" -CAcreateserial -out "${certFile}" -days 365 -sha256 -extfile "${cnfFile}" -extensions ext`);
+
+            const ctx = tls.createSecureContext({
+                key: fs.readFileSync(keyFile),
+                cert: fs.readFileSync(certFile)
+            });
+            this.ctxCache.set(domain, ctx);
+            return ctx;
+        } catch (e) {
+            return null;
+        }
+    }
+}
 
 // --- Core Relay Logic ---
 class GoogleRelay {
@@ -20,6 +81,25 @@ class GoogleRelay {
         this.authKey = config.auth_key || '';
         this.upstreamProxyUrl = config.UpstreamProxyURL || null;
         this.maxRedirects = 5;
+    }
+
+    isGoogleDomain(host) {
+        if (!host) return false;
+        const h = host.toLowerCase();
+        // Redirect most google domains, except video
+        if (h.endsWith('.googlevideo.com')) return false;
+        
+        const googleDomains = [
+            'google.com', 'gstatic.com', 'googleapis.com', 'googleusercontent.com',
+            'ggpht.com', 'ytimg.com', 'youtube.com', 'google-analytics.com',
+            'googletagmanager.com', 'doubleclick.net', 'googlesyndication.com'
+        ];
+        return googleDomains.some(d => h === d || h.endsWith('.' + d));
+    }
+
+    isGoogleIp(host) {
+        // Simple check for Google IP ranges (very basic)
+        return host.startsWith('142.250.') || host.startsWith('172.217.') || host.startsWith('216.58.') || host.startsWith('216.239.');
     }
 
     _createProxyConnection(options) {
@@ -211,6 +291,92 @@ class GoogleRelay {
         stream.on('end', () => callback(null, Buffer.concat(chunks).toString('utf8')));
         stream.on('error', (err) => callback(err));
     }
+
+    async relayParallel(method, url, headers, body, writer) {
+        // 1. Get total size with a Probe request
+        const rangeHeaders = { ...headers, 'Range': 'bytes=0-0' };
+        try {
+            const firstChunk = await this.fetch(method, url, rangeHeaders, body);
+            if (firstChunk.status !== 206 || !firstChunk.headers['content-range']) {
+                const fullRes = await this.fetch(method, url, headers, body);
+                this.writeHttpResponse(writer, fullRes.status, fullRes.headers, fullRes.body);
+                return;
+            }
+
+            const match = firstChunk.headers['content-range'].match(/\/(\d+)$/);
+            const totalSize = match ? parseInt(match[1]) : 0;
+            
+            // If file is small, don't bother with parallel
+            if (totalSize < 5 * 1024 * 1024) {
+                const fullRes = await this.fetch(method, url, headers, body);
+                this.writeHttpResponse(writer, fullRes.status, fullRes.headers, fullRes.body);
+                return;
+            }
+
+            // 2. Start streaming chunks
+            const chunkSize = 512 * 1024;
+            const maxParallel = 8;
+            
+            const responseHeaders = { ...firstChunk.headers };
+            delete responseHeaders['content-range'];
+            responseHeaders['content-length'] = totalSize;
+            responseHeaders['accept-ranges'] = 'bytes';
+            
+            this.writeHttpResponse(writer, 200, responseHeaders, null);
+
+            let currentPos = 0;
+            while (currentPos < totalSize) {
+                const tasks = [];
+                for (let i = 0; i < maxParallel && currentPos < totalSize; i++) {
+                    const start = currentPos;
+                    const end = Math.min(start + chunkSize - 1, totalSize - 1);
+                    tasks.push(this.fetch('GET', url, { ...headers, 'Range': `bytes=${start}-${end}` }, null));
+                    currentPos = end + 1;
+                }
+
+                const results = await Promise.all(tasks);
+                for (const res of results) {
+                    if (res.body) writer.write(res.body);
+                }
+            }
+        } catch (e) {
+            writer.destroy();
+        }
+    }
+
+    writeHttpResponse(writer, status, headers, body) {
+        const statusText = http.STATUS_CODES[status] || 'OK';
+        if (writer.writeHead && !writer.isCustom) {
+            const h = {};
+            for (let [k, v] of Object.entries(headers)) {
+                const lk = k.toLowerCase();
+                if (['transfer-encoding', 'connection', 'content-length', 'content-encoding'].includes(lk)) continue;
+                h[k] = v;
+            }
+            if (body) h['Content-Length'] = body.length;
+            writer.writeHead(status, h);
+            if (body) writer.write(body);
+            if (writer.end) writer.end();
+        } else {
+            writer.write(`HTTP/1.1 ${status} ${statusText}\r\n`);
+            for (let [k, v] of Object.entries(headers)) {
+                const lk = k.toLowerCase();
+                if (['transfer-encoding', 'connection', 'content-length', 'content-encoding'].includes(lk)) continue;
+                if (lk === 'set-cookie') {
+                    const cookies = Array.isArray(v) ? v : [v];
+                    for (const c of cookies) writer.write(`${k}: ${c}\r\n`);
+                } else {
+                    writer.write(`${k}: ${v}\r\n`);
+                }
+            }
+            if (body) {
+                writer.write(`Content-Length: ${body.length}\r\n\r\n`);
+                writer.write(body);
+            } else {
+                writer.write('\r\n');
+            }
+        }
+    }
 }
 
 // --- UI / Animation Logic ---
@@ -286,11 +452,38 @@ startServer();
 // --- Master HTTP Server ---
 function startServer() {
     const relay = new GoogleRelay(config);
+    const certManager = new CertManager();
     const PORT = config.listen_port || 8087;
     const httpServer = http.createServer();
 
     httpServer.on('request', (req, res) => handleHttpRequest(req, res, relay));
     httpServer.on('connect', (req, socket) => {
+        const [host, port] = req.url.split(':');
+        
+        // Google Domain Redirection (Default Trick)
+        if (relay.isGoogleDomain(host)) {
+            socket.write('HTTP/1.1 200 Connection Established\r\n\r\n');
+            handleDirectForward(socket, relay.googleIp, port, relay.frontDomain);
+            return;
+        }
+
+        // Proxy Google IPs if enabled
+        if (PROXY_GOOGLE_IPS && relay.isGoogleIp(host)) {
+             socket.write('HTTP/1.1 200 Connection Established\r\n\r\n');
+             handleGenericRelay(socket, req.url, null, relay);
+             return;
+        }
+
+        if (port === '443' && !NO_MITM) {
+            socket.write('HTTP/1.1 200 Connection Established\r\n\r\n');
+            const ctx = certManager.getSSLContext(host);
+            if (ctx) {
+                const tlsSocket = new tls.TLSSocket(socket, { isServer: true, secureContext: ctx });
+                tlsSocket.on('secure', () => handleMitmStream(host, tlsSocket, relay));
+                return;
+            }
+        }
+
         socket.write('HTTP/1.1 200 Connection Established\r\n\r\n');
         handleGenericRelay(socket, req.url, null, relay);
     });
@@ -328,6 +521,58 @@ function startServer() {
 
 // --- Server Implementation Helpers ---
 
+async function handleMitmStream(host, tlsSocket, relay) {
+    let buffer = Buffer.alloc(0);
+    tlsSocket.on('data', async (chunk) => {
+        buffer = Buffer.concat([buffer, chunk]);
+        const headerEnd = buffer.indexOf('\r\n\r\n');
+        if (headerEnd !== -1) {
+            const headerStr = buffer.slice(0, headerEnd).toString();
+            const lines = headerStr.split('\r\n');
+            const [method, path] = lines[0].split(' ');
+            const headers = {};
+            for (let i = 1; i < lines.length; i++) {
+                const parts = lines[i].split(': ');
+                if (parts.length === 2) headers[parts[0].toLowerCase()] = parts[1];
+            }
+            const contentLength = parseInt(headers['content-length'] || '0');
+            const bodyStart = headerEnd + 4;
+            if (buffer.length >= bodyStart + contentLength) {
+                const body = buffer.slice(bodyStart, bodyStart + contentLength);
+                buffer = buffer.slice(bodyStart + contentLength);
+                const url = `https://${host}${path}`;
+                try {
+                    if (method === 'GET') {
+                        const customWriter = {
+                            write: (data) => tlsSocket.write(data),
+                            destroy: () => tlsSocket.destroy(),
+                            isCustom: true
+                        };
+                        await relay.relayParallel(method, url, headers, null, customWriter);
+                    } else {
+                        const relayRes = await relay.fetch(method, url, headers, body);
+                        relay.writeHttpResponse(tlsSocket, relayRes.status, relayRes.headers, relayRes.body);
+                    }
+                } catch (e) {
+                    tlsSocket.write('HTTP/1.1 502 Bad Gateway\r\n\r\n');
+                }
+            }
+        }
+    });
+}
+
+function handleDirectForward(socket, targetIp, targetPort, sni) {
+    const target = net.connect({
+        host: targetIp,
+        port: targetPort || 443
+    }, () => {
+        socket.pipe(target);
+        target.pipe(socket);
+    });
+    target.on('error', () => socket.destroy());
+    socket.on('error', () => target.destroy());
+}
+
 async function handleHttpRequest(req, res, relay) {
     let bodyChunks = [];
     req.on('data', (chunk) => bodyChunks.push(chunk));
@@ -337,11 +582,14 @@ async function handleHttpRequest(req, res, relay) {
         UI.triggerUp();
 
         try {
-            const relayResponse = await relay.fetch(req.method, req.url, req.headers, bodyBuffer.length > 0 ? bodyBuffer : null);
-            UI.downloaded += relayResponse.body.length;
-            UI.triggerDown();
-            res.writeHead(relayResponse.status, relayResponse.headers);
-            res.end(relayResponse.body);
+            if (req.method === 'GET') {
+                await relay.relayParallel(req.method, req.url, req.headers, null, res);
+            } else {
+                const relayResponse = await relay.fetch(req.method, req.url, req.headers, bodyBuffer.length > 0 ? bodyBuffer : null);
+                UI.downloaded += relayResponse.body.length;
+                UI.triggerDown();
+                relay.writeHttpResponse(res, relayResponse.status, relayResponse.headers, relayResponse.body);
+            }
         } catch (e) {
             UI.triggerUp(true);
             UI.triggerDown(true);

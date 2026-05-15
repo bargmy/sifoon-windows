@@ -1,0 +1,11 @@
+{
+	"google_ip": "216.239.38.120",
+	"front_domain": "www.google.com",
+	"script_id": "AKfycbyUx677uy9N1591_baC7gsflIzcGj9RTSkk-4RqL32DwLApQHOeZ02ALFOcaDA-LcI",
+	"auth_key": "11097nabi",
+	"listen_host": "127.0.0.1",
+	"listen_port": 8085,
+	"log_level": "INFO",
+	"verify_ssl": true,
+	"hosts": {}
+}

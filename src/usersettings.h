@@ -67,6 +67,13 @@ namespace Settings
     bool SkipProxySettings();
     bool SkipAutoConnect();
 
+    bool EnableHttpsSupport();
+    bool EnableCloudflareWorker();
+    bool CertInstalled();
+    bool ProxyGoogleIPs();
+
+    void SetCertInstalled(bool value);
+
     // These are used by the web UI
     void SetCookies(const string& value);
     string GetCookies();

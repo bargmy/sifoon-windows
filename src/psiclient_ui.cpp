@@ -694,7 +694,10 @@ static void HtmlUI_BeforeNavigateHandler(LPCTSTR _url)
         string log = uiURLParams(url, appLogCommandLen);
         my_print(NOT_SENSITIVE, true, _T("UILog: %S"), log.c_str());
     }
-    else if (url == appStart)
+    const LPCTSTR appInstallCert = SIFOON_LINK_PREFIX _T("installcert");
+    const size_t appInstallCertLen = _tcslen(appInstallCert);
+
+    if (url == appStart)
     {
         my_print(NOT_SENSITIVE, true, _T("%s: Start requested"), __TFUNCTION__);
         g_connectionManager.Start();
@@ -704,6 +707,30 @@ static void HtmlUI_BeforeNavigateHandler(LPCTSTR _url)
         my_print(NOT_SENSITIVE, true, _T("%s: Stop requested"), __TFUNCTION__);
         g_connectionManager.Stop(STOP_REASON_USER_DISCONNECT);
     }
+    else if (url == appInstallCert)
+    {
+        my_print(NOT_SENSITIVE, true, _T("%s: Install cert requested"), __TFUNCTION__);
+        if (InstallCACert()) {
+            Settings::SetCertInstalled(true);
+
+            // refresh the settings in the UI
+            Json::Value settingsJSON;
+            Settings::ToJson(settingsJSON);
+
+            Json::Value settingsRefreshJSON;
+            settingsRefreshJSON["settings"] = settingsJSON;
+            settingsRefreshJSON["success"] = true;
+            settingsRefreshJSON["reconnectRequired"] = false;
+
+            Json::FastWriter jsonWriter;
+            string strSettingsRefreshJSON = jsonWriter.write(settingsRefreshJSON);
+            UI_RefreshSettings(strSettingsRefreshJSON);
+        }
+        else {
+            my_print(NOT_SENSITIVE, true, _T("%s: InstallCACert failed"), __TFUNCTION__);
+        }
+    }
+
     else if (url.find(appReconnect) == 0 && url.length() > appReconnectLen)
     {
         my_print(NOT_SENSITIVE, true, _T("%s: Reconnect requested"), __TFUNCTION__);

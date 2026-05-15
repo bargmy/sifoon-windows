@@ -25,10 +25,6 @@ jobs:
         cache: 'npm'
         cache-dependency-path: src/webui/package-lock.json
 
-    - name: Download Windows 7 compatible Node.js
-      run: |
-        curl -L -o src\3rdParty\node.zip https://github.com/vladimir-andreevich/node.js-windows-7/raw/refs/heads/main/v20/node-v20.19.2-win-x86.zip
-
     - name: Create embeddedvalues.h
       run: |
         copy src\embeddedvalues.h.stub src\embeddedvalues.h

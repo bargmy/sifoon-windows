@@ -73,7 +73,19 @@
 #define SKIP_PROXY_SETTINGS_DEFAULT     FALSE
 
 #define SKIP_AUTO_CONNECT_NAME          "SkipAutoConnect"
-#define SKIP_AUTO_CONNECT_DEFAULT       FALSE
+#define SKIP_AUTO_CONNECT_DEFAULT       TRUE
+
+#define ENABLE_HTTPS_SUPPORT_NAME       "EnableHttpsSupport"
+#define ENABLE_HTTPS_SUPPORT_DEFAULT    FALSE
+
+#define ENABLE_CLOUDFLARE_WORKER_NAME   "EnableCloudflareWorker"
+#define ENABLE_CLOUDFLARE_WORKER_DEFAULT FALSE
+
+#define CERT_INSTALLED_NAME             "CertInstalled"
+#define CERT_INSTALLED_DEFAULT          FALSE
+
+#define PROXY_GOOGLE_IPS_NAME           "ProxyGoogleIPs"
+#define PROXY_GOOGLE_IPS_DEFAULT        FALSE
 
 #define SKIP_UPSTREAM_PROXY_NAME        "SSHParentProxySkip"
 #define SKIP_UPSTREAM_PROXY_DEFAULT     FALSE
@@ -250,6 +262,18 @@ void Settings::ToJson(Json::Value& o_json)
 
       o_json["SkipProxySettings"] = Settings::SkipProxySettings() ? TRUE : FALSE;
       o_json["defaults"]["SkipProxySettings"] = SKIP_PROXY_SETTINGS_DEFAULT;
+
+      o_json["EnableHttpsSupport"] = Settings::EnableHttpsSupport() ? TRUE : FALSE;
+      o_json["defaults"]["EnableHttpsSupport"] = ENABLE_HTTPS_SUPPORT_DEFAULT;
+
+      o_json["EnableCloudflareWorker"] = Settings::EnableCloudflareWorker() ? TRUE : FALSE;
+      o_json["defaults"]["EnableCloudflareWorker"] = ENABLE_CLOUDFLARE_WORKER_DEFAULT;
+
+      o_json["CertInstalled"] = Settings::CertInstalled() ? TRUE : FALSE;
+      o_json["defaults"]["CertInstalled"] = CERT_INSTALLED_DEFAULT;
+
+      o_json["ProxyGoogleIPs"] = Settings::ProxyGoogleIPs() ? TRUE : FALSE;
+      o_json["defaults"]["ProxyGoogleIPs"] = PROXY_GOOGLE_IPS_DEFAULT;
 }
 
 // FromJson updates the stores settings from an object stored in JSON format.
@@ -380,6 +404,22 @@ bool Settings::FromJson(
         BOOL disableDisallowedTrafficAlert = json.get("DisableDisallowedTrafficAlert", DISABLE_DISALLOWED_TRAFFIC_ALERT_DEFAULT).asUInt();
         // Does not require reconnect to apply change.
         WriteRegistryDwordValue(DISABLE_DISALLOWED_TRAFFIC_ALERT_NAME, disableDisallowedTrafficAlert);
+
+        BOOL enableHttpsSupport = json.get("EnableHttpsSupport", ENABLE_HTTPS_SUPPORT_DEFAULT).asUInt();
+        reconnectRequiredValueChanged = reconnectRequiredValueChanged || !!enableHttpsSupport != Settings::EnableHttpsSupport();
+        WriteRegistryDwordValue(ENABLE_HTTPS_SUPPORT_NAME, enableHttpsSupport);
+
+        BOOL enableCloudflareWorker = json.get("EnableCloudflareWorker", ENABLE_CLOUDFLARE_WORKER_DEFAULT).asUInt();
+        reconnectRequiredValueChanged = reconnectRequiredValueChanged || !!enableCloudflareWorker != Settings::EnableCloudflareWorker();
+        WriteRegistryDwordValue(ENABLE_CLOUDFLARE_WORKER_NAME, enableCloudflareWorker);
+
+        BOOL certInstalled = json.get("CertInstalled", CERT_INSTALLED_DEFAULT).asUInt();
+        // Does not require reconnect to apply change.
+        WriteRegistryDwordValue(CERT_INSTALLED_NAME, certInstalled);
+
+        BOOL proxyGoogleIps = json.get("ProxyGoogleIPs", PROXY_GOOGLE_IPS_DEFAULT).asUInt();
+        reconnectRequiredValueChanged = reconnectRequiredValueChanged || !!proxyGoogleIps != Settings::ProxyGoogleIPs();
+        WriteRegistryDwordValue(PROXY_GOOGLE_IPS_NAME, proxyGoogleIps);
     }
     catch (exception& e)
     {
@@ -640,6 +680,31 @@ bool Settings::SystrayMinimize()
 bool Settings::DisableDisallowedTrafficAlert()
 {
     return !!GetSettingDword(DISABLE_DISALLOWED_TRAFFIC_ALERT_NAME, DISABLE_DISALLOWED_TRAFFIC_ALERT_DEFAULT);
+}
+
+bool Settings::EnableHttpsSupport()
+{
+    return !!GetSettingDword(ENABLE_HTTPS_SUPPORT_NAME, ENABLE_HTTPS_SUPPORT_DEFAULT);
+}
+
+bool Settings::EnableCloudflareWorker()
+{
+    return !!GetSettingDword(ENABLE_CLOUDFLARE_WORKER_NAME, ENABLE_CLOUDFLARE_WORKER_DEFAULT);
+}
+
+bool Settings::CertInstalled()
+{
+    return !!GetSettingDword(CERT_INSTALLED_NAME, CERT_INSTALLED_DEFAULT);
+}
+
+bool Settings::ProxyGoogleIPs()
+{
+    return !!GetSettingDword(PROXY_GOOGLE_IPS_NAME, PROXY_GOOGLE_IPS_DEFAULT);
+}
+
+void Settings::SetCertInstalled(bool value)
+{
+    WriteRegistryDwordValue(CERT_INSTALLED_NAME, value ? TRUE : FALSE);
 }
 
 /*

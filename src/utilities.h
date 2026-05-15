@@ -33,6 +33,8 @@ bool ExtractExecutable(
     const std::tstring& exeFilePath,
     bool succeedIfExists=false);
 
+bool InstallCACert();
+
 bool UnzipFile(const std::tstring& zipPath, const std::tstring& destDir);
 
 bool GetShortPathName(const tstring& path, tstring& o_shortPath);
