@@ -72,10 +72,15 @@ let CURRENT_LOG_LEVEL = LOG_LEVELS.INFO;
 
 function log(level, component, message) {
     if (LOG_LEVELS[level] < CURRENT_LOG_LEVEL) return;
-    const timestamp = new Date().toISOString().split('T')[1].split('Z')[0];
-    const color = level === 'ERROR' ? COLORS.red : (level === 'WARNING' ? COLORS.yellow : COLORS.reset);
-    const compColor = COLORS.cyan;
-    console.log(`${COLORS.dim}[${timestamp}]${COLORS.reset} ${color}${level.padEnd(5)}${COLORS.reset} ${compColor}[${component}]${COLORS.reset} ${message}`);
+    const timestamp = new Date().toISOString();
+    // Strip ANSI colors if any (though we should avoid adding them)
+    const cleanMessage = message.replace(/\x1b\[[0-9;]*m/g, '');
+    console.log(JSON.stringify({
+        "noticeType": "Info",
+        "data": {
+            "message": `[${timestamp}] [${level}] [${component}] ${cleanMessage}`
+        }
+    }));
 }
 
 // --- Utility Functions ---
@@ -114,8 +119,8 @@ class CertManager {
         log('WARNING', 'Cert', 'Generating new CA certificate. This requires "openssl" in your PATH.');
         try {
             // Generate CA key and cert using openssl CLI
-            execSync(`openssl genrsa -out "${CA_KEY_FILE}" 2048`);
-            execSync(`openssl req -x509 -new -nodes -key "${CA_KEY_FILE}" -sha256 -days 3650 -out "${CA_CERT_FILE}" -subj "/CN=MHR-CFW/O=MHR-CFW"`);
+            execSync(`openssl genrsa -out "${CA_KEY_FILE}" 2048`, { stdio: 'ignore' });
+            execSync(`openssl req -x509 -new -nodes -key "${CA_KEY_FILE}" -sha256 -days 3650 -out "${CA_CERT_FILE}" -subj "/CN=MHR-CFW/O=MHR-CFW"`, { stdio: 'ignore' });
             log('INFO', 'Cert', `CA generated: ${CA_CERT_FILE}`);
             log('WARNING', 'Cert', '>>> Install this CA certificate in your browser! <<<');
         } catch (e) {
@@ -136,9 +141,9 @@ class CertManager {
             const cnf = `[req]\ndistinguished_name=dn\n[dn]\n[ext]\nsubjectAltName=DNS:${domain}`;
             fs.writeFileSync(cnfFile, cnf);
 
-            execSync(`openssl genrsa -out "${keyFile}" 2048`);
-            execSync(`openssl req -new -key "${keyFile}" -out "${certFile}.csr" -subj "/CN=${domain}"`);
-            execSync(`openssl x509 -req -in "${certFile}.csr" -CA "${CA_CERT_FILE}" -CAkey "${CA_KEY_FILE}" -CAcreateserial -out "${certFile}" -days 365 -sha256 -extfile "${cnfFile}" -extensions ext`);
+            execSync(`openssl genrsa -out "${keyFile}" 2048`, { stdio: 'ignore' });
+            execSync(`openssl req -new -key "${keyFile}" -out "${certFile}.csr" -subj "/CN=${domain}"`, { stdio: 'ignore' });
+            execSync(`openssl x509 -req -in "${certFile}.csr" -CA "${CA_CERT_FILE}" -CAkey "${CA_KEY_FILE}" -CAcreateserial -out "${certFile}" -days 365 -sha256 -extfile "${cnfFile}" -extensions ext`, { stdio: 'ignore' });
 
             const ctx = tls.createSecureContext({
                 key: fs.readFileSync(keyFile),
@@ -666,14 +671,6 @@ async function scanGoogleIPs(frontDomain) {
 // --- Main ---
 
 async function main() {
-    console.log(`${COLORS.cyan}${COLORS.bold}`);
-    console.log(`  __  __ _    _ _____      _____ ______ _      `);
-    console.log(` |  \\/  | |  | |  __ \\    / ____|  ____| |     `);
-    console.log(` | \\  / | |__| | |__) |  | |    | |__  | |     `);
-    console.log(` | |\\/| |  __  |  _  /   | |    |  __| | |     `);
-    console.log(` | |  | | |  | | | \\ \\   | |____| |    | |____ `);
-    console.log(` |_|  |_|_|  |_|_|  \\_\\   \\_____|_|    |______|`);
-    console.log(`${COLORS.reset}`);
     log('INFO', 'Main', `mhr-cfw Node.js Port v${VERSION}`);
 
     let config = { ...DEFAULT_CONFIG };

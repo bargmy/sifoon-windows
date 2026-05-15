@@ -1584,7 +1584,7 @@
   }
 
   function HtmlCtrlInterface_InstallCert() {
-    window.location = 'sifoon:installcert';
+    window.location = 'psi:installcert';
   }
 
   // Some of the settings are incompatible with VPN mode. We'll modify the

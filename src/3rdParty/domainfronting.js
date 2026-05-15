@@ -12,6 +12,17 @@ const path = require('path');
 const os = require('os');
 const { execSync } = require('child_process');
 
+// --- Logger ---
+function log(level, component, message) {
+    const timestamp = new Date().toISOString();
+    console.log(JSON.stringify({
+        "noticeType": "Info",
+        "data": {
+            "message": `[${timestamp}] [${level}] [${component}] ${message}`
+        }
+    }));
+}
+
 const CA_ARG_INDEX = process.argv.indexOf('--ca-dir');
 const CA_DIR = CA_ARG_INDEX !== -1 ? process.argv[CA_ARG_INDEX + 1] : path.join(process.cwd(), 'ca');
 const CA_KEY_FILE = path.join(CA_DIR, 'ca.key');
@@ -47,9 +58,9 @@ class CertManager {
     if (fs.existsSync(CA_KEY_FILE) && fs.existsSync(CA_CERT_FILE)) return;
     if (!fs.existsSync(CA_DIR)) fs.mkdirSync(CA_DIR, { recursive: true });
     try {
-      execSync(`openssl genrsa -out "${CA_KEY_FILE}" 2048`);
-      execSync(`openssl req -x509 -new -nodes -key "${CA_KEY_FILE}" -sha256 -days 3650 -out "${CA_CERT_FILE}" -subj "/CN=DF-CA/O=Sifoon"`);
-    } catch (e) { console.error(e); }
+      execSync(`openssl genrsa -out "${CA_KEY_FILE}" 2048`, { stdio: 'ignore' });
+      execSync(`openssl req -x509 -new -nodes -key "${CA_KEY_FILE}" -sha256 -days 3650 -out "${CA_CERT_FILE}" -subj "/CN=DF-CA/O=Sifoon"`, { stdio: 'ignore' });
+    } catch (e) { log('ERROR', 'Cert', e.message); }
   }
 
   getSSLContext(domain) {
@@ -60,9 +71,9 @@ class CertManager {
     const cnfFile = path.join(this.certDir, `${safe}.cnf`);
     try {
       fs.writeFileSync(cnfFile, `[req]\ndistinguished_name=dn\n[dn]\n[ext]\nsubjectAltName=DNS:${domain}`);
-      execSync(`openssl genrsa -out "${keyFile}" 2048`);
-      execSync(`openssl req -new -key "${keyFile}" -out "${certFile}.csr" -subj "/CN=${domain}"`);
-      execSync(`openssl x509 -req -in "${certFile}.csr" -CA "${CA_CERT_FILE}" -CAkey "${CA_KEY_FILE}" -CAcreateserial -out "${certFile}" -days 365 -sha256 -extfile "${cnfFile}" -extensions ext`);
+      execSync(`openssl genrsa -out "${keyFile}" 2048`, { stdio: 'ignore' });
+      execSync(`openssl req -new -key "${keyFile}" -out "${certFile}.csr" -subj "/CN=${domain}"`, { stdio: 'ignore' });
+      execSync(`openssl x509 -req -in "${certFile}.csr" -CA "${CA_CERT_FILE}" -CAkey "${CA_KEY_FILE}" -CAcreateserial -out "${certFile}" -days 365 -sha256 -extfile "${cnfFile}" -extensions ext`, { stdio: 'ignore' });
       const ctx = tls.createSecureContext({ key: fs.readFileSync(keyFile), cert: fs.readFileSync(certFile) });
       this.ctxCache.set(domain, ctx);
       return ctx;

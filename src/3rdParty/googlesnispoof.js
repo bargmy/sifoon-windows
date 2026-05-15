@@ -9,6 +9,17 @@ const http = require('http');
 const net = require('net');
 const fs = require('fs');
 
+// --- Logger ---
+function log(level, component, message) {
+    const timestamp = new Date().toISOString();
+    console.log(JSON.stringify({
+        "noticeType": "Info",
+        "data": {
+            "message": `[${timestamp}] [${level}] [${component}] ${message}`
+        }
+    }));
+}
+
 const PROXY_GOOGLE_IPS = process.argv.includes('--proxy-google-ips');
 
 function isGoogleDomain(host) {
@@ -59,6 +70,7 @@ let config = {};
 try {
     config = JSON.parse(fs.readFileSync(CONFIG_FILE, 'utf8'));
 } catch (e) {
+    console.log(JSON.stringify({"noticeType": "FatalError", "data": {"message": "Failed to read config file"}}));
     process.exit(1);
 }
 

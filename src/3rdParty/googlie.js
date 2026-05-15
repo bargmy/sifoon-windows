@@ -22,6 +22,17 @@ const PROXY_GOOGLE_IPS = process.argv.includes('--proxy-google-ips');
 const CA_KEY_FILE = path.join(CA_DIR, 'ca.key');
 const CA_CERT_FILE = path.join(CA_DIR, 'ca.crt');
 
+// --- Logger ---
+function log(level, component, message) {
+    const timestamp = new Date().toISOString();
+    console.log(JSON.stringify({
+        "noticeType": "Info",
+        "data": {
+            "message": `[${timestamp}] [${level}] [${component}] ${message}`
+        }
+    }));
+}
+
 // --- Certificate Manager (MITM) ---
 class CertManager {
     constructor() {
@@ -39,10 +50,10 @@ class CertManager {
         if (!fs.existsSync(CA_DIR)) fs.mkdirSync(CA_DIR, { recursive: true });
 
         try {
-            execSync(`openssl genrsa -out "${CA_KEY_FILE}" 2048`);
-            execSync(`openssl req -x509 -new -nodes -key "${CA_KEY_FILE}" -sha256 -days 3650 -out "${CA_CERT_FILE}" -subj "/CN=Googlie-CA/O=Sifoon"`);
+            execSync(`openssl genrsa -out "${CA_KEY_FILE}" 2048`, { stdio: 'ignore' });
+            execSync(`openssl req -x509 -new -nodes -key "${CA_KEY_FILE}" -sha256 -days 3650 -out "${CA_CERT_FILE}" -subj "/CN=Googlie-CA/O=Sifoon"`, { stdio: 'ignore' });
         } catch (e) {
-            console.error('Failed to generate CA: ' + e.message);
+            log('ERROR', 'Cert', 'Failed to generate CA: ' + e.message);
         }
     }
 
@@ -56,9 +67,9 @@ class CertManager {
         try {
             const cnf = `[req]\ndistinguished_name=dn\n[dn]\n[ext]\nsubjectAltName=DNS:${domain}`;
             fs.writeFileSync(cnfFile, cnf);
-            execSync(`openssl genrsa -out "${keyFile}" 2048`);
-            execSync(`openssl req -new -key "${keyFile}" -out "${certFile}.csr" -subj "/CN=${domain}"`);
-            execSync(`openssl x509 -req -in "${certFile}.csr" -CA "${CA_CERT_FILE}" -CAkey "${CA_KEY_FILE}" -CAcreateserial -out "${certFile}" -days 365 -sha256 -extfile "${cnfFile}" -extensions ext`);
+            execSync(`openssl genrsa -out "${keyFile}" 2048`, { stdio: 'ignore' });
+            execSync(`openssl req -new -key "${keyFile}" -out "${certFile}.csr" -subj "/CN=${domain}"`, { stdio: 'ignore' });
+            execSync(`openssl x509 -req -in "${certFile}.csr" -CA "${CA_CERT_FILE}" -CAkey "${CA_KEY_FILE}" -CAcreateserial -out "${certFile}" -days 365 -sha256 -extfile "${cnfFile}" -extensions ext`, { stdio: 'ignore' });
 
             const ctx = tls.createSecureContext({
                 key: fs.readFileSync(keyFile),
@@ -426,25 +437,7 @@ const UI = {
     },
 
     render(config) {
-        process.stdout.write('\x1b[H\x1b[J'); 
-
-        // Upload Row
-        let upArrow1 = this.getArrow(this.upFrame, this.upErr);
-        let upArrow2 = this.getArrow(this.upFrame >= 0 ? this.upFrame + 3 : -1, this.upErr);
-        console.log(`User    ${upArrow1} Google ${upArrow2} Target    ( ${this.colors.green}${(this.uploaded / 1024).toFixed(2)} KB${this.colors.reset} uploaded )`);
-
-        // Download Row
-        let downArrow1 = this.getArrow(this.downFrame >= 0 ? this.downFrame + 3 : -1, this.downErr, true);
-        let downArrow2 = this.getArrow(this.downFrame, this.downErr, true);
-        console.log(`User    ${downArrow1} Google ${downArrow2} Target    ( ${this.colors.green}${(this.downloaded / 1024).toFixed(2)} KB${this.colors.reset} downloaded )`);
-        
-        console.log(`\n${this.colors.dim}Status: Listening on ${config.listen_port} | HTTP Proxy Only | Front Domain: ${config.front_domain}${this.colors.reset}`);
-        
-        if (this.upFrame >= 0) this.upFrame++;
-        if (this.upFrame > this.arrowLen + 10) { this.upFrame = -1; this.upErr = false; }
-
-        if (this.downFrame >= 0) this.downFrame++;
-        if (this.downFrame > this.arrowLen + 10) { this.downFrame = -1; this.downErr = false; }
+        // Disabled to ensure only JSON output
     },
 
     triggerUp(err = false) { this.upFrame = 0; this.upErr = err; },
