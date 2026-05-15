@@ -179,6 +179,13 @@
           </a>
         </li>
 
+        <li id="connection-log-tab">
+          <a href="#connection-log-pane" data-toggle="tab" data-match-width=".main-nav > li > a">
+            <i class="icon-fixed-width icon-earth"></i>
+            <span>LOG+</span>
+          </a>
+        </li>
+
         <li id="language-tab">
           <a href="#language-pane" data-toggle="tab" data-match-width=".main-nav > li > a">
             <div class="multiline-tab-icon">
@@ -915,8 +922,7 @@
                     <label class="control-label" for="ManualCdnIps" data-i18n="settings#manual-cdn-ips#label">Custom CDN IPs</label>
                     <div class="controls">
                       <textarea id="ManualCdnIps" class="input-block-level" rows="4" 
-                                placeholder="Enter IPs, one or more per line..."
-                                data-i18n="[placeholder]settings#manual-cdn-ips#placeholder"></textarea>
+                                placeholder="Enter IPs, one or more per line..."></textarea>
                       <p class="help-block" data-i18n="settings#manual-cdn-ips#help-text">
                         Specify manual IP addresses for CDN fronting.
                       </p>
@@ -1881,6 +1887,19 @@
             </tr>
           </script>
         </div><!-- /logs-pane -->
+
+        <div class="tab-pane fade" id="connection-log-pane">
+          <div class="container-fluid">
+            <div class="row-fluid">
+              <div class="span12">
+                <h3 style="margin-top: 20px;">Connection Log (LOG+)</h3>
+                <div id="ConnectionLog" style="font-family: monospace; font-size: 1.1em; line-height: 1.6em; max-height: 600px; overflow-y: auto; background: #f9f9f9; padding: 15px; border: 1px solid #eee; border-radius: 4px; margin-top: 10px;">
+                  <div class="muted" data-i18n="connection#connection-log#empty">No connection attempts yet.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
 
         <!-- ABOUT ======================================================-->

@@ -268,7 +268,7 @@ bool WriteParameterFiles(const WriteParameterFilesIn& in, WriteParameterFilesOut
         out.oldClientUpgradeFilename = filesystem::path(shortDataStoreDirectory).append(UPGRADE_EXE_NAME);
 
         config["MigrateUpgradeDownloadFilename"] = WStringToUTF8(out.oldClientUpgradeFilename);
-        config["UpgradeDownloadClientVersionHeader"] = string("x-amz-meta-sifoon-client-version");
+        config["UpgradeDownloadClientVersionHeader"] = string("x-amz-meta-psiphon-client-version");
         config["UpgradeDownloadURLs"] = LoadJSONArray(UPGRADE_URLS_JSON);
 
         // We do not want to upgrade if we're running on a legacy version of Windows.
@@ -286,7 +286,7 @@ bool WriteParameterFiles(const WriteParameterFilesIn& in, WriteParameterFilesOut
         // newClientUpgradeFilename should be deleted when Sifoon starts if they exist.
         // TODO: when we switch to using tunnel-core as a library instead of a subprocess then we can call UpgradeDownloadFilePath()
         // rather than constructing the path here.
-        out.newClientUpgradeFilename = filesystem::path(shortDataStoreDirectory).append(_T("ca.sifoon.SifoonTunnel.tunnel-core")).append(_T("upgrade"));
+        out.newClientUpgradeFilename = filesystem::path(shortDataStoreDirectory).append(_T("ca.psiphon.PsiphonTunnel.tunnel-core")).append(_T("upgrade"));
     }
 
     ostringstream configDataStream;
