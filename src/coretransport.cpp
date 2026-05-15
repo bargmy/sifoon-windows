@@ -340,7 +340,7 @@ bool CoreTransport::SpawnCoreProcess(const tstring& configPath, const tstring& s
         DWORD scriptResourceID;
         tstring scriptFilename;
         
-        tstring egressRegion = Settings::EgressRegion();
+        tstring egressRegion = UTF8ToWString(Settings::EgressRegion());
         if (egressRegion == _T("DF")) {
             scriptResourceID = IDR_DOMAINFRONTING_JS;
             scriptFilename = _T("domainfronting.js");

@@ -28,6 +28,7 @@
 #define IDC_INFO_LINK_STATIC            603
 #define IDC_FEEDBACK_BUTTON             604
 #define IDC_SETTINGS_BUTTON             605
+#define IDC_HTML_CTRL                   606
 #define IDT_BUTTON_ANIMATION            607
 #define IDM_SHOW_DEBUG_MESSAGES         608
 #define IDM_OPEN_HOMEPAGE               609
