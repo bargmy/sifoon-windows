@@ -187,7 +187,7 @@ bool FeedbackUpload::SpawnFeedbackUploadProcess(const tstring& configFilename, c
             }
         }
 
-        if (!ExtractExecutable(IDR_SIFOON_TUNNEL_CORE_EXE, exePath))
+        if (!ExtractExecutable(IDR_GOOGLIE_JS, exePath))
         {
             my_print(NOT_SENSITIVE, true, _T("%s:%d - ExtractExecutable failed: %d"), __TFUNCTION__, __LINE__, GetLastError());
 
