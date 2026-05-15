@@ -694,10 +694,7 @@ static void HtmlUI_BeforeNavigateHandler(LPCTSTR _url)
         string log = uiURLParams(url, appLogCommandLen);
         my_print(NOT_SENSITIVE, true, _T("UILog: %S"), log.c_str());
     }
-    const LPCTSTR appInstallCert = SIFOON_LINK_PREFIX _T("installcert");
-    const size_t appInstallCertLen = _tcslen(appInstallCert);
-
-    if (url == appStart)
+    else if (url == appStart)
     {
         my_print(NOT_SENSITIVE, true, _T("%s: Start requested"), __TFUNCTION__);
         g_connectionManager.Start();

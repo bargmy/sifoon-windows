@@ -594,7 +594,7 @@
     });
 
     // Have the combobox track the state of the control in the settings pane.
-    $('#EgressRegion').on('change', function egressRegionComboSetup_EgressRegion_change() {
+    $('#EgressRegion').on('change', function egressRegionComboSetup_EgressRegion_change(e, data) {
       let $activeItem;
       // Copy the relevant classes to the combo items from the settings items.
       const $regionItems = $('#EgressRegion li');
@@ -610,15 +610,14 @@
 
         if (active) {
           $activeItem = $regionItem;
-          
-          if (region === 'DF' && !currentCertInstalled) {
+
+          if (region === 'DF' && !currentCertInstalled && data !== 'init') {
             if (confirm("Domain Fronting requires a Root CA certificate. Would you like to install it now?")) {
               HtmlCtrlInterface_InstallCert();
             }
           }
         }
       }
-
       // Update the button
       if ($activeItem) {
         // Most of the list items have an `a` element as an immediate child, but the "Google
@@ -970,15 +969,15 @@
     }
 
     if (!_.isUndefined(obj.EnableHttpsSupport)) {
-      $('#EnableHttpsSupport').prop('checked', !!obj.EnableHttpsSupport);
+      $('#EnableHttpsSupport').prop('checked', !!obj.EnableHttpsSupport).trigger('change', 'init');
     }
 
     if (!_.isUndefined(obj.EnableCloudflareWorker)) {
-      $('#EnableCloudflareWorker').prop('checked', !!obj.EnableCloudflareWorker);
+      $('#EnableCloudflareWorker').prop('checked', !!obj.EnableCloudflareWorker).trigger('change', 'init');
     }
 
     if (!_.isUndefined(obj.ProxyGoogleIPs)) {
-      $('#ProxyGoogleIPs').prop('checked', !!obj.ProxyGoogleIPs);
+      $('#ProxyGoogleIPs').prop('checked', !!obj.ProxyGoogleIPs).trigger('change', 'init');
     }
 
     if (!_.isUndefined(obj.CertInstalled)) {
@@ -1031,7 +1030,7 @@
       $('#EgressRegion [data-region]').removeClass('active');
       $('#EgressRegion').find('[data-region="' + region + '"] a').trigger(
         'click',
-        { ignoreDisabled: true });
+        { ignoreDisabled: true, init: true });
     }
 
     if (!_.isUndefined(obj.SystrayMinimize)) {
@@ -1206,7 +1205,7 @@
       egressRegionValid(false);
 
       // This event helps the combobox on the connect pane stay in sync.
-      $('#EgressRegion').trigger('change');
+      $('#EgressRegion').trigger('change', extraArgs && extraArgs.init ? 'init' : undefined);
 
       // Tell the settings pane a change was made.
       $('#settings-pane').trigger(SETTING_CHANGED_EVENT, 'EgressRegion');
@@ -1265,7 +1264,7 @@
         return;
       }
 
-      if (_.includes(regions, elemRegion) || elemRegion === BEST_REGION_VALUE) {
+      if (_.includes(regions, elemRegion) || elemRegion === BEST_REGION_VALUE || elemRegion === 'DF' || elemRegion === 'SS') {
         $(this).removeClass('hidden');
       }
       else {
@@ -1556,13 +1555,19 @@
       $('#settings-pane').trigger(SETTING_CHANGED_EVENT, this.id);
     });
 
-    $('#EnableHttpsSupport').change(function() {
+    $('#EnableHttpsSupport').change(function(e, data) {
       $('#settings-pane').trigger(SETTING_CHANGED_EVENT, this.id);
       
+      // If data === 'init', it's a programmatic change during startup, so don't prompt.
+      if (data === 'init') {
+        return;
+      }
+
       if ($(this).is(':checked') && !currentCertInstalled) {
         if (confirm("Enabling HTTPS Support requires installing a Root CA certificate. Would you like to install it now?")) {
           HtmlCtrlInterface_InstallCert();
         } else {
+          // Temporarily unhook the handler to prevent recursion
           $(this).prop('checked', false);
           $('#settings-pane').trigger(SETTING_CHANGED_EVENT, this.id);
         }
