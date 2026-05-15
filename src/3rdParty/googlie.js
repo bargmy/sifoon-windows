@@ -1,6 +1,7 @@
 const http = require('http');
 const https = require('https');
 const net = require('net');
+const tls = require('tls');
 const fs = require('fs');
 const crypto = require('crypto');
 const zlib = require('zlib');
@@ -17,7 +18,59 @@ class GoogleRelay {
         this.frontDomain = config.front_domain || 'www.google.com';
         this.scriptId = config.script_id;
         this.authKey = config.auth_key || '';
+        this.upstreamProxyUrl = config.UpstreamProxyURL || null;
         this.maxRedirects = 5;
+    }
+
+    _createProxyConnection(options) {
+        return new Promise((resolve, reject) => {
+            const proxyUrl = new URL(this.upstreamProxyUrl);
+            const proxySocket = net.connect({
+                host: proxyUrl.hostname,
+                port: proxyUrl.port || 80
+            });
+            
+            let authHeader = '';
+            if (proxyUrl.username || proxyUrl.password) {
+                const auth = Buffer.from(decodeURIComponent(proxyUrl.username) + ':' + decodeURIComponent(proxyUrl.password)).toString('base64');
+                authHeader = `Proxy-Authorization: Basic ${auth}\r\n`;
+            }
+
+            proxySocket.on('connect', () => {
+                proxySocket.write(`CONNECT ${options.hostname}:${options.port} HTTP/1.1\r\nHost: ${options.hostname}:${options.port}\r\n${authHeader}\r\n`);
+            });
+
+            let connected = false;
+            proxySocket.on('data', (chunk) => {
+                if (!connected) {
+                    const response = chunk.toString();
+                    if (response.match(/^HTTP\/1\.[01] 200/)) {
+                        connected = true;
+                        resolve(proxySocket);
+                    } else {
+                        proxySocket.destroy();
+                        reject(new Error("Proxy connection failed: " + response.split('\r\n')[0]));
+                    }
+                }
+            });
+
+            proxySocket.on('error', reject);
+        });
+    }
+
+    _addProxyToOptions(options) {
+        if (this.upstreamProxyUrl) {
+            options.createConnection = (opts, callback) => {
+                this._createProxyConnection(opts).then(socket => {
+                    const tlsSocket = tls.connect({
+                        socket: socket,
+                        servername: opts.servername || opts.hostname
+                    }, () => callback(null, tlsSocket));
+                    tlsSocket.on('error', err => callback(err, null));
+                }).catch(err => callback(err, null));
+            };
+        }
+        return options;
     }
 
     async fetch(method, targetUrl, headers = {}, body = null) {
@@ -51,7 +104,7 @@ class GoogleRelay {
         if (redirectCount > this.maxRedirects) throw new Error("Too many redirects");
 
         const jsonPayload = JSON.stringify(payload);
-        const options = {
+        const options = this._addProxyToOptions({
             hostname: this.googleIp,
             port: 443,
             path: `/macros/s/${this.scriptId}/exec`,
@@ -64,7 +117,7 @@ class GoogleRelay {
             },
             servername: this.frontDomain,
             rejectUnauthorized: false
-        };
+        });
 
         return new Promise((resolve, reject) => {
             const req = https.request(options, (res) => {
@@ -104,7 +157,7 @@ class GoogleRelay {
     }
 
     async _followRedirect(url, originalPayload, redirectCount) {
-        const options = {
+        const options = this._addProxyToOptions({
             hostname: this.googleIp,
             port: 443,
             path: url.pathname + url.search,
@@ -112,7 +165,7 @@ class GoogleRelay {
             headers: { 'Host': url.hostname, 'Accept-Encoding': 'gzip, deflate' },
             servername: this.frontDomain,
             rejectUnauthorized: false
-        };
+        });
         
         return new Promise((resolve, reject) => {
             const req = https.request(options, (res) => {

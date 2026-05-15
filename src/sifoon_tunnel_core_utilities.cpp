@@ -84,6 +84,11 @@ bool WriteParameterFiles(const WriteParameterFilesIn& in, WriteParameterFilesOut
     config["google_ip"] = Settings::GoogleIp().empty() ? "216.239.38.120" : Settings::GoogleIp();
     config["listen_port"] = Settings::LocalHttpProxyPort() == 0 ? 8087 : Settings::LocalHttpProxyPort();
 
+    string upstreamProxyAddress = GetUpstreamProxyAddress();
+    if (!upstreamProxyAddress.empty()) {
+        config["UpstreamProxyURL"] = upstreamProxyAddress;
+    }
+
     ostringstream configDataStream;
     Json::FastWriter jsonWriter;
     configDataStream << jsonWriter.write(config);
